@@ -1,23 +1,21 @@
-<%= form_for(@branch) do |f| %>
-  <% if @branch.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@branch.errors.count, "error") %> prohibited this branch from being saved:</h2>
-
-      <ul>
-      <% @branch.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for(@branch) do |f| %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.input :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.input :description %><br>
+  </div>
+  <div class="field">
+      <fieldset>
+        <%= f.simple_fields_for(:rolifications) do |rolif| %>
+          <%= rolif.association :role %>
+          <%= rolif.association :user %>
+          <%= rolif.hidden_field :branch, value: @branch.id %>
+          <br>
+        <% end %>
+
+      </fieldset>
   </div>
   <div class="actions">
     <%= f.submit %>

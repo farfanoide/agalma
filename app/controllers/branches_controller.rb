@@ -15,6 +15,7 @@ class BranchesController < ApplicationController
   # GET /branches/new
   def new
     @branch = Branch.new
+    rolification = @branch.rolifications.build
   end
 
   # GET /branches/1/edit
@@ -25,7 +26,6 @@ class BranchesController < ApplicationController
   # POST /branches.json
   def create
     @branch = Branch.new(branch_params)
-
     respond_to do |format|
       if @branch.save
         format.html { redirect_to @branch, notice: 'Branch was successfully created.' }
@@ -69,6 +69,6 @@ class BranchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def branch_params
-      params.require(:branch).permit(:name, :description)
+      params.require(:branch).permit(:id, :name, :description, rolifications_attributes: [:id, :role_id, :user_id, :branch_id])
     end
 end
