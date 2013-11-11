@@ -4,7 +4,7 @@ class Branch < ActiveRecord::Base
   has_many :roles, through: :rolifications
 
 
-  accepts_nested_attributes_for :rolifications
+  accepts_nested_attributes_for :rolifications, allow_destroy: true
 
   validates_presence_of :name
 end
