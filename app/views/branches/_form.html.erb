@@ -1,12 +1,11 @@
 <%= simple_form_for(@branch) do |f| %>
 
-<%= f.input :name, placeholder: "nombre", label: "nombre" %>
-<%= f.input :description, placeholder: "descripcion", label: "descripcion" %><br>
+<%= f.input :name, placeholder: "nombre para la sucursal", label: "nombre" %>
+<%= f.input :description, placeholder: "informacion extra", label: "descripcion" %><br>
 <%= f.simple_fields_for(:rolifications) do |rolif| %>
-<%= rolif.association :user, label: "usuario" %>
-<%= rolif.association :role, label: "tipo" %>
-<br>
+  <%= render 'rolification_fields', f: rolif %>
 <% end %>
+<%= link_to_add_fields 'agregar rol', f, :rolifications %>
 
 <%= f.submit "Guardar" %>
 <% end %>
