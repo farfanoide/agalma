@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="centered small6 large6 columns">
+        <% if !notice.blank? %>
+        <p id="notice"><%= notice %></p>
+        <% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @branch.name %>
-</p>
+        <p>
+          <strong>Nombre:</strong>
+          <%= @branch.name %>
+      </p>
+      <% if !@branch.description.blank? %>
+      <p>
+          <strong>Descripcion:</strong>
+          <%= @branch.description %>
+      </p>
+      <% end %>
+      <% @branch.rolifications.each do |rolification| %>
+      <p>
+        <strong><%= rolification.user.name %>:</strong>
+        <%= rolification.role.name %>
+    </p>
+    <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @branch.description %>
-</p>
+    <%= link_to 'Editar', edit_branch_path(@branch) %> |
+    <%= link_to 'Volver', branches_path %>
 
-<%= link_to 'Edit', edit_branch_path(@branch) %> |
-<%= link_to 'Back', branches_path %>
+</div>
+</div>
