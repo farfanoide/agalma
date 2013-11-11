@@ -1,22 +1,12 @@
 <%= simple_form_for(@branch) do |f| %>
 
-  <div class="field">
-    <%= f.input :name, placeholder: "nombre", label: "nombre" %>
-  </div>
-  <div class="field">
-    <%= f.input :description, placeholder: "descripcion", label: "descripcion" %><br>
-  </div>
-  <div class="field">
-      <fieldset>
-        <%= f.simple_fields_for(:rolifications) do |rolif| %>
-          <%= rolif.association :user, label: "usuario" %>
-          <%= rolif.association :role, label: "tipo" %>
-          <br>
-        <% end %>
+<%= f.input :name, placeholder: "nombre", label: "nombre" %>
+<%= f.input :description, placeholder: "descripcion", label: "descripcion" %><br>
+<%= f.simple_fields_for(:rolifications) do |rolif| %>
+<%= rolif.association :user, label: "usuario" %>
+<%= rolif.association :role, label: "tipo" %>
+<br>
+<% end %>
 
-      </fieldset>
-  </div>
-  <div class="actions">
-    <%= f.submit "Guardar" %>
-  </div>
+<%= f.submit "Guardar" %>
 <% end %>

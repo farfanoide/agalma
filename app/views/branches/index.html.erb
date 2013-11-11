@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small6 centered columns">
+  <div class="small-8 columns small-centered ">
     <h1>Listado de sucursales</h1>
 
     <table>
@@ -14,10 +14,9 @@
         <% @branches.each do |branch| %>
         <tr>
           <td>
-              <%= branch.name %>
+            <%= link_to branch.name, branch %>
           </td>
           <td>
-              <%= link_to 'Ver', branch %> |
               <%= link_to 'Editar', edit_branch_path(branch) %> |
               <%= link_to 'Borrar', branch, method: :delete, data: { confirm: 'tas seguro?' } %>
           </td>

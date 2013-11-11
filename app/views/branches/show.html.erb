@@ -1,7 +1,9 @@
 <div class="row">
-    <div class="centered small6 large6 columns">
+<div class="small-6 columns small-centered">
         <% if !notice.blank? %>
-        <p id="notice"><%= notice %></p>
+        <div class="alert-box success">
+            <%= notice %>
+        </div>
         <% end %>
 
         <p>
