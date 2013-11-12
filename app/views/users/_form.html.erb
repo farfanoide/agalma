@@ -1,25 +1,13 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= simple_form_for(@user) do |f| %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= f.input :name, placeholder: "nombre para el usuario", label: "nombre" %>
+<%= f.input :email, placeholder: "informacion extra", label: "email" %><br>
+<%= f.simple_fields_for(:rolifications) do |rolif| %>
+  <%= render 'rolification_fields', f: rolif %>
 <% end %>
+<%= link_to_add_fields 'agregar rol', f, :rolifications %>
+<br>
+
+<%= f.submit "Guardar" %>
+<% end %>
+

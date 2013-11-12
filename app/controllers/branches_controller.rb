@@ -15,7 +15,6 @@ class BranchesController < ApplicationController
   # GET /branches/new
   def new
     @branch = Branch.new
-    rolification = @branch.rolifications.build
   end
 
   # GET /branches/1/edit
