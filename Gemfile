@@ -43,6 +43,16 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :development do
+  gem 'meta_request'
+  gem 'thin'
+end
+
+
 gem 'simple_form'
 gem 'devise'
 gem 'zurb-foundation'
+
+# heroku deploy
+gem 'rails_12factor', group: :production
+gem 'pg'
