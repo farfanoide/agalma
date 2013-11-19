@@ -16,6 +16,12 @@
           <%= @branch.description %>
       </p>
       <% end %>
+      <% if !@branch.telephones.empty? %>
+      <strong>Telefonos:</strong>
+	<% @branch.telephones.each do |tel| %>
+	  <p>(<%= tel.ext %>)-<%= tel.num %></p>
+	<% end %>
+      <% end %>
       <% @branch.rolifications.each do |rolification| %>
       <p>
         <strong><%= rolification.user.name %>:</strong>
