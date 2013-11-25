@@ -1324,4 +1324,13 @@ $default-float: left;
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
+
+@import 'agalma';
+
+// Override variables
+
+// top-bar
+$topbar-bg-color: $agalma-blue;
+$topbar-link-bg-hover: $topbar-bg-color;
+
 @import 'foundation';
