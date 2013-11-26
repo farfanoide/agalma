@@ -6,6 +6,7 @@ Agalma::Application.routes.draw do
 
   resources :users
   namespace :backend do
+    root 'dashboard#home'
     resources :branches
   end
 
