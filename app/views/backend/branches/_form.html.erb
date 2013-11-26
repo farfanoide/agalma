@@ -1,4 +1,4 @@
-<%= simple_form_for(@branch) do |f| %>
+<%= simple_form_for([:backend,@branch]) do |f| %>
 
 <%= f.input :name, placeholder: "nombre para la sucursal", label: "nombre" %>
 <%= f.input :description, placeholder: "informacion extra", label: "descripcion" %><br>

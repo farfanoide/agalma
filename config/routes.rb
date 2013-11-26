@@ -1,9 +1,14 @@
 Agalma::Application.routes.draw do
+  devise_for :users
   resources :roles
 
   resources :branches
 
   resources :users
+  namespace :backend do
+    root 'dashboard#home'
+    resources :branches
+  end
 
   root 'branches#index'
 

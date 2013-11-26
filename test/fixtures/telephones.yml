@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ext: 1
+  num: 1
+  branch_id: 
+
+two:
+  ext: 1
+  num: 1
+  branch_id: 
