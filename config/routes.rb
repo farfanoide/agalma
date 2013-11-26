@@ -5,6 +5,9 @@ Agalma::Application.routes.draw do
   resources :branches
 
   resources :users
+  namespace :backend do
+    resources :branches
+  end
 
   root 'branches#index'
 
