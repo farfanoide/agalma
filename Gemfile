@@ -51,7 +51,7 @@ end
 
 gem 'simple_form'
 gem 'devise'
-gem 'zurb-foundation'
+gem 'foundation-rails'
 
 # heroku deploy
 gem 'rails_12factor', group: :production
