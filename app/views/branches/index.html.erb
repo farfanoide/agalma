@@ -1,33 +1,15 @@
 <div class="row">
   <div class="small-8 columns small-centered ">
     <h1>Listado de sucursales</h1>
+    <% @branches.each do |branch| %>
+      <li>
+    <%= link_to branch.name, branch %>
+    <%= link_to 'Editar', edit_branch_path(branch) %>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>acciones</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @branches.each do |branch| %>
-        <tr>
-          <td>
-            <%= link_to branch.name, branch %>
-          </td>
-          <td>
-              <%= link_to 'Editar', edit_branch_path(branch) %> |
-              <%= link_to 'Borrar', branch, method: :delete, data: { confirm: 'tas seguro?' } %>
-          </td>
-        </tr>
+    </li>
         <% end %>
-      </tbody>
-    </table>
 
     <br>
-
     <%= link_to 'Crear Sucursal', new_branch_path %>
-
   </div>
 </div>

@@ -32,18 +32,18 @@
       margin:0;
       padding: 2em 0 2em 0;
       color: $white;
-//      font-weight: 700; to bold or not to bold... that is the question.
+      //      font-weight: 700; to bold or not to bold... that is the question.
     }
     a:hover{
       background-color: $white;
       color: $black;
       margin: -1px 0 -1px -20px;
       padding-left: 20px;
-      box-shadow: 10px 10px 8px 8px ;
-      }
+      box-shadow: 0 3px 5px;
+    }
     .nav-footer{
       img{
-        margin-bottom: 20px;
+	margin-bottom: 20px;
       }
       margin-top: 50px;
       font-style: italic;
@@ -53,7 +53,7 @@
 
 }
 .header{
-  background-image: url(http://localhost:3000/assets/fondo_header.jpg);
+  background-image: image-url('fondo_header.jpg');
   background-repeat: repeat-x;
   .bg-img{
     float:left;
@@ -70,5 +70,5 @@
     padding: 1.5em;
     font-size: .8em;
     font-weight: bold;
-    }
+  }
 }
