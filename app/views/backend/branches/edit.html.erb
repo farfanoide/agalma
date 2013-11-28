@@ -6,7 +6,7 @@
         <%= render 'form' %>
 
         <%= link_to 'Ver', [:backend, @branch] %> |
-        <%= link_to 'Volver', backend_branches_path %>
+        <%= link_to 'Volver', :controller => "dashboard", :action => "home" %>
 
     </div>
 </div>
