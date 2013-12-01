@@ -5,24 +5,25 @@
     </div>
     <div class="small-7 columns top-nav">
       <div class="contain-to-grid">
-        <nav class="top-bar" >
-          <ul class="title-area">
-            <!-- Title Area -->
-            <li class="name"></li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
-          </ul>
+	<nav class="top-bar" >
+	  <ul class="title-area">
+	    <!-- Title Area -->
+	    <li class="name"></li>
+	    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+	    <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+	  </ul>
 
-          <section class="top-bar-section">
-            <!-- Left Nav Section -->
-            <ul class="left">
-              <li><a href="#">Quiénes Somos</a></li>
-              <li><a href="#">Galería</a></li>
-              <li><a href="#">Contacto</a></li>
-              <li><a href="#">Iniciar Sesión</a></li>
-            </ul>
-          </section>
-        </nav>
+	  <section class="top-bar-section">
+	    <!-- Left Nav Section -->
+	    <ul class="left">
+	      <li><a href="#">Quiénes Somos</a></li>
+	      <li><a href="#">Galería</a></li>
+	      <li><a href="#">Contacto</a></li>
+	      <%= render 'devise/menu/registration_items' %>
+	      <%= render 'devise/menu/login_items' %>
+	    </ul>
+	  </section>
+	</nav>
       </div>
     </div>
   </div>

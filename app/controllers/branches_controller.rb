@@ -18,4 +18,4 @@ class BranchesController < ApplicationController
     def set_branch
       @branch = Branch.find(params[:id])
     end
-  end
+end
