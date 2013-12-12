@@ -46,6 +46,7 @@ end
 group :development do
   gem 'meta_request'
   gem 'thin'
+  gem 'pry'
 end
 
 

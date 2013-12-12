@@ -1,8 +1,6 @@
 <fieldset>
-<p>
  <%= f.association :branch, label: "sucursal",label_method: :name, include_blank: false %>
  <%= f.association :role, label: "rol", label_method: :name, include_blank: false %>
  <%= f.hidden_field :_destroy %>
  <%= link_to "Borrar", '#', class: "remove_fields" %>
-</p>
 </fieldset>
