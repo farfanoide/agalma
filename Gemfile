@@ -52,7 +52,7 @@ end
 gem 'simple_form'
 gem 'devise'
 gem 'foundation-rails'
-
+gem 'pundit'
 # heroku deploy
 gem 'rails_12factor', group: :production
 gem 'pg'
