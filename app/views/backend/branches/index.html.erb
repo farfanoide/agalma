@@ -1,4 +1,6 @@
-<div class="row">
+<% if user_signed_in? %>
+ <% if policy(current_user).admin? %>	
+ <div class="row">
   <div class="small-8 columns small-centered ">
     <h1>Listado de sucursales</h1>
 
@@ -31,4 +33,5 @@
 
   </div>
 </div>
-
+<% end %>
+<% end %> 

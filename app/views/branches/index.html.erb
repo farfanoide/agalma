@@ -5,7 +5,7 @@
       <li>
     <%= link_to branch.name, branch %>
 	<% if user_signed_in? %>
-          <% if policy(current_user).show? %>	
+          <% if policy(current_user).admin? %>	
 	<%= link_to 'Editar', edit_backend_branch_path(branch) %>
    	<% end %>
    	<% end %>
@@ -13,6 +13,10 @@
         <% end %>
 
     <br>
-    <%= link_to 'Crear Sucursal', new_backend_branch_path %>
-  </div>
+   <% if user_signed_in? %>
+       <% if policy(current_user).admin? %>	
+       <%= link_to 'Crear Sucursal', new_backend_branch_path %>
+       <% end %>
+   <% end %>
+</div>
 </div>
