@@ -1089,7 +1089,7 @@ $default-float: left;
 // $side-nav-list-position: inside;
 // $side-nav-list-margin: em-calc(0 0 7 0);
 
-// We use these to control link styles.
+// we use these to control link styles.
 
 // $side-nav-link-color: $primary-color;
 // $side-nav-link-color-active: lighten(#000, 30%);
@@ -1328,10 +1328,15 @@ $default-float: left;
 @import 'variables';
 
 // Override variables
-
 // top-bar
 $topbar-bg-color: $blue;
+$topbar-bg: $topbar-bg-color;
 $topbar-link-bg-hover: $topbar-bg-color;
+
+// input
+// No shadow for the input
+$input-box-shadow: 0;
+$input-include-glowing-effect: false;
 
 @import 'foundation/components/global';
 @import 'foundation/components/alert-boxes';

@@ -16,15 +16,18 @@
 
  <title><%= content_for?(:title) ? yield(:title) : "Agalma" %></title>
 
- <%= stylesheet_link_tag    "application" %>
+
  <%= javascript_include_tag "vendor/custom.modernizr" %>
  <%= csrf_meta_tags %>
+ <%= stylesheet_link_tag    "application" %>
 </head>
 
 <body>
   <%= render "shared/flashes" %>
 
   <%= render 'frontend/shared/header' %>
+  <%= render 'frontend/shared/search' %>
+  
   <div class="row">
     <div class="small-12 large-4 columns">
       <%= render 'frontend/shared/side_nav' %>
