@@ -1,9 +1,6 @@
 <div class="header">
   <div class="row">
-    <div class="small-4 columns">
-      <a href="<%= url_for :root %>"><img src="<%= image_path("agalma.png") %>" style="margin-top: 1em"></a>
-    </div>
-    <div class="small-7 columns top-nav">
+    <div class="small-7 small-offset-5 columns top-nav">
       <div class="contain-to-grid">
 	<nav class="top-bar" >
 
@@ -21,6 +18,15 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="small-6 columns" >  
+      <a href="<%= url_for :root %>"><img src="<%= image_path("agalma.png") %>" style="margin-bottom:3em;"></a>
+    </div>
+    <div class="small-6 columns" >
+      <%= render '/frontend/shared/slide' %>
+    </div>
+  </div>
+
 </div>
 
 

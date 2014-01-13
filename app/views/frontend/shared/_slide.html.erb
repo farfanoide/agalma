@@ -1,0 +1,64 @@
+
+<div class="slide-step" onload="draw_circles()" >
+    <canvas id="circlecanvas1" onclick="switch_image(1)" width="28" height="28"></canvas>
+    <canvas id="circlecanvas2" onclick="switch_image(2)" width="28" height="28"></canvas>
+    <canvas id="circlecanvas3" onclick="switch_image(3)" width="28" height="28"></canvas>
+    <canvas id="circlecanvas4" onclick="switch_image(4)" width="28" height="28"></canvas>
+    <canvas id="circlecanvas5" onclick="switch_image(5)" width="28" height="28"></canvas>
+</div>
+
+<div class="slide-container">
+    <img class="slide" id="current_image" src="assets/timmy3.jpg"  style="border:solid 1px #000; box-shadow: 1px 1px #000;" />
+</div>
+
+<script>
+    for (var i=1; i<=5; i++){
+        console.log(i);
+        draw_circle("circlecanvas"+i,"#fff");
+	}
+
+    ind = 1
+    setInterval(function(){slide_action();},2000);
+    
+    function slide_action(){
+        var id = "circlecanvas" + ind;
+        switch_image(ind);
+        switch(ind)
+            {
+            case 1:
+                {
+                 draw_circle("circlecanvas5","#fff");
+                 ind++;
+                 break;
+                 }
+            case 5:
+                 {
+                 draw_circle("circlecanvas"+(ind-1),"#fff");
+                 ind = 1;
+                 break;
+                 }
+            default:
+                 {
+                 draw_circle("circlecanvas"+(ind-1),"#fff");
+                 ind++;
+                 break;
+                 }
+            }
+        }
+            
+    function draw_circle(id,color){
+        var cnvs = document.getElementById(id);
+	var context = cnvs.getContext("2d");
+        context.clearRect(0,0,cnvs.offsetWidth, cnvs.offsetHeight);
+	context.arc(15,15,8,0, Math.PI * 2, false);
+	context.fillStyle=color;
+	context.fill();
+	}
+
+    function switch_image(index){
+	document.getElementById("current_image").src="/assets/timmy"+index+".jpg";
+        draw_circle("circlecanvas" + index, "#6fcff5");
+	}
+
+</script>
+
