@@ -1,16 +1,19 @@
 Agalma::Application.routes.draw do
+  root 'branches#index'
+
   devise_for :users
+
   resources :roles
-
   resources :branches
-
   resources :users
+
   namespace :backend do
     root 'dashboard#home'
     resources :branches
+    resources :pages
   end
 
-  root 'branches#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,3 +1,4 @@
 class BackendController < ActionController::Base
-  layout "backend"
+    before_filter :authenticate_user!
+    layout "backend"
 end

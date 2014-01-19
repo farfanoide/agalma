@@ -1,0 +1,33 @@
+<h1>Listing backend_pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Slug</th>
+      <th>Body</th>
+      <th>Active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @backend_pages.each do |backend_page| %>
+      <tr>
+        <td><%= backend_page.title %></td>
+        <td><%= backend_page.slug %></td>
+        <td><%= backend_page.body %></td>
+        <td><%= backend_page.active %></td>
+        <td><%= link_to 'Show', backend_page %></td>
+        <td><%= link_to 'Edit', edit_backend_page_path(backend_page) %></td>
+        <td><%= link_to 'Destroy', backend_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page', new_backend_page_path %>

@@ -3,7 +3,7 @@
         <nav class="top-bar" data-topbar>
             <ul class="title-area">
                 <li class="name">
-		<h1><%= link_to "Administracion", :backend_root %></h1>
+                    <h1><%= link_to "Administracion", :backend_root %></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
             </ul>
@@ -11,20 +11,11 @@
             <section class="top-bar-section">
                 <!-- Right Nav Section -->
                 <ul class="right">
-                    <li class="active"><a href="#">Right Nav Button Active</a></li>
-                    <li class="has-dropdown">
-                        <a href="#">Right Button with Dropdown</a>
-                        <ul class="dropdown">
-                            <li><a href="#">First link in dropdown</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                    <li class="active"><a href="#"><%= link_to "Sucursales", backend_branches_path %></a></li>
+                    <li class="active"><a href="#"><%= link_to "Paginas", backend_pages_path %></a></li>
 
-                <!-- Left Nav Section -->
-                <ul class="left">
-                    <li><a href="#">Left Nav Button</a></li>
                 </ul>
             </section>
-        </nav>    
+        </nav>
     </div>
 </div>
