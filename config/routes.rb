@@ -1,4 +1,7 @@
 Agalma::Application.routes.draw do
+
+  mount Ckeditor::Engine => '/ckeditor'
+
   root 'branches#index'
 
   devise_for :users

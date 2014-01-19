@@ -54,6 +54,11 @@ gem 'simple_form'
 gem 'devise'
 gem 'foundation-rails'
 
+# editor
+gem "ckeditor"
+gem "carrierwave"
+gem "mini_magick"
+
 # heroku deploy
 gem 'rails_12factor', group: :production
 gem 'pg'

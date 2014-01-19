@@ -30,6 +30,10 @@ GEM
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
     callsite (0.0.11)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     ckeditor (4.0.8)
       mime-types
       orm_adapter
@@ -72,6 +76,8 @@ GEM
       railties
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_magick (3.6.0)
+      subexec (~> 0.2.1)
     minitest (4.7.5)
     multi_json (1.8.2)
     mysql2 (0.3.14)
@@ -129,6 +135,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    subexec (0.2.3)
     thin (1.6.1)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -153,6 +160,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave
   ckeditor
   coffee-rails (~> 4.0.0)
   devise
@@ -160,6 +168,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   meta_request
+  mini_magick
   mysql2
   pg
   pry
