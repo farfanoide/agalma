@@ -1,0 +1,7 @@
+<% if !@branches.blank? %>
+  <% for branch in @branches %>
+    <section class="branch-container">
+        <%= branch.name %>
+    </section>
+  <% end %>
+<% end %>

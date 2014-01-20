@@ -2,12 +2,12 @@ Agalma::Application.routes.draw do
 
 
   mount Ckeditor::Engine => '/ckeditor'
-
-  get 'pages/:slug' => 'pages#show'
   devise_for :users
 
+  get 'pages/:slug' => 'pages#show'
+  get 'branches/:action' => 'branches#:action'
+
   resources :roles
-  resources :branches
   resources :users
 
   namespace :backend do

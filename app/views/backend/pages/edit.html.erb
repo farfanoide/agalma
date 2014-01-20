@@ -6,7 +6,7 @@
     <%= render 'form' %>
 
     <%= link_to 'Ver', backend_page_path(@page)  %> |
-    <%= link_to 'Volver', :back %>
-
+    <%= link_to 'Volver', :back %> | 
+    <%= link_to 'Destroy', backend_page_path(@page), method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </div>
