@@ -1,6 +1,6 @@
-class CreateBackendPages < ActiveRecord::Migration
+class CreatePages < ActiveRecord::Migration
   def change
-    create_table :backend_pages do |t|
+    create_table :pages do |t|
       t.string :title
       t.string :slug
       t.text :body
@@ -8,6 +8,6 @@ class CreateBackendPages < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :backend_pages, :slug
+    add_index :pages, :slug
   end
 end

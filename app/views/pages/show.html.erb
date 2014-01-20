@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @page.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= raw(@page.body) %>
+</p>
+<%= link_to("Editar", edit_backend_page_path(@page)) %>
+<%= link_to "Volver", :back %>
+<%= link_to 'Destroy', backend_page_path(@page), method: :delete, data: { confirm: 'Are you sure?' } %>

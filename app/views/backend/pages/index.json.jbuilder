@@ -1,4 +1,4 @@
-json.array!(@backend_pages) do |backend_page|
-  json.extract! backend_page, :id, :title, :slug, :body, :active
-  json.url backend_page_url(backend_page, format: :json)
+json.array!(@pages) do |page|
+  json.extract! page, :id, :title, :slug, :body, :active
+  json.url page_url(page, format: :json)
 end

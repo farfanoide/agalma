@@ -2,23 +2,23 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @backend_page.title %>
+  <%= @page.title %>
 </p>
 
 <p>
   <strong>Slug:</strong>
-  <%= @backend_page.slug %>
+  <%= @page.slug %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @backend_page.body %>
+  <%= @page.body %>
 </p>
 
 <p>
   <strong>Active:</strong>
-  <%= @backend_page.active %>
+  <%= @page.active %>
 </p>
 
-<%= link_to 'Edit', edit_backend_page_path(@backend_page) %> |
+<%= link_to 'Edit', edit_backend_page_path(@page) %> |
 <%= link_to 'Back', backend_pages_path %>

@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140119200617) do
-
-  create_table "backend_pages", force: true do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.text     "body"
-    t.boolean  "active"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "backend_pages", ["slug"], name: "index_backend_pages_on_slug", using: :btree
+ActiveRecord::Schema.define(version: 20140119230147) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -55,6 +44,17 @@ ActiveRecord::Schema.define(version: 20140119200617) do
   end
 
   add_index "images", ["post_id"], name: "index_images_on_post_id", using: :btree
+
+  create_table "pages", force: true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "body"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
