@@ -5,13 +5,16 @@ Agalma::Application.routes.draw do
   devise_for :users
 
   get 'pages/:slug' => 'pages#show'
-  get 'branches/:action' => 'branches#:action'
+  resources :pages, only: [:show, :index]
 
   resources :branches, only: [:show]
+
+  get 'branches/:action' => 'branches#:action'
+
   resources :roles
-  resources :users
 
   namespace :backend do
+    resources :users
     resources :branches
     resources :pages
     root 'dashboard#home'

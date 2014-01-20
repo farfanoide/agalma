@@ -9,8 +9,8 @@ class BranchesController < ApplicationController
 
   # # GET /branches/1
   # # GET /branches/1.json
-  # def show
-  # end
+  def show
+  end
 
   def consultorios_externos
     @branches = Branch.all
