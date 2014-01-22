@@ -8,8 +8,9 @@ namespace :ckeditor do
       FileUtils.cp file, nondigest, verbose: true
     end
   end
+end
 
-  # auto run ckeditor:create_nondigest_assets after assets:precompile
-  Rake::Task['assets:precompile'].enhance do
-    Rake::Task['ckeditor:create_nondigest_assets'].invokeckeditor:create_nondigest_assets
+# auto run ckeditor:create_nondigest_assets after assets:precompile
+Rake::Task['assets:precompile'].enhance do
+  Rake::Task['ckeditor:create_nondigest_assets'].invoke
 end
