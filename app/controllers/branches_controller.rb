@@ -7,11 +7,14 @@ class BranchesController < ApplicationController
     @branches = Branch.all
   end
 
-  # GET /branches/1
-  # GET /branches/1.json
+  # # GET /branches/1
+  # # GET /branches/1.json
   def show
   end
 
+  def consultorios_externos
+    @branches = Branch.all
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

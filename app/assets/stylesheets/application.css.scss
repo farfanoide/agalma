@@ -18,54 +18,80 @@
 
 @import 'general';
 .nav-wrapper{
-  border-right: 1px solid $white;
-  .items-container{
-      li{ 
-        padding:25px 0 25px 0;
-        list-style-type:none;
-        border-bottom: 1px solid $white;
-        margin-right: 10px;
-        a{
-          text-decoration: none;
-          padding: 24px 20px 24px 0;
+    border-right: 1px solid $white;
+    .items-container{
+        .item {}
+        .item:hover{
+            background-color: $white;
+            color: $black;
+            box-shadow: 0 3px 5px;
         }
-        a:hover{
-          background-color: $white;
-          color: $black;
-          box-shadow: 0 3px 5px;
+        .nav-footer{
+            img{
+                margin-bottom: 20px;
+            }
+            margin-top: 50px;
+            font-style: italic;
+            text-align: center;
         }
-      }
-      li:last-child{
-        border-bottom-width: 0px;
-      }
-    .nav-footer{
-      img{
-	margin-bottom: 20px;
-      }
-      margin-top: 100px;
-      font-style: italic;
-      text-align: center;
     }
-  }
+
+}
+// =side nav module
+.side-nav{
+    padding: 1em;
+    margin: 0;
+    .items-container{
+        list-style: none;
+        .item-container{
+            border-bottom: 1px solid $white;
+            padding: 1em 0;
+        }
+    }
 
 }
 .header{
-  background-image: image-url('fondo_header.jpg');
-  background-repeat: repeat-x;
-  .bg-img{
-    float:left;
-  }
+    background-image: image-url('fondo_header.jpg');
+    background-repeat: repeat-x;
+    .bg-img{
+        float:left;
+    }
 }
 
 .top-nav{
-  border-radius: .5em;
-  background-color: $blue;
-  text-align: center;
-  .top-nav-item{
-    color: $white;
-    display: inline-block;
-    padding: 1.5em;
-    font-size: .8em;
-    font-weight: bold;
-  }
+    border-radius: .5em;
+    background-color: $blue;
+    text-align: center;
+    .top-nav-item{
+        color: $white;
+        display: inline-block;
+        padding: 1.5em;
+        font-size: .8em;
+        font-weight: bold;
+    }
+}
+.logo{
+    display:block;
+    width: 329px;
+    height: 212px;
+    background: image-url('agalma.png');
+    margin-top: 1em;
+    text-indent: 999999px;
+}
+// =resets
+a { text-decoration: none }
+
+.branch-container{
+    background: $white;
+    color: $dark-grey;
+    padding: 1em;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+
+
+@media (max-width: 767px){
+    /* ejemplo de media query */
+    /* .logo{ background: image-url('redes_sociales.jpg') no-repeat } */
 }
