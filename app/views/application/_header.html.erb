@@ -10,11 +10,12 @@
           <section class="top-bar-section">
             <!-- Left Nav Section -->
             <ul class="left">
-              <li><a href="#">Quiénes Somos</a></li>
+              <li><%= link_to "Quiénes Somos", @quienes %></li>
               <li><a href="#">Galería</a></li>
               <li><a href="#">Contacto</a></li>
               <%= render 'devise/menu/registration_items' %>
               <%= render 'devise/menu/login_items' %>
+              <li><%= link_to "Administrar", [:backend, :root] %></li>
             </ul>
           </section>
         </nav>

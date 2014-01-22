@@ -1,6 +1,6 @@
-// 
+//
 // Custom Variables
-// 
+//
 @import 'variables';
 
 //
@@ -177,8 +177,8 @@ $default-float: left;
 //
 
 // Control header font styles
-
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$include-open-sans: false;
+$header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
