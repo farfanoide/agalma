@@ -1,7 +1,13 @@
 <% if !@branches.blank? %>
   <% for branch in @branches %>
     <section class="branch-container">
-        <%= branch.name %>
+        <h1><%= branch.name %></h1>
+        <p> <strong>Direccion:</strong> <%= branch.address %></p>
+        <p><strong>email</strong><%= branch.email %></p>
+        <strong>Telefonos:</strong>
+          <% for telephone in branch.telephones %>
+            <p><%= telephone %></p>
+          <% end %>
     </section>
   <% end %>
 <% end %>

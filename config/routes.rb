@@ -7,9 +7,9 @@ Agalma::Application.routes.draw do
   get 'pages/:slug' => 'pages#show'
   resources :pages, only: [:show, :index]
 
-  resources :branches, only: [:show]
+  get 'branches/consultorios_externos' => 'branches#consultorios_externos'
 
-  get 'branches/:action' => 'branches#:action'
+  resources :branches, only: [:show]
 
   resources :roles
 
