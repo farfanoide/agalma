@@ -14,6 +14,7 @@ User.create!(name: 'anacleta', email: 'anacleta@esta.com', password: _pass)
 User.create!(name: 'marcela', email: 'marcela@esta.com', password: _pass)
 User.create!(name: 'veronica', email: 'veronica@esta.com', password: _pass)
 User.create!(name: 'antonio', email: 'antonio@esta.com', password: _pass)
+User.create!(name: 'administrador', email: 'admin@agalma.com', password: _pass)
 
 Role.create!(name: 'gil', description: 'es un verdadero gil')
 Role.create!(name: 'moderador', description: 'es menos groso')
