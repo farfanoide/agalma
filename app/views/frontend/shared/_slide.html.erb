@@ -1,5 +1,5 @@
 
-<div class="slide-step" onload="draw_circles()" >
+<div class="slide-step" id="slide-step"  >
     <canvas id="circlecanvas1" onclick="switch_image(1)" width="28" height="28"></canvas>
     <canvas id="circlecanvas2" onclick="switch_image(2)" width="28" height="28"></canvas>
     <canvas id="circlecanvas3" onclick="switch_image(3)" width="28" height="28"></canvas>
@@ -7,19 +7,40 @@
     <canvas id="circlecanvas5" onclick="switch_image(5)" width="28" height="28"></canvas>
 </div>
 
-<div class="slide-container">
-    <img class="slide" id="current_image" src="assets/timmy3.jpg"  style="border:solid 1px #000; box-shadow: 1px 1px #000;" />
+<div class="slide-container" id="slide-container" style="">
+    <img class="slide" id="current_image" src="assets/slideshow/slide1.jpg"   />
 </div>
 
 <script>
-    for (var i=1; i<=5; i++){
-        console.log(i);
+
+// Todo: improve performance.
+
+//  Store images
+    var images = new Array;
+    // for now slideshow images will be in a separate dir.
+    var slideshow_path = "assets/slideshow/"
+    images[1] = slideshow_path + "slide1.jpg";
+    images[2] = slideshow_path + "slide2.jpg";
+    images[3] = slideshow_path + "slide3.jpg";
+    images[4] = slideshow_path + "slide4.jpg";
+    images[5] = slideshow_path + "slide5.jpg";
+
+
+// This draws the progress bar
+    for (var i=1; i<images.length; i++){
         draw_circle("circlecanvas"+i,"#fff");
 	}
 
-    ind = 1
+    ind = 1;
+
+//  Puts the progress bar in the correct place.
+    document.getElementById("current_image").onload= position_progress_bar();
+    document.getElementById("current_image").onload=switch_image(ind);
+
+
     setInterval(function(){slide_action();},2000);
     
+//  This function, called above, switches slide's images.    
     function slide_action(){
         var id = "circlecanvas" + ind;
         switch_image(ind);
@@ -27,25 +48,28 @@
             {
             case 1:
                 {
-                 draw_circle("circlecanvas5","#fff");
+                 //draw_circle("circlecanvas5","#fff");
                  ind++;
                  break;
                  }
             case 5:
                  {
-                 draw_circle("circlecanvas"+(ind-1),"#fff");
+                 //draw_circle("circlecanvas"+(ind-1),"#fff");
                  ind = 1;
                  break;
                  }
             default:
                  {
-                 draw_circle("circlecanvas"+(ind-1),"#fff");
+                 //draw_circle("circlecanvas"+(ind-1),"#fff");
                  ind++;
                  break;
                  }
             }
         }
-            
+
+////.-.-.-.-.-.-.-.-.-.-.  helpers
+
+//  Draws a circle in certain canvas(id), and fill with some color(color)             
     function draw_circle(id,color){
         var cnvs = document.getElementById(id);
 	var context = cnvs.getContext("2d");
@@ -55,10 +79,52 @@
 	context.fill();
 	}
 
+//  Change an image in certain container and updates progress bar 
     function switch_image(index){
-	document.getElementById("current_image").src="/assets/timmy"+index+".jpg";
-        draw_circle("circlecanvas" + index, "#6fcff5");
+        var imag = document.getElementById("current_image");
+        imag.src= images[index];
+        if (ind!=index){
+            draw_circle("circlecanvas" + index, "#6fcff5");
+            draw_circle("circlecanvas" +(ind-1) , "#fff");
+            ind=index;
+        }else{
+            draw_circle("circlecanvas" + index, "#6fcff5");
+            i = previus_ind();
+            draw_circle("circlecanvas" + i, "#fff");           
 	}
+    }
 
+//  Position the progress bar according to the image height.
+//  And quantity of images
+    function position_progress_bar(){
+        var elm = document.getElementById("slide-container");
+        var elm_rect = elm.getBoundingClientRect();
+        var elm_height = elm.clientHeight;
+
+        var relative_top = elm_rect.top + .5  * elm_height;
+        var step_width =  document.getElementById("circlecanvas1").width;
+        var relative_right = step_width * (images.length) +10 ;
+        document.getElementById("slide-step").style.top= relative_top+"px";
+        document.getElementById("slide-step").style.right= relative_right+"px";
+        }
+
+// Get previus step on slide
+    function previus_ind(){
+        var previus;
+        switch(ind){
+           case 1:
+               {
+               previus = 5;
+               return previus;
+               break;
+               }
+           default:
+               {
+               previus = ind -1;
+               return previus;
+               break;
+               }
+        }
+    }
 </script>
 
