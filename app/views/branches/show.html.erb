@@ -16,15 +16,11 @@
       <p>(<%= tel.ext %>)-<%= tel.num %></p>
   <% end %>
   <% end %>
-    <% @branch.rolifications.each do |rolification| %>
-      <p>
-    <strong><%= rolification.user.name %>:</strong>
-    <%= rolification.role.name %>
-    </p>
-  <% end %>
+  <p><strong>E-mail: </strong><%= @branch.email %></p>
+  <p><strong>Direccion: </strong><%= @branch.address %></p>
 
     <%= link_to 'Editar', edit_backend_branch_path(@branch) %> |
-    <%= link_to 'Volver', branches_path %>
+    <%= link_to 'Volver', :back %>
 
   </div>
 </div>

@@ -27,3 +27,9 @@ Agalma::Application.configure do
   config.assets.debug = true
   config.action_mailer.default_url_option = { :host => 'localhost:3000' }
 end
+
+silence_warnings do
+  require 'pry'
+  IRB = Pry
+end
+

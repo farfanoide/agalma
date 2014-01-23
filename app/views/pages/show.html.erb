@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<div class="page-container">
+    <h1><%= @page.title %></h1>
+
+    <section class="page_content">
+        <%= raw(@page.body) %>
+    </section>
+</div>
+<%= link_to("Editar", edit_backend_page_path(@page)) %>
+<%= link_to "Volver", :back %>
+<%= link_to 'Borrar', backend_page_path(@page), method: :delete, data: { confirm: 'Esta seguro?' } %>

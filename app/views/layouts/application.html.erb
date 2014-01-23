@@ -16,8 +16,13 @@
 
  <title><%= content_for?(:title) ? yield(:title) : "Agalma" %></title>
 
+<<<<<<< HEAD
 
  <%= javascript_include_tag "vendor/custom.modernizr" %>
+=======
+ <%= stylesheet_link_tag    "application" %>
+ <%# javascript_include_tag "vendor/custom.modernizr" %>
+>>>>>>> dev
  <%= csrf_meta_tags %>
  <%= stylesheet_link_tag    "application" %>
 </head>
@@ -25,12 +30,16 @@
 <body>
   <%= render "shared/flashes" %>
 
+<<<<<<< HEAD
   <%= render 'frontend/shared/header' %>
   <%= render 'frontend/shared/search' %>
   
+=======
+  <%= render "header" %>
+>>>>>>> dev
   <div class="row">
     <div class="small-12 large-4 columns">
-      <%= render 'frontend/shared/side_nav' %>
+      <%= render 'side_nav' %>
     </div>
     <div class="small-12 large-8 columns">
       <%= yield %>
