@@ -31,15 +31,16 @@
         .item-container{
             position:relative;
             border-bottom: $white-border;
-            padding: em-calc(30) 0;
+            padding: .8em .2em ;
+            text-transform: capitalize;
         }
         .item-container:hover:after{
             content:" ";
             position:absolute;
-            width:77px;
-            height:77px;
-            top:0%;
-            left:85%;
+            width:2.6em;
+            height:2.6em;
+            top:0;
+            right: -1.3em;
             z-index:1;
             background-color:$white;
 //            transform:rotate(45deg) skewX(30deg);
@@ -60,7 +61,7 @@
 
 }
 .nav-footer{
-        margin:30px 0;              
+        margin:30px 0;
         text-align:center;
         line-height:5px;
 }
@@ -73,7 +74,7 @@
   }
 }
 
-// Top bar 
+// Top bar
 .top-nav{
   border-radius: .5em;
   background-color: $blue;
@@ -132,6 +133,7 @@
     background: image-url('agalma_logo.png') no-repeat;
 //    margin-top: 1em;
     text-indent: -999999px;
+    margin: 0 auto;
 }
 // =resets
 a { text-decoration: none }
@@ -144,11 +146,17 @@ a { text-decoration: none }
     margin: 10px auto;
 }
 
-
+.pages-dropdown{display:none}
 
 @media (max-width: 767px){
     /* ejemplo de media query */
-    /* .logo{ background: image-url('redes_sociales.jpg') no-repeat } */
+    .logo{
+        width: 300px;
+        height: 100px;
+        background: image-url('logo_hh.png') no-repeat;
+    }
+    .pages-dropdown{display:list-item}
+    .side-nav{display:none}
 }
 
 // hide slider for small screens

@@ -16,10 +16,21 @@
               <%= render 'devise/menu/registration_items' %>
               <%= render 'devise/menu/login_items' %>
               <li><%= link_to "Administrar", [:backend, :root] %></li>
+              <li class="has-dropdown pages-dropdown">
+                <a href="#">Paginas</a>
+                <ul class="dropdown">
+                    <li><%= link_to @cTeraEd.title, @cTeraEd %></li>
+                    <li><%= link_to @cEsTemp.title, @cEsTemp %></li>
+                    <li><%= link_to "Consultorios Externos", url_for(:consultorios_externos) %></li>
+                    <li><a class="item" href="#">Integración Escolar</a></li>
+                    <li><a class="item" href="#">Investigación y Docencia</a></li>
+                    <li><a class="item" href="#">Links de Interés</a></li>
+                </ul>
+              </li>
             </ul>
           </section>
         </nav>
-      </div>   
+      </div>
     </div>
   </div>
   <div class="row">
