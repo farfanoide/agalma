@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -5,9 +6,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Branch.create!(name: 'alta sucursal', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aliquam, magni reiciendis quas voluptatum soluta harum quo dignissimos aut. Veritatis, assumenda distinctio modi dignissimos unde rem enim voluptas consequatur aliquam!')
-Branch.create!(name: 'tabajo social', description: 'le faltan cosas donia, nosotro se la conseguimo')
+_cent_desc = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aliquam, magni reiciendis quas voluptatum soluta harum quo dignissimos aut. Veritatis, assumenda distinctio modi dignissimos unde rem enim voluptas consequatur aliquam!'
+
+Branch.create!(name: 'Centro Terapeutico Educativo', description:_cent_desc, zone: 'partido de General San Martin, Prov. de Buenos Aires', zipcode:1655 , address: 'Lacroze 7259 - Jose Leon Suarez', email:'info@centroagalma.com.ar' )
+Branch.create!(name: 'Atencion Terapeutica Interdisciplinaria', description:_cent_desc, zone:'Capital Federal', zipcode:1405, email:'consultorios@centroagalma.com.ar', address:'Aranguren 561 - P. B. "A"'  )
 Branch.create!(name: 'mecanica', description: 'le arreglamo el auto donia')
+
+
+Telephone.create!(ext:'011', num:'49032888', branch_id: Branch.find_by(name: 'Centro Terapeutico Educativo').id )
+Telephone.create!(ext:'011', num:'47208195', branch_id: Branch.find_by(name: 'Atencion Terapeutica Interdisciplinaria').id)
 
 _pass = "12345678"
 User.create!(name: 'anacleta', email: 'anacleta@esta.com', password: _pass)
@@ -16,9 +23,9 @@ User.create!(name: 'veronica', email: 'veronica@esta.com', password: _pass)
 User.create!(name: 'antonio', email: 'antonio@esta.com', password: _pass)
 User.create!(name: 'administrador', email: 'admin@agalma.com', password: _pass)
 
-Role.create!(name: 'gil', description: 'es un verdadero gil')
-Role.create!(name: 'moderador', description: 'es menos groso')
-Role.create!(name: 'admin', description: 'es un groso')
+Role.create!(name: 'visitante', description: 'usuario con menos privilegios')
+Role.create!(name: 'moderador', description: 'privilegios de lectura y modificacion')
+Role.create!(name: 'admin', description: 'Todos los privilegios')
 
 Rolification.create!(user: User.find(1), branch: Branch.find(1), role: Role.find(2))
 Rolification.create!(user: User.find(3), branch: Branch.find(2), role: Role.find(3))
@@ -34,8 +41,3 @@ Page.create!(title: "centros terapeuticos educativos", body: _centros_terapeutic
 
 _centro_estimulacion_temprana = "[cargar informacion]"
 Page.create!(title: "centro de estimulacion temprana", body: _centro_estimulacion_temprana)
-
-
-
-
-

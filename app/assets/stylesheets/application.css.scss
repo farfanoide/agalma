@@ -17,66 +17,123 @@
 @import 'variables';
 
 @import 'general';
-.nav-wrapper{
-    border-right: 1px solid $white;
-    .items-container{
-        .item {}
-        .item:hover{
-            background-color: $white;
-            color: $black;
-            box-shadow: 0 3px 5px;
-        }
-        .nav-footer{
-            img{
-                margin-bottom: 20px;
-            }
-            margin-top: 50px;
-            font-style: italic;
-            text-align: center;
-        }
-    }
+// @import "foundation/components/orbit";
+// Side navigation
 
-}
 // =side nav module
 .side-nav{
     padding: 1em;
     margin: 0;
     .items-container{
         list-style: none;
+        border-right: $white-border;
+        padding:0 em-calc(15) 0 0;
         .item-container{
-            border-bottom: 1px solid $white;
-            padding: 1em 0;
+            position:relative;
+            border-bottom: $white-border;
+            padding: .8em .2em ;
+            text-transform: capitalize;
         }
-    }
+        .item-container:hover:after{
+            content:" ";
+            position:absolute;
+            width:2.6em;
+            height:2.6em;
+            top:0;
+            right: -1.3em;
+            z-index:1;
+            background-color:$white;
+//            transform:rotate(45deg) skewX(30deg);
+            -webkit-transform: rotate(45deg) scale(0.7,0.7);
+            box-shadow: 3px -3px 3px $black;
+            }
+
+        .item-container:hover{
+            background-color:$white;
+            box-shadow: 0px 0px 5px $black;
+            a{
+                position:relative;
+                color:$black;
+                z-index:2;
+            }
+        }
+     }
 
 }
+.nav-footer{
+        margin:30px 0;
+        text-align:center;
+        line-height:5px;
+}
+// Header
 .header{
-    background-image: image-url('fondo_header.jpg');
-    background-repeat: repeat-x;
-    .bg-img{
-        float:left;
-    }
+  background-image: image-url('fondo_header.jpg');
+  background-repeat: repeat-x;
+  .bg-img{
+    float:left;
+  }
 }
 
+// Top bar
 .top-nav{
-    border-radius: .5em;
-    background-color: $blue;
-    text-align: center;
-    .top-nav-item{
-        color: $white;
-        display: inline-block;
-        padding: 1.5em;
-        font-size: .8em;
-        font-weight: bold;
-    }
+  border-radius: .5em;
+  background-color: $blue;
+  text-align: center;
+  .top-nav-item{
+    color: $white;
+    display: inline-block;
+    padding: 1.5em;
+    font-size: .8em;
+    font-weight: bold;
+  }
 }
+
+// Search
+.search-container{
+	background-color: $grey;
+	border: solid 3px $white;
+	padding: .5em;
+	input.rounded{
+		border-radius: .7em 0 0 .7em;
+		padding:.5em;
+		font-size: .7em;
+		margin-bottom:0em;
+		border:0;
+		}
+	a{
+		border-radius:0 .7em .7em 0;
+		margin-bottom:0;
+		font-size:.7em;
+		color:$black;
+		background-color:$white;
+		}
+	.row{
+		margin-bottom:0;
+		padding: 0;
+		}
+}
+
+// slide
+
+.slide-container{
+	padding:.3em;
+	position: relative;
+	top: 30px;
+	background-color: $white;
+	box-shadow: 5px 5px 20px #000;
+        text-align: center;
+	img.slide{
+		}
+}
+
 .logo{
     display:block;
-    width: 329px;
+    width: 400px;
     height: 212px;
-    background: image-url('agalma.png');
-    margin-top: 1em;
-    text-indent: 999999px;
+    background: image-url('agalma_logo.png') no-repeat;
+//    margin-top: 1em;
+    text-indent: -999999px;
+    margin: 0 auto;
 }
 // =resets
 a { text-decoration: none }
@@ -85,13 +142,37 @@ a { text-decoration: none }
     background: $white;
     color: $dark-grey;
     padding: 1em;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 10px auto;
 }
 
-
-
+@media #{$medium-up}{
+    .pages-dropdown{display:none}
+}
 @media (max-width: 767px){
     /* ejemplo de media query */
-    /* .logo{ background: image-url('redes_sociales.jpg') no-repeat } */
+    // .pages-dropdown{display:list-item}
 }
+
+// hide slider for small screens
+@media #{$small-only}{
+    .side-nav{display:none}
+    .logo{
+        width: 300px;
+        height: 100px;
+        background: image-url('logo_hh.png') no-repeat;
+    }
+       .orbit-container{
+          display:none;
+       }
+}
+
+
+.slide-step{
+	background-color: $blue;
+	padding-left: 1em;
+	position: relative;
+	border-radius: 2em;
+
+}
+

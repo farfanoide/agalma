@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
 
   private
     def fetch_static_pages
-        @quienes = Page.find_by!(slug: 'quienes-somos')
-        @cTeraEd = Page.find_by!(slug: 'centros-terapeuticos-educativos')
-        @cEsTemp = Page.find_by!(slug: 'centro-de-estimulacion-temprana')
-        # @quienes = Page.find_by!(slug: 'quienes-somos')
+        @quienes ||= Page.find_by!(slug: 'quienes-somos')
+        @cTeraEd ||= Page.find_by!(slug: 'centros-terapeuticos-educativos')
+        @cEsTemp ||= Page.find_by!(slug: 'centro-de-estimulacion-temprana')
+        # @quienes ||= Page.find_by!(slug: 'quienes-somos')
     end
 end
