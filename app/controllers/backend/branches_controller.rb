@@ -68,7 +68,7 @@ class Backend::BranchesController < BackendController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def branch_params
-      params.require(:branch).permit(:id, :name, :description,
+      params.require(:branch).permit(:id, :name, :description, :zone,:email, :zipcode ,:address, 
                                          rolifications_attributes: [:id, :role_id, :user_id, :branch_id, :_destroy],
                                          telephones_attributes: [:id, :ext, :num, :branch_id, :_destroy])
     end

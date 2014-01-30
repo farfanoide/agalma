@@ -45,7 +45,7 @@
             background-color:$white;
 //            transform:rotate(45deg) skewX(30deg);
             -webkit-transform: rotate(45deg) scale(0.7,0.7);
-            box-shadow: 3px -3px 5px $black;
+            box-shadow: 3px -3px 3px $black;
             }
 
         .item-container:hover{
@@ -142,7 +142,7 @@ a { text-decoration: none }
     background: $white;
     color: $dark-grey;
     padding: 1em;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 10px auto;
 }
 

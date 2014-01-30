@@ -32,7 +32,9 @@
       <%= render 'side_nav' %>
     </div>
     <div class="small-12 large-8 columns">
+	  <main>
       <%= yield %>
+	  </main>
     </div>
   </div>
   <%= javascript_include_tag "application" %>
