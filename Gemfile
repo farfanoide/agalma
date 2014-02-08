@@ -45,8 +45,10 @@ end
 # gem 'debugger', group: [:development, :test]
 group :development do
   gem 'meta_request'
-  gem 'thin'
-  gem 'pry'
+  gem 'thin' # Use Thin instead of Webrick
+  gem 'pry'  # Much better than irb
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 

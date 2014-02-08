@@ -27,7 +27,7 @@ class Backend::BranchesController < BackendController
     @branch = Branch.new(branch_params)
     respond_to do |format|
       if @branch.save
-        format.html { redirect_to @branch, notice: 'Branch was successfully created.' }
+        format.html { redirect_to @branch, notice: 'La sucursal se ha creado correctamente.' }
         format.json { render action: 'show', status: :created, location: @branch }
       else
         format.html { render action: 'new' }
@@ -41,7 +41,7 @@ class Backend::BranchesController < BackendController
   def update
     respond_to do |format|
       if @branch.update(branch_params)
-        format.html { redirect_to @branch, notice: 'Branch was successfully updated.' }
+        format.html { redirect_to @branch, notice: 'La sucursal se ha actualizado correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -68,8 +68,8 @@ class Backend::BranchesController < BackendController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def branch_params
-      params.require(:branch).permit(:id, :name, :description, :zone,:email, :zipcode ,:address, 
+      params.require(:branch).permit(:id, :name, :description, :zone,:email, :zipcode , :address,
                                          rolifications_attributes: [:id, :role_id, :user_id, :branch_id, :_destroy],
                                          telephones_attributes: [:id, :ext, :num, :branch_id, :_destroy])
     end
-  end
+end
