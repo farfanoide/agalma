@@ -8,84 +8,101 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
+
  *= require foundation_and_overrides
- *= require_tree .
+ *= require_self
+ *= require general
+
  */
 
 // some variables
 @import 'variables';
-
 @import 'general';
-// @import "foundation/components/orbit";
+@import 'foundation/components/orbit';
 // Side navigation
 
 // =side nav module
 .side-nav{
     padding: 1em;
     margin: 0;
-    .items-container{
+    .items-container{;
         list-style: none;
         border-right: $white-border;
-        padding:0 em-calc(15) 0 0;
+//        padding:0 em-calc(15) 0 0;
         .item-container{
             position:relative;
             border-bottom: $white-border;
             padding: .8em .2em ;
             text-transform: capitalize;
+            margin:0;
+            a{color:$white}
         }
+
         .item-container:hover:after{
             content:" ";
             position:absolute;
-            width:2.6em;
-            height:2.6em;
+            width:3.2em;
+            height:3.2em;
             top:0;
-            right: -1.3em;
+            right: -1.6em;
             z-index:1;
             background-color:$white;
-//            transform:rotate(45deg) skewX(30deg);
             -webkit-transform: rotate(45deg) scale(0.7,0.7);
             box-shadow: 3px -3px 3px $black;
             }
 
         .item-container:hover{
             background-color:$white;
-            box-shadow: 0px 0px 5px $black;
+            box-shadow: 3px 3px 5px $black;
             a{
                 position:relative;
                 color:$black;
                 z-index:2;
             }
         }
-     }
-
-}
-.nav-footer{
+    .nav-footer{
         margin:30px 0;
         text-align:center;
-        line-height:5px;
+        line-height:2px;
+        a{
+            display:inline-block;
+            margin-bottom: 2em;
+        }
+
+    }
+    }
 }
+
+
+
 // Header
 .header{
-  background-image: image-url('fondo_header.jpg');
-  background-repeat: repeat-x;
+  background-image: image-url('fondo_header.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #fff;
+  border-top: solid 10px $blue;
   .bg-img{
-    float:left;
+//    float:left;
   }
 }
 
 // Top bar
-.top-nav{
-  border-radius: .5em;
+.top-bar{
+  border-radius: 0 0 .5em .5em;
   background-color: $blue;
   text-align: center;
-  .top-nav-item{
-    color: $white;
-    display: inline-block;
-    padding: 1.5em;
-    font-size: .8em;
-    font-weight: bold;
-  }
+  ul{
+    margin:0;
+    li{
+      color: $white;
+      display: inline-block;
+      padding: 1.5em;
+      font-size: .8em;
+      font-weight: bold;
+      a{display:inline-block}
+      }
+    }     
 }
 
 // Search
@@ -149,6 +166,7 @@ a { text-decoration: none }
 @media #{$medium-up}{
     .pages-dropdown{display:none}
 }
+
 @media (max-width: 767px){
     /* ejemplo de media query */
     // .pages-dropdown{display:list-item}

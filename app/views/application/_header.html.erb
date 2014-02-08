@@ -1,36 +1,16 @@
 <div class="header">
   <div class="row">
-    <div class="small-12 large-9 large-offset-4 columns top-nav">
-      <div class="contain-to-grid">
-        <nav class="top-bar" data-topbar>
-          <ul class="title-area">
-            <li class="toggle-topbar menu-icon"><a href="#"><span> Menu </span> </a> </li>
-          </ul>
-          <section class="top-bar-section">
-            <!-- Left Nav Section -->
-            <ul class="left" >
-              <li> <a href="/"><img src="<%= image_path("home_top-nav.png") %>"/> </a></li>
-              <li><%= link_to "Quiénes Somos", @quienes %></li>
-              <li><a href="#">Galería</a></li>
-              <li><a href="#">Contacto</a></li>
-              <%= render 'devise/menu/registration_items' %>
-              <%= render 'devise/menu/login_items' %>
-              <li><%= link_to "Administrar", [:backend, :root] %></li>
-              <li class="has-dropdown pages-dropdown">
-                <a href="#">Paginas</a>
-                <ul class="dropdown">
-                    <li><%= link_to @cTeraEd.title, @cTeraEd %></li>
-                    <li><%= link_to @cEsTemp.title, @cEsTemp %></li>
-                    <li><%= link_to "Consultorios Externos", url_for(:consultorios_externos) %></li>
-                    <li><a class="item" href="#">Integración Escolar</a></li>
-                    <li><a class="item" href="#">Investigación y Docencia</a></li>
-                    <li><a class="item" href="#">Links de Interés</a></li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-        </nav>
-      </div>
+    <div class="small-12 large-9 large-offset-4 columns">
+      <nav class="top-bar">
+        <ul>
+          <li class="top-nav-item"><%= link_to "Quiénes Somos", @quienes %></li>
+          <li class="top-nav-item"><a href="#">Galería</a></li>
+          <li class="top-nav-item"><a href="#">Contacto</a></li>
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+          <li class="top-nav-item"><%= link_to "Administrar", [:backend, :root] %></li>
+        </ul>
+      </nav>
     </div>
   </div>
   <div class="row">
@@ -42,3 +22,4 @@
     </div>
   </div>
 </div>
+
