@@ -19,32 +19,73 @@
 @import 'variables';
 @import 'general';
 @import 'foundation/components/orbit';
-// Side navigation
+
+// Header
+.header{
+
+  background-image :image-url('fondo_header.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  border-top: solid 10px $blue;
+  background-position: 0 20px;
+}
+.top-bar{
+  border-radius: 0 0 .5em .5em;
+  background-color: $blue;
+  text-align: center;
+  height:40px;
+  ul{
+    margin:0;
+    padding:.5em;
+    li{
+      color: $white;
+      display: inline-block;
+      padding:0 1.5em;
+      font-size: .8em;
+      font-weight: bold;
+      a{display:inline-block}
+      }
+    }     
+}
+.logo{
+    display:block;
+    width: 400px;
+    height: 212px;
+    background: image-url('agalma_logo.svg') no-repeat;
+    text-indent: -999999px;
+    margin: 0 auto;
+    position:relative;
+    top:-30px;
+}
+
 
 // =side nav module
 .side-nav{
     padding: 1em;
     margin: 0;
+
     .items-container{;
         list-style: none;
         border-right: $white-border;
-//        padding:0 em-calc(15) 0 0;
+        padding:0 10px 0 0;
         .item-container{
             position:relative;
             border-bottom: $white-border;
-            padding: .8em .2em ;
+            padding: 14px 0 15px 0 ;
             text-transform: capitalize;
             margin:0;
+            font-size:16px;
             a{color:$white}
         }
 
         .item-container:hover:after{
             content:" ";
             position:absolute;
-            width:3.2em;
-            height:3.2em;
+            width:47px;
+            height:47px;
             top:0;
-            right: -1.6em;
+            right: -1.5em;
             z-index:1;
             background-color:$white;
             -webkit-transform: rotate(45deg) scale(0.7,0.7);
@@ -63,7 +104,7 @@
     .nav-footer{
         margin:30px 0;
         text-align:center;
-        line-height:2px;
+        line-height:30px;
         a{
             display:inline-block;
             margin-bottom: 2em;
@@ -75,35 +116,10 @@
 
 
 
-// Header
-.header{
-  background-image: image-url('fondo_header.svg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: #fff;
-  border-top: solid 10px $blue;
-  .bg-img{
-//    float:left;
-  }
-}
+
 
 // Top bar
-.top-bar{
-  border-radius: 0 0 .5em .5em;
-  background-color: $blue;
-  text-align: center;
-  ul{
-    margin:0;
-    li{
-      color: $white;
-      display: inline-block;
-      padding: 1.5em;
-      font-size: .8em;
-      font-weight: bold;
-      a{display:inline-block}
-      }
-    }     
-}
+
 
 // Search
 .search-container{
@@ -143,15 +159,7 @@
 		}
 }
 
-.logo{
-    display:block;
-    width: 400px;
-    height: 212px;
-    background: image-url('agalma_logo.png') no-repeat;
-//    margin-top: 1em;
-    text-indent: -999999px;
-    margin: 0 auto;
-}
+
 // =resets
 a { text-decoration: none }
 
