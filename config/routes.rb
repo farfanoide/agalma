@@ -4,9 +4,8 @@ Agalma::Application.routes.draw do
   devise_for :users
 
   get 'paginas/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
-  get 'paginas/:slug' => 'pages#show'
+  # get 'paginas/:slug' => 'pages#show'
   resources :paginas, only: [:show, :index], controller: :pages, as: :pages
-
 
   resources :sucursales, only: [:show], as: :branches
 
