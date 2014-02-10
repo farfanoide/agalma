@@ -55,6 +55,7 @@ end
 gem 'simple_form'
 gem 'devise'
 gem 'foundation-rails'
+gem 'pundit'
 
 # editor
 gem "ckeditor"

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :fetch_static_pages
-
+  include Pundit
   private
     def fetch_static_pages
         @quienes ||= Page.find_by!(slug: 'quienes-somos')
