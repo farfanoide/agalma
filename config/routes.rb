@@ -1,7 +1,7 @@
 Agalma::Application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
+  mount Ckeditor::Engine => '/ckeditor'
 
   get 'pages/:slug' => 'pages#show'
   resources :pages, only: [:show, :index]
