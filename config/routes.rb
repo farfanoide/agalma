@@ -3,12 +3,12 @@ Agalma::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
 
-  get 'pages/:slug' => 'pages#show'
-  resources :pages, only: [:show, :index]
+  get 'paginas/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
+  get 'paginas/:slug' => 'pages#show'
+  resources :paginas, only: [:show, :index], controller: :pages, as: :pages
 
-  get 'branches/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
 
-  resources :branches, only: [:show]
+  resources :sucursales, only: [:show], as: :branches
 
   resources :roles
 
