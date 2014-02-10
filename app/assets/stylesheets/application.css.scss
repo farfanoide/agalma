@@ -205,3 +205,25 @@ a { text-decoration: none }
 
 }
 
+.search-container{
+  .columns{
+    padding:0;
+  }
+  .search-input{
+    margin:0;
+    padding: 0px 10px;
+    font-size:10px;
+    border-radius:5px 0 0 5px;
+    border:none;
+    height:22px;
+  }
+  .search-button{
+    margin:0;
+    color: $black;
+    background-color: #fff;
+    padding:2px 10px;
+    font-size:10px;
+    border-radius: 0 5px 5px 0;
+    height:22px;
+  }
+}
