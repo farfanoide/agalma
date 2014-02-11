@@ -1348,31 +1348,6 @@ $input-include-glowing-effect: false;
 // @import 'foundation/components/alert-boxes';
 // @import 'foundation/components/forms';
 // @import 'foundation/components/block-grid';
-// @import 'foundation/components/grid';
-// @import 'foundation/components/top-bar';
-
-@import 'foundation';
-
-
-
-
-@media #{$medium-up}{
-    .pages-dropdown{display:none}
-}
-@media (max-width: 767px){
-    /* ejemplo de media query */
-    // .pages-dropdown{display:list-item}
-}
-
-// hide slider for small screens
-@media #{$small-only}{
-    .side-nav{display:none}
-    .logo{
-        width: 300px;
-        height: 100px;
-        background: image-url('logo_hh.png') no-repeat;
-    }
-       .orbit-container{
-          display:none;
-       }
-}
+@import 'foundation/components/grid';
+//@import 'foundation/components/buttons';
+@import 'foundation/components/forms';

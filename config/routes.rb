@@ -3,16 +3,16 @@ Agalma::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
 
-  get 'pages/:slug' => 'pages#show'
-  resources :pages, only: [:show, :index]
+  get 'paginas/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
+  # get 'paginas/:slug' => 'pages#show'
+  resources :paginas, only: [:show, :index], controller: :pages, as: :pages
 
-  get 'branches/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
-
-  resources :branches, only: [:show]
-
+  resources :sucursales, only: [:show], as: :branches
+  resources :posts, only: [:show, :index]
   resources :roles
 
   namespace :backend do
+    resources :posts
     resources :users
     resources :branches
     resources :galleries
@@ -20,7 +20,7 @@ Agalma::Application.routes.draw do
     root 'dashboard#home'
   end
 
-  root 'branches#index'
+  root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

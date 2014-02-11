@@ -1,0 +1,22 @@
+@import 'variables';
+body{
+    background-color: $blue;
+    color: $white;
+    font-family: sans-serif;
+    background-image: url(fondo_main.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 400px;
+}
+a{ color: $white;
+   font-weight:100;
+}
+
+h1{
+    font-weight: 300;
+    font-style: italic;
+//	font-family: OfficinaSans-Italic;
+}
+p{
+    margin:0;
+}

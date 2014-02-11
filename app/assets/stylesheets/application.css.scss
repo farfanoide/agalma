@@ -10,61 +10,79 @@
  *
  *= require foundation_and_overrides
  *= require_self
+ *= require general
  */
 
 // some variables
 @import 'variables';
+@import 'general';
+@import 'foundation/components/orbit';
 
-body{
-    background: $blue;
-    color: $white;
-    font-family: 'OpenSans', 'Helvetica Neue', Arial, sans-serif;
+// Header
+.header{
+
+  background-image :image-url('fondo_header.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  border-top: solid 10px $blue;
+  background-position: 0 20px;
 }
-a{ color: $white }
-
-h1{
-    color:$grey;
-    font-weight: 300;
-    font-style: italic;
-    border-bottom: $white-border;
-    display: block;
-    text-transform: capitalize;
-//  font-family: OfficinaSans-Italic;
+.top-bar{
+  border-radius: 0 0 .5em .5em;
+  background-color: $blue;
+  text-align: center;
+  height:40px;
+  ul{
+    margin:0;
+    padding:.5em;
+    li{
+      color: $white;
+      display: inline-block;
+      padding:0 1.5em;
+      font-size: .8em;
+      font-weight: bold;
+      a{display:inline-block}
+      }
+    }
 }
-
-ul{
-    margin-left:0;
-    list-style: none;
+.logo{
+    display:block;
+    width: 400px;
+    height: 212px;
+    background: image-url('logo.png') no-repeat;
+    text-indent: -999999px;
+    margin: 0 auto;
+    position:relative;
+    top:-30px;
 }
-
-
 
 // =side nav module
 .side-nav{
     // padding: 1em;
     margin: 0;
-    .items-container{
+
+    .items-container{;
         list-style: none;
         border-right: $white-border;
-        padding:0 em-calc(15) 0 0;
+        padding:0 10px 0 0;
         .item-container{
             position:relative;
             border-bottom: $white-border;
-            padding: .8em .2em ;
+            padding: 14px 0 15px 0 ;
             text-transform: capitalize;
-            margin: 0 1em;
-            a{
-                color: $white;
-            }
+            margin:0;
+            font-size:16px;
+            a{color:$white}
         }
-        $after-width: 3.2em;
+
         .item-container:hover:after{
             content:" ";
             position:absolute;
-            width:$after-width;
-            height:$after-width;
+            width:47px;
+            height:47px;
             top:0;
-            right: -($after-width/2);
+            right: -1.45em;
             z-index:1;
             background-color:$white;
             -webkit-transform: rotate(45deg) scale(0.7,0.7);
@@ -73,43 +91,24 @@ ul{
 
         .item-container:hover{
             background-color:$white;
-            box-shadow: 0px 0px 5px $black;
+            box-shadow: 3px 3px 5px $black;
             a{
                 position:relative;
                 color:$black;
                 z-index:2;
             }
         }
+    .nav-footer{
+        margin:30px 0;
+        text-align:center;
+        line-height:30px;
+        a{
+            display:inline-block;
+            margin-bottom: 2em;
+        }
+
     }
-
-}
-.nav-footer{
-    margin:30px 0;
-    text-align:center;
-    line-height:5px;
-    .social-icon{display:inline-block}
-}
-// Header
-.header{
-  background-image: image-url('fondo_header.jpg');
-  background-repeat: repeat-x;
-  .bg-img{
-    float:left;
-}
-}
-
-// Top bar
-.top-nav{
-  border-radius: .5em;
-  background-color: $blue;
-  text-align: center;
-  .top-nav-item{
-    color: $white;
-    display: inline-block;
-    padding: 1.5em;
-    font-size: .8em;
-    font-weight: bold;
-}
+  }
 }
 
 // Search
@@ -150,15 +149,6 @@ ul{
     }
 }
 
-.logo{
-    display:block;
-    width: 400px;
-    height: 212px;
-    background: image-url('agalma_logo.png') no-repeat;
-//    margin-top: 1em;
-text-indent: -999999px;
-margin: 0 auto;
-}
 // =resets
 a { text-decoration: none }
 
@@ -170,6 +160,30 @@ a { text-decoration: none }
     margin: 10px auto;
 }
 
+@media #{$medium-up}{
+    .pages-dropdown{display:none}
+}
+
+@media (max-width: 767px){
+    /* ejemplo de media query */
+    // .pages-dropdown{display:list-item}
+}
+
+// hide slider for small screens
+@media #{$small-only}{
+    .side-nav{display:none}
+    .logo{
+        width: 300px;
+        height: 200px;
+        top:0;
+//        background: image-url('logo_hh.png') no-repeat;
+        background-size:100%;
+    }
+
+    .orbit-container{
+        display:none;
+     }
+}
 
 
 .slide-step{
@@ -180,4 +194,25 @@ a { text-decoration: none }
 
 }
 
-
+.search-container{
+  .columns{
+    padding:0;
+  }
+  .search-input{
+    margin:0;
+    padding: 0px 10px;
+    font-size:10px;
+    border-radius:5px 0 0 5px;
+    border:none;
+    height:22px;
+  }
+  .search-button{
+    margin:0;
+    color: $black;
+    background-color: #fff;
+    padding:2px 10px;
+    font-size:10px;
+    border-radius: 0 5px 5px 0;
+    height:22px;
+  }
+}
