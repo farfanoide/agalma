@@ -1,7 +1,7 @@
 Agalma::Application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
+  mount Ckeditor::Engine => '/ckeditor'
 
   get 'paginas/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
   # get 'paginas/:slug' => 'pages#show'

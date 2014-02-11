@@ -14,16 +14,19 @@ class Backend::PagesController < BackendController
 
   # GET /pages/new
   def new
+    authorize @page
     @page = Page.new
   end
 
   # GET /pages/1/edit
   def edit
+    authorize @page
   end
 
   # POST /pages
   # POST /pages.json
   def create
+    authorize @page
     @page = Page.new(page_params)
 
     respond_to do |format|
@@ -40,6 +43,7 @@ class Backend::PagesController < BackendController
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
   def update
+    authorize @page
     respond_to do |format|
       if @page.update(page_params)
         format.html { redirect_to backend_page_url(@page), notice: 'Page was successfully updated.' }
@@ -54,6 +58,7 @@ class Backend::PagesController < BackendController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
+    authorize @page
     @page.destroy
     respond_to do |format|
       format.html { redirect_to backend_pages_url }

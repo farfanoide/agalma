@@ -19,6 +19,7 @@ class Backend::BranchesController < BackendController
 
   # GET /branches/1/edit
   def edit
+    authorize @branch
   end
 
   # POST /branches
