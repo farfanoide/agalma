@@ -1,5 +1,10 @@
+<h1><%= t '.noticias' %></h1>
 <% @posts.each do |post| %>
 
   <%= post.title %>
-  
+
+<% end %>
+
+<% if current_user.admin? %>
+  <%= link_to "crear noticia", new_backend_post_path %>
 <% end %>
