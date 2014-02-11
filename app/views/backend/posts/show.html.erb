@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @post.slug %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= raw(@post.body) %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @post.active %>
+</p>
+
+<%= link_to 'Edit', edit_backend_post_path(@post) %> |
+<%= link_to 'Back', backend_posts_path %> |
+<%= link_to 'Destroy', backend_post_path(@post), method: :delete, data: { confirm: 'Esta seguro?' } %>
