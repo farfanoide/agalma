@@ -1,12 +1,22 @@
 @import 'variables';
 body{
-    background-color: $blue;
+    background-color: $light-grey;
     color: $white;
     font-family: sans-serif;
-    background-image: url(fondo_main.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 0 400px;
+}
+.all-container{
+  background: $blue image-url('fondo_main.svg') no-repeat;
+  background-size: 100%;
+  border-bottom-left-radius: 3em;
+  border-bottom-right-radius: 3em;
+}
+.main-footer{
+  background: $light-grey;
+  padding: 2em;
+}
+.copyright{
+  color: $dark-grey;
+  font-size: .8em;
 }
 a{ color: $white;
    font-weight:100;

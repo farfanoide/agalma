@@ -2,13 +2,17 @@
   <div class="row">
     <div class="small-12 large-9 large-offset-4 columns">
       <nav class="top-bar">
-        <ul>
-          <li class="top-nav-item"><%= link_to "Quiénes Somos", @quienes %></li>
-          <li class="top-nav-item"><a href="#">Galería</a></li>
-          <li class="top-nav-item"><a href="#">Contacto</a></li>
+        <ul class="links-container">
+          <li class="item"><%= link_to "Quiénes Somos", @quienes %></li>
+          <li class="item"><a href="#">Galería</a></li>
+          <li class="item"><a href="#">Contacto</a></li>
           <%= render 'devise/menu/registration_items' %>
           <%= render 'devise/menu/login_items' %>
-          <li class="top-nav-item"><%= link_to "Administrar", [:backend, :root] %></li>
+	  <% if current_user %>
+	    <% if current_user.admin? %>
+	      <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
+	    <% end %>
+	  <% end %>
         </ul>
       </nav>
     </div>

@@ -5,6 +5,8 @@
 
 <% end %>
 
-<% if current_user.admin? %>
-  <%= link_to "crear noticia", new_backend_post_path %>
+<% if current_user %>
+  <% if current_user.admin? %>
+    <%= link_to "crear noticia", new_backend_post_path %>
+  <% end %>
 <% end %>

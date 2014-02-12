@@ -26,16 +26,19 @@
   <%= render "shared/flashes" %>
   <%= render "header" %>
   <%= render "search" %>
-  <div class="row">
-    <div class="small-12 large-4 columns">
-      <%= render 'side_nav' %>
-    </div>
-    <div class="small-12 large-8 columns">
-      <main>
-	<%= yield %>
-      </main>
+  <div class="all-container">
+    <div class="row main-wrapper">
+      <div class="small-12 large-4 columns">
+	<%= render 'side_nav' %>
+      </div>
+      <div class="small-12 large-8 columns">
+	<main>
+	  <%= yield %>
+	</main>
+      </div>
     </div>
   </div>
+  <%= render "footer" %>
   <%= javascript_include_tag "application" %>
 
 </body>
