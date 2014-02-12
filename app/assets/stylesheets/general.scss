@@ -4,11 +4,11 @@ body{
     color: $white;
     font-family: sans-serif;
 }
+$all-container-br: 2em;
 .all-container{
   background: $blue image-url('fondo_main.svg') no-repeat;
   background-size: 100%;
-  border-bottom-left-radius: 3em;
-  border-bottom-right-radius: 3em;
+  border-radius: 0  0 $all-container-br $all-container-br;
 }
 .main-footer{
   background: $light-grey;
@@ -25,8 +25,25 @@ a{ color: $white;
 h1{
     font-weight: 300;
     font-style: italic;
-//	font-family: OfficinaSans-Italic;
+    font-family: 'Trebuchet MS', OfficinaSans-Italic, sans-serif;
+    text-transform: capitalize;
+    &.page-title{
+      color: $grey;
+      padding-bottom: .2em;
+      border-bottom: 1px solid $grey;
+    }
+}
+h2{
+    font-family: Helvetica, Arial, sans-serif;
+    /* font-weight: bold; */
+    font-size: 16px;
+    padding-left: 2em;
 }
 p{
     margin:0;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.2em;
+    font-weight: lighter;
 }
+// basic nav structure => nav>ul.links-container>li.item
+

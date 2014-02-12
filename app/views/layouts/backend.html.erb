@@ -17,11 +17,12 @@
  <title><%= content_for?(:title) ? yield(:title) : "Administracion Agalma" %></title>
 
  <%= stylesheet_link_tag "application" %>
+ <%= stylesheet_link_tag "backend" %>
  <%# javascript_include_tag "vendor/custom.modernizr" %>
  <%= csrf_meta_tags %>
 </head>
 
-<body>
+<body class="backend">
   <%= render "shared/flashes" %>
 
   <%= render 'backend/shared/header' %>

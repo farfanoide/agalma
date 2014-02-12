@@ -1,8 +1,19 @@
-<h1><%= t '.noticias' %></h1>
+<h1 class='page-title'>
+  <%= t '.noticias' %>
+</h1>
+
 <% @posts.each do |post| %>
+  <section class="post-container">
 
-  <%= post.title %>
+    <%= post.title %>
+    <blockquote>
+      <q></q>
+      <p>
+      <%= post.description %>
+      </p>
+    </blockquote>
 
+  </section>
 <% end %>
 
 <% if current_user %>

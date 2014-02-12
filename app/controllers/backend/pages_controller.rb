@@ -14,8 +14,8 @@ class Backend::PagesController < BackendController
 
   # GET /pages/new
   def new
-    authorize @page
     @page = Page.new
+    authorize @page
   end
 
   # GET /pages/1/edit
@@ -26,8 +26,8 @@ class Backend::PagesController < BackendController
   # POST /pages
   # POST /pages.json
   def create
-    authorize @page
     @page = Page.new(page_params)
+    authorize @page
 
     respond_to do |format|
       if @page.save

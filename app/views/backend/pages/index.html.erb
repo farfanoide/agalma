@@ -1,27 +1,21 @@
-<h1>Listing pages</h1>
+<h1 class="page-title">Paginas: </h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pages.each do |page| %>
-      <tr>
-        <td><%= page.title %></td>
-        <td><%= link_to 'Show', backend_page_path(page) %></td>
-        <td><%= link_to 'Edit', edit_backend_page_path(page) %></td>
-        <td><%= link_to 'Destroy', backend_page_path(page), method: :delete, data: { confirm: 'Esta seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="pages-container">
+  <% @pages.each do |page| %>
+    <div class="page">
+      <div class="description">
+	<h2>
+	  <%= page.title %>
+	</h2>
+      </div>
+      <div class="actions">
+	<%= link_to 'Show', page_path(page), class: 'button' %>
+	<%= link_to 'Edit', edit_backend_page_path(page), class: 'button' %>
+	<%= link_to 'Destroy', backend_page_path(page), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'button' %>
+      </div>
+    </div>
+  <% end %>
+</div>
 <br>
 
-<%= link_to 'New Page', new_backend_page_path %>
+<%= link_to 'New Page', new_backend_page_path, class: 'button' %>
