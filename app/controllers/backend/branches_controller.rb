@@ -56,7 +56,7 @@ class Backend::BranchesController < BackendController
   def destroy
     @branch.destroy
     respond_to do |format|
-      format.html { redirect_to branches_url }
+      format.html { redirect_to backend_branches_url }
       format.json { head :no_content }
     end
   end
