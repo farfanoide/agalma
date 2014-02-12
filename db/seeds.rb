@@ -17,11 +17,11 @@ Telephone.create!(ext:'011', num:'49032888', branch_id: Branch.find_by(name: 'Ce
 Telephone.create!(ext:'011', num:'47208195', branch_id: Branch.find_by(name: 'Atencion Terapeutica Interdisciplinaria').id)
 
 _pass = "12345678"
-User.create!(name: 'anacleta', email: 'anacleta@esta.com', password: _pass)
-User.create!(name: 'marcela', email: 'marcela@gmail.com', password: _pass)
-User.create!(name: 'veronica', email: 'veronica@centroagalma.com.ar', password: _pass)
-User.create!(name: 'antonio', email: 'antonio@yahoo.com.ar', password: _pass)
-User.create!(name: 'Administrador', email: 'admin@agalma.com', password: _pass)
+User.create!(name: 'anacleta', email: 'anacleta@agalma.com', password: _pass)
+User.create!(name: 'marcela', email: 'marcela@agalma.com', password: _pass)
+User.create!(name: 'veronica', email: 'veronica@agalma.com', password: _pass)
+User.create!(name: 'antonio', email: 'antonio@agalma.com', password: _pass)
+User.create!(name: 'administrador', email: 'admin@agalma.com', password: _pass)
 
 Role.create!(name: 'visitante', description: 'usuario con menos privilegios')
 Role.create!(name: 'moderador', description: 'privilegios de lectura y modificacion')
