@@ -10,7 +10,6 @@ Agalma::Application.routes.draw do
   resources :sucursales, only: [:show], as: :branches
   resources :posts, only: [:show, :index]
   resources :roles
-  resources :contacts
 
   namespace :backend do
     resources :posts
