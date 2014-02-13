@@ -8,12 +8,10 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require foundation_and_overrides
- *= require_self
- *= require general
  */
 
 // some variables
+@import 'foundation_and_overrides';
 @import 'variables';
 @import 'general';
 @import 'foundation/components/orbit';
@@ -37,7 +35,7 @@
       font-size: .8em;
       font-weight: bold;
       }
-    }
+   }
 }
 .logo{
     display:block;
@@ -225,4 +223,21 @@ a { text-decoration: none }
 }
 .main-wrapper{
   padding: 2em 0;
+  .post{
+    h2{
+      padding: 2em;
+    }        
+  }
+}
+
+.branch-container{
+  margin:20px 40px;
+  padding:10px 30px;
+  h2{font-weight:normal}
+  .info-wrapper{
+    padding:25px 0;
+    color: lighten($black, 30%);
+    p{padding:3px;}
+  }
+  
 }
