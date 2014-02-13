@@ -66,3 +66,6 @@ gem "mini_magick"
 gem 'rails_12factor', group: :production
 gem 'pg'
 ruby '2.0.0'
+
+# Create models with no db tables
+gem 'active_attr'
