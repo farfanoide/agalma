@@ -1,0 +1,29 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: agalma_development
+  username: root
+  password: 1qazse4
+  socket:
+  host:
+  port:
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: agalma_test
+  username: root
+  password: 1qazse4
+  socket:
+  host:
+  port:
+  
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: agalma
+  username: root
+  password: 1qazse4
+  socket:
+  host: 
+  port:         
