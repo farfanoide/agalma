@@ -7,7 +7,7 @@ Agalma::Application.routes.draw do
   # get 'paginas/:slug' => 'pages#show'
   resources :paginas, only: [:show, :index], controller: :pages, as: :pages
 
-  resources :sucursales, only: [:show], as: :branches
+  resources :sucursales, only: [:show], controller: :branches, as: :branches
   resources :posts, only: [:show, :index]
   resources :roles
 
