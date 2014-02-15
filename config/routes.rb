@@ -2,15 +2,13 @@ Agalma::Application.routes.draw do
 
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
-
   get 'paginas/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
-  # get 'paginas/:slug' => 'pages#show'
   resources :paginas, only: [:show, :index], controller: :pages, as: :pages
 
   resources :sucursales, only: [:show], controller: :branches, as: :branches
   resources :posts, only: [:show, :index]
   resources :roles
-  resources :contacts, only: [:new, :create] 
+  resources :contacts, only: [:new, :create]
   namespace :backend do
     resources :posts
     resources :users
