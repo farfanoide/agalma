@@ -6,14 +6,14 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params[:contact])
-    @contact.request = request
-    if @contact.deliver
+#    @contact.request = request
+#    if @contact.deliver
+    if ContactMailer.contact_mail(@contact).deliver
       flash.now[:error]  = nil
-      flash.now[:notice] = 'Gracias por su contactarse! Lo contestaremos a la brevedad.'
+      flash.now[:notice] = 'Gracias por contactarse! Le contestaremos a la brevedad.'
     else
       flash.now[:error]= 'Su mensaje no pudo ser enviado.'
-      render :new
     end
+    render :new
   end
-
 end
