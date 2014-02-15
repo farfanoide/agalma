@@ -66,3 +66,6 @@ gem "mini_magick"
 gem 'rails_12factor', group: :production
 gem 'pg'
 ruby '2.0.0'
+
+# mails
+gem 'mail_form'
