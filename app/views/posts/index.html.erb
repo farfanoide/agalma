@@ -5,11 +5,10 @@
 <% @posts.each do |post| %>
   <section class="post-container">
 
-    <%= post.title %>
+    <%=link_to  post.title, post_path(post) %>
     <blockquote>
-      <q></q>
       <p>
-      <%= post.description %>
+      <%= raw(post.content)  %>
       </p>
     </blockquote>
 

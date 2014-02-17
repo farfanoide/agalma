@@ -11,12 +11,12 @@
   </thead>
 
   <tbody>
-    <% @pages.each do |page| %>
+    <% @posts.each do |post| %>
       <tr>
-        <td><%= page.title %></td>
-        <td><%= link_to 'Show', backend_page_path(page) %></td>
-        <td><%= link_to 'Edit', edit_backend_page_path(page) %></td>
-        <td><%= link_to 'Destroy', backend_page_path(page), method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+        <td><%= post.title %></td>
+        <td><%= link_to 'Show', backend_post_path(post) %></td>
+        <td><%= link_to 'Edit', edit_backend_post_path(post) %></td>
+        <td><%= link_to 'Destroy', backend_post_path(post), method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Page', new_backend_page_path %>
+<%= link_to 'Nueva Noticia', new_backend_post_path %>
