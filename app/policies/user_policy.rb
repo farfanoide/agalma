@@ -5,4 +5,5 @@ class UserPolicy < Struct.new(:user, :scope)
         break
     end
     end
+    end
 end

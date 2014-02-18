@@ -1,0 +1,11 @@
+
+<p id="notice"><%= notice %></p>
+<div class="page-container">
+    <h1 class="page-title"><%= @post.title %></h1>
+
+    <section class="page_content">
+        <%= raw(@post.content) %>
+    </section>
+</div>
+<%= link_to("Editar", edit_backend_post_path(@post)) %>
+<%= link_to "Volver", :back %>

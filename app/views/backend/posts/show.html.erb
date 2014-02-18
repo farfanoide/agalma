@@ -1,24 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Titulo:</strong>
   <%= @post.title %>
 </p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @post.slug %>
+  <%= @post.description %>
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= raw(@post.body) %>
+  <strong>Contenido</strong>
+  <%= raw(@post.content) %>
 </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @post.active %>
-</p>
+
+
+
+
 
 <%= link_to 'Edit', edit_backend_post_path(@post) %> |
 <%= link_to 'Back', backend_posts_path %> |

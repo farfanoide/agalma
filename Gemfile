@@ -56,6 +56,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'foundation-rails'
 gem 'pundit'
+gem 'will_paginate', '~> 3.0'
 # editor
 gem "ckeditor"
 gem "carrierwave"

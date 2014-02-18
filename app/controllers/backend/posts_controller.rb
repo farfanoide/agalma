@@ -1,8 +1,15 @@
 class Backend::PostsController < BackendController
-  before_action :set_post, only: [:edit, :create, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy, :show]
 
   def new
     @post = Post.new
+  end
+  
+  def index
+    @posts= Post.all
+  end  
+
+  def show
   end
 
   def edit
@@ -48,6 +55,6 @@ class Backend::PostsController < BackendController
     end
 
     def post_params
-      params.require(:post).permit(:title, :description, :content)
+      params.require(:post).permit(:id ,:title, :description, :content, :branch_id)
     end
 end
