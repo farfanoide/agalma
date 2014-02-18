@@ -1,0 +1,21 @@
+<h1 class="page-title">Paginas: </h1>
+
+<div class="pages-container">
+  <% @pages.each do |page| %>
+    <div class="page">
+      <div class="description">
+	<h2>
+	  <%= page.title %>
+	</h2>
+      </div>
+      <div class="actions">
+	<%= link_to 'Show', page_path(page), class: 'button' %>
+	<%= link_to 'Edit', edit_backend_page_path(page), class: 'button' %>
+	<%= link_to 'Destroy', backend_page_path(page), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'button' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'New Page', new_backend_page_path, class: 'button' %>

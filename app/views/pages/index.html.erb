@@ -1,0 +1,9 @@
+<% if !@pages.blank? %>
+  <% for page in @pages %>
+    <%= link_to page.title, page_path(page) %>
+  <% end %>
+<% else %>
+    <p>No hay paginas cargadas.</p>
+    <p>Puede comenzar a cargar haciendo <%= link_to 'click aqui', new_backend_page_path %></p>
+
+<% end %>

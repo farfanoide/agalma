@@ -1,6 +1,12 @@
 //
+// Custom Variables
+//
+@import 'variables';
+
+//
 // Foundation Variables
 //
+
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -149,7 +155,7 @@ $default-float: left;
 // Grid Variables
 //
 
-// $row-width: em-calc(1000);
+$row-width: em-calc(1299);
 // $column-gutter: em-calc(30);
 // $total-columns: 12;
 
@@ -171,8 +177,8 @@ $default-float: left;
 //
 
 // Control header font styles
-
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$include-open-sans: false;
+$header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -314,11 +320,11 @@ $default-float: left;
 
 // We use these to style the fieldset border and spacing.
 
-// $fieldset-border-style: solid;
+$fieldset-border-style: none;
 // $fieldset-border-width: 1px;
 // $fieldset-border-color: #ddd;
-// $fieldset-padding: em-calc(20);
-// $fieldset-margin: em-calc(18 0);
+$fieldset-padding: 0;
+$fieldset-margin: 0;
 
 // We use these to style the legends when you use them
 
@@ -1089,7 +1095,7 @@ $default-float: left;
 // $side-nav-list-position: inside;
 // $side-nav-list-margin: em-calc(0 0 7 0);
 
-// We use these to control link styles.
+// we use these to control link styles.
 
 // $side-nav-link-color: $primary-color;
 // $side-nav-link-color-active: lighten(#000, 30%);
@@ -1325,18 +1331,23 @@ $default-float: left;
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 
-@import 'variables';
+
 
 // Override variables
-
 // top-bar
 $topbar-bg-color: $blue;
+$topbar-bg: $topbar-bg-color;
 $topbar-link-bg-hover: $topbar-bg-color;
 
-@import 'foundation/components/global';
-@import 'foundation/components/alert-boxes';
-@import 'foundation/components/forms';
-@import 'foundation/components/block-grid';
+// input
+// No shadow for the input
+$input-box-shadow: 0;
+$input-include-glowing-effect: false;
+
+// @import 'foundation/components/global';
+// @import 'foundation/components/alert-boxes';
+// @import 'foundation/components/forms';
+// @import 'foundation/components/block-grid';
 @import 'foundation/components/grid';
-@import 'foundation/components/top-bar';
-// @import 'foundation';
+//@import 'foundation/components/buttons';
+@import 'foundation/components/forms';

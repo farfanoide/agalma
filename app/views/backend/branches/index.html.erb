@@ -20,7 +20,7 @@
           </td>
           <td>
               <%= link_to 'Editar', edit_backend_branch_path(branch) %> |
-              <%= link_to 'Borrar', branch, method: :delete, data: { confirm: 'tas seguro?' } %>
+	      <%= link_to 'Borrar', [:backend, branch], method: :delete, data: { confirm: 'tas seguro?' } %>
           </td>
         </tr>
         <% end %>

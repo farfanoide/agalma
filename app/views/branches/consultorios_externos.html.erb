@@ -1,0 +1,18 @@
+
+<h1> Consultorios Externos </h1>
+<hr>
+<% if !@branches.blank? %>
+  <% for branch in @branches %>
+    <section class="branch-container">
+        <h2><%= branch.name %></h2>
+        <div class="info-wrapper">
+          <p><%= branch.address %></p>
+          <p> <%= branch.zone %> (<%= branch.zipcode %>)</p>
+          <% for telephone in branch.telephones %>
+            <p>Tel. (0<%= telephone.ext %>) <%= telephone.num %></p>
+          <% end %>
+          <p>E-Mail: <%= branch.email %></p>
+        </div>
+    </section>
+  <% end %>
+<% end %>

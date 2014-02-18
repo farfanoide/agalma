@@ -1,7 +1,50 @@
 @import 'variables';
-body{ 
-  background: $blue;
-  color: $white;
-  font-family: sans-serif;
+body{
+    background-color: $light-grey;
+    color: $white;
+    font-family: sans-serif;
 }
-a{ color: $white }
+$all-container-br: 2em;
+.all-container{
+  background: $blue image-url('fondo_main.svg') no-repeat;
+  background-size: 100%;
+  border-radius: 0  0 $all-container-br $all-container-br;
+}
+.main-footer{
+  background: $light-grey;
+  padding: 2em;
+}
+.copyright{
+  color: $dark-grey;
+  font-size: .8em;
+}
+a{ color: $white;
+   font-weight:100;
+}
+
+h1{
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Trebuchet MS', OfficinaSans-Italic, sans-serif;
+    text-transform: capitalize;
+    &.page-title{
+      color: $grey;
+      padding-bottom: .2em;
+      border-bottom: 1px solid $grey;
+    }
+}
+h2{
+    font-family: Helvetica, Arial, sans-serif;
+    /* font-weight: bold; */
+    font-size: 20px;
+}
+p{
+    margin:0;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.2em;
+    font-weight: lighter;
+}
+// basic nav structure => nav>ul.links-container>li.item
+
+
+

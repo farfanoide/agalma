@@ -1,0 +1,23 @@
+<h1 class='page-title'>
+  <%= t '.noticias' %>
+</h1>
+
+<% @posts.each do |post| %>
+  <section class="post-container">
+
+    <%= post.title %>
+    <blockquote>
+      <q></q>
+      <p>
+      <%= post.description %>
+      </p>
+    </blockquote>
+
+  </section>
+<% end %>
+
+<% if current_user %>
+  <% if current_user.admin? %>
+    <%= link_to "crear noticia", new_backend_post_path %>
+  <% end %>
+<% end %>

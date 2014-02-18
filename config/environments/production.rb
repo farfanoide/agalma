@@ -77,4 +77,9 @@ Agalma::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # ckeditor stuff for production
+  config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+  config.assets.precompile += Ckeditor.assets
+  config.assets.precompile += %w(ckeditor/*)
 end

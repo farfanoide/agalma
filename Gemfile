@@ -45,7 +45,10 @@ end
 # gem 'debugger', group: [:development, :test]
 group :development do
   gem 'meta_request'
-  gem 'thin'
+  gem 'thin' # Use Thin instead of Webrick
+  gem 'pry'  # Much better than irb
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 
@@ -53,7 +56,15 @@ gem 'simple_form'
 gem 'devise'
 gem 'foundation-rails'
 gem 'pundit'
+# editor
+gem "ckeditor"
+gem "carrierwave"
+gem "mini_magick"
+
 # heroku deploy
 gem 'rails_12factor', group: :production
 gem 'pg'
 ruby '2.0.0'
+
+# mails
+gem 'mail_form'

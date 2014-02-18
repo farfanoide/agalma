@@ -1,0 +1,14 @@
+<div class="side-nav" >
+  <ul class="items-container">
+    <li class="item-container"><%= link_to @cTeraEd.title, @cTeraEd %></li>
+    <li class="item-container"><%= link_to @cEsTemp.title, @cEsTemp %></li>
+    <li class="item-container"><%= link_to "Consultorios Externos", url_for(:consultorios_externos) %></li>
+    <li class="item-container"><a class="item" href="#">Integración Escolar</a></li>
+    <li class="item-container"><a class="item" href="#">Investigación y Docencia</a></li>
+    <li class="item-container"><a class="item" href="#">Links de Interés</a></li>
+    <%# <% @pages.each do |page| %>
+    <%#   <li class="item-container"><%= link_to page.title, page, class: 'item' %></li>
+    <%# <% end %>
+    <%= render 'social' %>
+  </ul>
+</div>
