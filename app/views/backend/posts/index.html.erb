@@ -1,27 +1,23 @@
-<h1>Listing pages</h1>
+<h1>Noticias:</h1>
+<div class="noticias-container">
+    <% if !@posts.blank?  %>
+        <% @posts.each do |post| %>
+            <div class="noticia">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+                <%= post.title %>
 
-  <tbody>
-    <% @pages.each do |page| %>
-      <tr>
-        <td><%= page.title %></td>
-        <td><%= link_to 'Show', backend_page_path(page) %></td>
-        <td><%= link_to 'Edit', edit_backend_page_path(page) %></td>
-        <td><%= link_to 'Destroy', backend_page_path(page), method: :delete, data: { confirm: 'Esta seguro?' } %></td>
-      </tr>
+                <%= link_to 'Show', post_path(post) %>
+                <%= link_to 'Edit', edit_backend_post_path(post) %>
+                <%= link_to 'Destroy', backend_post_path(post), method: :delete, data: { confirm: 'Esta seguro?' } %>
+            </div>
+        <% end %>
+    <% else %>
+        <div class="alert alert-info">
+            <p>Todavia ha creado noticias, puede comenzar aqui.</p>
+        </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <br>
 
-<%= link_to 'New Page', new_backend_page_path %>
+    <%= link_to 'New post', new_backend_post_path %>
+</div>

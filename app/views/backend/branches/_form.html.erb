@@ -1,22 +1,22 @@
-<%= simple_form_for([:backend,@branch]) do |f| %>
+<%= simple_form_for([:backend, @branch]) do |f| %>
 
-<%= f.input :name, placeholder: "nombre para la sucursal", label: "nombre" %>
-<%= f.input :description, placeholder: "informacion extra", label: "descripcion" %><br>
-<%= f.input :address, placeholder: "calle Altura - piso dpto ", label: "Direccion" %><br>
-<%= f.input :zipcode, placeholder: "", label: "Codigo Postal" %><br>
+    <%= f.input :name, placeholder: "nombre para la sucursal", label: "nombre" %>
+    <%= f.input :description, placeholder: "informacion extra", label: "descripcion" %><br>
+    <%= f.input :address, placeholder: "calle Altura - piso dpto ", label: "Direccion" %><br>
+    <%= f.input :zipcode, placeholder: "", label: "Codigo Postal" %><br>
 
-<%= f.input :zone, placeholder: "Localidad - Provincia", label: "Localidad" %>
-<%= f.input :email, placeholder: "ejemplo@dominio.com", label: "E-Mail" %><br>
+    <%= f.input :zone, placeholder: "Localidad - Provincia", label: "Localidad" %>
+    <%= f.input :email, placeholder: "ejemplo@dominio.com", label: "E-Mail" %><br>
 
-<%= f.simple_fields_for(:telephones) do |tel| %>
-  <%= render 'telephone_fields', f: tel %>
-<% end %>
-<%= link_to_add_fields 'agregar telefono', f, :telephones %>
-<%= f.simple_fields_for(:rolifications) do |rolif| %>
-  <%= render 'rolification_fields', f: rolif %>
-<% end %>
-<%= link_to_add_fields 'agregar usuario', f, :rolifications %>
-<br>
+    <%= f.simple_fields_for(:telephones) do |tel| %>
+        <%= render 'telephone_fields', f: tel %>
+    <% end %>
+    <%= link_to_add_fields 'agregar telefono', f, :telephones %>
+    <%= f.simple_fields_for(:rolifications) do |rolif| %>
+        <%= render 'rolification_fields', f: rolif %>
+    <% end %>
+    <%= link_to_add_fields 'agregar usuario', f, :rolifications %>
+    <br>
 
-<%= f.submit "Guardar" %>
+    <%= f.submit "Guardar" %>
 <% end %>
