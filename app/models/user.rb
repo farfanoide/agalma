@@ -9,9 +9,11 @@ class User < ActiveRecord::Base
   has_many :branches, through: :rolifications
 
   accepts_nested_attributes_for :rolifications, allow_destroy: true
+
   def admin?
     !roles.where('name = ?', 'admin').blank?
-  end  
+  end
+
   def can_edit_branch?(branch)
     !rolifications.where('role_id = ? and branch_id = ? ', Role.find_by(name: 'admin').id, branch.id).blank?
   end

@@ -1,21 +1,17 @@
 <div class="row">
     <div class="small-12 columns">
         <nav class="top-bar" data-topbar>
-            <ul class="links-container title-area">
-                <li class="name">
-                    <h1 class="item"><%= link_to "Administracion", :backend_root %></h1>
-                </li>
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-            </ul>
-            <section class="top-bar-section">
-                <!-- Right Nav Section -->
-                <ul class="links-container right">
+            <ul class="links-container">
+                <li class="item left"> <h1><%= link_to "Administracion", :backend_root %></h1> </li>
+            <!-- Right Nav Section -->
+                <li class="right">
                     <li class="item"><a href="#"><%= link_to "Sucursales", backend_branches_path %></a></li>
                     <li class="item"><a href="#"><%= link_to "Paginas", backend_pages_path %></a></li>
                     <li class="item"><a href="#"><%= link_to "Usuarios", backend_users_path %></a></li>
+                    <li class="item"><a href="#"><%= link_to "Noticias", backend_posts_path %></a></li>
                     <li class="item"><a href="#"><%= link_to "Ver Pagina", :root %></a></li>
-                </ul>
-            </section>
+                </li>
+            </ul>
         </nav>
     </div>
 </div>
