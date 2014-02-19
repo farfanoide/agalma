@@ -5,13 +5,14 @@
   <% for branch in @branches %>
     <section class="branch-container">
         <h2><%= branch.name %></h2>
-        <p><%= branch.address %></p>
-        <p> <%= branch.zone %> (<%= branch.zipcode %>)</p>
+        <div class="info-wrapper">
+          <p><%= branch.address %></p>
+          <p> <%= branch.zone %> (<%= branch.zipcode %>)</p>
           <% for telephone in branch.telephones %>
             <p>Tel. (0<%= telephone.ext %>) <%= telephone.num %></p>
           <% end %>
-
-        <p>E-Mail: <%= branch.email %></p>
+          <p>E-Mail: <%= branch.email %></p>
+        </div>
     </section>
   <% end %>
 <% end %>
