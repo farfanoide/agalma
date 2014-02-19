@@ -1,5 +1,9 @@
 Agalma::Application.routes.draw do
 
+  resources :galeries
+
+  resources :images
+
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
 
