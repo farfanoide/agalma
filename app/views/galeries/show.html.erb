@@ -8,7 +8,12 @@
 <p>
   <strong>Description:</strong>
   <%= @galery.description %>
-</p>
+  </p>
 
+  <% @galery.images.each do |image| %>
+  <div>
+  <%= image_tag(image.file_name) %>   
+  </div>
+<% end %>
 <%= link_to 'Edit', edit_galery_path(@galery) %> |
 <%= link_to 'Back', galeries_path %>

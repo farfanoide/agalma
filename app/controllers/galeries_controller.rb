@@ -24,8 +24,7 @@ class GaleriesController < ApplicationController
   # POST /galeries
   # POST /galeries.json
   def create
-    @galery = Galery.new(galery_params)
-
+    @galery = Galery.new(galery_params) 
     respond_to do |format|
       if @galery.save
         format.html { redirect_to @galery, notice: 'Galery was successfully created.' }
@@ -69,6 +68,6 @@ class GaleriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def galery_params
-      params.require(:galery).permit(:name, :description)
+      params.require(:galery).permit(:name, :description, images_attributes: [:id, :file_name, :name, :_destroy  ])
     end
 end
