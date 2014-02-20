@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
 
   def admin?
     !roles.where('name = ?', 'admin').blank?
-  end  
+  end
+
   def can_edit_branch?(branch)
     !rolifications.where('role_id = ? and branch_id = ? ', Role.find_by(name: 'admin').id, branch.id).blank?
   end
