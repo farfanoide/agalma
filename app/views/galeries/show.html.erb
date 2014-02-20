@@ -12,7 +12,7 @@
 
   <% @galery.images.each do |image| %>
   <div>
-  <%= image_tag(image.file_name) %>   
+  <%=link_to image_tag(image.file_name.url(:thumb)),image_path(image) %>   
   </div>
 <% end %>
 <%= link_to 'Edit', edit_galery_path(@galery) %> |

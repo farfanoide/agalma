@@ -6,7 +6,7 @@
 <%= link_to "Borrar", '#', class: "remove_fields" %>
 <% else %>
 
-<%= image_tag f.object.file_name %>
+<%= image_tag f.object.file_name.url(:thumb) %>
 <%= f.input :name %>
 <%= link_to "Borrar", '#', class: "remove_fields" %>
 <% end %>
