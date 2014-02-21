@@ -1,8 +1,8 @@
 Agalma::Application.routes.draw do
 
-  resources :galeries
+  resources :galeries, only: [:index, :show]
 
-  resources :images
+  resources :images, only: [:show]
 
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
@@ -14,6 +14,7 @@ Agalma::Application.routes.draw do
   resources :roles
   resources :contacts, only: [:new, :create]
   namespace :backend do
+    resources :galeries, only: [:new, :create, :edit, :update, :destroy]
     resources :posts
     resources :users
     resources :branches

@@ -1,10 +1,11 @@
-class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy]
+class Backend::ImagesController < ApplicationController
+  before_action :set_image, only: [:show]
+
   # GET /images/1
   # GET /images/1.json
   def show
   end
-
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_image
