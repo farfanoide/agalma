@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @galery.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @galery.description %>
+  </p>
+
+  <% @galery.images.each do |image| %>
+  <div>
+  <%=link_to image_tag(image.file_name.url(:thumb)),image_path(image) %>   
+  </div>
+<% end %>
+<%= link_to 'Edit', edit_galery_path(@galery) %> |
+<%= link_to 'Back', galeries_path %>

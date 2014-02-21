@@ -5,17 +5,17 @@
 <% @posts.each do |post| %>
   <section class="post-container">
 
-    <%= post.title %>
+    <%=link_to  post.title, post_path(post) %>
     <blockquote>
-      <q></q>
       <p>
-      <%= post.description %>
+      <%= raw(post.content)  %>
       </p>
     </blockquote>
 
   </section>
 <% end %>
 
+  <%= will_paginate @posts, previous_label: '<<', next_label: '>>'%> 
 <% if current_user %>
   <% if current_user.admin? %>
     <%= link_to "crear noticia", new_backend_post_path %>
