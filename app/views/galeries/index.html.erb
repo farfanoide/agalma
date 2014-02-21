@@ -16,9 +16,9 @@
       <tr>
         <td><%= galery.name %></td>
         <td><%= galery.description %></td>
-        <td><%= link_to 'Show', galery %></td>
-        <td><%= link_to 'Edit', edit_galery_path(galery) %></td>
-        <td><%= link_to 'Destroy', galery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', galery %></td>
+        <td><%= link_to 'Editar', edit_backend_galery_path(galery) %></td>
+	<td><%= link_to 'Borrar', [:backend, galery], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Galery', new_galery_path %>
+<%= link_to 'New Galery', new_backend_galery_path %>
