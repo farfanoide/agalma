@@ -1,8 +1,12 @@
-<%= simple_form_for @contact do |c| %>
+<div class="small-12 large-6 large-centered columns" >
+<%= simple_form_for @contact, defaults: {label_html:{ class: "contact-form-label"}, input_html: {class:"contact-form-input"}}  do |c| %>
 
-  <%= c.input :name %>
-  <%= c.input :email %>
-  <%= c.input :message, as: :text %>
+  <%= c.input :name, label:"Nombre:" %>
+  <%= c.input :lname, label:"Apellido:", required:false  %>
+  <%= c.input :telephone, label:"Telefono:", required:false %>  
+  <%= c.input :email, label:"E-Mail:" %>
+  <%= c.input :message, :as => :text,  {:cols => 50, :rows =>100 } %>
   <%= c.button :submit, "Enviar Mensaje" %>
 
 <% end %>
+</div>
