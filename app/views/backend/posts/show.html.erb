@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Titulo:</strong>
   <%= @post.title %>
 </p>
+<p>
   <%= @post.description %>
 </p>
 
@@ -12,11 +11,6 @@
   <%= raw(@post.content) %>
 </p>
 
-
-
-
-
-
-<%= link_to 'Edit', edit_backend_post_path(@post) %> |
-<%= link_to 'Back', backend_posts_path %> |
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', :back %> |
 <%= link_to 'Destroy', backend_post_path(@post), method: :delete, data: { confirm: 'Esta seguro?' } %>

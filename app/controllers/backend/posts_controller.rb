@@ -1,6 +1,6 @@
 class Backend::PostsController < BackendController
 
-    before_action :set_post, only: [:edit, :create, :update, :destroy]
+    before_action :set_post, only: [:edit, :update, :destroy]
 
     def new
         @post = Post.new
@@ -14,7 +14,7 @@ class Backend::PostsController < BackendController
 
         respond_to do |format|
             if @post.save
-                format.html { redirect_to backend_post_url(@post), notice: 'Post was successfully created.' }
+                format.html { redirect_to post_url(@post), notice: 'Post was successfully created.' }
                 format.json { render action: 'show', status: :created, location: @post }
             else
                 format.html { render action: 'new' }
