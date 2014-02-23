@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  #
   devise :database_authenticatable, :registerable,
          :recoverable,:trackable, :rememberable, :validatable
 
@@ -17,4 +18,5 @@ class User < ActiveRecord::Base
   def can_edit_branch?(branch)
     !rolifications.where('role_id = ? and branch_id = ? ', Role.find_by(name: 'admin').id, branch.id).blank?
   end
+
 end

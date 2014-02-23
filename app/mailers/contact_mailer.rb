@@ -3,7 +3,13 @@ class ContactMailer < ActionMailer::Base
 
   def contact_mail(contact)
     @contact = contact
-    mail(to: "ilstucardo@gmail.com", subject: "Has recibido un nuevo mensaje!")
+    mail(to: "fernan.nestier@gmail.com", subject: "Has recibido un nuevo mensaje!")
   end
 
+  def contacts_mails(contact)
+    @contact = contact
+    @contact.to.each do |t|
+      mail(to: t.to_s, subject: "Has recibido un nuevo mensaje!").deliver
+    end
+  end
 end

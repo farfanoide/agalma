@@ -1,0 +1,8 @@
+<%= simple_form_for [:backend,@contact] do |c| %>
+    <%= c.input :name %>
+    <%= c.input :email %>
+    <%= c.input :message  %>
+
+    <%= c.collection_check_boxes :to, @users,:email, :name%> 
+    <%= c.button :submit, "Enviar Mensaje" %>
+<% end %>
