@@ -4,15 +4,15 @@ class Backend::ContactsController < ApplicationController
 
     def new
         @contact = Contact.new
-	@users=User.all
+        @users   = User.all
     end
 
     def create
 
-      if ContactMailer.contacts_mails(@contact)
+        if ContactMailer.contacts_mails(@contact, current_user)
             flash.now[:error]  = nil
             flash.now[:notice] = 'Gracias por contactarse! Le contestaremos a la brevedad.'
-            redirect_to :root
+            redirect_to [:backend, :root]
         else
             flash.now[:error]= 'Su mensaje no pudo ser enviado.'
             render :new
@@ -22,7 +22,7 @@ class Backend::ContactsController < ApplicationController
     private
 
         def contact_params
-            params.require(:contact).permit(:name, :email, :message,to:[])
+            params.require(:contact).permit(:name, :email, :message, recipients:[])
         end
 
         def set_contact
