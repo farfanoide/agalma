@@ -1,4 +1,4 @@
-<%= simple_form_for(@galery) do |f| %>
+<%= simple_form_for([:backend,@galery]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -12,6 +12,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit 'Guardar' %>
   </div>
 <% end %>

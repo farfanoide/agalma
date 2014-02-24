@@ -1,0 +1,2 @@
+module Backend::GalleryHelper
+end
