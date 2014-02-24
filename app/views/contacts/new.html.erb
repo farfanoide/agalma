@@ -1,12 +1,50 @@
 <div class="small-12 large-6 large-centered columns" >
-<%= simple_form_for @contact, defaults: {label_html:{ class: "contact-form-label"}, input_html: {class:"contact-form-input"}}  do |c| %>
+<%= simple_form_for @contact, defaults: {label:{ class: "right inline "}}  do |c| %>
+<div class="row">
+	<div class="small-3 columns">
+ 		<%= c.label :name, "Nombre: ", class: "right inline" %>
+	</div>
+	<div class="small-9 columns">
+  		<%= c.input_field :name %>
+	</div>
+</div>
 
-  <%= c.input :name, label:"Nombre:" %>
-  <%= c.input :lname, label:"Apellido:", required:false  %>
-  <%= c.input :telephone, label:"Telefono:", required:false %>  
-  <%= c.input :email, label:"E-Mail:" %>
-  <%= c.input :message, :as => :text,  {:cols => 50, :rows =>100 } %>
+
+<div class="row">
+	<div class="small-3 columns">
+ 		<%= c.label :lname, "Apellido: ", class: "right inline" %>
+	</div>
+	<div class="small-9 columns">
+  		<%= c.input_field :lname %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-3 columns">
+ 		<%= c.label :telephone, "Telefono: ", class: "right inline" %>
+	</div>
+	<div class="small-9 columns">
+  		<%= c.input_field :telephone, required: false %>
+	</div>
+</div>
+<div class="row">
+	<div class="small-3 columns">
+ 		<%= c.label :email, "E-Mail: ", class: "right inline" %>
+	</div>
+	<div class="small-9 columns">
+  		<%= c.input_field :email %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-3 columns">
+ 		<%= c.label :message, "Mensaje: ", class: "right inline msg-label" %>
+	</div>
+	<div class="small-9 columns">
+  		<%= c.input_field :message, :as => :text %>
+	</div>
+</div>
   <%= c.button :submit, "Enviar Mensaje" %>
-
-<% end %>
+  <%= c.button :button, 'Cancelar', :type => 'reset', :class => 'btn' %>
+  <% end %>
 </div>

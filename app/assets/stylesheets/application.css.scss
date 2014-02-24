@@ -242,13 +242,20 @@ a { text-decoration: none }
     padding: 1em;
 }
 
-.contact-form-label{
+label.inline{
   color:$white;
 }
 
-.contact-form-input{
+input, textarea{
   border-radius: 10px;
 
 }
 
- 
+textarea{
+  min-height: 10em;
+  resize:none;
+}
+
+label.msg-label{
+  margin-top: 3em;
+} 
