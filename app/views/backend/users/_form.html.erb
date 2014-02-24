@@ -1,7 +1,7 @@
 <%= simple_form_for([:backend, @user]) do |f| %>
 
-<%= f.input :name, placeholder: "nombre para el usuario", label: "nombre" %>
-<%= f.input :email, placeholder: "informacion extra", label: "email" %><br>
+<%= f.input :name, placeholder: "Nombre de Usuario", label: "Nombre" %>
+<%= f.input :email, placeholder: "informacion extra", label: "Email" %><br>
 <%= f.simple_fields_for(:rolifications) do |rolif| %>
   <%= render 'rolification_fields', f: rolif %>
 <% end %>
