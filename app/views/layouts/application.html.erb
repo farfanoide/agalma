@@ -6,40 +6,40 @@
 <!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
- <meta charset="utf-8" />
+<meta charset="utf-8" />
 
- <!-- Uncomment to make IE8 render like IE7 -->
- <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+<!-- Uncomment to make IE8 render like IE7 -->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
- <!-- Set the viewport width to device width for mobile -->
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
- <title><%= content_for?(:title) ? yield(:title) : "Agalma" %></title>
+<title><%= content_for?(:title) ? yield(:title) : "Agalma" %></title>
 
 
- <%= stylesheet_link_tag    "application" %>
- <%# javascript_include_tag "vendor/custom.modernizr" %>
- <%= csrf_meta_tags %>
+<%= stylesheet_link_tag    "application" %>
+<%# javascript_include_tag "vendor/custom.modernizr" %>
+<%= csrf_meta_tags %>
 </head>
 
 <body>
-  <%= render "shared/flashes" %>
-  <%= render "header" %>
-  <%= render "search" %>
-  <div class="all-container">
+<%= render "shared/flashes" %>
+<%= render "header" %>
+<%= render "search" %>
+<div class="all-container">
     <div class="row main-wrapper">
-      <div class="small-12 large-4 columns">
-	<%= render 'side_nav' %>
-      </div>
-      <div class="small-12 large-8 columns">
-	<main>
-	  <%= yield %>
-	</main>
-      </div>
+        <div class="small-12 large-4 columns">
+            <%= render 'side_nav' %>
+        </div>
+        <div class="small-12 large-8 columns">
+            <main>
+                <%= yield %>
+            </main>
+        </div>
     </div>
-  </div>
-  <%= render "footer" %>
-  <%= javascript_include_tag "application" %>
+</div>
+<%= render "footer" %>
+<%= javascript_include_tag "application" %>
 
 </body>
 </html>

@@ -2,3 +2,8 @@ es:
   posts:
     index:
       noticias: Noticias
+  name: Nombre
+  password: Contraseña
+  password_again: Confirmar Contraseña
+  sign_up: registrarse
+
