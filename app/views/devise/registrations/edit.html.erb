@@ -15,12 +15,8 @@
     <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
   </div>
     <%= f.input :name, :required => false %>
-    <% if f.object.new_record? %>
+    <%= image_tag f.object.avatar.url :thumb %>
         <%= f.input :avatar %>
-    <% else %>
-        <%= image_tag f.object.avatar.url(:thumb) %>
-        <%= f.input :avatar %>
-    <% end %>
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
