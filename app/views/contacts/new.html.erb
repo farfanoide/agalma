@@ -1,6 +1,6 @@
 <%= simple_form_for @contact do |c| %>
 
-  <%= c.input :name %>
+  <%= c.input :name, label: t(:name)%>
   <%= c.input :email %>
   <%= c.input :message, as: :text %>
   <%= c.button :submit, "Enviar Mensaje" %>

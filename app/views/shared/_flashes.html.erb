@@ -1,12 +1,12 @@
 <% if !notice.blank? %>
-  <div class="alert-box success">
+  <div class="alert success">
     <%= notice %>
     <a href="#" class="close">&times;</a>
   </div>
 <% end %>
-<% if !flash[:error].blank? %>
-  <div class="alert-error">
-    <%= flash[:error] %>
+<% if !error.blank? %>
+  <div class="alert error">
+    <%= error %>
     <a href="#" class="close">&times;</a>
   </div>
 <% end %>

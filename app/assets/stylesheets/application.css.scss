@@ -237,7 +237,12 @@ a { text-decoration: none }
     }
 
 }
-.alert-error{
+.alert{
+    padding: 1em
+}
+.success{
+    background: green;
+}
+.error{
     background: #f04124;
-    padding: 1em;
 }

@@ -1,5 +1,6 @@
 class BackendController < ActionController::Base
 
+    add_flash_types :error
     include Pundit
 
     before_filter :authorize_user
