@@ -1,55 +1,58 @@
-<div class="row">
-  <div class="small-12 large-3 columns">
-    <ul class="items-container">
-      <h2><%= link_to "Paginas", backend_pages_path %></h2>
-      <% if @pages.empty? %>
-          <p>Todavia no tiene paginas cargadas.</p>
-          <%= link_to "Crear Pagina", new_backend_page_path %>
-      <% else %>
-          <% for page in @pages %>
-            <li><%= link_to page.title, edit_backend_page_path(page) %></li>
-          <% end %>
-      <% end %>
-    </ul>
-  </div>
+<% if user_signed_in? %>
+    <div class="row">
+        <div class="small-12 large-3 columns">
+            <ul class="items-container">
+                <h2><%= link_to "Paginas", backend_pages_path %></h2>
+                <% if @pages.empty? %>
+                    <p>Todavia no tiene paginas cargadas.</p>
+                <%= link_to "Crear Pagina", new_backend_page_path %>
+            <% else %>
+                    <% for page in @pages %>
+                    <li><%= link_to page.title, edit_backend_page_path(page) %></li>
+            <% end %>
+            <% end %>
+            </ul>
+        </div>
 
-  <div class="small-12 large-3 columns">
-    <ul class="items-container">
-      <h2><%= link_to "Noticias", backend_posts_path %></h2>
-      <% if @posts.empty? %>
-          <p>Todavia no tiene noticias cargadas.</p>
-          <%= link_to "Crear noticia", new_backend_post_path %>
-      <% else %>
-          <% for post in @posts %>
-            <li><%= link_to post.title, edit_backend_post_path(post) %></li>
-          <% end %>
-      <% end %>
-    </ul>
-  </div>
-  <div class="small-12 large-3 columns">
-    <ul class="items-container">
-      <h2><%= link_to "Sucursales", backend_branches_path %></h2>
-      <% if @branches.empty? %>
-          <p>Todavia no tiene paginas cargadas.</p>
-          <%= link_to "Crear Sucursal", new_backend_branch_path %>
-      <% else %>
-          <% for branch in @branches %>
-            <li><%= link_to branch.name, edit_backend_branch_path(branch) %></li>
-          <% end %>
-      <% end %>
-    </ul>
-  </div>
-  <div class="small-12 large-3 columns">
-    <h2><%= link_to "Usuarios", backend_users_path %></h2>
-    <ul class="items-container">
-      <% if @branches.empty? %>
-          <p>Todavia no tiene usuarios cargados.</p>
-          <%= link_to "Crear Usuario", new_backend_user_path %>
-      <% else %>
-          <% for role in @roles %>
-            <li><%= role.user.name %>(<%= role.role.name %>)</li>
-          <% end %>
-      <% end %>
-    </ul>
-  </div>
-</div>
+        <div class="small-12 large-3 columns">
+            <ul class="items-container">
+                <h2><%= link_to "Noticias", backend_posts_path %></h2>
+                <% if @posts.empty? %>
+                    <p>Todavia no tiene noticias cargadas.</p>
+                <%= link_to "Crear noticia", new_backend_post_path %>
+            <% else %>
+                    <% for post in @posts %>
+                    <li><%= link_to post.title, edit_backend_post_path(post) %></li>
+            <% end %>
+            <% end %>
+            </ul>
+        </div>
+        <div class="small-12 large-3 columns">
+            <ul class="items-container">
+                <h2><%= link_to "Sucursales", backend_branches_path %></h2>
+                <% if @branches.empty? %>
+                    <p>Todavia no tiene paginas cargadas.</p>
+                <%= link_to "Crear Sucursal", new_backend_branch_path %>
+            <% else %>
+                    <% for branch in @branches %>
+                    <li><%= link_to branch.name, edit_backend_branch_path(branch) %></li>
+            <% end %>
+            <% end %>
+            </ul>
+        </div>
+        <div class="small-12 large-3 columns">
+            <h2><%= link_to "Usuarios", backend_users_path %></h2>
+            <ul class="items-container">
+                <% if @branches.empty? %>
+                    <p>Todavia no tiene usuarios cargados.</p>
+                <%= link_to "Crear Usuario", new_backend_user_path %>
+            <% else %>
+                    <% for role in @roles %>
+                    <li><%= role.user.name %>(<%= role.role.name %>)</li>
+            <% end %>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+<% end %>
+

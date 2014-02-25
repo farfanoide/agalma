@@ -19,8 +19,8 @@ Telephone.create!(ext:'011', num:'47208195', branch_id: Branch.find_by(name: 'At
 _pass = "12345678"
 User.create!(name: 'anacleta', email: 'anacleta@agalma.com', password: _pass)
 User.create!(name: 'marcela', email: 'marcela@agalma.com', password: _pass)
-User.create!(name: 'veronica', email: 'veronica@agalma.com', password: _pass)
-User.create!(name: 'antonio', email: 'antonio@agalma.com', password: _pass)
+User.create!(name: 'veronica', email: 'ivan6258@gmail.com', password: _pass)
+User.create!(name: 'antonio', email: 'fernan.nestier@gmail.com', password: _pass)
 User.create!(name: 'administrador', email: 'admin@agalma.com', password: _pass)
 
 Role.create!(name: 'visitante', description: 'usuario con menos privilegios')
@@ -32,6 +32,7 @@ Rolification.create!(user: User.find(3), branch: Branch.find(2), role: Role.find
 Rolification.create!(user: User.find(2), branch: Branch.find(3), role: Role.find(2))
 Rolification.create!(user: User.find(3), branch: Branch.find(1), role: Role.find(3))
 Rolification.create!(user: User.find(2), branch: Branch.find(1), role: Role.find(1))
+Rolification.create!(user: User.find(5), branch: Branch.find(1), role: Role.find(3))
 
 _quienes_body = "<p>Los Centros en Salud Mental Agalma están al servicio de la sociedad. Prestan  una amplia cobertura asistencial y terapéutica que permite dar respuesta a las diversas problemáticas propias de la niñez, la infancia y la adolescencia, con un enfoque especializado y un criterio integral, en las áreas de psicología, musicoterapia, psicopedagogía, terapia ocupacional, psicomotricidad, nutrición, kinesiología y asistencia social,  promoviendo la excelencia en la calidad de los tratamientos, la optimización de los recursos y sustentando una particular práctica transdisciplinaria, que incluye la orientación y apoyo a las familias. También cuenta con el área de formación profesional dedicada a la enseñanza, trasmisión y capacitación de profesionales de la salud, sobre distintas temáticas de incidencia eminentemente clínica, relacionadas con los campos disciplinarios que abarca nuestro Equipo.</p>"
 Page.create!(title: "quienes somos", body: _quienes_body)

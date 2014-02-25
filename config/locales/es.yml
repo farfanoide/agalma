@@ -2,3 +2,17 @@ es:
   posts:
     index:
       noticias: Noticias
+  name: Nombre
+  password: Contraseña
+  password_again: Confirmar Contraseña
+  sign_up: registrarse
+  activerecord:
+    errors:
+        models:
+            user:
+                attributes:
+                  password_confirmation:
+                    confirmation: confirme su contraseña
+                  email:
+                    taken: este email ya esta registrado en nuestro sistema
+

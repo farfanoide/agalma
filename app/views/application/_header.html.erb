@@ -11,6 +11,7 @@
                     <% if authorize_content %>
                         <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
                     <% end %>
+                    <a href="<%= new_user_registration_path %>" data-reveal-id="myModal" data-reveal-ajax="true">dame un modal</a>
                 </ul>
             </nav>
         </div>
@@ -25,3 +26,5 @@
     </div>
 </div>
 
+<div id="myModal" class="reveal-modal" data-reveal-ajax="true">
+  </div>
