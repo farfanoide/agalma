@@ -119,6 +119,10 @@
         color            : $black;
         background-color : $white;
     }
+    .search-button{
+        border-radius: 0 5px 5px 0;
+        height:22px;
+    }
     .row{
         margin-bottom : 0;
         padding       : 0;
@@ -207,16 +211,8 @@ a { text-decoration: none }
         border:none;
         height:22px;
     }
-    .search-button{
-        margin:0;
-        color: $black;
-        background-color: #fff;
-        padding:2px 10px;
-        font-size:10px;
-        border-radius: 0 5px 5px 0;
-        height:22px;
-    }
 }
+
 .main-wrapper{
     padding: 2em 0;
     .post{
@@ -250,4 +246,21 @@ textarea{
   resize:none;
 }
 
-label.msg-label{ margin-top: 3em; }
+label.msg-label{
+  margin-top: 3em;
+}
+
+.contact-form-button{
+  color: $dark-grey;
+  border-radius: .5em;
+  padding:.8em;
+  width: 8em;
+  margin: 2em .7em;
+}
+
+.main-header{
+  border-bottom: 1px solid $grey;
+  padding-bottom:.3em;
+  color: #000;
+  margin-bottom:1.5em;
+}

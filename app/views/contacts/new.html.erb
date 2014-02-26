@@ -1,3 +1,8 @@
+
+  <h1 class="main-header"> Contacto </h1>
+
+
+
 <div class="small-12 large-6 large-centered columns" >
 <%= simple_form_for @contact, defaults: {label:{ class: "right inline "}}  do |c| %>
 <div class="row">
@@ -43,7 +48,13 @@
         <%= c.input_field :message, :as => :text %>
     </div>
 </div>
-  <%= c.button :submit, "Enviar Mensaje" %>
-  <%= c.button :button, 'Cancelar', :type => 'reset', :class => 'btn' %>
+<!--  <%= c.button :button, "Cancelar", :type => 'reset', :class => "contact-button" %> -->
+  <div class="row">
+    <div class="small-8 small-offset-4 columns" >
+      <button type="reset" class="contact-form-button" > Cancelar </button>
+      <button type="submit" class="contact-form-button"> Enviar  </button>
+    </div>
+  </div>
+<!--  <%= c.button :button, "Enviar", :type => 'submit', button_html: { class: "contact-button"} %> -->
   <% end %>
 </div>
