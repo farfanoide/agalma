@@ -233,19 +233,13 @@ a { text-decoration: none }
     }
 
 }
-.alert-error{
-    background: #f04124;
-    padding: 1em;
-}
+.alert{ padding: 1em }
+.success{ background: green; }
+.error{ background: #f04124; }
 
-label.inline{
-  color:$white;
-}
+label.inline{ color:$white; }
 
-input, textarea{
-  border-radius: 10px;
-
-}
+input, textarea{ border-radius: 10px; }
 
 textarea{
   min-height: 10em;
@@ -254,7 +248,7 @@ textarea{
 
 label.msg-label{
   margin-top: 3em;
-} 
+}
 
 .contact-form-button{
   color: $dark-grey;

@@ -20,6 +20,7 @@ Agalma::Application.routes.draw do
     resources :branches
     resources :galleries
     resources :pages
+    resources :contacts, only: [:new, :create]
     root 'dashboard#home'
   end
 

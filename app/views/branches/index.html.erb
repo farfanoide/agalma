@@ -1,2 +1,26 @@
-<h1>Noticias</h1>
-<h2>[cargar noticias]</h2>
+<div class="row">
+  <div class="small-8 columns small-centered ">
+    <h1>Listado de sucursales</h1>
+    <% @branches.each do |branch| %>
+      <li>
+    <%= link_to branch.name, branch %>
+	<% if user_signed_in? %>
+          <% if policy(current_user).admin? %>	
+	<%= link_to 'Editar', edit_backend_branch_path(branch) %>
+   	<% end %>
+   	<% end %>
+	 </li>
+        <% end %>
+
+    <br>
+   <% if user_signed_in? %>
+       <% if policy(current_user).admin? %>	
+       <%= link_to 'Crear Sucursal', new_backend_branch_path %>
+       <% end %>
+   <% end %>
+</div>
+</div>
+
+
+
+

@@ -4,7 +4,8 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = '4b1e77036e4811fad0d5e0f6e1a666773cb5d20760633d5fc64a1bf65ff3e771302077c8ab14b8f4e9ae5f616d379a3fd56dac489bd383fc037ca94abd16ed1c'
+
+  config.secret_key = 'ee1887eff9a31bafb5d0a3734555e437344d18ae34f4de3dd404d0d3de92b662ab0bef78227545c3d465e1080067df8d688f68314e2724cc05dee7df9cfb2f6e'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -95,8 +96,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '973922d7cfea5c16065f54a78485ec93211988a6e77d986725b496473cc3888910724ca43f4637bc9ca5665168ebbf7ffc2dcf106166d65e56e015fee34c8df0'
-
+ # config.pepper = '973922d7cfea5c16065f54a78485ec93211988a6e77d986725b496473cc3888910724ca43f4637bc9ca5665168ebbf7ffc2dcf106166d65e56e015fee34c8df0'
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
   # confirming his account. For instance, if set to 2.days, the user will be
@@ -135,7 +135,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 8..128.
-  config.password_length = 8..128
+  config.password_length = 6..25
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -251,4 +251,5 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
 end
