@@ -4,6 +4,8 @@ class Backend::PostsController < BackendController
 
     def new
         @post = Post.new
+        @post.galeries.build
+
     end
 
     def edit
@@ -26,7 +28,7 @@ class Backend::PostsController < BackendController
     def update
         respond_to do |format|
             if @post.update(post_params)
-                format.html { redirect_to backend_post_url(@post), notice: 'Post was successfully updated.' }
+                format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
                 format.json { head :no_content }
             else
                 format.html { render action: 'edit' }
@@ -49,6 +51,6 @@ class Backend::PostsController < BackendController
         end
 
         def post_params
-            params.require(:post).permit(:title, :description, :content, :branch_id)
+            params.require(:post).permit(:title, :description, :content, :branch_id, galeries_attributes:[:id,:post_id,:name,:description,:_destroy,images_attributes:[:id,:file_name,:name,:_destroy]])
         end
 end

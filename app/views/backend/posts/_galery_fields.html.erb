@@ -1,0 +1,8 @@
+<fieldset>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.simple_fields_for (:images) do |image|  %>
+   <%= render 'image_fields', f: image %>
+ <% end %>
+<%= link_to_add_fields 'agregar imagen', f, :images %>
+</fieldset>

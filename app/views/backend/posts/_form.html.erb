@@ -7,6 +7,10 @@
     <%= f.association :branch, label: 'Sucursal', as: :select, include_blank: false%>
   </div>
 
+  <div class="form-inputs">
+  <%= f.simple_fields_for (:galeries) do |gallery| %>
+   <%= render 'galery_fields', f: gallery %>
+  <% end %>
   <div class="form-actions">
     <%= f.submit 'Publicar' %>
   </div>
