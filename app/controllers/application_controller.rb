@@ -1,38 +1,36 @@
 class ApplicationController < ActionController::Base
-    # Prevent CSRF attacks by raising an exception.
-    # For APIs, you may want to use :null_session instead.
+  include Pundit
 
-    add_flash_types :error
-    protect_from_forgery with: :exception
-    before_filter :fetch_static_pages
-    before_filter :configure_permitted_parameters, if: :devise_controller?
-    include Pundit
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  add_flash_types :error
+  before_filter :fetch_static_pages
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+  protect_from_forgery with: :exception
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  private
 
-    rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  def fetch_static_pages
+    @quienes ||= Page.find_by!(slug: 'quienes-somos')
+    @cTeraEd ||= Page.find_by!(slug: 'centros-terapeuticos-educativos')
+    @cEsTemp ||= Page.find_by!(slug: 'centro-de-estimulacion-temprana')
+    # @quienes ||= Page.find_by!(slug: 'quienes-somos')
+  end
 
+  def set_menu_pages
+    @pages = Page.all
+  end
 
-    private
-        def fetch_static_pages
-            @quienes ||= Page.find_by!(slug: 'quienes-somos')
-            @cTeraEd ||= Page.find_by!(slug: 'centros-terapeuticos-educativos')
-            @cEsTemp ||= Page.find_by!(slug: 'centro-de-estimulacion-temprana')
-            # @quienes ||= Page.find_by!(slug: 'quienes-somos')
-        end
+  def user_not_authorized
+    flash[:error] = "You are not authorized to perform this action."
+    redirect_to request.headers["Referer"] || root_path
+  end
 
-        def set_menu_pages
-            @pages = Page.all
-        end
+  protected
 
-        def user_not_authorized
-            flash[:error] = "You are not authorized to perform this action."
-            redirect_to request.headers["Referer"] || root_path
-        end
-
-        protected
-
-        def configure_permitted_parameters
-            devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :avatar, :email, :password)  }
-            devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :avatar, :email, :password, :password_confirmation, :current_password)  }
-        end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:account_update) << :name
+  end
 end
