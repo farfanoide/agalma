@@ -1,14 +1,12 @@
 Agalma::Application.routes.draw do
-
   resources :galeries, only: [:index, :show]
-
   resources :images, only: [:show]
 
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   get 'paginas/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
-  resources :paginas, only: [:show, :index], controller: :pages, as: :pages
 
+  resources :paginas, only: [:show, :index], controller: :pages, as: :pages
   resources :sucursales, only: [:show], controller: :branches, as: :branches
   resources :posts, only: [:show, :index]
   resources :roles
@@ -18,6 +16,7 @@ Agalma::Application.routes.draw do
     resources :posts
     resources :users
     resources :branches
+    post 'dashboard/set_current_branch' => 'dashboard#set_current_branch'
     resources :galleries
     resources :pages
     resources :contacts, only: [:new, :create]
