@@ -1,7 +1,6 @@
 //
 // Custom Variables
 //
-@import 'variables';
 
 //
 // Foundation Variables
@@ -1348,7 +1347,9 @@ $input-include-glowing-effect: false;
 // @import 'foundation/components/alert-boxes';
 // @import 'foundation/components/forms';
 // @import 'foundation/components/block-grid';
-@import 'foundation/components/grid';
-@import 'foundation/components/buttons';
-@import 'foundation/components/forms';
-@import "foundation/components/reveal";
+// @import 'foundation/components/buttons';
+// @import 'foundation/components/forms';
+// @import "foundation/components/reveal";
+
+@import 'foundation';
+

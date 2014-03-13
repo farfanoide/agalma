@@ -3,18 +3,18 @@
 <div class="pages-container">
   <% @pages.each do |page| %>
     <div class="page">
-      <div class="description">
-	<h2>
-	  <%= page.title %>
-	</h2>
-      </div>
-      <div class="actions">
-	<%= link_to 'Show', page_path(page), class: 'button' %>
-	<%= link_to 'Edit', edit_backend_page_path(page), class: 'button' %>
-	<%= link_to 'Destroy', backend_page_path(page), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'button' %>
-      </div>
+    <div class="description">
+      <h2>
+      </h2>
     </div>
-  <% end %>
+    <div class="actions">
+        <%= page.title %>
+      <%= link_to 'Ver', page_path(page), class: 'button' %>
+      <%= link_to 'Editar', edit_backend_page_path(page), class: 'button success' %>
+      <%= link_to 'Borrar', backend_page_path(page), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'button danger' %>
+    </div>
+  </div>
+<% end %>
 </div>
 <br>
 

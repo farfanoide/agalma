@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  
+
   mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,
          :recoverable,:trackable, :rememberable, :validatable
@@ -16,8 +16,10 @@ class User < ActiveRecord::Base
     !roles.where('name = ?', 'admin').blank?
   end
 
+  def active_branch
+    session[:current_branch]
+  end
   def can_edit_branch?(branch)
     !rolifications.where('role_id = ? and branch_id = ? ', Role.find_by(name: 'admin').id, branch.id).blank?
   end
-
 end

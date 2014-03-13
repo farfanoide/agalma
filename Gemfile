@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -49,6 +49,7 @@ group :development do
   gem 'pry'  # Much better than irb
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'bourbon'
 end
 
 
