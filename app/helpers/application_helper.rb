@@ -13,5 +13,13 @@ module ApplicationHelper
       current_user.admin?
     end
   end
+
+  def active_branch_id
+    session[:active_branch].to_i
+  end
+
+  def active_branch
+    Branch.find active_branch_id
+  end
 end
 
