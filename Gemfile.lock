@@ -137,6 +137,10 @@ GEM
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    sass-rails-source-maps (0.0.4)
+      rails
+      sass (>= 3.3.0.rc.3)
+      sprockets (>= 2.3.0)
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
@@ -199,6 +203,7 @@ DEPENDENCIES
   rails (~> 4.0.0)
   rails_12factor
   sass-rails (~> 4.0.0)
+  sass-rails-source-maps
   sdoc
   simple_form
   thin

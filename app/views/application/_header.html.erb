@@ -1,7 +1,7 @@
 <div class="header-container">
   <div class="row">
     <div class="small-12 large-8 large-offset-4 columns top-bar-container">
-      <nav class="top-bar" data-topbar>
+      <nav class="top-bar" data-topbar data-options="custom_back_text: true; back_text: Volver">
         <ul class="title-area">
           <li class="name"> <h1> <a class=""  href="<%= url_for :root %>"><%= image_tag 'home_btn.png'  %></a> </h1> </li>
           <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
@@ -28,10 +28,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="small-12 large-6 columns">
+    <div class="small-12 medium-6 columns">
       <a class="logo"  href="<%= url_for :root %>">Agalma</a>
     </div>
-    <div class="large-6 medium-12  small-12 columns">
+    <div class="small-12 medium-6 columns">
       <%= render "slide" %>
     </div>
   </div>

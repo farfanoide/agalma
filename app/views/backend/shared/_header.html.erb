@@ -1,31 +1,30 @@
-<div class="row">
-  <div class="small-12 columns">
-    <nav class="top-bar" data-topbar>
-      <ul class="links-container">
-        <li class="item left"> <h1><%= link_to "Administracion", :backend_root %></h1> </li>
-        <li class="right">
-          <% if current_user.has_many_branches? %>
-            <form action="<%= backend_dashboard_set_current_branch_path %>" 
-                  id="edit_current_branch"
-                  method="POST">
-              <select name="branch_id">
-                <% current_user.branches.each do |branch| %>
-                  <% if active_branch_id == branch.id %>
-                    <option selected=selected value="<%= branch.id %>"><%= branch.name %></option>
-                  <% else %>
-                    <option value="<%= branch.id %>"><%= branch.name %></option>
-                  <% end %>
-                <% end %>
-              </select>
-            </form>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name"><h1><%= link_to "Administracion", :backend_root %></h1></li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+  <% if current_user.has_many_branches? %>
+    <form action="<%= backend_dashboard_set_current_branch_path %>" id="edit_current_branch" method="POST">
+      <select name="branch_id">
+        <% current_user.branches.each do |branch| %>
+          <% if active_branch_id == branch.id %>
+            <option selected=selected value="<%= branch.id %>"><%= branch.name %></option>
+          <% else %>
+            <option value="<%= branch.id %>"><%= branch.name %></option>
           <% end %>
-          <li class="item"><a href="#"><%= link_to "Sucursales", backend_branches_path %></a></li>
-          <li class="item"><a href="#"><%= link_to "Paginas", backend_pages_path %></a></li>
-          <li class="item"><a href="#"><%= link_to "Usuarios", backend_users_path %></a></li>
-          <li class="item"><a href="#"><%= link_to "Noticias", backend_posts_path %></a></li>
-          <li class="item"><a href="#"><%= link_to "Ver Pagina", :root %></a></li>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
+        <% end %>
+      </select>
+    </form>
+  <% end %>
+  <section class="top-bar-section">
+    <ul class="links-container">
+      <li class="item"><a href="#"><%= link_to "Sucursales", backend_branches_path %></a></li>
+      <li class="item"><a href="#"><%= link_to "Paginas", backend_pages_path %></a></li>
+      <li class="item"><a href="#"><%= link_to "Usuarios", backend_users_path %></a></li>
+      <li class="item"><a href="#"><%= link_to "Noticias", backend_posts_path %></a></li>
+      <li class="item"><a href="#"><%= link_to "Ver Pagina", :root %></a></li>
+      <%= render 'devise/menu/registration_items' %>
+      <%= render 'devise/menu/login_items' %>
+    </ul>
+  </section>
+</nav>

@@ -1,8 +1,8 @@
 .logo {
-  display: block;
   width: 400px;
   height: 212px;
   background: image-url('logo.png') no-repeat;
   margin: 0 auto;
   position: relative;
 }
+.header-container{ border-top: solid 10px $blue }

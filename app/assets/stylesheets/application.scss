@@ -6,11 +6,11 @@
 @import 'bourbon';
 @import 'modules/typography';
 @import 'modules/navs';
+
 // Header
 .header-container {
   background: $white image-url('bg_header_lines.svg') no-repeat;
   background-size: cover;
-  border-top: solid 10px $blue;
 }
 
 
