@@ -7,7 +7,7 @@ class Backend::DashboardController < BackendController
   end
 
   def set_current_branch
-    session[:current_branch] = params[:branch_id]
+    session[:active_branch] = params[:branch_id]
     redirect_to [:backend, :root]
   end
 end
