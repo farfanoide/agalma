@@ -1,5 +1,4 @@
 <% if user_signed_in? %>
- <% if policy(current_user).admin? %>	
  <div class="row">
   <div class="small-8 columns small-centered ">
     <h1>Listado de sucursales</h1>
@@ -20,7 +19,9 @@
           </td>
           <td>
               <%= link_to 'Editar', edit_backend_branch_path(branch) %> |
-	      <%= link_to 'Borrar', [:backend, branch], method: :delete, data: { confirm: 'tas seguro?' } %>
+              <% if policy(current_user).admin? %>
+	              <%= link_to 'Borrar', [:backend, branch], method: :delete, data: { confirm: 'Estas seguro?' } %>
+              <% end %>
           </td>
         </tr>
         <% end %>
@@ -28,10 +29,9 @@
     </table>
 
     <br>
-
-    <%= link_to 'Crear Sucursal', new_backend_branch_path %>
-
+    <% if policy(current_user).admin? %>
+      <%= link_to 'Crear Sucursal', new_backend_branch_path %>
+    <% end %>
   </div>
 </div>
-<% end %>
 <% end %> 

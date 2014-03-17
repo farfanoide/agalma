@@ -26,6 +26,8 @@
 
     <%= link_to 'Editar', edit_backend_branch_path(@branch) %> |
     <%= link_to 'Volver', backend_branches_path %>
-
+    <% if policy(current_user).admin? %>
+      <%= link_to 'Borrar', [:backend, @branch], method: :delete, data: { confirm: 'Estas seguro?' } %>
+    <% end %>
 </div>
 </div>
