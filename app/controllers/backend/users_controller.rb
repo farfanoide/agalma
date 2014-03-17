@@ -4,6 +4,7 @@ class Backend::UsersController < BackendController
     # GET /users
     # GET /users.json
     def index
+        authorize User
         @users = User.all
     end
 
@@ -15,16 +16,19 @@ class Backend::UsersController < BackendController
     # GET /users/new
     def new
         @user = User.new
+        authorize @user
     end
 
     # GET /users/1/edit
     def edit
+        authorize @user
     end
 
     # POST /users
     # POST /users.json
     def create
         @user = User.new(user_params)
+        authorize @user
 
         respond_to do |format|
             if @user.save
@@ -40,6 +44,7 @@ class Backend::UsersController < BackendController
     # PATCH/PUT /users/1
     # PATCH/PUT /users/1.json
     def update
+        authorize @user
         respond_to do |format|
             if @user.update(user_params)
                 format.html { redirect_to backend_user_url(@user), notice: 'User was successfully updated.' }
@@ -55,6 +60,7 @@ class Backend::UsersController < BackendController
     # DELETE /users/1.json
     def destroy
         @user.destroy
+        authorize @user
         respond_to do |format|
             format.html { redirect_to backend_users_url }
             format.json { head :no_content }
