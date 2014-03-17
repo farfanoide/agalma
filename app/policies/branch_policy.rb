@@ -1,5 +1,5 @@
 class BranchPolicy < Struct.new(:user, :branch)
-  self::Scope = Struct.new(:user, :scope) do
+  class Scope < Struct.new(:user, :scope)
     def resolve
       if user.admin?
         scope.all

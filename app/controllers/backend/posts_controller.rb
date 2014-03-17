@@ -1,6 +1,9 @@
 class Backend::PostsController < BackendController
-
     before_action :set_post, only: [:edit, :update, :destroy]
+
+    def index
+      @posts = policy_scope(Post)
+    end
 
     def new
         @post = Post.new

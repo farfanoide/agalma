@@ -8,6 +8,10 @@ class Backend::DashboardController < BackendController
 
   def set_current_branch
     session[:active_branch] = params[:branch_id]
+    current_user.active_branch = session[:active_branch]
+    current_user.save
+
+    #FIXME: redirigir al REFERRER
     redirect_to [:backend, :root]
   end
 end

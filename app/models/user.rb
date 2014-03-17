@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     user_roles(branch).include?('moderador')
   end
 
+  def can_manage_post?(post)
+    user_roles(post.branch).include?('moderador')
+  end
+
   def has_many_branches?
     branches.size > 1
   end
