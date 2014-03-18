@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :rolifications, allow_destroy: true
   mount_uploader :avatar, AvatarUploader
 
+  # TODO: add last name to users
+  def full_name
+    # TODO: update method -> "${name}, ${last_name}"
+    name
+  end
   def admin?
     admin
   end
