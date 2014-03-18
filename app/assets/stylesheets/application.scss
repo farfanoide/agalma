@@ -199,7 +199,8 @@ label.msg-label {
 
   li.slide-item.active {
     display: inherit;
-    border: .5em solid $white;
+    img{
+    border: .5em solid $white;}
     width: em-calc(400);
 
     img {
@@ -220,7 +221,7 @@ label.msg-label {
       float: left;
       width: em-calc(15);
       height: em-calc(15);
-      margin-right: .8em;
+      margin: 0 .4em;
       background-color: $white;
     }
 

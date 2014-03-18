@@ -1,7 +1,20 @@
 .orbit-container {
   margin: em-calc(40) auto;
   position: static;
+  ol.orbit-bullets{
+    background-color: transparent;
+    position: static;
+    width:172px;
+    margin:auto;
+    li{box-shadow: 1px 1px 4px $black;}
+
 }
+
+}
+a.logo {
+   margin:auto
+}
+
 
 .side-nav{
   .items-container{
