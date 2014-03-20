@@ -1,5 +1,5 @@
 <header class="header">
-  <a href="<%= url_for [:backend, :root] %>" class="logo">
+  <a href="<%= url_for :root %>" class="logo">
     <%= image_tag "logo_hh.png", class: :logo %>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
@@ -211,31 +211,17 @@
           <!-- User image -->
           <li class="user-header bg-light-blue">
           <%= image_tag current_user.avatar.url, class: 'img-circle' %>
-          <!-- <img src="img/avatar3.png" class="img&#45;circle" alt="User Image" /> -->
           <p>
           <!-- TODO: add job to users -->
-          <!-- <small>Member since Nov. 2012</small> -->
           </p>
           </li>
-          <!-- Menu Body -->
-          <!-- <li class="user&#45;body"> -->
-          <!--     <div class="col&#45;xs&#45;4 text&#45;center"> -->
-          <!--         <a href="#">Followers</a> -->
-          <!--     </div> -->
-          <!--     <div class="col&#45;xs&#45;4 text&#45;center"> -->
-          <!--         <a href="#">Sales</a> -->
-          <!--     </div> -->
-          <!--     <div class="col&#45;xs&#45;4 text&#45;center"> -->
-          <!--         <a href="#">Friends</a> -->
-          <!--     </div> -->
-          <!-- </li> -->
           <!-- Menu Footer-->
           <li class="user-footer">
           <div class="pull-left">
             <%= link_to "Perfil", edit_user_registration_path(current_user), class: "btn btn-default btn-flat" %>
           </div>
           <div class="pull-right">
-            <%= link_to('Cerrar Sesion', destroy_user_session_path, :method => :delete, class: "btn btn-default btn-flat") %>
+            <%= link_to('Cerrar Sesion', destroy_user_session_path, class: "btn btn-default btn-flat", :method => :delete ) %>
           </div>
           </li>
         </ul>

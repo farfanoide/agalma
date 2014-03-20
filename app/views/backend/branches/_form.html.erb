@@ -21,11 +21,12 @@
   <%= f.simple_fields_for(:telephones) do |tel| %>
     <%= render 'telephone_fields', f: tel %>
   <% end %>
-  <%= link_to_add_fields 'agregar telefono', f, :telephones %>
+  <%= link_to_add_fields '+ agregar telefono', f, :telephones %>
   <%= f.simple_fields_for(:rolifications) do |rolif| %>
     <%= render 'rolification_fields', f: rolif %>
   <% end %>
-  <%= link_to_add_fields 'agregar usuario', f, :rolifications %>
+  <br />
+  <%= link_to_add_fields '+ agregar usuario', f, :rolifications %>
   <br>
 
 <%= f.submit "Guardar", class: 'btn btn-primary' %>
