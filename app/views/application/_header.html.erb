@@ -1,32 +1,38 @@
-<div class="header">
-    <div class="row">
-        <div class="small-12 large-9 large-offset-4 columns">
-            <nav class="top-bar">
-                <ul class="links-container">
-                    <li class="item"><%= link_to "Quiénes Somos", @quienes %></li>
-                    <li class="item"><a href="#">Galería</a></li>
-                    <li class="item"><%= link_to "Contacto", new_contact_path %></li>
-                    <%= render 'devise/menu/registration_items' %>
-                    <%= render 'devise/menu/login_items' %>
-                    <% if authorize_content %>
-                        <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
-                    <% end %>
-                    <a href="<%= new_user_registration_path %>" data-reveal-id="myModal" data-reveal-ajax="true">dame un modal</a>
-                </ul>
-            </nav>
-        </div>
+<div class="header-container">
+  <div class="row">
+    <div class="small-12 large-8 large-offset-4 columns top-bar-container">
+      <nav class="top-bar" data-topbar data-options="custom_back_text: true; back_text: Volver">
+        <ul class="title-area">
+          <li class="name"> <h1> <a class=""  href="<%= url_for :root %>"><%= image_tag 'home_btn.png'  %></a> </h1> </li>
+          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="links-container">
+            <li class="item"><%= link_to "Quiénes Somos", @quienes %></li>
+            <li class="item"><a href="#">Galería</a></li>
+            <li class="item"><%= link_to "Contacto", new_contact_path %></li>
+            <%= render 'devise/menu/registration_items' %>
+            <%= render 'devise/menu/login_items' %>
+            <% if authorize_content %>
+              <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
+          <% end %>
+            <li class="has-dropdown pages-dropdown ">
+              <a href="#">Paginas</a>
+              <ul class="dropdown">
+                <%= render 'pages_nav' %>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </nav>
     </div>
-    <div class="row">
-        <div class="small-12 large-6 columns">
-            <a class="logo"  href="<%= url_for :root %>">Agalma</a>
-        </div>
-        <div class="large-6 medium-12  small-12 columns">
-
-            <%= render "slide" %>
-
-        </div>
-    </div>
-</div>
-
-<div id="myModal" class="reveal-modal" data-reveal-ajax="true">
   </div>
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <a class="logo"  href="<%= url_for :root %>">Agalma</a>
+    </div>
+    <div class="small-12 medium-6 columns">
+      <%= render "slide" %>
+    </div>
+  </div>
+</div>

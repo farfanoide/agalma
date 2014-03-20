@@ -1,0 +1,13 @@
+<div class="mod-list">
+  <ul class="items-container">
+    <h2><%= link_to "Sucursales", backend_branches_path %></h2>
+    <% if @branches.empty? %>
+      <p>Todavia no tiene paginas cargadas.</p>
+      <%= link_to "Crear Sucursal", new_backend_branch_path, class: 'button'%>
+    <% else %>
+      <% for branch in @branches %>
+        <li><%= link_to branch.name, edit_backend_branch_path(branch) %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

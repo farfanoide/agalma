@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -49,12 +49,15 @@ group :development do
   gem 'pry'  # Much better than irb
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'bourbon'
+  gem 'sass-rails-source-maps'
 end
 
 
 gem 'simple_form'
 gem 'devise'
 gem 'foundation-rails'
+gem 'font-awesome-rails'
 gem 'pundit'
 gem 'will_paginate', '~> 3.0'
 # editor
@@ -64,8 +67,7 @@ gem "mini_magick"
 
 # heroku deploy
 gem 'rails_12factor', group: :production
-gem 'pg'
-ruby '2.0.0'
+# gem 'pg'
 
 # mails
 gem 'mail_form'

@@ -1,18 +1,22 @@
 class Backend::PostsController < BackendController
-
     before_action :set_post, only: [:edit, :update, :destroy]
+
+    def index
+      @posts = policy_scope(Post)
+    end
 
     def new
         @post = Post.new
         @post.build_galery
-
     end
 
     def edit
+      authorize @post
     end
 
     def create
         @post = Post.new(post_params)
+        @post.user = current_user
 
         respond_to do |format|
             if @post.save
@@ -26,6 +30,7 @@ class Backend::PostsController < BackendController
     end
 
     def update
+      @post.user = current_user
         respond_to do |format|
             if @post.update(post_params)
                 format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }

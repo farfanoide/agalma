@@ -1,0 +1,13 @@
+<div class="mod-list">
+  <ul class="items-container">
+    <h2><%= link_to "Paginas", backend_pages_path %></h2>
+    <% if @pages.empty? %>
+      <p>Todavia no tiene paginas cargadas.</p>
+      <%= link_to "Crear Pagina", new_backend_page_path %>
+    <% else %>
+      <% for page in @pages %>
+          <li><%= link_to page.title, edit_backend_page_path(page) %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

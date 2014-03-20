@@ -15,6 +15,5 @@
 //= require foundation
 //= require ckeditor/override
 //= require ckeditor/init
-//= require_tree .
 
 $(function(){ $(document).foundation(); });

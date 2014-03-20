@@ -4,7 +4,7 @@ class Backend::BranchesController < BackendController
     # GET /branches
     # GET /branches.json
     def index
-        @branches = Branch.all
+      @branches = policy_scope(Branch)
     end
 
     # GET /branches/1
@@ -15,11 +15,12 @@ class Backend::BranchesController < BackendController
     # GET /branches/new
     def new
         @branch = Branch.new
+        authorize @branch, :create?
     end
 
     # GET /branches/1/edit
     def edit
-        authorize @branch
+      authorize @branch
     end
 
     # POST /branches

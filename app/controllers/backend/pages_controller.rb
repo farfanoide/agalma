@@ -1,10 +1,10 @@
 class Backend::PagesController < BackendController
-
     before_action :set_page, only: [:show, :edit, :update, :destroy]
 
     # GET /pages
     # GET /pages.json
     def index
+        authorize Page
         @pages = Page.all
     end
 
