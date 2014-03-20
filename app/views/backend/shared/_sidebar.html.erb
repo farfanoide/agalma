@@ -10,35 +10,17 @@
             </div>
             <div class="pull-left info">
                 <p>Hola, <%= current_user.name %></p>
-
-                <!-- <a href="#"><i class="fa fa&#45;circle text&#45;success"></i> Online</a> -->
             </div>
         </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                <span class="input-group-btn">
-                    <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="active">
                 <a href="<%= url_for [:backend, :root] %>">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
-            <li>
-                <a href="pages/widgets.html">
-                    <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
-                </a>
-            </li>
             <li class="treeview">
                 <a href="<%= backend_branches_path %>">
-                    <i class="fa fa-bar-chart-o"></i>
+                    <%= fa_icon :home %>
                     <span>Sucursales </span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
@@ -50,7 +32,7 @@
             <% if policy(current_user).admin? %>
             <li class="treeview">
                 <a href="<%= backend_pages_path %>">
-                    <i class="fa fa-laptop"></i>
+                  <%= fa_icon "file-o" %>
                     <span>Paginas</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
@@ -60,19 +42,21 @@
                 </ul>
             </li>
             <li class="treeview">
-                <a href="<%= backend_users_path %>">
-                    <i class="fa fa-edit"></i> <span>Usuarios</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><%= link_to "Crear Nueva", new_backend_user_path %></li>
-                    <li><%= link_to "Editar Existentes", backend_users_path %></li>
-                </ul>
+              <a href="<%= backend_users_path %>">
+                <%= fa_icon :user %>
+                <span>Usuarios</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><%= link_to "Crear Nueva", new_backend_user_path %></li>
+                <li><%= link_to "Editar Existentes", backend_users_path %></li>
+              </ul>
             </li>
             <% end %>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-table"></i> <span>Noticias</span>
+                  <%= fa_icon :edit %>
+                  <span>Noticias</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
