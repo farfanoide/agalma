@@ -1,5 +1,4 @@
 class Backend::BranchesController < BackendController
-
     before_action :set_branch, only: [:show, :edit, :update, :destroy]
 
     # GET /branches
