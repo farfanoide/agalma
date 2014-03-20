@@ -4,7 +4,7 @@ class Backend::PostsController < BackendController
 
     def new
         @post = Post.new
-        @post.galeries.build
+        @post.build_galery
 
     end
 
