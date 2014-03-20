@@ -67,8 +67,7 @@ gem "mini_magick"
 
 # heroku deploy
 gem 'rails_12factor', group: :production
-gem 'pg'
-ruby '2.0.0'
+# gem 'pg'
 
 # mails
 gem 'mail_form'

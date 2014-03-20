@@ -1,4 +1,4 @@
-class PostPolicy < ApplicationPolicy
+class PostPolicy < Struct.new(:user, :post)
   class Scope < Struct.new(:user, :scope)
     def resolve
       if user.admin?

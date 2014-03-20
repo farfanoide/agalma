@@ -1,8 +1,9 @@
 class Backend::DashboardController < BackendController
   def home
-    @posts = Post.all
-    @pages = Page.all
-    @branches = Branch.all
+    @posts = policy_scope(Post)
+    @pages = []
+    @pages = Page.all if current_user.admin?
+    @branches = policy_scope(Branch)
     @roles = Rolification.all.group :id, :user_id
   end
 
@@ -12,6 +13,6 @@ class Backend::DashboardController < BackendController
     current_user.save
 
     #FIXME: redirigir al REFERRER
-    redirect_to [:backend, :root]
+    redirect_to :back
   end
 end
