@@ -5,7 +5,8 @@
   </li>
 <% else %>
   <li class="item">
-    <a href="#" data-reveal-id="registration-modal" data-reveal> Registrarse</a>
-<!--  <%= link_to('Registrarse', new_user_registration_path)  %> -->
+
+    <%= link_to('Registrarse', "#", data: { "reveal-id" => "registration-modal" } ) %>
+
   </li>
 <% end %>
