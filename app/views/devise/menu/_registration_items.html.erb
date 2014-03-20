@@ -1,9 +1,11 @@
+
 <% if user_signed_in? %>
   <li class="item">
   <%= link_to('Editar Cuenta', edit_user_registration_path) %>
   </li>
 <% else %>
   <li class="item">
-  <%= link_to('Registrarse', new_user_registration_path)  %>
+    <a href="#" data-reveal-id="registration-modal" data-reveal> Registrarse</a>
+<!--  <%= link_to('Registrarse', new_user_registration_path)  %> -->
   </li>
 <% end %>
