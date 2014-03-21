@@ -1,15 +1,17 @@
-<%= simple_form_for([:backend,@galery]) do |f| %>
+<%= simple_form_for([:backend, @galery], defaults: {input_html: {class: 'form-control'}}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-group">
     <%= f.input :name %>
-    <%= f.input :description %>
-
-    <%= f.simple_fields_for(:images) do |image| %>
-    <%= render 'image_fields', f: image %>
-    <% end %>
-    <%= link_to_add_fields 'agregar imagen', f, :images %>
   </div>
+  <div class="form-group">
+    <%= f.input :description %>
+  </div>
+
+  <%= f.simple_fields_for(:images) do |image| %>
+    <%= render 'image_fields', f: image %>
+  <% end %>
+  <%= link_to_add_fields 'agregar imagen', f, :images %>
 
   <div class="form-actions">
     <%= f.submit 'Guardar' %>

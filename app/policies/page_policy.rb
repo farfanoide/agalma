@@ -9,17 +9,17 @@ class PagePolicy < Struct.new(:user, :page)
 
   def create?
     user.admin?
-  end  
-  
+  end
+
   def edit?
     user.admin?
   end
-  
+
   def update?
     user.admin?
   end
 
   def destroy?
     user.admin?
-  end  
+  end
 end

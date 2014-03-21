@@ -6,14 +6,16 @@ class Backend::PostsController < BackendController
     end
 
     def new
-        @post = Post.new
+      @post = Post.new
     end
 
     def edit
+      authorize @post
     end
 
     def create
         @post = Post.new(post_params)
+        @post.user = current_user
 
         respond_to do |format|
             if @post.save
@@ -27,6 +29,7 @@ class Backend::PostsController < BackendController
     end
 
     def update
+      @post.user = current_user
         respond_to do |format|
             if @post.update(post_params)
                 format.html { redirect_to backend_post_url(@post), notice: 'Post was successfully updated.' }
@@ -52,6 +55,6 @@ class Backend::PostsController < BackendController
         end
 
         def post_params
-            params.require(:post).permit(:title, :description, :content, :branch_id)
+            params.require(:post).permit(:title, :description, :content, :branch_id, :user_id)
         end
 end
