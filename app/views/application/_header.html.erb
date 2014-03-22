@@ -35,11 +35,12 @@
       <%= render "slide" %>
     </div>
   </div>
-  <div id="registration-modal" class="reveal-modal" data-reveal> 
-    <%= render 'devise/registrations/new' %>
-  </div>
-  <div id="login-modal" class="reveal-modal" data-reveal> 
-    <%= render 'devise/sessions/new' %>
-  </div>
-
+  <% if !user_signed_in? %>
+    <div id="registration-modal" class="reveal-modal" data-reveal>
+      <%= render 'devise/registrations/new' %>
+    </div>
+    <div id="login-modal" class="reveal-modal" data-reveal>
+      <%= render 'devise/sessions/new' %>
+    </div>
+  <% end %>
 </div>
