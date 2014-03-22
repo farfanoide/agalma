@@ -1,8 +1,13 @@
 <fieldset>
-
-<%= f.input :file_name %>
-<%= f.input :name %>
-<%= f.hidden_field :_destroy %>
-<%= link_to "Borrar", '#', class: "remove_fields" %>
-
+  <% if f.object.new_record? %>
+    <%= f.input :file_name %>
+    <%= f.input :name %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "Borrar", '#', class: "remove_fields" %>
+  <% else %>
+    <%= image_tag f.object.file_name.url(:thumb) %>
+    <%= f.input :name %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "Borrar", '#', class: "remove_fields" %>
+  <% end %>
 </fieldset>

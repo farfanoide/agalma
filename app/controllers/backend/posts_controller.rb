@@ -8,6 +8,7 @@ class Backend::PostsController < BackendController
     def new
         @post = Post.new
         @post.build_galery
+        @post.galery.images.build
     end
 
     def edit
@@ -16,7 +17,7 @@ class Backend::PostsController < BackendController
 
     def create
         @post = Post.new(post_params)
-        @post.user = current_user
+       # @post.user = current_user
 
         respond_to do |format|
             if @post.save
@@ -56,6 +57,6 @@ class Backend::PostsController < BackendController
         end
 
         def post_params
-            params.require(:post).permit(:title, :description, :content, :branch_id, galeries_attributes:[:id,:post_id,:name,:description,:_destroy,images_attributes:[:id,:file_name,:name,:_destroy]])
+            params.require(:post).permit(:title, :description, :content, :branch_id, galery_attributes:[:id,:post_id,:name,:description,:_destroy,images_attributes:[:id,:file_name,:name,:_destroy]])
         end
 end

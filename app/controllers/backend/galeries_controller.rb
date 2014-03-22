@@ -4,6 +4,7 @@ class Backend::GaleriesController < ApplicationController
   # GET /galeries/new
   def new
     @galery = Galery.new
+    @galery.images.build
   end
 
   # GET /galeries/1/edit
