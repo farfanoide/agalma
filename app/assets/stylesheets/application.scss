@@ -6,6 +6,7 @@
 @import 'bourbon';
 @import 'modules/typography';
 @import 'modules/navs';
+@import 'modules/forms';
 
 // Header
 .header-container {
@@ -55,9 +56,7 @@
 }
 
 // =resets
-a {
-  text-decoration: none
-}
+
 
 .branch-container {
   background: $white;
@@ -141,30 +140,6 @@ a {
   background: #f04124
 }
 
-label.inline {
-  color: $white
-}
-
-input, textarea {
-  border-radius: 10px
-}
-
-textarea {
-  min-height: 10em;
-  resize: none;
-}
-
-label.msg-label {
-  margin-top: 3em;
-}
-
-.contact-form-button {
-  color: $dark-grey;
-  border-radius: .5em;
-  padding: .8em;
-  width: 8em;
-  margin: 2em .7em;
-}
 
 .main-header {
   border-bottom: 1px solid $grey;
@@ -241,4 +216,43 @@ label.msg-label {
 }
 @media #{$large-only}{
   @import 'mq/large';
+}
+@media #{$medium-up}{
+  @import 'mq/medium';
+}
+.reveal-modal{
+
+
+  border-radius: 5em 0 5em 0;
+
+  img{
+    width:75%;
+  }
+}
+
+// sesssion modal
+
+.session-modal-wrapper{
+@import 'modules/modals';
+  .form-wrapper{
+  
+    }
+  .user_remember_me {
+    margin-left:1.5em;
+    }  
+  .register * {
+    margin: 1em 0;
+    }       
+}
+
+.register-modal-wrapper{
+   @import 'modules/modals';
+   .form-wrapper{ border:none}
+   .modal-header{
+     text-align: center
+   }
+   img {
+     min-width: 200px;
+     }
+   padding: 0 5em;
 }

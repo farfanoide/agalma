@@ -1021,7 +1021,7 @@ $fieldset-margin: 0;
 // $reveal-position-top: 50px;
 // $reveal-default-width: 80%;
 // $reveal-modal-padding: em-calc(20);
-// $reveal-box-shadow: 0 0 10px rgba(#000,.4);
+$reveal-box-shadow: 0 0 30px rgba(#000,.9);
 
 // We use these to style the reveal close button
 
@@ -1029,12 +1029,12 @@ $fieldset-margin: 0;
 // $reveal-close-top: em-calc(8);
 // $reveal-close-side: em-calc(11);
 // $reveal-close-color: #aaa;
-// $reveal-close-weight: bold;
+ $reveal-close-weight: thin;
 
 // We use these to control the modal border
 
 // $reveal-border-style: solid;
-// $reveal-border-width: 1px;
+ $reveal-border-width: 0px;
 // $reveal-border-color: #666;
 
 // $reveal-modal-class: "reveal-modal";
@@ -1333,6 +1333,19 @@ $fieldset-margin: 0;
 
 
 // Override variables
+// anchor styling
+$anchor-text-decoration: none;
+$anchor-font-color: $white;
+$anchor-font-color-hover:white;
+
+
+//buttons
+$button-font-family: inherit;
+$button-font-color: $black;
+$button-font-color-alt: $black;
+$button-function-factor: 0%;
+
+
 // top-bar
 $topbar-bg-color: $blue;
 $topbar-bg: $topbar-bg-color;
@@ -1342,6 +1355,11 @@ $topbar-link-bg-hover: $topbar-bg-color;
 // No shadow for the input
 $input-box-shadow: 0;
 $input-include-glowing-effect: false;
+
+
+// Modal ovrwt
+// the bg color lighten
+ $reveal-overlay-bg: rgba(#fff, .80);
 
 // @import 'foundation/components/global';
 // @import 'foundation/components/alert-boxes';

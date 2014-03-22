@@ -1,6 +1,4 @@
 
-<h2>Registro</h2>
-
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -11,11 +9,15 @@
     <%= f.input :password_confirmation, label: t(:password_again), :required => true %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, t(:sign_up) %>
+  <div class="row">
+    <div class="small-6 columns">
+      <%= f.input :remember_me, :as => :boolean, label: t('Newsetter') %>
+    </div>
+    <div class="small-6 columns">
+      <%= f.button :submit, "Crear Cuenta" %>
+    </div>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
 
 

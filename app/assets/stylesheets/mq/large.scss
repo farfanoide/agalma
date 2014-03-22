@@ -6,3 +6,17 @@
   position: relative;
 }
 .header-container{ border-top: solid 10px $blue }
+.reveal-modal{
+ .form-wrapper{
+   border-right: 1px solid $black;
+   padding : 2em;
+ }
+  a.close-reveal-modal{
+    background-color: #fff;
+    padding:.1em .3em;
+    border-radius:10em;
+    box-shadow: 0em 0em 1em $black;
+    top: -.5em !important;
+    right: -.6em !important;
+  }
+}
