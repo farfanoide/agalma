@@ -5,11 +5,17 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable,:trackable, :rememberable, :validatable
   has_many :rolifications
+  has_many :posts
   has_many :roles, through: :rolifications
   has_many :branches, through: :rolifications
   accepts_nested_attributes_for :rolifications, allow_destroy: true
   mount_uploader :avatar, AvatarUploader
 
+  # TODO: add last name to users
+  def full_name
+    # TODO: update method -> "${name}, ${last_name}"
+    name
+  end
   def admin?
     admin
   end

@@ -21,11 +21,11 @@ module ApplicationHelper
   def active_branch
     Branch.find active_branch_id
   end
-  
+
   def resource_name
     :user
   end
-  
+
   def resource
     @resource ||= User.new
   end

@@ -1,0 +1,70 @@
+
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="left-side sidebar-offcanvas">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <%= image_tag current_user.avatar.url, class: 'img-circle' %>
+            </div>
+            <div class="pull-left info">
+                <p>Hola, <%= current_user.name %></p>
+            </div>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a href="<%= url_for [:backend, :root] %>">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="<%= backend_branches_path %>">
+                    <%= fa_icon :home %>
+                    <span>Sucursales </span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><%= link_to "Crear Nueva", new_backend_branch_path %></li>
+                    <li><%= link_to "Editar Existentes", backend_branches_path %></li>
+                </ul>
+            </li>
+            <% if policy(current_user).admin? %>
+            <li class="treeview">
+                <a href="<%= backend_pages_path %>">
+                  <%= fa_icon "file-o" %>
+                    <span>Paginas</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><%= link_to "Crear Nueva", new_backend_page_path %></li>
+                    <li><%= link_to "Editar Existentes", backend_pages_path %></li>
+                </ul>
+            </li>
+            <li class="treeview">
+              <a href="<%= backend_users_path %>">
+                <%= fa_icon :user %>
+                <span>Usuarios</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><%= link_to "Crear Nueva", new_backend_user_path %></li>
+                <li><%= link_to "Editar Existentes", backend_users_path %></li>
+              </ul>
+            </li>
+            <% end %>
+            <li class="treeview">
+                <a href="#">
+                  <%= fa_icon :edit %>
+                  <span>Noticias</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><%= link_to "Crear Nueva", new_backend_post_path %></li>
+                    <li><%= link_to "Editar Existentes", backend_posts_path %></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

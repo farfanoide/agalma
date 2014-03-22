@@ -57,6 +57,7 @@ end
 gem 'simple_form'
 gem 'devise'
 gem 'foundation-rails'
+gem 'font-awesome-rails'
 gem 'pundit'
 gem 'will_paginate', '~> 3.0'
 # editor
@@ -66,8 +67,7 @@ gem "mini_magick"
 
 # heroku deploy
 gem 'rails_12factor', group: :production
-gem 'pg'
-ruby '2.0.0'
+# gem 'pg'
 
 # mails
 gem 'mail_form'
