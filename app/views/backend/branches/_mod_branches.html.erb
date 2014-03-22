@@ -1,13 +1,24 @@
-<div class="mod-list">
-  <ul class="items-container">
-    <h2><%= link_to "Sucursales", backend_branches_path %></h2>
+<div class="box box-primary">
+  <div class="box-header">
+    <h3 class="box-title"><%= link_to "Sucursales", backend_branches_path %></h3>
+  </div><!-- /.box-header -->
+  <div class="box-body">
     <% if @branches.empty? %>
-      <p>Todavia no tiene paginas cargadas.</p>
+    <div class="alert alert-info alert-dismissable">
+      <i class="fa fa-info"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      Todavia no tiene paginas cargadas.
       <%= link_to "Crear Sucursal", new_backend_branch_path, class: 'button'%>
+    </div>
     <% else %>
+    <table class="table table-condensed">
+      <tbody>
       <% for branch in @branches %>
-        <li><%= link_to branch.name, edit_backend_branch_path(branch) %></li>
+      <tr>
+        <td><%= link_to branch.name, edit_backend_branch_path(branch) %></td>
+      </tr>
       <% end %>
+    </tbody></table>
     <% end %>
-  </ul>
+  </div><!-- /.box-body -->
 </div>
