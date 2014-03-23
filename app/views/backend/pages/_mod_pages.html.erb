@@ -1,13 +1,23 @@
-<div class="mod-list">
-  <ul class="items-container">
-    <h2><%= link_to "Paginas", backend_pages_path %></h2>
+<div class="box box-success">
+  <div class="box-header">
+    <h3 class="box-title"><%= link_to "Paginas", backend_pages_path %></h3>
+  </div><!-- /.box-header -->
+  <div class="box-body">
     <% if @pages.empty? %>
-      <p>Todavia no tiene paginas cargadas.</p>
-      <%= link_to "Crear Pagina", new_backend_page_path %>
+    <div class="alert alert-info alert-dismissable">
+      <i class="fa fa-info"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      Todavia no tiene paginas cargadas.  <%= link_to "Crear Pagina", new_backend_page_path, class: 'button'%>
+    </div>
     <% else %>
+    <table class="table table-condensed">
+      <tbody>
       <% for page in @pages %>
-          <li><%= link_to page.title, edit_backend_page_path(page) %></li>
+      <tr>
+        <td><%= link_to page.title, edit_backend_page_path(page) %></td>
+      </tr>
       <% end %>
+    </tbody></table>
     <% end %>
-  </ul>
+  </div><!-- /.box-body -->
 </div>

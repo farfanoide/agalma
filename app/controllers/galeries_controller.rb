@@ -13,13 +13,13 @@ class GaleriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_galery
-      @galery = Galery.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_galery
+    @galery = Galery.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def galery_params
-      params.require(:galery).permit(:name, :description, images_attributes: [:id, :file_name, :name ])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def galery_params
+    params.require(:galery).permit(:name, :description, images_attributes: [:id, :file_name, :name ])
+  end
 end

@@ -17,14 +17,16 @@
   <div class="form-group">
     <%= f.input :email, placeholder: "ejemplo@dominio.com", label: "E-Mail" %><br>
   </div>
-
+  <div class="form-group">
   <%= f.simple_fields_for(:telephones) do |tel| %>
     <%= render 'telephone_fields', f: tel %>
-  <% end %>
+  <% end %></div>
   <%= link_to_add_fields '+ agregar telefono', f, :telephones %>
-  <%= f.simple_fields_for(:rolifications) do |rolif| %>
-    <%= render 'rolification_fields', f: rolif %>
-  <% end %>
+  <div class="form-group">
+    <%= f.simple_fields_for(:rolifications) do |rolif| %>
+      <%= render 'rolification_fields', f: rolif %>
+    <% end %>
+  </div>
   <br />
   <%= link_to_add_fields '+ agregar usuario', f, :rolifications %>
   <br>
