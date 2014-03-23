@@ -28,6 +28,8 @@
     border: 0;
   }
   a {
+    margin:0;
+    height : 22px;
     border-radius: 0 .7em .7em 0;
     margin-bottom: 0;
     font-size: .7em;
@@ -220,6 +222,16 @@
 @media #{$medium-up}{
   @import 'mq/medium';
 }
+// contacts 
+
+.contact-wrapper{
+  .button{
+    width: 6em;
+  }
+}
+
+
+
 .reveal-modal{
 
 
