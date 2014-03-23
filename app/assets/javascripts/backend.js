@@ -3,6 +3,7 @@
 //= require ckeditor/override
 //= require ckeditor/init
 //= require bootstrap.min.js
+//= require branches
 // plugins/morris/morris.min.js
 // plugins/sparkline/jquery.sparkline.min.js
 // plugins/jvectormap/jquery-jvectormap-1.2.2.min.js
