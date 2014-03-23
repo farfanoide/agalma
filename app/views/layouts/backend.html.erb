@@ -6,47 +6,43 @@
 <!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
- <meta charset="utf-8" />
+<meta charset="utf-8" />
 
- <!-- Uncomment to make IE8 render like IE7 -->
- <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+<!-- Uncomment to make IE8 render like IE7 -->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
- <!-- Set the viewport width to device width for mobile -->
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title><%= content_for?(:title) ? yield(:title) : "Administracion Agalma" %></title>
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title><%= content_for?(:title) ? yield(:title) : "Administracion Agalma" %></title>
 
-  <%= stylesheet_link_tag :backend %>
- <%= csrf_meta_tags %>
+<%= stylesheet_link_tag :backend %>
+<%= csrf_meta_tags %>
 </head>
 
 <body class="skin-black">
 
-        <!-- header logo: style can be found in header.less -->
-        <%= render "backend/shared/header" %>
-        <div class="wrapper row-offcanvas row-offcanvas-left">
-            <%= render 'backend/shared/sidebar' %>
-            <!-- Right side column. Contains the navbar and content of the page -->
-            <aside class="right-side">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Dashboard
-                        <small>Control panel</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                </section>
+<!-- header logo: style can be found in header.less -->
+<%= render "backend/shared/header" %>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+  <%= render 'backend/shared/sidebar' %>
+  <!-- Right side column. Contains the navbar and content of the page -->
+  <aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
 
-                <!-- Main content -->
-                <section class="content">
-                  <%= yield %>
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
+    <!-- Main content -->
+    <section class="content">
+      <%= yield %>
+    </section><!-- /.content -->
+  </aside><!-- /.right-side -->
+</div><!-- ./wrapper -->
 
-        <!-- add new calendar event modal -->
-  <%= javascript_include_tag :backend %>
+<!-- add new calendar event modal -->
+<%= javascript_include_tag :backend %>
 </body>
 </html>

@@ -1,22 +1,34 @@
-<h1>Noticias:</h1>
-<div class="noticias-container">
-    <% if !@posts.blank?  %>
-        <% @posts.each do |post| %>
-            <div class="noticia">
-
-                <%= post.title %>
-                <%= link_to 'Show', post_path(post) %>
-                <%= link_to 'Edit', edit_backend_post_path(post) %>
-                <%= link_to 'Destroy', backend_post_path(post), method: :delete, data: { confirm: 'Esta seguro?' } %>
-            </div>
-        <% end %>
+<div class="box">
+  <div class="box-header"> <h3 class="box-title">Noticias:</h3> </div>
+  <div class="box-body">
+    <% if @posts.blank? %>
+    <table class="table table-condensed">
+      <tbody>
+      <tr>
+        <th>Noticia</th>
+        <th>Sucursal</th>
+        <th>Acciones</th>
+      </tr>
+      <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, edit_backend_post_path(post) %> </td>
+        <td><%= post.branch.name %> </td>
+        <td class="table-actions">
+          <%= link_to fa_icon(:eye), post_path(post), class: 'btn btn-primary btn-sm' %>
+          <%= link_to fa_icon(:edit), edit_backend_post_path(post), class: 'btn btn-success  btn-sm' %>
+          <%= link_to fa_icon('trash-o'), backend_post_path(post), method: :delete, data: {confirm: 'Esta seguro?'}, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
     <% else %>
-        <div class="alert alert-info">
-            <p>Todavia ha creado noticias, puede comenzar aqui.</p>
-        </div>
+    <div class="alert alert-info">
+      <%= fa_icon :info %>
+      <p>Todavia ha creado noticias, puede comenzar <%= link_to 'aqui.', new_backend_post_path %> </p>
+    </div>
     <% end %>
-
-    <br>
-
-    <%= link_to 'Nueva Noticia', new_backend_post_path %>
+  </div> <!-- /.box-body -->
 </div>
+<br>
+<%= link_to 'Nueva Noticia', new_backend_post_path, class: 'btn btn-primary' %>
