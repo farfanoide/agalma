@@ -1,0 +1,13 @@
+
+<%= form_tag( backend_mailer_send_path, method: :post) do |f|%>
+  <%= render 'mod_users_list' %>
+  <div class="form-group">
+    <%= label_tag :mailer_subject %>
+    <%= text_field :mailer, :subject, { class: 'form-control'  } %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :mailer_body %>
+    <%= text_area_tag 'mailer[body]', '', { class: 'form-control' } %>
+  </div>
+  <%= submit_tag 'Enviar', class: 'btn btn-primary' %>
+<% end %>
