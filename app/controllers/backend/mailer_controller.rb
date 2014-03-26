@@ -3,7 +3,8 @@ class Backend::MailerController < BackendController
     @users = User.all
   end
 
-  def new
+  def send
+
   end
 
 end
