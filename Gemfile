@@ -71,3 +71,8 @@ gem 'rails_12factor', group: :production
 
 # mails
 gem 'mail_form'
+
+# index stuff
+gem 'sunspot_rails'
+## for development
+gem 'sunspot_solr'
