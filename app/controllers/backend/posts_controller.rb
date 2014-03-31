@@ -8,7 +8,6 @@ class Backend::PostsController < BackendController
     def new
         @post = Post.new
         @post.build_galery
-        @post.galery.images.build
     end
 
   def edit
