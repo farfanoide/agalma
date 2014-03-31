@@ -1,0 +1,26 @@
+
+<h1>listado de usarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><input type="checkbox" checked="checked" name="mailer[users_ids][]" id="<%= "user_#{user.id}" %>" value="<%= user.id %>" /></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

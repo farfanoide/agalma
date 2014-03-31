@@ -1,0 +1,31 @@
+label.inline {
+  color: $white
+}
+
+input, textarea {
+  border-radius: 5px
+}
+
+textarea {
+  min-height: 10em;
+  resize: none;
+}
+
+label.msg-label {
+  margin-top: 3em;
+}
+
+
+.button{
+  margin:2em .5em;
+  color: $black;
+  background-color: #fff;
+  padding:.4em 1em;
+  font-size:1em;
+//  width:6em;
+}
+
+.button:hover{
+  color:$black;
+  background-color: $white;
+}

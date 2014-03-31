@@ -6,6 +6,7 @@
 @import 'bourbon';
 @import 'modules/typography';
 @import 'modules/navs';
+@import 'modules/forms';
 
 // Header
 .header-container {
@@ -27,6 +28,8 @@
     border: 0;
   }
   a {
+    margin:0;
+    height : 22px;
     border-radius: 0 .7em .7em 0;
     margin-bottom: 0;
     font-size: .7em;
@@ -55,9 +58,7 @@
 }
 
 // =resets
-a {
-  text-decoration: none
-}
+
 
 .branch-container {
   background: $white;
@@ -141,30 +142,6 @@ a {
   background: #f04124
 }
 
-label.inline {
-  color: $white
-}
-
-input, textarea {
-  border-radius: 10px
-}
-
-textarea {
-  min-height: 10em;
-  resize: none;
-}
-
-label.msg-label {
-  margin-top: 3em;
-}
-
-.contact-form-button {
-  color: $dark-grey;
-  border-radius: .5em;
-  padding: .8em;
-  width: 8em;
-  margin: 2em .7em;
-}
 
 .main-header {
   border-bottom: 1px solid $grey;
@@ -199,7 +176,8 @@ label.msg-label {
 
   li.slide-item.active {
     display: inherit;
-    border: .5em solid $white;
+    img{
+    border: .5em solid $white;}
     width: em-calc(400);
 
     img {
@@ -220,7 +198,7 @@ label.msg-label {
       float: left;
       width: em-calc(15);
       height: em-calc(15);
-      margin-right: .8em;
+      margin: 0 .4em;
       background-color: $white;
     }
 
@@ -240,4 +218,53 @@ label.msg-label {
 }
 @media #{$large-only}{
   @import 'mq/large';
+}
+@media #{$medium-up}{
+  @import 'mq/medium';
+}
+// contacts 
+
+.contact-wrapper{
+  .button{
+    width: 6em;
+  }
+}
+
+
+
+.reveal-modal{
+
+
+  border-radius: 5em 0 5em 0;
+
+  img{
+    width:75%;
+  }
+}
+
+// sesssion modal
+
+.session-modal-wrapper{
+@import 'modules/modals';
+  .form-wrapper{
+  
+    }
+  .user_remember_me {
+    margin-left:1.5em;
+    }  
+  .register * {
+    margin: 1em 0;
+    }       
+}
+
+.register-modal-wrapper{
+   @import 'modules/modals';
+   .form-wrapper{ border:none}
+   .modal-header{
+     text-align: center
+   }
+   img {
+     min-width: 200px;
+     }
+   padding: 0 5em;
 }

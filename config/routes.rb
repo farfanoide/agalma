@@ -20,6 +20,8 @@ Agalma::Application.routes.draw do
     resources :galleries
     resources :pages
     resources :contacts, only: [:new, :create]
+    get "mailer/index"
+    post "mailer/send"
     root 'dashboard#home'
   end
 

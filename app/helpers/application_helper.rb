@@ -21,5 +21,17 @@ module ApplicationHelper
   def active_branch
     Branch.find active_branch_id
   end
+
+  def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
 end
 

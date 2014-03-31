@@ -11,45 +11,45 @@ class Backend::PostsController < BackendController
         @post.galery.images.build
     end
 
-    def edit
-      authorize @post
-    end
+  def edit
+    authorize @post
+  end
 
-    def create
-        @post = Post.new(post_params)
-       # @post.user = current_user
+  def create
+    @post = Post.new(post_params)
+    @post.user = current_user
 
-        respond_to do |format|
-            if @post.save
-                format.html { redirect_to post_url(@post), notice: 'Post was successfully created.' }
-                format.json { render action: 'show', status: :created, location: @post }
-            else
-                format.html { render action: 'new' }
-                format.json { render json: @post.errors, status: :unprocessable_entity }
-            end
-        end
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to post_url(@post), notice: 'Post was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @post }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
+  end
 
-    def update
-      @post.user = current_user
-        respond_to do |format|
-            if @post.update(post_params)
-                format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
-                format.json { head :no_content }
-            else
-                format.html { render action: 'edit' }
-                format.json { render json: @post.errors, status: :unprocessable_entity }
-            end
-        end
+  def update
+    @post.user = current_user
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to backend_post_url(@post), notice: 'Post was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
+  end
 
-    def destroy
-        @post.destroy
-        respond_to do |format|
-            format.html { redirect_to backend_posts_url }
-            format.json { head :no_content }
-        end
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to backend_posts_url }
+      format.json { head :no_content }
     end
+  end
 
     private
         def set_post
