@@ -21,7 +21,7 @@ User.create!(name: 'anacleta', email: 'anacleta@agalma.com', password: _pass)
 User.create!(name: 'marcela', email: 'marcela@agalma.com', password: _pass)
 User.create!(name: 'veronica', email: 'ivan6258@gmail.com', password: _pass)
 User.create!(name: 'antonio', email: 'fernan.nestier@gmail.com', password: _pass)
-User.create!(name: 'administrador', email: 'admin@agalma.com', password: _pass)
+User.create!(name: 'administrador', email: 'admin@agalma.com', password: _pass, admin: true)
 
 Role.create!(name: 'visitante', description: 'usuario con menos privilegios')
 Role.create!(name: 'moderador', description: 'privilegios de lectura y modificacion')
