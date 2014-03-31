@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140326181941) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "post_id"
   end
 
   create_table "images", force: true do |t|
