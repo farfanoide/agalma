@@ -13,7 +13,7 @@
             <li class="item"><%= link_to "Contacto", new_contact_path %></li>
             <%= render 'devise/menu/registration_items' %>
             <%= render 'devise/menu/login_items' %>
-            <% if authorize_content %>
+            <% if policy(current_user).admin? %>
               <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
           <% end %>
             <li class="has-dropdown pages-dropdown ">
