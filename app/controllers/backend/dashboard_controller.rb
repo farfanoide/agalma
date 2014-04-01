@@ -4,7 +4,8 @@ class Backend::DashboardController < BackendController
     @pages = []
     @pages = Page.all if current_user.admin?
     @branches = policy_scope(Branch)
-    @roles = Rolification.all.group :id, :user_id
+    @users = User.all
+    # @roles = Rolification.all.group :id, :user_id
   end
 
   def set_current_branch
