@@ -205,6 +205,10 @@
     li.active { background-color: $light-blue }
   }
 }
+.slide-item{
+  border: 5px solid $white;
+  display: none;
+}
 
 // media query for the slider
 /* @media #{$medium-only}{ */
@@ -222,7 +226,7 @@
 @media #{$medium-up}{
   @import 'mq/medium';
 }
-// contacts 
+// contacts
 
 .contact-wrapper{
   .button{
@@ -247,14 +251,14 @@
 .session-modal-wrapper{
 @import 'modules/modals';
   .form-wrapper{
-  
+
     }
   .user_remember_me {
     margin-left:1.5em;
-    }  
+    }
   .register * {
     margin: 1em 0;
-    }       
+    }
 }
 
 .register-modal-wrapper{
