@@ -33,6 +33,7 @@ Rolification.create!(user: User.find_by!(name: 'veronica'), branch: Branch.find(
 Rolification.create!(user: User.find_by!(name: 'erica'), branch: Branch.find(1), role: _admin)
 Rolification.create!(user: User.find_by!(name: 'maria victoria'), branch: Branch.find(1), role: _admin)
 Rolification.create!(user: User.find_by!(name: 'ivan'), branch: Branch.find(1), role: _admin)
+Rolification.create!(user: User.find_by!(name: 'fernan'), branch: Branch.find(1), role: _admin)
 
 _quienes_body = "<p>Los Centros en Salud Mental Agalma están al servicio de la sociedad. Prestan  una amplia cobertura asistencial y terapéutica que permite dar respuesta a las diversas problemáticas propias de la niñez, la infancia y la adolescencia, con un enfoque especializado y un criterio integral, en las áreas de psicología, musicoterapia, psicopedagogía, terapia ocupacional, psicomotricidad, nutrición, kinesiología y asistencia social,  promoviendo la excelencia en la calidad de los tratamientos, la optimización de los recursos y sustentando una particular práctica transdisciplinaria, que incluye la orientación y apoyo a las familias. También cuenta con el área de formación profesional dedicada a la enseñanza, trasmisión y capacitación de profesionales de la salud, sobre distintas temáticas de incidencia eminentemente clínica, relacionadas con los campos disciplinarios que abarca nuestro Equipo.</p>"
 Page.create!(title: "quienes somos", body: _quienes_body)
