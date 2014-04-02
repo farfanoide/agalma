@@ -17,22 +17,22 @@ Telephone.create!(ext:'011', num:'49032888', branch_id: Branch.find_by(name: 'Ce
 Telephone.create!(ext:'011', num:'47208195', branch_id: Branch.find_by(name: 'Atencion Terapeutica Interdisciplinaria').id)
 
 _pass = "12345678"
-User.create!(name: 'anacleta', email: 'anacleta@agalma.com', password: _pass)
-User.create!(name: 'marcela', email: 'marcela@agalma.com', password: _pass)
-User.create!(name: 'veronica', email: 'ivan6258@gmail.com', password: _pass)
-User.create!(name: 'antonio', email: 'fernan.nestier@gmail.com', password: _pass)
-User.create!(name: 'administrador', email: 'admin@agalma.com', password: _pass, admin: true)
+User.create!(name: 'erica', email: 'sanchezvitale@gmail.com', password: _pass, admin: true)
+User.create!(name: 'veronica', email: 'veruhkieck@gmail.com', password: _pass, admin: true)
+User.create!(name: 'ivan', email: 'ivan6258@gmail.com', password: _pass, admin: true)
+User.create!(name: 'fernan', email: 'fernan.nestier@gmail.com', password: _pass, admin: true)
+User.create!(name: 'administrador', email: 'admin@centroagalma.com.ar', password: _pass, admin: true)
+User.create!(name: 'maria victoria', email: 'toia_gf@hotmail.com', password: _pass, admin: true)
 
 Role.create!(name: 'visitante', description: 'usuario con menos privilegios')
 Role.create!(name: 'moderador', description: 'privilegios de lectura y modificacion')
 Role.create!(name: 'admin', description: 'Todos los privilegios')
 
-Rolification.create!(user: User.find(1), branch: Branch.find(1), role: Role.find(2))
-Rolification.create!(user: User.find(3), branch: Branch.find(2), role: Role.find(3))
-Rolification.create!(user: User.find(2), branch: Branch.find(3), role: Role.find(2))
-Rolification.create!(user: User.find(3), branch: Branch.find(1), role: Role.find(3))
-Rolification.create!(user: User.find(2), branch: Branch.find(1), role: Role.find(1))
-Rolification.create!(user: User.find(5), branch: Branch.find(1), role: Role.find(3))
+_admin = Role.find_by!(name: 'admin')
+Rolification.create!(user: User.find_by!(name: 'veronica'), branch: Branch.find(1), role: _admin)
+Rolification.create!(user: User.find_by!(name: 'erica'), branch: Branch.find(1), role: _admin)
+Rolification.create!(user: User.find_by!(name: 'maria victoria'), branch: Branch.find(1), role: _admin)
+Rolification.create!(user: User.find_by!(name: 'ivan'), branch: Branch.find(1), role: _admin)
 
 _quienes_body = "<p>Los Centros en Salud Mental Agalma están al servicio de la sociedad. Prestan  una amplia cobertura asistencial y terapéutica que permite dar respuesta a las diversas problemáticas propias de la niñez, la infancia y la adolescencia, con un enfoque especializado y un criterio integral, en las áreas de psicología, musicoterapia, psicopedagogía, terapia ocupacional, psicomotricidad, nutrición, kinesiología y asistencia social,  promoviendo la excelencia en la calidad de los tratamientos, la optimización de los recursos y sustentando una particular práctica transdisciplinaria, que incluye la orientación y apoyo a las familias. También cuenta con el área de formación profesional dedicada a la enseñanza, trasmisión y capacitación de profesionales de la salud, sobre distintas temáticas de incidencia eminentemente clínica, relacionadas con los campos disciplinarios que abarca nuestro Equipo.</p>"
 Page.create!(title: "quienes somos", body: _quienes_body)
@@ -42,3 +42,7 @@ Page.create!(title: "centros terapeuticos educativos", body: _centros_terapeutic
 
 _centro_estimulacion_temprana = "[cargar informacion]"
 Page.create!(title: "centro de estimulacion temprana", body: _centro_estimulacion_temprana)
+
+
+_boca_content = "<p>Teniendo en cuenta la importancia de generar espacios fuera de la institución y poder tomar algo muy propio de cada uno de los chicos e ir trabajando en función de ello, durante el mes de octubre Martín y Matías, ambos hinchas de boca y muy futboleros, con sus padres y  los terapeutas Diego y Claudio, conocieron la Bombonera y partes históricas de la Ciudad de Buenos Aires.  A partir de una propuesta de la asistente social Sabrina, quien a través de la municipalidad y las excursiones abiertas a instituciones trajo la propuesta, se tomó la decisión de que Matías, fanático del futbol y quien conoce a todos a través de este deporte, llamando a los terapeutas, Diego el gallina o Hernán el cuervo, junto Martín a quien le encanta esta disciplina y se desenvuelve muy bien en las salidas, conocieron el museo de la pasión boquense y el estadio.  Comenzó el viaje con el acompañamiento de una guía turística que fue mostrándoles algunos lugares históricos de la ciudad, como el puerto de Buenos Aires, el barrio de Retiro y hasta se pasó por la cancha de River, donde los chicos manifestaron la rivalidad de su club.  Diego, Musicoterapeuta de la entidad, expresó: “Vimos el museo de la pasión boquense, con mucha libertad, y ahí apareció la particularidad de cada uno de ellos, principalmente el sentido del humor. La risa muy bien ubicada. Apareció esa pasión boquense de los dos cuando abrieron las puertas de la popular y entramos al estadio. Destaco el sentido del humor” Po su parte Claudio, uno de los Psicólogos del equipo agregó que la salida fue muy positiva, a partir de la misma se planteó abrir un espacio de actividad aeróbica para que empiecen a manejar su cuerpo de otras formas y los ayude a mejorar su estado físico.  Ambos coinciden sobre la Importancia de generar espacios fuera de la institución por la dinámica, buscando sorprenderlos a ellos, que ellos sorprendan a sus terapeutas y poder trabajar sobre esto.</p> "
+Post.create!(title: 'Visita a la cancha de Boca', content: _boca_content)
