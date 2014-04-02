@@ -6,9 +6,7 @@
   <section class="post-container">
 
   <%= link_to  post.title, post_path(post) %>
-  <blockquote>
-    <%= raw(post.content)  %>
-  </blockquote>
+  <p> <%= raw(post.content)  %> </p>
 
   </section>
 <% end %>
