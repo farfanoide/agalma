@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   add_flash_types :error
-  before_filter :fetch_static_pages
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :fetch_static_pages
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :fetch_slider_images
   protect_from_forgery with: :exception
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
     @cTeraEd ||= Page.find_by!(slug: 'centros-terapeuticos-educativos')
     @cEsTemp ||= Page.find_by!(slug: 'centro-de-estimulacion-temprana')
     # @quienes ||= Page.find_by!(slug: 'quienes-somos')
+  end
+
+  def fetch_slider_images
+    @slider_images ||= ImageSlider.all
   end
 
   def set_menu_pages

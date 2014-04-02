@@ -1,4 +1,5 @@
 Agalma::Application.routes.draw do
+
   resources :galeries, only: [:index, :show]
   resources :images, only: [:show]
 
@@ -16,6 +17,7 @@ Agalma::Application.routes.draw do
     resources :posts
     resources :users
     resources :branches
+    resources :image_sliders
     post 'dashboard/set_current_branch' => 'dashboard#set_current_branch'
     resources :galleries
     resources :pages
