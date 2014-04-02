@@ -15,6 +15,7 @@
   <%= f.simple_fields_for (:galery) do |gallery| %>
    <%= render 'galery_fields', f: gallery %>
   <% end %>
+  <%= link_to_add_galery 'agregar galeria', f, :galery %>
   <div class="form-actions">
     <%= f.submit 'Publicar', class: 'btn btn-primary' %>
   </div>

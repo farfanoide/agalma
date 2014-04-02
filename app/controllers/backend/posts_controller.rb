@@ -7,7 +7,6 @@ class Backend::PostsController < BackendController
 
     def new
         @post = Post.new
-        @post.build_galery
     end
 
   def edit
@@ -33,7 +32,7 @@ class Backend::PostsController < BackendController
     @post.user = current_user
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to backend_post_url(@post), notice: 'Post was successfully updated.' }
+        format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
