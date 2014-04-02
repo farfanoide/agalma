@@ -1,9 +1,10 @@
 label.inline {
-  color: $white
+  color: $white;
 }
 
-input, textarea {
-  border-radius: 5px
+input,
+textarea {
+  border-radius: 5px;
 }
 
 textarea {
@@ -16,16 +17,17 @@ label.msg-label {
 }
 
 
-.button{
-  margin:2em .5em;
-  color: $black;
+.button {
   background-color: #fff;
-  padding:.4em 1em;
-  font-size:1em;
-//  width:6em;
+  border-radius: 5px;
+  color: $black;
+  font-size: .8em;
+  margin: 2em .5em;
+  padding: .4em 1em;
+  text-transform: capitalize;
 }
 
-.button:hover{
-  color:$black;
+.button:hover {
   background-color: $white;
+  color: $black;
 }

@@ -7,6 +7,7 @@
 @import 'modules/typography';
 @import 'modules/navs';
 @import 'modules/forms';
+@import 'modules/posts';
 
 // Header
 .header-container {
@@ -222,7 +223,7 @@
 @media #{$medium-up}{
   @import 'mq/medium';
 }
-// contacts 
+// contacts
 
 .contact-wrapper{
   .button{
@@ -247,17 +248,17 @@
 .session-modal-wrapper{
 @import 'modules/modals';
   .form-wrapper{
-  
+
     }
   .user_remember_me {
     margin-left:1.5em;
-    }  
+    }
   .register * {
     margin: 1em 0;
-    }       
+    }
 }
 
-.register-modal-wrapper{
+.register-modal-wrapper {
    @import 'modules/modals';
    .form-wrapper{ border:none}
    .modal-header{
@@ -267,4 +268,8 @@
      min-width: 200px;
      }
    padding: 0 5em;
+}
+/* FIXME: arreglar estooooooo! */
+.search-container > .row {
+margin: 0 100px;
 }

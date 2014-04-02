@@ -12,14 +12,15 @@ class ApplicationController < ActionController::Base
   private
 
   def fetch_static_pages
+    set_menu_pages
     @quienes ||= Page.find_by!(slug: 'quienes-somos')
     @cTeraEd ||= Page.find_by!(slug: 'centros-terapeuticos-educativos')
     @cEsTemp ||= Page.find_by!(slug: 'centro-de-estimulacion-temprana')
-    # @quienes ||= Page.find_by!(slug: 'quienes-somos')
+    @n_pages.reject! {|page| [@quienes, @cTeraEd, @cEsTemp].include? page }
   end
 
   def set_menu_pages
-    @pages = Page.all
+    @n_pages ||= Page.all
   end
 
   def user_not_authorized

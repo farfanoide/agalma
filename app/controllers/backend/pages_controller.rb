@@ -32,7 +32,7 @@ class Backend::PagesController < BackendController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to backend_page_url(@page), notice: 'Page was successfully created.' }
+        format.html { redirect_to page_url(@page), notice: 'Page was successfully created.' }
         format.json { render action: 'show', status: :created, location: @page }
       else
         format.html { render action: 'new' }
