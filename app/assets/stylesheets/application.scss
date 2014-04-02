@@ -7,6 +7,7 @@
 @import 'modules/typography';
 @import 'modules/navs';
 @import 'modules/forms';
+@import 'modules/posts';
 
 // Header
 .header-container {
@@ -261,7 +262,7 @@
     }
 }
 
-.register-modal-wrapper{
+.register-modal-wrapper {
    @import 'modules/modals';
    .form-wrapper{ border:none}
    .modal-header{
@@ -271,4 +272,8 @@
      min-width: 200px;
      }
    padding: 0 5em;
+}
+/* FIXME: arreglar estooooooo! */
+.search-container > .row {
+margin: 0 100px;
 }

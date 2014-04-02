@@ -1,26 +1,36 @@
-a{
+a {
   color: $white;
-  font-weight:100;
+  font-weight: 100;
 }
 
-h1{
-  font-weight: 300;
-  font-style: italic;
+h1,
+.page-title {
   font-family: 'Trebuchet MS', OfficinaSans-Italic, sans-serif;
+  font-style: italic;
+  font-weight: 300;
   text-transform: capitalize;
 }
-.page-title{
-  color: $grey;
-  padding-bottom: .2em;
+
+.page-title {
   border-bottom: 1px solid $grey;
+  color: $grey;
+  font-size: 2.3em;
+  padding: .2em auto;
 }
-h2{
+
+h2 {
+
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+
+h3 {
   font-size: 20px;
 }
-p{
-  margin: 0;
+
+p {
   font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.2em;
   font-weight: lighter;
+  line-height: 1.5em;
+  margin: 0;
 }

@@ -1,0 +1,17 @@
+.post-container {
+  margin: 1em auto;
+}
+
+.post-header {
+  text-align: center;
+}
+
+.post-main {
+  padding: 1em 2em;
+  text-indent: 1em;
+  & p { line-height: 1.5em; }
+}
+
+.post-title {
+  font-size: 27px;
+}
