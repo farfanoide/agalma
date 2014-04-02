@@ -4,7 +4,7 @@
 <%= f.input :name, placeholder: "Nombre de Usuario", label: "Nombre" %>
   </div>
   <div class="form-group">
-<%= f.input :email, placeholder: "informacion extra", label: "Email" %><br>
+<%= f.input :email, placeholder: "Email del Usuario", label: "Email" %><br>
 </div>
 <%= f.simple_fields_for(:rolifications) do |rolif| %>
   <%= render 'rolification_fields', f: rolif %>

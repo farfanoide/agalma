@@ -1,13 +1,13 @@
 class Backend::PostsController < BackendController
-  before_action :set_post, only: [:edit, :update, :destroy]
+    before_action :set_post, only: [:edit, :update, :destroy]
 
-  def index
-    @posts = policy_scope(Post)
-  end
+    def index
+      @posts = policy_scope(Post)
+    end
 
-  def new
-    @post = Post.new
-  end
+    def new
+        @post = Post.new
+    end
 
   def edit
     authorize @post
@@ -32,7 +32,7 @@ class Backend::PostsController < BackendController
     @post.user = current_user
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to backend_post_url(@post), notice: 'Post was successfully updated.' }
+        format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -49,12 +49,12 @@ class Backend::PostsController < BackendController
     end
   end
 
-  private
-    def set_post
-      @post = Post.find(params[:id])
-    end
+    private
+        def set_post
+            @post = Post.find(params[:id])
+        end
 
-    def post_params
-      params.require(:post).permit(:title, :description, :content, :branch_id, :user_id)
-    end
+        def post_params
+            params.require(:post).permit(:title, :description, :content, :branch_id, galery_attributes:[:id,:post_id,:name,:description,:_destroy,images_attributes:[:id,:file_name,:name,:_destroy]])
+        end
 end
