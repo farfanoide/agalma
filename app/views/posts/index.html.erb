@@ -5,19 +5,15 @@
 <% @posts.each do |post| %>
   <section class="post-container">
 
-    <%=link_to  post.title, post_path(post) %>
-    <blockquote>
-      <p>
-      <%= raw(post.content)  %>
-      </p>
-    </blockquote>
+  <%= link_to  post.title, post_path(post) %>
+  <p> <%= raw(post.content)  %> </p>
 
   </section>
 <% end %>
 
-  <%= will_paginate @posts, previous_label: '<<', next_label: '>>'%> 
+<%= will_paginate @posts, previous_label: '<<', next_label: '>>'%>
 <% if current_user %>
   <% if current_user.admin? %>
-    <%= link_to "crear noticia", new_backend_post_path %>
+  <%= link_to "crear noticia", new_backend_post_path %>
   <% end %>
 <% end %>
