@@ -7,7 +7,7 @@
 @import 'modules/typography';
 @import 'modules/navs';
 @import 'modules/forms';
-@import 'modules/posts';
+ @import 'modules/posts';
 
 // Header
 .header-container {
@@ -18,16 +18,12 @@
 
 // Search
 .search-container {
+
   background-color: $grey;
   border: solid 3px $white;
   padding: .5em;
-
-  input.rounded {
-    border: 0;
-    border-radius: .7em 0 0 .7em;
-    font-size: .7em;
-    margin-bottom: 0;
-    padding: .5em;
+  .columns {
+    padding: 0
   }
 
   a {
@@ -40,8 +36,12 @@
     margin-bottom: 0;
   }
 
-  .search-button {
-    border-radius: 0 5px 5px 0;
+  .search-input {
+    margin: 0;
+    padding: 0px 10px;
+    font-size: 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
     height: 22px;
   }
 
@@ -51,62 +51,17 @@
   }
 }
 
-// slide
-
-.slide-container {
-  background-color: $white;
-  box-shadow: 5px 5px 20px #000;
-  padding: .3em;
-  position: relative;
-  text-align: center;
-  top: 30px;
-}
-
-// =resets
-
-
 .branch-container {
   background: $white;
   border-radius: 10px;
   color: $dark-grey;
   margin: 10px auto;
-  padding: 1em;
-}
 
-.branch-header {
-  color: $dark-grey;
-  & a { color: $dark-grey; }
-}
-
-@media #{$medium-up} {
-  .pages-dropdown { display: none; }
-}
-
-// hide slider for small screens
-@media #{$small-only} {
-  .side-nav { display: none; }
-  .orbit-container { display: none; }
-}
-
-.slide-step {
-  background-color: $blue;
-  border-radius: 2em;
-  padding-left: 1em;
-  position: relative;
-}
-
-.search-container {
-  .columns { padding: 0; }
-  .search-input {
-    border: 0;
-    border-radius: 5px 0 0 5px;
-    font-size: 10px;
-    height: 22px;
-    margin: 0;
-    padding: 0 10px;
+  h2{
+    color: $black;
+    margin:.5em 1.3em;        
   }
 }
-
 .main-wrapper {
   padding: 2em 0;
 
@@ -134,15 +89,10 @@
 
 .success { background: $green; }
 
-.error { background: #f04124; }
 
-
-.main-header {
-  border-bottom: 1px solid $grey;
-  color: #000;
-  margin-bottom: 1.5em;
-  padding-bottom: .3em;
-}
+//.error {
+//  background: #f04124
+//}
 
 .orbit-container {
   background-color: $white;
@@ -194,20 +144,12 @@
     li.active { background-color: $light-blue; }
   }
 }
+//.orbit-timer { display: none !important }
 
-.slide-item {
-  border: 5px solid $white;
-  display: none;
-}
 
-// media query for the slider
-/* @media #{$medium-only}{ */
-/*   @import "medium"; */
-/* } */
 
-.orbit-timer { display: none !important; }
-
-@media #{$medium-only} {
+//*-*-*-*-*-*-*-*-*-*-*-*-* Media Querys
+@media #{$medium-only}{
   @import 'mq/medium-only';
 }
 @media #{$large-only} {
@@ -216,22 +158,29 @@
 @media #{$medium-up} {
   @import 'mq/medium';
 }
-// contacts
+
+@media #{$small-only}{
+  @import 'mq/small-only';
+}
+
+
+// contacts 
 
 .contact-wrapper {
   .button { width: 6em; }
 }
 
-
-
-.reveal-modal {
-  border-radius: 5em 0;
-
-  img { width: 75%; }
+.registration-wrapper{
+  .reveal-modal {
+    border-radius: 5em 0;
+    img { width: 75%; }
+    }
 }
 
 // sesssion modal
-
+.reveal-modal{
+  border-radius: 5em 0 5em 0;
+}
 .session-modal-wrapper {
   @import 'modules/modals';
   .user_remember_me { margin-left: 1.5em; }
@@ -247,5 +196,27 @@
   img { min-width: 200px; }
 }
 
+
+.register-modal-wrapper{
+   @import 'modules/modals';
+   .form-wrapper{ border:none}
+   .modal-header{
+     text-align: center
+   }
+   img {
+     min-width: 200px;
+     }
+
+   padding: 0 5em;
+}
+
+.page-container{
+   section{
+     margin-top: 2em;
+   }
+
+}
+
 /* FIXME: arreglar estooooooo! */
 .search-container > .row { margin: 0 100px; }
+

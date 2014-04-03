@@ -14,7 +14,6 @@
     <% @image_sliders.each do |image_slider| %>
       <tr>
         <td><%= image_tag(image_slider.image) %></td>
-        <td><%= link_to 'Show', backend_image_slider_path(image_slider) %></td>
         <td><%= link_to 'Edit', edit_backend_image_slider_path(image_slider) %></td>
         <td><%= link_to 'Destroy', backend_image_slider_path(image_slider), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
