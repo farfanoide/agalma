@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @gallery = @post.galery
   end
 
   private

@@ -12,8 +12,8 @@
       <p><%= raw(@post.content) %></p>
     </div>
     <div>
-      <% if !@post.galery.nil? %>
-      <% @post.galery.images.each do |imagen| %>
+      <% if !@gallery.nil? %>
+      <% @gallery.images.each do |imagen| %>
         <%=link_to image_tag(imagen.file_name.url(:thumb)), image_path(imagen) %>
       <% end %>  
     <% end %>  
