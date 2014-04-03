@@ -17,15 +17,12 @@
 
 // Search
 .search-container {
+
   background-color: $grey;
   border: solid 3px $white;
   padding: .5em;
-  input.rounded {
-    border-radius: .7em 0 0 .7em;
-    padding: .5em;
-    font-size: .7em;
-    margin-bottom: 0em;
-    border: 0;
+  .columns {
+    padding: 0
   }
   a {
     margin:0;
@@ -36,64 +33,6 @@
     color: $black;
     background-color: $white;
   }
-  .search-button {
-    border-radius: 0 5px 5px 0;
-    height: 22px;
-  }
-  .row {
-    margin-bottom: 0;
-    padding: 0;
-  }
-}
-
-// slide
-
-.slide-container {
-  padding: .3em;
-  position: relative;
-  top: 30px;
-  background-color: $white;
-  box-shadow: 5px 5px 20px #000;
-  text-align: center;
-}
-
-// =resets
-
-
-.branch-container {
-  background: $white;
-  color: $dark-grey;
-  padding: 1em;
-  border-radius: 10px;
-  margin: 10px auto;
-}
-
-@media #{$medium-up}{
-  .pages-dropdown { display: none }
-}
-
-// hide slider for small screens
-@media #{$small-only}{
-  .side-nav {
-    display: none
-  }
-  .orbit-container {
-    display: none
-  }
-}
-
-.slide-step {
-  background-color: $blue;
-  padding-left: 1em;
-  position: relative;
-  border-radius: 2em;
-
-}
-
-.search-container {
-  .columns {
-    padding: 0
-  }
   .search-input {
     margin: 0;
     padding: 0px 10px;
@@ -102,7 +41,24 @@
     border: none;
     height: 22px;
   }
+  .row {
+    margin-bottom: 0;
+    padding: 0;
+  }
 }
+
+.branch-container {
+  background: $white;
+  color: $dark-grey;
+  padding: 1em;
+  border-radius: 10px;
+  margin: 10px auto;
+  h2{
+    color: $black;
+    margin:.5em 1.3em;        
+  }
+}
+
 
 .main-wrapper {
   padding: 2em 0;
@@ -141,14 +97,6 @@
 //.error {
 //  background: #f04124
 //}
-
-
-.main-header {
-  border-bottom: 1px solid $grey;
-  padding-bottom: .3em;
-  color: #000;
-  margin-bottom: 1.5em;
-}
 
 .orbit-container {
   position: relative;
@@ -205,14 +153,10 @@
     li.active { background-color: $light-blue }
   }
 }
+//.orbit-timer { display: none !important }
 
-// media query for the slider
-/* @media #{$medium-only}{ */
-/*   @import "medium"; */
-/* } */
 
-.orbit-timer { display: none !important }
-
+//*-*-*-*-*-*-*-*-*-*-*-*-* Media Querys
 @media #{$medium-only}{
   @import 'mq/medium-only';
 }
@@ -222,6 +166,11 @@
 @media #{$medium-up}{
   @import 'mq/medium';
 }
+@media #{$small-only}{
+  @import 'mq/small-only';
+}
+
+
 // contacts 
 
 .contact-wrapper{
@@ -267,5 +216,13 @@
    img {
      min-width: 200px;
      }
+
    padding: 0 5em;
+}
+
+.page-container{
+   section{
+     margin-top: 2em;
+   }
+
 }
