@@ -8,3 +8,4 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :galery, allow_destroy: true
 
 end
+
