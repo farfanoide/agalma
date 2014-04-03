@@ -59,9 +59,10 @@
 
   h2{
     color: $black;
-    margin:.5em 1.3em;        
+    margin:.5em 1.3em;
   }
 }
+
 .main-wrapper {
   padding: 2em 0;
 
@@ -83,6 +84,14 @@
     p { padding: 3px; }
   }
 
+}
+
+.branch-header {
+  color: $dark-grey;
+
+  & * {
+    color: $dark-grey;
+  }
 }
 
 .alert { padding: 1em; }
@@ -164,7 +173,7 @@
 }
 
 
-// contacts 
+// contacts
 
 .contact-wrapper {
   .button { width: 6em; }
