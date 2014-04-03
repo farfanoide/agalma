@@ -1,4 +1,4 @@
-class Backend::ContactsController < ApplicationController
+class Backend::ContactsController < BackendController
 
   before_action :set_contact, only: [:create]
 
