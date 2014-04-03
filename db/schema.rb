@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326181941) do
+ActiveRecord::Schema.define(version: 20140402104354) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20140326181941) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "post_id"
+  end
+
+  create_table "image_sliders", force: true do |t|
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "images", force: true do |t|
@@ -57,7 +64,7 @@ ActiveRecord::Schema.define(version: 20140326181941) do
 
   add_index "images", ["galery_id"], name: "index_images_on_galery_id", using: :btree
 
-  create_table "mails", force: true do |t|
+  create_table "mailers", force: true do |t|
     t.string   "subject"
     t.text     "body"
     t.integer  "sender_id"
@@ -65,7 +72,7 @@ ActiveRecord::Schema.define(version: 20140326181941) do
     t.datetime "updated_at"
   end
 
-  add_index "mails", ["sender_id"], name: "index_mails_on_sender_id", using: :btree
+  add_index "mailers", ["sender_id"], name: "index_mailers_on_sender_id", using: :btree
 
   create_table "mails_users", id: false, force: true do |t|
     t.integer "mail_id", null: false

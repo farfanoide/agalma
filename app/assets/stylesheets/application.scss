@@ -7,6 +7,7 @@
 @import 'modules/typography';
 @import 'modules/navs';
 @import 'modules/forms';
+@import 'modules/posts';
 
 // Header
 .header-container {
@@ -24,15 +25,17 @@
   .columns {
     padding: 0
   }
+
   a {
-    margin:0;
-    height : 22px;
-    border-radius: 0 .7em .7em 0;
-    margin-bottom: 0;
-    font-size: .7em;
-    color: $black;
     background-color: $white;
+    border-radius: 0 .7em .7em 0;
+    color: $black;
+    font-size: .7em;
+    height: 22px;
+    margin: 0;
+    margin-bottom: 0;
   }
+
   .search-input {
     margin: 0;
     padding: 0px 10px;
@@ -41,6 +44,7 @@
     border: none;
     height: 22px;
   }
+
   .row {
     margin-bottom: 0;
     padding: 0;
@@ -49,123 +53,112 @@
 
 .branch-container {
   background: $white;
-  color: $dark-grey;
-  padding: 1em;
   border-radius: 10px;
+  color: $dark-grey;
   margin: 10px auto;
+
   h2{
     color: $black;
     margin:.5em 1.3em;        
   }
 }
-
-
 .main-wrapper {
   padding: 2em 0;
+
   .post {
-    h2 {
-      padding: 2em
-    }
+
+    h2 { padding: 2em; }
   }
 }
 
 .branch-container {
   margin: 20px 40px;
   padding: 10px 30px;
-  h2 {
-    font-weight: normal
-  }
+
+  h2 { font-weight: normal; }
   .info-wrapper {
-    padding: 25px 0;
     color: lighten($black, 30%);
-    h2{color: $grey}
-    p {
-      padding: 3px
-    }
+    padding: 25px 0;
+    h2 {color: $grey; }
+    p { padding: 3px; }
   }
 
 }
 
-.alert {
-  padding: 1em
-}
+.alert { padding: 1em; }
 
-.success {
-  background: green
-}
+.success { background: $green; }
+
 
 //.error {
 //  background: #f04124
 //}
 
 .orbit-container {
-  position: relative;
-  top: 50px;
-  margin-bottom: em-calc(40);
-  overflow: inherit;
-  width: em-calc(400);
-  height: em-calc(208);
   background-color: $white;
   box-shadow: em-calc(10) em-calc(10) em-calc(10) $black;
+  height: em-calc(208);
+  margin-bottom: em-calc(40);
+  overflow: inherit;
+  position: relative;
+  top: 50px;
+  width: em-calc(400);
 
   .orbit-slides-container {
+    margin: 0;
     width: em-calc(400);
-    margi: 0;
     z-index: 1;
   }
 
-  ul {
-    background-color: $white
-  }
+  ul { background-color: $white; }
 
-  li.slide-item {
-    display: none
-  }
+  li.slide-item { display: none; }
 
   li.slide-item.active {
     display: inherit;
-    img{
-    border: .5em solid $white;}
     width: em-calc(400);
 
     img {
-      box-shadow: 1px 1px $black
+      border: .5em solid $white;
+      box-shadow: 1px 1px $black;
     }
   }
 
   ol.orbit-bullets {
     background-color: $blue;
+    border-radius: 1em;
+    margin: 0;
+    padding: .3em 1em;
     position: relative;
     right: 38%;
     top: em-calc(-30);
-    margin: 0;
-    padding: .3em 1em;
-    border-radius: 1em;
 
     li {
+      background-color: $white;
       float: left;
-      width: em-calc(15);
       height: em-calc(15);
       margin: 0 .4em;
-      background-color: $white;
+      width: em-calc(15);
     }
 
-    li.active { background-color: $light-blue }
+    li.active { background-color: $light-blue; }
   }
 }
 //.orbit-timer { display: none !important }
+
 
 
 //*-*-*-*-*-*-*-*-*-*-*-*-* Media Querys
 @media #{$medium-only}{
   @import 'mq/medium-only';
 }
-@media #{$large-only}{
+@media #{$large-only} {
   @import 'mq/large';
 }
-@media #{$medium-up}{
+@media #{$medium-up} {
   @import 'mq/medium';
 }
+
 @media #{$small-only}{
   @import 'mq/small-only';
 }
@@ -173,39 +166,34 @@
 
 // contacts 
 
-.contact-wrapper{
-  .button{
-    width: 6em;
-  }
+.contact-wrapper {
+  .button { width: 6em; }
 }
 
 .registration-wrapper{
-
-}
-.reveal-modal{
-
-
-  border-radius: 5em 0 5em 0;
-
-  img{
-    width:75%;
-  }
+  .reveal-modal {
+    border-radius: 5em 0;
+    img { width: 75%; }
+    }
 }
 
 // sesssion modal
 
-.session-modal-wrapper{
-@import 'modules/modals';
-  .form-wrapper{
-  
-    }
-  .user_remember_me {
-    margin-left:1.5em;
-    }  
-  .register * {
-    margin: 1em 0;
-    }       
+.session-modal-wrapper {
+  @import 'modules/modals';
+  .user_remember_me { margin-left: 1.5em; }
+  .register * { margin: 1em 0; }
 }
+
+.register-modal-wrapper {
+  @import 'modules/modals';
+  padding: 0 5em;
+  .form-wrapper { border: 0; }
+  .modal-header { text-align: center; }
+
+  img { min-width: 200px; }
+}
+
 
 .register-modal-wrapper{
    @import 'modules/modals';
@@ -226,3 +214,7 @@
    }
 
 }
+
+/* FIXME: arreglar estooooooo! */
+.search-container > .row { margin: 0 100px; }
+

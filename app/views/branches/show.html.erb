@@ -1,26 +1,42 @@
-<div class="row">
-  <div class="small-6 columns small-centered">
-    <p>
-    <strong>Nombre:</strong>
-    <%= @branch.name %>
-    </p>
-    <% if !@branch.description.blank? %>
-      <p>
-    <strong>Descripcion:</strong>
-    <%= @branch.description %>
-    </p>
+<section class="branch-container">
+  <h2 class="branch-header"><%= @branch.name %></h2>
+  <div class="info-wrapper">
+    <p><%= @branch.address %></p>
+    <p><%= @branch.description %></p>
+    <p> <%= @branch.zone %> (<%= @branch.zipcode %>)</p>
+    <% for telephone in @branch.telephones %>
+      <p>Tel. (0<%= telephone.ext %>) <%= telephone.num %></p>
   <% end %>
-    <% if !@branch.telephones.empty? %>
-      <strong>Telefonos:</strong>
-    <% @branch.telephones.each do |tel| %>
-      <p>(<%= tel.ext %>)-<%= tel.num %></p>
-  <% end %>
-  <% end %>
-  <p><strong>E-mail: </strong><%= @branch.email %></p>
-  <p><strong>Direccion: </strong><%= @branch.address %></p>
-
-    <%= link_to 'Editar', edit_backend_branch_path(@branch) %> |
-    <%= link_to 'Volver', :back %>
-
+    <p>E-Mail: <%= @branch.email %></p>
   </div>
+</section>
+<% if @posts %>
+  <%# <%= render 'posts/post', collection: @posts %>
+
+<% @posts.each do |post| %>
+
+  <h2>Noticias de esta sucursal:</h2>
+<div class="page-container">
+  <section class="post-container">
+    <div class="post-header">
+      <h1 class="post-title"> <%= post.title %> </h1>
+    </div>
+    <div class="post-main">
+      <p> <%= raw(post.description)  %> </p>
+      <br>
+      <br>
+    </div>
+<% if user_signed_in? and policy(current_user).admin? %>
+  <%= link_to("Editar", edit_backend_post_path(post), class: 'button') %>
+<% end %>
+  </section>
 </div>
+<% end %>
+<%# will_paginate @posts, previous_label: '<<', next_label: '>>'%>
+<% end %>
+
+<% if  user_signed_in? and policy(current_user).admin? %>
+  <%= link_to 'Editar', edit_backend_branch_path(@branch), class: :button %> |
+<% end %>
+<%= link_to 'Volver', :back, class: :button %>
+

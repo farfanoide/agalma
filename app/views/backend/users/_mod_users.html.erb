@@ -1,0 +1,23 @@
+<div class="box box-success">
+  <div class="box-header">
+    <h3 class="box-title"><%= link_to "usuarios", backend_users_path %></h3>
+  </div><!-- /.box-header -->
+  <div class="box-body">
+    <% if @users.empty? %>
+    <div class="alert alert-info alert-dismissable">
+      <i class="fa fa-info"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      Todavia no tiene usuarios cargadas.  <%= link_to "Crear usuario", new_backend_user_path, class: 'button'%>
+    </div>
+    <% else %>
+    <table class="table table-condensed">
+      <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, edit_backend_user_path(user) %></td>
+      </tr>
+      <% end %>
+    </tbody></table>
+    <% end %>
+  </div><!-- /.box-body -->
+</div>

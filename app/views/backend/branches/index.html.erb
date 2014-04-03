@@ -1,37 +1,31 @@
 <% if user_signed_in? %>
-<div class="row">
-  <div class="small-8 columns small-centered ">
-    <h1>Listado de sucursales</h1>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-
-      <tbody>
+  <div class="box">
+  <div class="box-header">
+    <h3 class="box-title">Sucursales: </h3>
+  </div><!-- /.box-header -->
+  <div class="box-body no-padding">
+    <table class="table table-condensed">
+      <tbody><tr>
+        <th>Sucursal</th>
+        <th>Acciones</th>
+      </tr>
       <% @branches.each do |branch| %>
-      <tr>
-        <td>
-          <%= link_to branch.name, [:backend, branch] %>
-        </td>
-        <td>
-          <%= link_to 'Editar', edit_backend_branch_path(branch) %> |
-          <% if policy(current_user).admin? %>
-          <%= link_to 'Borrar', [:backend, branch], method: :delete, data: { confirm: 'Estas seguro?' } %>
-          <% end %>
+        <tr>
+        <td class="title-field"><%= link_to branch.name, edit_backend_branch_path(branch) %></td>
+        <td class="table-actions">
+          <%= link_to fa_icon(:edit), edit_backend_branch_path(branch), class: 'btn btn-success btn-sm', data:{toggle: 'tooltip', 'original-title' => 'Editar'}  %>
+          <% if policy(current_user).admin?  %>
+            <%= link_to fa_icon(:'trash-o'), backend_branch_path(branch), method: :delete, data: { confirm: 'Esta seguro?', toggle: 'tooltip', 'original-title' => 'Borrar' }, class: 'btn btn-danger btn-sm' %>
+        <% end %>
         </td>
       </tr>
-      <% end %>
-      </tbody>
-    </table>
-
-    <br>
-    <% if policy(current_user).admin? %>
-    <%= link_to 'Crear Sucursal', new_backend_branch_path %>
     <% end %>
-  </div>
+    </tbody></table>
+  </div><!-- /.box-body -->
 </div>
+<br>
+
+<% if policy(current_user).admin? %>
+  <%= link_to 'Crear Sucursal', new_backend_branch_path, class: :'btn btn-primary' %>
+<% end %>
 <% end %>

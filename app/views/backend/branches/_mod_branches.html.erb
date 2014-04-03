@@ -5,7 +5,7 @@
   <div class="box-body">
     <% if @branches.empty? %>
     <div class="alert alert-info alert-dismissable">
-      <i class="fa fa-info"></i>
+      <%= fa :'fa-info'%>
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       Todavia no tiene paginas cargadas.
       <%= link_to "Crear Sucursal", new_backend_branch_path, class: 'button'%>
@@ -13,7 +13,7 @@
     <% else %>
     <table class="table table-condensed">
       <tbody>
-      <% for branch in @branches %>
+      <% @branches.each do |branch| %>
       <tr>
         <td><%= link_to branch.name, edit_backend_branch_path(branch) %></td>
       </tr>
