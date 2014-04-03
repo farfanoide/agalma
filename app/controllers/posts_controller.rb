@@ -2,8 +2,10 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
-    @search = Post.search do
-      fulltext params[:search]
+    @search = Sunspot.search Post do
+      fulltext params[:search] do
+        boost_fields :title => 2.0
+      end
     end
 #    @posts = Post.order('created_at DESC').paginate(page: params[:page], per_page: 5)
     @posts = @search.results

@@ -4,10 +4,10 @@
       <div class="row collapse">
         <%= form_tag posts_path, :method => :get do %>
         <div class="small-8 columns">
-          <%= text_field_tag :search,  params[:search] %>
+          <%= text_field_tag :search,  params[:search], class: :'search-input', placeholder: 'Ingrese su busqueda...' %>
         </div>
         <div class="small-4 columns">        
-          <%= submit_tag "Buscar", :class => "button", :name => nil %>
+          <%= link_to "Buscar", posts_path, class: :button, :name => nil %>
         </div>
         <% end %>
         <!--        <input class="search-input" type="text" placeholder="Ingrese busqueda...">
