@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
-    @search = Sunspot.search Post do
+    @search = Post.search do
       fulltext params[:search] do
         boost_fields :title => 2.0
       end
