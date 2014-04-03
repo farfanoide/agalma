@@ -57,10 +57,16 @@
   color: $dark-grey;
   margin: 10px auto;
 
+  a {color: $dark-grey;}
+
   h2{
     color: $black;
-    margin:.5em 1.3em;        
+    margin:.5em 1.3em;
   }
+}
+.branch-container.small {
+  padding: 1em;
+  margin: 0;
 }
 .main-wrapper {
   padding: 2em 0;
@@ -83,6 +89,14 @@
     p { padding: 3px; }
   }
 
+}
+
+.branch-header {
+  color: $dark-grey;
+
+  & * {
+    color: $dark-grey;
+  }
 }
 
 .alert { padding: 1em; }
@@ -146,7 +160,7 @@
 }
 .orbit-timer { display: none !important }
 
-
+.orbit-bullets:empty { display: none; }
 
 //*-*-*-*-*-*-*-*-*-*-*-*-* Media Querys
 @media #{$medium-only}{
@@ -164,7 +178,7 @@
 }
 
 
-// contacts 
+// contacts
 
 .contact-wrapper {
   .button { width: 6em; }
@@ -210,13 +224,16 @@
    padding: 0 5em;
 }
 
-.page-container{
-   section{
-     margin-top: 2em;
-   }
-
+.page-container {
+  section { margin-top: 2em; }
+  .page_content img {
+    border: 3px solid $white;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    margin: .5em;
+  }
 }
 
-/* FIXME: arreglar estooooooo! */
+// FIXME: arreglar estooooooo!
 .search-container > .row { margin: 0 100px; }
+
 
