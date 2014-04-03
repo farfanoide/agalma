@@ -112,17 +112,16 @@
 
   ul { background-color: $white; }
 
-  li.slide-item { display: none; }
+  li{ 
+    img{
+      border: .5em solid $white;
+      }
+    }   
 
-  li.slide-item.active {
+  li.active {
     display: inherit;
     width: em-calc(400);
-
-    img {
-      border: .5em solid $white;
-      box-shadow: 1px 1px $black;
     }
-  }
 
   ol.orbit-bullets {
     background-color: $blue;
