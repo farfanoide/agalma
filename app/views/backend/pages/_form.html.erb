@@ -10,8 +10,8 @@
   <%= f.simple_fields_for(:directions) do |tel| %>
     <%= render 'direction_fields', f: tel %>
   <% end %>
-  <%= link_to_add_fields '+ agregar sucursal', f, :directions %>
-      <%# <%= f.association :branches, label: "Sedes", label_method: :name, include_blank: false %>
+  <%= link_to_add_fields '+ agregar direccion de sucursal', f, :directions %>
+  <!-- FIXME: change to multiple select -->
   </div>
   <div class="form-actions">
     <%= f.button :submit, 'Guardar', class: 'btn btn-primary' %>

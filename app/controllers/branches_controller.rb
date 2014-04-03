@@ -15,9 +15,12 @@ class BranchesController < ApplicationController
   end
 
   def consultorios_externos
-    @branches = Branch.all
+    @branches = Branch.external
   end
 
+  def nuestras_sedes
+    @branches = Branch.internal
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_branch

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403065351) do
+ActiveRecord::Schema.define(version: 20140403082714) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140403065351) do
     t.string   "email"
     t.integer  "zipcode"
     t.string   "zone"
+    t.boolean  "external",    default: false
   end
 
   create_table "ckeditor_assets", force: true do |t|

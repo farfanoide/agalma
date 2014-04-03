@@ -8,10 +8,28 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 _cent_desc = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aliquam, magni reiciendis quas voluptatum soluta harum quo dignissimos aut. Veritatis, assumenda distinctio modi dignissimos unde rem enim voluptas consequatur aliquam!'
 
-Branch.create!(name: 'Centro Terapeutico Educativo', description:_cent_desc, zone: 'partido de General San Martin, Prov. de Buenos Aires', zipcode:1655 , address: 'Lacroze 7259 - Jose Leon Suarez', email:'info@centroagalma.com.ar' )
-Branch.create!(name: 'Atencion Terapeutica Interdisciplinaria', description:_cent_desc, zone:'Capital Federal', zipcode:1405, email:'consultorios@centroagalma.com.ar', address:'Aranguren 561 - P. B. "A"'  )
-Branch.create!(name: 'mecanica', description: 'le arreglamo el auto donia')
+Branch.create!(name: 'Centro Terapeutico Educativo', 
+               description:_cent_desc, 
+               zone: 'partido de General San Martin, Prov. de Buenos Aires', 
+               zipcode: 1655,
+               address: 'Lacroze 7259 - Jose Leon Suarez', 
+               email: 'info@centroagalma.com.ar', 
+               external: false )
 
+Branch.create!(name: 'Atencion Terapeutica Interdisciplinaria',
+               description:_cent_desc,
+               zone:'Capital Federal',
+               zipcode:1405,
+               email:'consultorios@centroagalma.com.ar',
+               address:'Aranguren 561 - P. B. "A"',
+               external: false )
+
+Branch.create!(name: 'Centro de Tratamientos Maternales',
+               description: _cent_desc,
+               zone: 'Salta' ,
+               zipcode: 3390, email: 'maternal@ externo.com.ar',
+               address: 'Arangurencio 890',
+               external: true)
 
 Telephone.create!(ext:'011', num:'49032888', branch_id: Branch.find_by(name: 'Centro Terapeutico Educativo').id )
 Telephone.create!(ext:'011', num:'47208195', branch_id: Branch.find_by(name: 'Atencion Terapeutica Interdisciplinaria').id)

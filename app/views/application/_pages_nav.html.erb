@@ -4,9 +4,10 @@
 <li class="item-container"><%= link_to 'Consultorios Externos', url_for(:consultorios_externos), class: :item %></li>
 <li class="item-container"><%= link_to @psicoDist.title, @psicoDist, class: :item %></li>
 <li class="item-container"><%= link_to @invYDoc.title, @invYDoc, class: :item %></li>
-
+<li class="item-container"><%= link_to "Nuestras Sedes", url_for(:nuestras_sedes), class: :item %></li>
+<li class="item-container"><a class="item" href="#">Links de Interés</a></li>
 <% @n_pages.each do |page| %>
   <li class="item-container"><%= link_to page.title, page_path(page),  class: :item %></li>
 <% end %>
 
-<li class="item-container"><a class="item" href="#">Links de Interés</a></li>
+

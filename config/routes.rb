@@ -6,6 +6,7 @@ Agalma::Application.routes.draw do
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   get 'paginas/consultorios_externos' => 'branches#consultorios_externos', as: :consultorios_externos
+  get 'paginas/nuestras_sedes' => 'branches#nuestras_sedes', as: :nuestras_sedes
 
   resources :paginas, only: [:show, :index], controller: :pages, as: :pages
   resources :sucursales, only: [:show], controller: :branches, as: :branches
