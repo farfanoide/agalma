@@ -49,13 +49,13 @@ group :development do
   gem 'pry'  # Much better than irb
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'bourbon'
   gem 'sass-rails-source-maps'
 end
 
 
 gem 'simple_form'
 gem 'devise'
+gem 'bourbon'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
 gem 'pundit'

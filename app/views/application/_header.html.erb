@@ -11,16 +11,19 @@
             <li class="item"><%= link_to "Quiénes Somos", @quienes %></li>
             <li class="item"><a href="#">Galería</a></li>
             <li class="item"><%= link_to "Contacto", new_contact_path %></li>
-            <%= render 'devise/menu/registration_items' %>
             <%= render 'devise/menu/login_items' %>
-            <% if authorize_content %>
-              <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
-          <% end %>
+            <% if user_signed_in? %>
+              <% if policy(current_user).admin? %>
+                <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
+              <% end %>
+            <% else %>
+              <%= render 'devise/menu/registration_items' %>
+            <% end %>
             <li class="has-dropdown pages-dropdown ">
-              <a href="#">Paginas</a>
-              <ul class="dropdown">
-                <%= render 'pages_nav' %>
-              </ul>
+            <a href="#">Paginas</a>
+            <ul class="dropdown">
+              <%= render 'pages_nav' %>
+            </ul>
             </li>
           </ul>
         </section>
@@ -36,8 +39,8 @@
     </div>
   </div>
 
-<% if !user_signed_in? %>
-  <div id="registration-modal" class="reveal-modal medium" data-reveal> 
+  <% if !user_signed_in? %>
+  <div id="registration-modal" class="reveal-modal medium" data-reveal>
     <div class="register-modal-wrapper" >
       <div class="row" >
         <div class="small-12 columns modal-header">
@@ -49,9 +52,9 @@
       </div>
       <a class="close-reveal-modal"> &#215 </a>
     </div>
-  </div>  
-  
-  <div id="login-modal" class="reveal-modal medium" data-reveal> 
+  </div>
+
+  <div id="login-modal" class="reveal-modal medium" data-reveal>
     <div class="session-modal-wrapper">
       <div class="row">
         <div class="small-12 large-10 large-offset-2 columns">
@@ -66,9 +69,9 @@
         <p> Si usted no tiene una cuenta aun puede crearla aquí. </p>
         <%= link_to('Crear Cuenta', "#", class: "button", data: { "reveal-id" => "registration-modal" } ) %>
       </div>
-  
+
       <a class="close-reveal-modal"> &#215 </a>
     </div>
   </div>
-<% end %>
+  <% end %>
 </div>

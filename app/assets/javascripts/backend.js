@@ -12,5 +12,5 @@
 // plugins/jqueryKnob/jquery.knob.js
 //= require plugins/daterangepicker/daterangepicker.js
 // plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js
-//= require plugins/iCheck/icheck.min.js
+// require plugins/iCheck/icheck.min.js
 //= require adminapp.js

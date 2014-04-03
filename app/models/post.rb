@@ -5,4 +5,12 @@ class Post < ActiveRecord::Base
   searchable do
     text :title, :content
   end
+
+  has_one :galery
+
+  validates_presence_of :title
+
+  accepts_nested_attributes_for :galery, allow_destroy: true
+
+
 end

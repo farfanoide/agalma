@@ -1,0 +1,2 @@
+module Backend::ImageSlidersHelper
+end

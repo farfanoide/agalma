@@ -65,6 +65,15 @@ Agalma::Application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.smtp_settings = {
+    address:                'smtp.gmail.com',
+    port:                   '587',
+    user_name:              'ilstucardo',
+    password:               'ninjakick86',
+    autentication:          'plain',
+    enable_starttls_auto:   true,
+  }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true
@@ -82,4 +91,5 @@ Agalma::Application.configure do
   config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   config.assets.precompile += Ckeditor.assets
   config.assets.precompile += %w(ckeditor/*)
+  config.assets.precompile += %w(backend.js backend.css)
 end
