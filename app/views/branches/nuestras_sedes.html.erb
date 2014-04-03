@@ -1,0 +1,8 @@
+
+<h1 class="page-title">Nuestras Sedes</h1>
+
+<% if @branches.blank? %>
+  <p>Aun no hay sedes cargadas.</p>
+<% else %>
+  <%= render "branches" %>
+<% end %>

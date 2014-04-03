@@ -12,4 +12,8 @@ class Branch < ActiveRecord::Base
   accepts_nested_attributes_for :posts, allow_destroy: true
 
   validates_presence_of :name
+  scope :external, -> { where(external: true) }
+  scope :internal, -> { where(external: false) }
+
 end
+
