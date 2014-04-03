@@ -11,10 +11,8 @@
     </div>
     <div>
       <% if !@gallery.nil? %>
-      <% @gallery.images.each do |imagen| %>
-        <%=link_to image_tag(imagen.file_name.url(:thumb)), image_path(imagen) %>
-      <% end %>  
-    <% end %>  
+        <%= render "post_gallery" %>
+    <% end %>
     </div>
   </section>
 </div>
