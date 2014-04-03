@@ -11,6 +11,13 @@
       <br>
       <p><%= raw(@post.content) %></p>
     </div>
+    <div>
+      <% if !@gallery.nil? %>
+      <% @gallery.images.each do |imagen| %>
+        <%=link_to image_tag(imagen.file_name.url(:thumb)), image_path(imagen) %>
+      <% end %>  
+    <% end %>  
+    </div>
   </section>
 </div>
 <% if user_signed_in? and policy(current_user).admin? %>
