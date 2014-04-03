@@ -62,6 +62,16 @@
           <li><%= link_to "Crear Nueva", new_backend_post_path %></li>
           <li><%= link_to "Editar Existentes", backend_posts_path %></li>
         </ul>
+      <li class="treeview">
+        <a href="#">
+          <%= fa_icon :edit %>
+          <span>Slider</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><%= link_to "Editar Existentes", backend_image_sliders_path %></li>
+        </ul>
+      </li>
       </li>
     </ul>
   </section>

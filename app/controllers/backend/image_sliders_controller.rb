@@ -1,4 +1,4 @@
-class Backend::ImageSlidersController < ApplicationController
+class Backend::ImageSlidersController <  BackendController
   before_action :set_image_slider, only: [:show, :edit, :update, :destroy]
 
   # GET /image_sliders
