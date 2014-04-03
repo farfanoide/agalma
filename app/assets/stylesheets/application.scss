@@ -73,6 +73,11 @@
   padding: 1em;
 }
 
+.branch-header {
+  color: $dark-grey;
+  & a { color: $dark-grey; }
+}
+
 @media #{$medium-up} {
   .pages-dropdown { display: none; }
 }
@@ -165,7 +170,7 @@
 
     img {
       border: .5em solid $white;
-      box-shadow: 1px 1px $black; 
+      box-shadow: 1px 1px $black;
     }
   }
 

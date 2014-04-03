@@ -4,7 +4,7 @@
 <% if !@branches.blank? %>
   <% for branch in @branches %>
     <section class="branch-container">
-        <h2><%= branch.name %></h2>
+        <h2 class="branch-header"><%= link_to branch.name, branch_path(branch) %></h2>
         <div class="info-wrapper">
           <p><%= branch.address %></p>
           <p> <%= branch.zone %> (<%= branch.zipcode %>)</p>
