@@ -91,5 +91,5 @@ Agalma::Application.configure do
   config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   config.assets.precompile += Ckeditor.assets
   config.assets.precompile += %w(ckeditor/*)
-  config.assets.precompile += %w(backend.js backend.css)
+  config.assets.precompile += %w(backend.js backend.css vendor/custom.modernizr.js)
 end
