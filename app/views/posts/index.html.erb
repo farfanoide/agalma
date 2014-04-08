@@ -1,24 +1,6 @@
 <p class="page-title"> <%= t '.noticias' %> </p>
 
-<% @posts.each do |post| %>
-  <section class="post-container">
-    <div class="post-header">
-      <h1 class="post-title"> <%= link_to  post.title, post_path(post) %> </h1>
-    </div>
-    <% if !post.galery.nil? %>
-      <div class="post-gallery">
-<ul class="clearing-thumbs" data-clearing>
-<% post.galery.images.each do |imagen| %>
-  <li> <%=link_to image_tag(imagen.file_name.url(:thumb), class: :'gallery-thumb'), imagen.file_name.url %> </li>
-<% end %>
-</ul>
-      </div>
-    <% end %>
-    <div class="post-main">
-      <p> <%= raw(post.description)  %> </p>
-    </div>
-</section>
-<% end %>
+<%= render @posts  %>
 
 <%# <%= will_paginate @posts, previous_label: '<<', next_label: '>>'%>
 

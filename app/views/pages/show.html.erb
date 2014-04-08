@@ -18,7 +18,7 @@
 
   <% end %>
   <section class="page-content">
-    <%= raw(@page.body) %>
+    <%= simple_format(@page.body) %>
   </section>
 </div>
 <% if user_signed_in? and policy(current_user).admin? %>

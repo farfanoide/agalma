@@ -1,15 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Nombre:</strong>
   <%= @user.name %>
 </p>
-
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-
-<%= link_to "Enviar mail", "mailto:" + @user.email %>
-<%= link_to 'Editar', edit_backend_user_path(@user) %> |
+<div class="actions">
+<%= link_to 'enviar Mail', "mailto:#{@user.email}"  %>
+<%= link_to 'Editar', edit_backend_user_path(@user) %>
 <%= link_to 'Atras', backend_users_path %>
+</div>
