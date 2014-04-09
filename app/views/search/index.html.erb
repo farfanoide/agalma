@@ -1,0 +1,15 @@
+<p class="page-title"> Busqueda </p>
+<% if @results %>
+  <% @results.each do |r| %>
+    <% if r.class.name == 'Post' %>
+      <%= render 'shared/post_index', :post => r %>
+      <% elsif r.class.name == 'Branch' %>
+      <%= render 'shared/branches_index', :branch => r %>
+      <% else %>
+      <p> algo mas </P>
+      <% end %>
+      <% end %>
+<% else %>
+  <p> No se encontraron coincidencias con su criterio de busqueda </p>
+<% end %>
+      

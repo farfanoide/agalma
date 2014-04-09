@@ -1,5 +1,6 @@
 Agalma::Application.routes.draw do
 
+  get 'search/index'
   resources :galeries, only: [:index, :show]
   resources :images, only: [:show]
 
