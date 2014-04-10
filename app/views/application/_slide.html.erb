@@ -8,9 +8,7 @@
   animation_speed:200; ">
 
   <% @slider_images.each do |slide| %>
-  <li>
-    <%= image_tag slide.image.url, class: 'slide-item' %>
-  </li>
+    <li> <%= image_tag slide.image.url, class: 'slide-item' %> </li>
   <% end %>
 </ul>
 

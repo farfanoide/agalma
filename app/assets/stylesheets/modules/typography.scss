@@ -5,34 +5,35 @@ a {
 
 h1,
 .page-title {
+  
+border-bottom: 1px solid $grey;
+  color: $grey;
   font-family: 'Trebuchet MS', OfficinaSans-Italic, sans-serif;
+  font-size: 2.3em;
   font-style: italic;
   font-weight: 300;
+  padding: .2em auto;
   text-transform: capitalize;
 }
 
-.page-title {
-  border-bottom: 1px solid $grey;
-  color: $grey;
-  font-size: 2.3em;
-  padding: .2em auto;
+.page-content {
+  p { text-indent: 1.2em; }
 }
 
-h2,h3,h4{
+h2 { font-size: 24px; }
+
+h2, h3, h4{
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 24px;
 }
 
 h3 {
+  color: $white;
   font-size: 20px;
-  color:$white;
-  margin:1em 1.3em
+  margin: 1em 1.3em;
 }
 
 p {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: lighter;
-  text-indent: 1.3em;
-  margin:0;
-
+  line-height: 1.5em;
 }

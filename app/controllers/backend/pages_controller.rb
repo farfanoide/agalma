@@ -32,7 +32,7 @@ class Backend::PagesController < BackendController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to page_url(@page), notice: 'Page was successfully created.' }
+        format.html { redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.' }
         format.json { render action: 'show', status: :created, location: @page }
       else
         format.html { render action: 'new' }
@@ -47,7 +47,7 @@ class Backend::PagesController < BackendController
     authorize @page
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to backend_page_url(@page), notice: 'Page was successfully updated.' }
+        format.html { redirect_to page_url(@page), notice: 'Page was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -62,7 +62,7 @@ class Backend::PagesController < BackendController
     authorize @page
     @page.destroy
     respond_to do |format|
-      format.html { redirect_to backend_pages_url }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end
@@ -75,6 +75,9 @@ class Backend::PagesController < BackendController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :slug, :body, :active)
+      dir_attrs = [:id, :branch_id, :page_id, :_destroy]
+      params.require(:page).permit(:title, :slug, :body, :active,
+                                   directions_attributes: dir_attrs)
+
     end
 end

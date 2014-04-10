@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402104354) do
+ActiveRecord::Schema.define(version: 20140403082714) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140402104354) do
     t.string   "email"
     t.integer  "zipcode"
     t.string   "zone"
+    t.boolean  "external",    default: false
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -39,6 +40,16 @@ ActiveRecord::Schema.define(version: 20140402104354) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "directions", force: true do |t|
+    t.integer  "branch_id"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "directions", ["branch_id"], name: "index_directions_on_branch_id", using: :btree
+  add_index "directions", ["page_id"], name: "index_directions_on_page_id", using: :btree
 
   create_table "galeries", force: true do |t|
     t.string   "name"

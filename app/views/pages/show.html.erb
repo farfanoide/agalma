@@ -1,13 +1,28 @@
-<p id="notice"><%= notice %></p>
 <div class="page-container">
   <h1 class="page-title"><%= @page.title %></h1>
 
-  <section class="page_content">
-    <%= raw(@page.body) %>
+  <% if @page.branches.any? %>
+    <div class='row'>
+    <h3>Atencion en las siguientes sucursales:</h3>
+  <% @page.branches.each do |branch| %>
+    <div class="small-6 columns ">
+      <div class="branch-container small">
+      <%= link_to branch.name, branch_path(branch) %>
+      <br />
+      <br />
+      <%= "Direccion: #{branch.address}" %>
+    </div>
+    </div>
+  <% end %>
+  </div>
+
+  <% end %>
+  <section class="page-content">
+    <%= simple_format(@page.body) %>
   </section>
 </div>
 <% if user_signed_in? and policy(current_user).admin? %>
-  <%= link_to("Editar", edit_backend_page_path(@page), class: :button) %>
-  <%= link_to 'Borrar', backend_page_path(@page), method: :delete, data: { confirm: 'Esta seguro?' }, class: :button %>
+<%= link_to("Editar", edit_backend_page_path(@page), class: :button) %>
+<%= link_to 'Borrar', backend_page_path(@page), method: :delete, data: { confirm: 'Esta seguro?' }, class: :button %>
 <% end %>
 <%= link_to "Volver", :back, class: :button %>

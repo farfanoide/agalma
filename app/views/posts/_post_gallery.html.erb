@@ -1,0 +1,5 @@
+<ul class="clearing-thumbs" data-clearing>
+<% @gallery.images.each do |imagen| %>
+  <li> <%=link_to image_tag(imagen.file_name.url(:thumb), class: :'gallery-thumb'), imagen.file_name.url %> </li>
+<% end %>
+</ul>
