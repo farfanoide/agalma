@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   def intro
     @branches = Branch.all
-    render template: 'application/intro', layout: false
+    render template: 'application/intro', layout: 'intro'
   end
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

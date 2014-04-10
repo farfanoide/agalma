@@ -1,4 +1,16 @@
-<h1> aca va la intro </h1>
-<% @branches.each do |branch| %>
-  <%= link_to branch.name, branch %>
-<% end %>
+<div class="all-container">
+  <div class="row">
+    <div class="small-8 small-centered columns">
+      <h1>Seleccione su sucursal de interes</h1>
+    </div>
+  </div>
+  <% @branches.each do |branch| %>
+  <div class="row">
+    <div class="small-6 small-centered columns ">
+      <section class="branch-container">
+        <%= link_to branch.name, branch %>
+      </section>
+    </div>
+  </div>
+  <% end %>
+</div>
