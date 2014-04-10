@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   include Pundit
-
+  
+  def intro
+    @branches = Branch.all
+    render template: 'application/intro', layout: false
+  end
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   add_flash_types :error

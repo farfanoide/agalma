@@ -8,6 +8,9 @@ class PostsController < ApplicationController
   def show
     @gallery = @post.galery
   end
+  
+  def active_branch
+  end
 
   private
     def set_post
@@ -17,4 +20,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:id )
     end
+
 end
