@@ -17,6 +17,23 @@
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
+
+      <!--
+        <% if current_user.has_many_branches? %>
+          <form action="<%= backend_dashboard_set_current_branch_path %>" id="edit_current_branch" method="POST">
+            <select name="branch_id">
+              <% current_user.branches.each do |branch| %>
+                <% if active_branch_id == branch.id %>
+                  <option selected=selected value="<%= branch.id %>"><%= branch.name %></option>
+                <% else %>
+                  <option value="<%= branch.id %>"><%= branch.name %></option>
+                <% end %>
+              <% end %>
+            </select>
+            <input type="submit" name="" id="" value="Seleccionar Sucursal" />
+          </form>
+        <% end %>
+      -->
       <li class="treeview">
         <a href="<%= backend_branches_path %>">
           <%= fa_icon :home %>
