@@ -1,0 +1,27 @@
+<h1>Listing backend_menus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @backend_menus.each do |menu| %>
+      <tr>
+        <td><%= menu.name %></td>
+        <td><%= link_to 'Show', backend_menu_path(menu) %></td>
+        <td><%= link_to 'Edit', edit_backend_menu_path(menu) %></td>
+        <td><%= link_to 'Destroy', backend_menu_path(menu), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Menu', new_backend_menu_path %>

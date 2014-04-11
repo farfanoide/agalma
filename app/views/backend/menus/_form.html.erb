@@ -1,0 +1,13 @@
+<%= simple_form_for([:backend,@backend_menu]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+  </div>
+  <div class="form-actions">
+    <%= f.association :pages, label: "paginas", label_method: :title, include_blank: false,as: :check_boxes %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
