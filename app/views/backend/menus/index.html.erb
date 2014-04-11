@@ -1,27 +1,42 @@
-<h1>Listing backend_menus</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @menus.each do |menu| %>
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title">Menus: </h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body no-padding">
+    <table class="table table-condensed">
+      <tbody>
       <tr>
-        <td><%= menu.name %></td>
-        <td><%= link_to 'Show', backend_menu_path(menu) %></td>
-        <td><%= link_to 'Edit', edit_backend_menu_path(menu) %></td>
-        <td><%= link_to 'Destroy', backend_menu_path(menu), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Menu</th>
+        <th>Cantidad de Paginas</th>
+        <th>Acciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% @menus.each do |menu| %>
+        <tr>
+        <td><%= link_to menu.name, edit_backend_menu_path(menu) %></td>
+        <td><%= menu.pages.size %></td>
+        <td class="table-actions">
+          <%= link_to fa_icon(:eye),
+            backend_menu_path(menu),
+            class: :'btn btn-primary btn-sm',
+            data: {toggle: 'tooltip', 'original-title' => 'Ver'} %>
+          <%= link_to fa_icon(:edit),
+            edit_backend_menu_path(menu),
+            class: :'btn btn-success btn-sm',
+            data: {toggle: 'tooltip', 'original-title' => 'Editar'} %>
+          <%# link_to fa_icon('trash-o'),
+            backend_menu_path(menu),
+            method: :delete,
+            data: {confirm: 'Esta seguro?', toggle: 'tooltip', 'original-title' => 'Borrar'},
+            class: :'btn btn-danger btn-sm' %>
+        </td>
+        </tr>
+      <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <br>
 
-<br>
-
-<%= link_to 'New Menu', new_backend_menu_path %>
+  <%= link_to 'Crear Nueva Menu', new_backend_menu_path, class: :'btn btn-primary' %>
