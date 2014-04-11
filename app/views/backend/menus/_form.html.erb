@@ -1,13 +1,13 @@
-<%= simple_form_for([:backend,@backend_menu]) do |f| %>
+<%= simple_form_for([:backend, @menu], defaults: {input_html: {class: :'form-control'}}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-group">
     <%= f.input :name %>
   </div>
-  <div class="form-actions">
+  <div class="form-group">
     <%= f.association :pages, label: "paginas", label_method: :title, include_blank: false,as: :check_boxes %>
   </div>
-  <div class="form-actions">
+  <div class="form-group">
     <%= f.button :submit %>
   </div>
 <% end %>

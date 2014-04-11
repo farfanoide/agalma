@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @backend_menus.each do |menu| %>
+    <% @menus.each do |menu| %>
       <tr>
         <td><%= menu.name %></td>
         <td><%= link_to 'Show', backend_menu_path(menu) %></td>

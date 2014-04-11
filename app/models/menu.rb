@@ -1,6 +1,8 @@
 class Menu < ActiveRecord::Base
   has_many :pages
   belongs_to :branch
+
+  # TODO: implement menu_policy
   scope :general, -> { where(branch_id: nil) }
   scope :top, ->     { where(position: "top") }
   scope :right, ->   { where(position: "right") }

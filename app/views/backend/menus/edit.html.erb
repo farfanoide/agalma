@@ -1,6 +1,10 @@
-<h1>Editing backend_menu</h1>
+<% if @menu.branch  %>
+  <h1> <%= "Editar Menu para la Sucursal #{@menu.branch.name}" %> </h1>
+<% else %>
+  <h1>Editar Menu</h1>
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', backend_menu_path(@backend_menu) %> |
+<%= link_to 'Show', backend_menu_path(@menu) %> |
 <%= link_to 'Back', backend_menus_path %>

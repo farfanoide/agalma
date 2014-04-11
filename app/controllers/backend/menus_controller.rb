@@ -3,7 +3,7 @@ class Backend::MenusController < BackendController
 
   # GET /backend/menus
   def index
-    @backend_menus = Menu.all
+    @menus = Menu.all
   end
 
   # GET /backend/menus/1
@@ -12,7 +12,7 @@ class Backend::MenusController < BackendController
 
   # GET /backend/menus/new
   def new
-    @backend_menu = Menu.new
+    @menu = Menu.new
   end
 
   # GET /backend/menus/1/edit
@@ -21,10 +21,10 @@ class Backend::MenusController < BackendController
 
   # POST /backend/menus
   def create
-    @backend_menu = Menu.new(backend_menu_params)
+    @menu = Menu.new(backend_menu_params)
 
     respond_to do |format|
-      if @backend_menu.save
+      if @menu.save
         format.html { redirect_to backend_menus_url, notice: 'Menu was successfully created.' }
       else
         format.html { render action: 'new' }
@@ -35,7 +35,7 @@ class Backend::MenusController < BackendController
   # PATCH/PUT /backend/menus/1
   def update
     respond_to do |format|
-      if @backend_menu.update(backend_menu_params)
+      if @menu.update(backend_menu_params)
         format.html { redirect_to backend_menus_url, notice: 'Menu was successfully updated.' }
       else
         format.html { render action: 'edit' }
@@ -45,7 +45,7 @@ class Backend::MenusController < BackendController
 
   # DELETE /backend/menus/1
   def destroy
-    @backend_menu.destroy
+    @menu.destroy
     respond_to do |format|
       format.html { redirect_to backend_menus_url }
     end
@@ -54,7 +54,7 @@ class Backend::MenusController < BackendController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_backend_menu
-    @backend_menu = Menu.find(params[:id])
+    @menu = Menu.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
