@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
-    @posts = Post.order('created_at DESC').paginate(page: params[:page], per_page: 5)
+    if session[:frontend_branch_id].nil?
+      render template: 'application/intro', layout: 'intro'
+    else
+      @posts = Post.order('created_at DESC').paginate(page: params[:page], per_page: 5)
+    end
   end
 
   def show

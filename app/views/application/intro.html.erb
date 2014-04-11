@@ -4,11 +4,14 @@
       <h1>Seleccione su sucursal de interes</h1>
     </div>
   </div>
-  <% @branches.each do |branch| %>
+  <% @internal_branches.each do |branch| %>
   <div class="row">
     <div class="small-6 small-centered columns ">
       <section class="branch-container">
-        <%= link_to branch.name, branch %>
+	  <%= form_tag set_frontend_branch_path, method: :post %>
+		  <input type="hidden" name="branch_id" value="<%= branch.id %>">
+		  <input type="submit" value="<%= branch.name %>">
+	  </form>
       </section>
     </div>
   </div>

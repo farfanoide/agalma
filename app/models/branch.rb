@@ -19,5 +19,9 @@ class Branch < ActiveRecord::Base
 
   scope :external, -> { where(external: true) }
   scope :internal, -> { where(external: false) }
+  
+  #def self << default_branch
+    #first
+  #end
 end
 

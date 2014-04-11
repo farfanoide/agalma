@@ -20,9 +20,15 @@ class BranchesController < ApplicationController
 
   def nuestras_sedes
     @branches = Branch.internal
+  end 
+  def set_frontend_branch
+	puts params
+    puts params[:branch_id]
+    session[:frontend_branch_id] = params[:branch_id]
+	redirect_to :back
   end
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
     def set_branch
       @branch = Branch.find(params[:id])
     end
