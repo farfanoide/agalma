@@ -5,6 +5,8 @@ class Page < ActiveRecord::Base
   validates :slug, uniqueness: true, presence: true
   before_validation :slugify
 
+  scope :general, -> { where(branch_id: nil) }
+
   def slugify
     self.slug ||= title.parameterize
   end

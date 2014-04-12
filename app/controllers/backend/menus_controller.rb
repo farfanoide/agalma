@@ -13,10 +13,12 @@ class Backend::MenusController < BackendController
   # GET /backend/menus/new
   def new
     @menu = Menu.new
+    @general_pages = Page.general
   end
 
   # GET /backend/menus/1/edit
   def edit
+    @general_pages = Page.general if @menu.general?
   end
 
   # POST /backend/menus
@@ -59,6 +61,6 @@ class Backend::MenusController < BackendController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def backend_menu_params
-    params.require(:menu).permit(:name, :_destroy, page_ids:[])
+    params.require(:menu).permit(:name, :position, :_destroy, page_ids:[])
   end
 end

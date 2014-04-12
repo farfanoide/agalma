@@ -1,42 +1,5 @@
-<div class="box">
-  <div class="box-header">
-    <h3 class="box-title">Menus: </h3>
-  </div>
-  <!-- /.box-header -->
-  <div class="box-body no-padding">
-    <table class="table table-condensed">
-      <tbody>
-      <tr>
-        <th>Menu</th>
-        <th>Cantidad de Paginas</th>
-        <th>Acciones</th>
-      </tr>
-      <% @menus.each do |menu| %>
-        <tr>
-        <td><%= link_to menu.name, edit_backend_menu_path(menu) %></td>
-        <td><%= menu.pages.size %></td>
-        <td class="table-actions">
-          <%= link_to fa_icon(:eye),
-            backend_menu_path(menu),
-            class: :'btn btn-primary btn-sm',
-            data: {toggle: 'tooltip', 'original-title' => 'Ver'} %>
-          <%= link_to fa_icon(:edit),
-            edit_backend_menu_path(menu),
-            class: :'btn btn-success btn-sm',
-            data: {toggle: 'tooltip', 'original-title' => 'Editar'} %>
-          <%# link_to fa_icon('trash-o'),
-            backend_menu_path(menu),
-            method: :delete,
-            data: {confirm: 'Esta seguro?', toggle: 'tooltip', 'original-title' => 'Borrar'},
-            class: :'btn btn-danger btn-sm' %>
-        </td>
-        </tr>
-      <% end %>
-        </tbody>
-      </table>
-    </div>
-    <!-- /.box-body -->
-  </div>
-  <br>
-
-  <%= link_to 'Crear Nueva Menu', new_backend_menu_path, class: :'btn btn-primary' %>
+<%= render partial: 'menus', locals: { menus: @menus.general  }%>
+<%= link_to 'Crear Nuevo Menu General', new_backend_menu_path, class: :'btn btn-primary' %>
+<br/>
+<br/>
+<%= render partial: 'menus', locals: { menus: @menus.dedicated } %>
