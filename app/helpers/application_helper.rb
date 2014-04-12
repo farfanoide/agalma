@@ -11,9 +11,9 @@ module ApplicationHelper
   def link_to_add_galery(name, f, association)
 
     if f.object.new_record?
-    new_object = f.object.build_galery
+      new_object = f.object.build_galery
     else
-    new_object = f.object.galery
+      new_object = f.object.galery
     end
     id = new_object.object_id
     fields = f.fields_for(association, new_object, child_index: id) do |builder|
@@ -21,7 +21,7 @@ module ApplicationHelper
     end
     if f.object.new_record?
       link_to(name, '#', class: "add_galery", data: {id: id, fields: fields.gsub("\n", "")})
-    end  
+    end
   end
 
   def authorize_content
