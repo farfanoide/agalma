@@ -1,19 +1,17 @@
 <div class="page-container">
   <h1 class="page-title"><%= @page.title %></h1>
 
-  <% if @page.branches.any? %>
+  <% if @page.branch %>
     <div class='row'>
-    <h3>Atencion en las siguientes sucursales:</h3>
-  <% @page.branches.each do |branch| %>
+    <h3>Atencion en la siguiente sucursal:</h3>
     <div class="small-6 columns ">
       <div class="branch-container small">
-      <%= link_to branch.name, branch_path(branch) %>
+      <%= link_to @page.branch.name, branch_path(@page.branch) %>
       <br />
       <br />
-      <%= "Direccion: #{branch.address}" %>
+      <%= "Direccion: #{@page.branch.address}" %>
     </div>
     </div>
-  <% end %>
   </div>
 
   <% end %>

@@ -7,6 +7,11 @@ class Menu < ActiveRecord::Base
   scope :top, ->     { where(position: "top") }
   scope :right, ->   { where(position: "right") }
   scope :bottom, ->  { where(position: "bottom") }
+  
+  def add_page (page)
+    page.menu_id = self.id
+    page.position = self.pages.size + 1
+  end
   # def sort_menu(argumento) #ToDo modificar nombre variable
   #  @pages = pages
   #  argumento.each do |arg|

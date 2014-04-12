@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411220028) do
+ActiveRecord::Schema.define(version: 20140412004206) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20140411220028) do
     t.datetime "updated_at"
     t.integer  "position"
     t.integer  "menu_id"
+    t.integer  "branch_id"
   end
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree

@@ -29,7 +29,7 @@ class Backend::PagesController < BackendController
   def create
     @page = Page.new(page_params)
     authorize @page
-
+    @page.branch.menu.add_page @page
     respond_to do |format|
       if @page.save
         format.html { redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.' }
@@ -76,8 +76,7 @@ class Backend::PagesController < BackendController
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
       dir_attrs = [:id, :branch_id, :page_id, :_destroy]
-      params.require(:page).permit(:title, :slug, :body, :active,
-                                   directions_attributes: dir_attrs)
+      params.require(:page).permit(:title, :slug, :body, :active, :branch_id, :menu_id)
 
     end
 end
