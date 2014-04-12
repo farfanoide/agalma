@@ -14,14 +14,14 @@ class ApplicationController < ActionController::Base
 
   def fetch_static_pages
     set_menu_pages
-    @quienes ||= Page.find_by!(slug: 'quienes-somos')
-    @cTeraEd ||= Page.find_by!(slug: 'centros-terapeuticos-educativos')
-    @cEsTemp ||= Page.find_by!(slug: 'centro-de-estimulacion-temprana')
-    @intEsc  ||= Page.find_by!(slug: 'integracion-escolar')
-    @psicoDi ||= Page.find_by!(slug: 'psicoanalisis-a-distancia')
-    @invYDoc ||= Page.find_by!(slug: 'investigacion-y-docencia')
-    pages = [@quienes, @cTeraEd, @cEsTemp, @intEsc, @consExt, @psicoDist, @invYDoc]
-    @n_pages.reject! {|page| pages.include? page }
+    # @quienes ||= Page.find_by!(slug: 'quienes-somos')
+    # @cTeraEd ||= Page.find_by!(slug: 'centros-terapeuticos-educativos')
+    # @cEsTemp ||= Page.find_by!(slug: 'centro-de-estimulacion-temprana')
+    # @intEsc  ||= Page.find_by!(slug: 'integracion-escolar')
+    # @psicoDi ||= Page.find_by!(slug: 'psicoanalisis-a-distancia')
+    # @invYDoc ||= Page.find_by!(slug: 'investigacion-y-docencia')
+    # pages = [@quienes, @cTeraEd, @cEsTemp, @intEsc, @consExt, @psicoDist, @invYDoc]
+    # @n_pages.reject! {|page| pages.include? page }
   end
 
   def fetch_slider_images
