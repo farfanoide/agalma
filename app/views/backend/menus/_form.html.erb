@@ -2,6 +2,11 @@
   <%= f.error_notification %>
 
   <% if @menu.general?  %>
+
+    <div class="form-group">
+      <%= f.input :name, label: :nombre %>
+    </div>
+
     <div class="form-group">
       <%= f.association :pages,
         collection: @general_pages,
@@ -11,7 +16,10 @@
         as: :check_boxes %>
     </div>
     <div class="form-group">
-      <%= f.input :position, label: 'Posicion', collection: ['arriba', 'derecha', 'abajo'], as: :radio_buttons %>
+      <%= f.input :position, label: 'Posicion',
+        collection: { arriba: 'top', derecha: 'right', abajo: 'bottom' },
+        as: :radio_buttons
+      %>
     </div>
   <% else %>
     <!-- TODO: darles orden -->

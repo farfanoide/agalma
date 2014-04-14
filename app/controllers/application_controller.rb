@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def fetch_static_pages
     set_menu_pages
-    # @quienes ||= Page.find_by!(slug: 'quienes-somos')
+    @quienes ||= Page.find_by!(slug: 'quienes-somos')
     # @cTeraEd ||= Page.find_by!(slug: 'centros-terapeuticos-educativos')
     # @cEsTemp ||= Page.find_by!(slug: 'centro-de-estimulacion-temprana')
     # @intEsc  ||= Page.find_by!(slug: 'integracion-escolar')
@@ -30,6 +30,7 @@ class ApplicationController < ActionController::Base
 
   def set_menu_pages
     @n_pages ||= Page.all
+    @top_menu = Menu.top.first
   end
 
   def user_not_authorized
