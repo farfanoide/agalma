@@ -12,7 +12,7 @@
     <% else %>
     <table class="table table-condensed">
       <tbody>
-      <% for post in @posts %>
+      <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, edit_backend_post_path(post) %></td>
       </tr>

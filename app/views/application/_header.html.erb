@@ -8,9 +8,8 @@
         </ul>
         <section class="top-bar-section">
           <ul class="links-container">
-            <li class="item"><%= link_to "Quiénes Somos", @quienes %></li>
-            <li class="item"><a href="#">Galería</a></li>
-            <li class="item"><%= link_to "Contacto", new_contact_path %></li>
+            <%= render partial: 'top_menu' if @top_menu %>
+
             <%= render 'devise/menu/login_items' %>
             <% if user_signed_in? %>
               <% if policy(current_user).admin? %>
@@ -18,13 +17,7 @@
               <% end %>
             <% else %>
               <%= render 'devise/menu/registration_items' %>
-              <% end %>
-            <li class="has-dropdown pages-dropdown ">
-            <a href="#">Paginas</a>
-            <ul class="dropdown">
-              <%= render 'pages_nav' %>
-            </ul>
-            </li>
+            <% end %>
           </ul>
         </section>
       </nav>

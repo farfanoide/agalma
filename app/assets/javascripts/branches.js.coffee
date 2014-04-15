@@ -17,7 +17,7 @@ jQuery ->
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
     $(this).before($(this).data('fields').replace(regexp, time))
-    $(this).hide()
+    $(this).remove()
     event.preventDefault()
 
   $('#edit_current_branch').on 'change', (event) ->

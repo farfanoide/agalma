@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  branch_id: 
-  page_id: 
+  name: MyString
 
 two:
-  branch_id: 
-  page_id: 
+  name: MyString

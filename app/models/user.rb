@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
     # TODO: update method -> "${name}, ${last_name}"
     name
   end
+
   def admin?
     admin
   end

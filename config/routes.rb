@@ -17,6 +17,7 @@ Agalma::Application.routes.draw do
   namespace :backend do
     resources :galeries, only: [:new, :create, :edit, :update, :destroy]
     resources :posts
+    resources :menus
     resources :users
     resources :branches
     resources :image_sliders

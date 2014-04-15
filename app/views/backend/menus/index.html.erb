@@ -1,0 +1,5 @@
+<%= render partial: 'menus', locals: { menus: @menus.general  }%>
+<%= link_to 'Crear Nuevo Menu General', new_backend_menu_path, class: :'btn btn-primary' %>
+<br/>
+<br/>
+<%= render partial: 'menus', locals: { menus: @menus.dedicated } %>

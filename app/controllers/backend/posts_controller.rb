@@ -1,13 +1,13 @@
 class Backend::PostsController < BackendController
-    before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy]
 
-    def index
-      @posts = policy_scope(Post)
-    end
+  def index
+    @posts = policy_scope(Post)
+  end
 
-    def new
-        @post = Post.new
-    end
+  def new
+    @post = Post.new
+  end
 
   def edit
     authorize @post
@@ -19,11 +19,9 @@ class Backend::PostsController < BackendController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @post }
+        format.html { redirect_to post_url(@post), notice: 'Noticia actualizada correctamente.' }
       else
         format.html { render action: 'new' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -32,11 +30,9 @@ class Backend::PostsController < BackendController
     @post.user = current_user
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to post_url(@post), notice: 'Noticia actualizada correctamente.' }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,16 +41,17 @@ class Backend::PostsController < BackendController
     @post.destroy
     respond_to do |format|
       format.html { redirect_to backend_posts_url }
-      format.json { head :no_content }
     end
   end
 
-    private
-        def set_post
-            @post = Post.find(params[:id])
-        end
+  private
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
-        def post_params
-            params.require(:post).permit(:title, :description, :content, :branch_id, galery_attributes:[:id,:post_id,:name,:description,:_destroy,images_attributes:[:id,:file_name,:name,:_destroy]])
-        end
+    def post_params
+      image_attrs   = [:id, :file_name, :name, :_destroy]
+      gallery_attrs = [:id, :post_id, :name, :description, :_destroy, images_attributes: image_attrs]
+      params.require(:post).permit(:title, :description, :content, :branch_id, galery_attributes: gallery_attrs)
+    end
 end
