@@ -21,7 +21,7 @@ module ApplicationHelper
     end
     if f.object.new_record?
       link_to(name, '#', class: "add_galery", data: {id: id, fields: fields.gsub("\n", "")})
-    end  
+    end
   end
 
   def authorize_content

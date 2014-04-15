@@ -19,20 +19,6 @@
             <% else %>
               <%= render 'devise/menu/registration_items' %>
               <% end %>
-              <li>
-              <form action="<%= set_frontend_branch_path %>" id="edit_current_branch" method="POST">
-                <select name="branch_id">
-                  <% @internal_branches.each do |branch| %>
-                  <% if session[:frontend_branch_id] == branch.id %>
-                  <option selected=selected value="<%= branch.id %>"><%= branch.name %></option>
-                  <% else %>
-                  <option value="<%= branch.id %>"><%= branch.name %></option>
-                  <% end %>
-                  <% end %>
-                </select>
-                <input type="submit" name="" id="" value="Seleccionar Sucursal" />
-              </form>
-              </li>
             <li class="has-dropdown pages-dropdown ">
             <a href="#">Paginas</a>
             <ul class="dropdown">
