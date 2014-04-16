@@ -63,6 +63,7 @@ class Backend::PagesController < BackendController
     end
 
     def page_params
-      params.require(:page).permit(:title, :slug, :body, :active, :branch_id, :menu_id)
+      params.require(:page).permit(:title, :slug, :body, :active, :branch_id, :menu_id,
+                                  widget_ids: [])
     end
 end

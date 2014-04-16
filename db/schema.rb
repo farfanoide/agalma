@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412213257) do
+ActiveRecord::Schema.define(version: 20140416222658) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -102,6 +102,11 @@ ActiveRecord::Schema.define(version: 20140412213257) do
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
 
+  create_table "pages_widgets", id: false, force: true do |t|
+    t.integer "page_id",   null: false
+    t.integer "widget_id", null: false
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "description"
@@ -165,5 +170,14 @@ ActiveRecord::Schema.define(version: 20140412213257) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "widgets", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "cell_class"
+    t.string   "method_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
