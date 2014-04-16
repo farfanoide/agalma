@@ -26,7 +26,7 @@ class Backend::PagesController < BackendController
   def create
     @page = Page.new(page_params)
     authorize @page
-    @page.branch.menu.add_page @page
+    @page.branch.menu.add_page @page if @page.valid?
     respond_to do |format|
       if @page.save
         format.html { redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.' }

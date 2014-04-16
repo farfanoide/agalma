@@ -14,19 +14,9 @@
         <tr>
         <td><%= link_to page.title, edit_backend_page_path(page) %></td>
         <td class="table-actions">
-          <%= link_to fa_icon(:eye),
-            page_path(page),
-            class: :'btn btn-primary btn-sm',
-            data: {toggle: 'tooltip', 'original-title' => 'Ver'} %>
-          <%= link_to fa_icon(:edit),
-            edit_backend_page_path(page),
-            class: :'btn btn-success btn-sm',
-            data: {toggle: 'tooltip', 'original-title' => 'Editar'} %>
-          <%= link_to fa_icon('trash-o'),
-            backend_page_path(page),
-            method: :delete,
-            data: {confirm: 'Esta seguro?', toggle: 'tooltip', 'original-title' => 'Borrar'},
-            class: :'btn btn-danger btn-sm' %>
+          <%= show_link page %>
+          <%= edit_link page %>
+          <%= destroy_link page %>
         </td>
         </tr>
       <% end %>
