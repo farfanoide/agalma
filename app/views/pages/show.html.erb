@@ -18,6 +18,11 @@
   <section class="page-content">
     <%= simple_format(@page.body) %>
   </section>
+  <section class="widgets-container">
+    <% @page.widgets.each do |w| %>
+      <%= render_cell w.cell_class, w.method_name %>
+    <% end %>
+</section>
 </div>
 <% if user_signed_in? and policy(current_user).admin? %>
 <%= link_to("Editar", edit_backend_page_path(@page), class: :button) %>

@@ -70,5 +70,5 @@ _calvicie_content = 'El afectado, sin antecedentes en esta afección, presentaba
 
 Widget.create!(name: 'consultorios internos', description: 'este widget lista todos los consultorios internos del sistema', cell_class:'branch', method_name:'internal_branches')
 Widget.create!(name: 'consultorios externos', description: 'este widget lista todos los consultorios externos del sistema', cell_class:'branch', method_name:'external_branches')
-Widget.create!(name: 'contacto', description: 'este widget presenta un formulario de contacto', cell_class:'contact', method_name:'contac_form')
+Widget.create!(name: 'contacto', description: 'este widget presenta un formulario de contacto', cell_class:'contact', method_name:'contact_form')
 Widget.create!(name: 'galeria', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'gallery_slider')
