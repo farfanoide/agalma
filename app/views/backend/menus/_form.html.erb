@@ -21,17 +21,18 @@
         as: :radio_buttons
       %>
     </div>
+    <div class="form-group">
+      <%= f.button :submit, 'guardar', class: :'btn btn-primary' %>
+    </div>
   <% else %>
+      <%= f.input :name, label: :nombre %>
     <!-- TODO: darles orden -->
     <label>Paginas: </label>
     <ol>
-      <% @menu.pages.each do |page| %>
+      <% f.object.pages.each do |page| %>
         <li><%= page.title %></li>
       <% end %>
     </ol>
 
   <% end %>
-  <div class="form-group">
-    <%= f.button :submit, 'Crear Menu', class: :'btn btn-primary' %>
-  </div>
 <% end %>
