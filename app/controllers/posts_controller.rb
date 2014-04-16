@@ -13,9 +13,6 @@ class PostsController < ApplicationController
     @gallery = @post.galery
   end
 
-  def active_branch
-  end
-
   private
     def set_post
       @post = Post.find(params[:id])
