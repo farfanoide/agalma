@@ -4,10 +4,7 @@
       <h1 class="post-title"> <%= link_to post.title, post_path(post) %> </h1>
     </div>
     <div class="post-main">
-      <p> <%= simple_format(post.description)  %> </p>
-      <br>
-      <br>
-      <p><%= simple_format(post.content) %></p>
+      <p> <%=   "#{post.description}..."   %> <%=  link_to("(leer mas)", post_path(post))  %></p>
     </div>
   </section>
 </div>
