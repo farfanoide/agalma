@@ -13,6 +13,7 @@
     </div>
   </section>
 </div>
+
 <!-- TODO: tirarle un iconito a esto y hacer q aparezca el texto on hover ;) -->
 <% if user_signed_in? and policy(current_user).admin? %>
   <%= link_to("Editar", edit_backend_post_path(post), class: 'button') %>
