@@ -7,7 +7,8 @@
 @import 'modules/typography';
 @import 'modules/navs';
 @import 'modules/forms';
- @import 'modules/posts';
+@import 'modules/posts';
+@import 'modules/media-object';
 
 // Header
 .header-container {
@@ -230,7 +231,7 @@
 
 .page-container {
   section { 
-    margin-top: 2em;
+    margin-top: .5em;
     border-top: 1px solid $grey;
   }
 }
