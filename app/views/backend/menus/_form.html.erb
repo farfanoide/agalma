@@ -31,8 +31,7 @@
     <ol>
       <%= f.fields_for :pages, f.object.pages do |page| %>
         <li>
-        <%= page.object.title %>
-        <%= page.input :position %>
+        <%= page.input :position, label: page.object.title %>
         </li>
       <% end %>
     </ol>
