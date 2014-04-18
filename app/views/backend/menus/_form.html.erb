@@ -29,10 +29,14 @@
     <!-- TODO: darles orden -->
     <label>Paginas: </label>
     <ol>
-      <% f.object.pages.each do |page| %>
-        <li><%= page.title %></li>
+      <%= f.fields_for :pages, f.object.pages do |page| %>
+        <li>
+        <%= page.object.title %>
+        <%= page.input :position %>
+        </li>
       <% end %>
     </ol>
 
+      <%= f.button :submit, 'guardar', class: :'btn btn-primary' %>
   <% end %>
 <% end %>

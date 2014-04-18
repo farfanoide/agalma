@@ -11,14 +11,14 @@ class Branch < ActiveRecord::Base
   accepts_nested_attributes_for :posts, allow_destroy: true
 
   validates_presence_of :name
-  
+
 #  searchable do
 #    text :name
 #  end
 
   scope :external, -> { where(external: true) }
   scope :internal, -> { where(external: false) }
-  
+
   #def self << default_branch
     #first
   #end
