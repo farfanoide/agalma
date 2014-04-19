@@ -1,20 +1,5 @@
 <div class="page-container">
   <h1 class="page-title"><%= @page.title %></h1>
-
-  <% if @page.branch %>
-    <div class='row'>
-    <h3>Atencion en la siguiente sucursal:</h3>
-    <div class="small-6 columns ">
-      <div class="branch-container small">
-      <%= link_to @page.branch.name, branch_path(@page.branch) %>
-      <br />
-      <br />
-      <%= "Direccion: #{@page.branch.address}" %>
-    </div>
-    </div>
-  </div>
-
-  <% end %>
   <section class="page-content">
     <%= simple_format(@page.body) %>
   </section>
@@ -22,10 +7,10 @@
     <% @page.widgets.each do |w| %>
       <%= render_cell w.cell_class, w.method_name %>
     <% end %>
-</section>
+  </section>
 </div>
 <% if user_signed_in? and policy(current_user).admin? %>
-<%= link_to("Editar", edit_backend_page_path(@page), class: :button) %>
-<%= link_to 'Borrar', backend_page_path(@page), method: :delete, data: { confirm: 'Esta seguro?' }, class: :button %>
+  <%= backend_edit_link @page %>
+  <%= backend_destroy_link @page %>
 <% end %>
 <%= link_to "Volver", :back, class: :button %>

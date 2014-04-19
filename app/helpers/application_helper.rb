@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def link_to_add_fields(name, f, association)
     new_object = f.object.send(association).klass.new
     id = new_object.object_id
@@ -30,6 +31,19 @@ module ApplicationHelper
     end
   end
 
+  def backend_edit_link(object)
+    link_to 'editar',
+      edit_polymorphic_path([:backend, object]),
+      class: :'button'
+  end
+
+  def backend_destroy_link(object)
+    link_to 'Borrar',
+      polymorphic_path([:backend, object]),
+      method: :delete,
+      data: { confirm: 'Esta seguro?' },
+      class: :button
+  end
 
 
   def resource_name
