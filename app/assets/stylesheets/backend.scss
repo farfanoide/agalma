@@ -6,6 +6,8 @@
 }
 
 @import 'font-awesome';
-/*
-*require_self
-*/
+
+.cke_top, .cke_bottom {
+  background-image: none !important;
+  background: #ECEEEC !important;
+}
