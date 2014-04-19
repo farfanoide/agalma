@@ -61,7 +61,7 @@ class Backend::MenusController < BackendController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def backend_menu_params
-    pages_attrs = [:id, :position]
-    params.require(:menu).permit(:name, :position, :_destroy, pages_attributes: pages_attrs)
+    pages_attrs = [:id, :position, :active]
+    params.require(:menu).permit(:name, :position, :_destroy, pages_attributes: pages_attrs, page_ids:[])
   end
 end

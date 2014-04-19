@@ -14,6 +14,7 @@ class Menu < ActiveRecord::Base
   def add_page(page)
     page.menu_id = self.id
     page.position = self.pages.size + 1
+    page.active = true
   end
 
   def add_pages(pages = [])
