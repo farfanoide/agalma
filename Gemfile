@@ -52,7 +52,7 @@ group :development do
   gem 'sass-rails-source-maps'
 end
 
-
+gem 'cells'
 gem 'simple_form'
 gem 'devise'
 gem 'bourbon'

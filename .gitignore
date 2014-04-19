@@ -18,5 +18,6 @@
 *.swp
 .#*
 /public/uploads/*
-public/assets/*
-solr/*
+/public/assets/*
+/solr/*
+solr/development/data/*

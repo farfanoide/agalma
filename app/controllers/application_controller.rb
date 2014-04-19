@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   end
 
   def active_branch
-    Branch.find active_branch_id
+    @active_branch ||= Branch.find active_branch_id
   end
 
   def active_branch_id
