@@ -28,6 +28,10 @@ class Menu < ActiveRecord::Base
     end
   end
 
+  def sorted_pages
+    pages.active.order(:position)
+  end
+
   def general?
     !branch_id
   end

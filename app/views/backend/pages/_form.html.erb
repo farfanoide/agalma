@@ -4,12 +4,16 @@
   <%= f.input :title %>
 </div>
 <div class="form-group">
+  <%= f.input :active, as: :boolean, label: 'pagina activa' %>
+</div>
+<div class="form-group">
   <%= f.input :body, :as => :ckeditor %>
 </div>
 <div class="form-group">
   <%= f.association :widgets, label: "widgets", label_method: :name, include_blank: true, as: :check_boxes%>
 </div>
 <div class="form-group">
+  <!-- TODO: add "general" option to select -->
   <%= f.association :branch, label: "sucursal", label_method: :name, include_blank: true%>
 </div>
 <div class="form-actions">

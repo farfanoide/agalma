@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :active_branch_id, :active_branch, :pages_menu
+  helper_method :active_branch_id, :active_branch, :active_branch_menu
 
   include Pundit
 
@@ -29,15 +29,13 @@ class ApplicationController < ActionController::Base
     flash[:error] = "You are not authorized to perform this action."
     redirect_to request.headers["Referer"] || root_path
   end
-  def pages_menu
-    @pages_menu ||= menu_branch.pages.active.order(:position)
-  end
-  def menu_branch
-    active_branch.menu
+
+  def active_branch_menu
+    @branch_menu ||= active_branch.menu
   end
 
   def active_branch
-    Branch.find active_branch_id
+    @active_branch ||= Branch.find active_branch_id
   end
 
   def active_branch_id
@@ -52,6 +50,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_internal_branches
-    @internal_branches = Branch.internal
+    @internal_branches ||= Branch.internal
   end
 end
