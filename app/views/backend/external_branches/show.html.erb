@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="small-6 columns small-centered">
+
+    <p>
+    <strong>Name:</strong>
+    <%= @external_branch.name %>
+    </p>
+
+    <p>
+    <strong>Description:</strong>
+    <%= @external_branch.description %>
+    </p>
+
+    <p>
+    <strong>Address:</strong>
+    <%= @external_branch.address %>
+    </p>
+
+    <p>
+    <strong>Email:</strong>
+    <%= @external_branch.email %>
+    </p>
+
+    <p>
+    <strong>Zipcode:</strong>
+    <%= @external_branch.zipcode %>
+    </p>
+
+    <p>
+    <strong>Zone:</strong>
+    <%= @external_branch.zone %>
+    </p>
+
+    <%= link_to 'Edit', edit_backend_external_branch_path(@external_branch) %> |
+    <%= link_to 'Back', backend_external_branches_path %>
+  </div>
+</div>

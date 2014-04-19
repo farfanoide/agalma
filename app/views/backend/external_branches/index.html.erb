@@ -1,0 +1,37 @@
+<h1>Sucursales Externas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Zipcode</th>
+      <th>Zone</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @external_branches.each do |external_branch| %>
+      <tr>
+        <td><%= external_branch.name %></td>
+        <td><%= external_branch.description %></td>
+        <td><%= external_branch.address %></td>
+        <td><%= external_branch.email %></td>
+        <td><%= external_branch.zipcode %></td>
+        <td><%= external_branch.zone %></td>
+        <td><%= link_to 'Show', backend_external_branch_path(external_branch) %></td>
+        <td><%= link_to 'Edit', edit_backend_external_branch_path(external_branch) %></td>
+        <td><%= link_to 'Destroy', backend_external_branch_path(external_branch), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva sucursal externa', new_backend_external_branch_path %>
