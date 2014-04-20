@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419215401) do
+ActiveRecord::Schema.define(version: 20140420205827) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 20140419215401) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "external_telephones", force: true do |t|
+    t.integer  "ext"
+    t.integer  "num"
+    t.integer  "external_branch_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "external_telephones", ["external_branch_id"], name: "index_external_telephones_on_external_branch_id", using: :btree
 
   create_table "galeries", force: true do |t|
     t.string   "name"
