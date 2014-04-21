@@ -1,37 +1,25 @@
-<h1>Sucursales Externas</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Zipcode</th>
-      <th>Zone</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @external_branches.each do |external_branch| %>
-      <tr>
-        <td><%= external_branch.name %></td>
-        <td><%= external_branch.description %></td>
-        <td><%= external_branch.address %></td>
-        <td><%= external_branch.email %></td>
-        <td><%= external_branch.zipcode %></td>
-        <td><%= external_branch.zone %></td>
-        <td><%= link_to 'Show', backend_external_branch_path(external_branch) %></td>
-        <td><%= link_to 'Edit', edit_backend_external_branch_path(external_branch) %></td>
-        <td><%= link_to 'Destroy', backend_external_branch_path(external_branch), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title">Sucursales Externas: </h3>
+  </div><!-- /.box-header -->
+  <div class="box-body no-padding">
+    <table class="table table-condensed">
+      <tbody><tr>
+        <th>Sucursal</th>
+        <th>Acciones</th>
+      </tr>
+      <% @external_branches.each do |branch| %>
+        <tr>
+        <td class="title-field"><%= link_to branch.name, edit_backend_external_branch_path(branch) %></td>
+        <td class="table-actions">
+          <%= link_to fa_icon(:edit), edit_backend_external_branch_path(branch), class: 'btn btn-success btn-sm', data:{toggle: 'tooltip', 'original-title' => 'Editar'}  %>
+          <%= link_to fa_icon(:'trash-o'), backend_external_branch_path(branch), method: :delete, data: { confirm: 'Esta seguro?', toggle: 'tooltip', 'original-title' => 'Borrar' }, class: 'btn btn-danger btn-sm' %>
+        </td>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
+    </tbody></table>
+  </div><!-- /.box-body -->
+</div>
 <br>
 
 <%= link_to 'Nueva sucursal externa', new_backend_external_branch_path %>
