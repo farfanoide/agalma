@@ -50,6 +50,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_internal_branches
-    @internal_branches ||= Branch.internal
+    @internal_branches ||= Branch.all
   end
 end

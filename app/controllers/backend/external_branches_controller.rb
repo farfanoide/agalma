@@ -61,6 +61,6 @@ class Backend::ExternalBranchesController < BackendController
   def external_branch_params
     telep_attrs = [:id, :ext, :num, :external_branch_id, :_destroy]
     params.require(:external_branch).permit(:name, :description, :address, :email, :zipcode, :zone,
-                                            external_telephones_attributes: telep_attrs)
+                                            external_telephones_attributes: telep_attrs, branch_ids:[])
   end
 end

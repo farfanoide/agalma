@@ -8,8 +8,7 @@ branch = Branch.create!(name: 'Centro Terapeutico Educativo',
                         zone: 'partido de General San Martin, Prov. de Buenos Aires',
                         zipcode: 1655,
                         address: 'Lacroze 7259 - Jose Leon Suarez',
-                        email: 'info@centroagalma.com.ar',
-                        external: false )
+                        email: 'info@centroagalma.com.ar')
 _branch_menu = branch.create_menu!(name: "Menu - #{branch.name}", position: 'left')
 
 
@@ -18,18 +17,15 @@ branch = Branch.create!(name: 'Atencion Terapeutica Interdisciplinaria',
                         zone:'Capital Federal',
                         zipcode:1405,
                         email:'consultorios@centroagalma.com.ar',
-                        address:'Aranguren 561 - P. B. "A"',
-                        external: false )
+                        address:'Aranguren 561 - P. B. "A"')
 
 branch.create_menu!(name: "Menu - #{branch.name}", position: 'left')
-branch = Branch.create!(name: 'Centro de Tratamientos Maternales',
+external_branch = ExternalBranch.create!(name: 'Centro de Tratamientos Maternales',
                         description: _cent_desc,
                         zone: 'Salta' ,
                         zipcode: 3390, email: 'maternal@ externo.com.ar',
-                        address: 'Arangurencio 890',
-                        external: true)
+                        address: 'Arangurencio 890')
 
-branch.create_menu!(name: "Menu - #{branch.name}", position: 'left')
 Telephone.create!(ext:'011', num:'49032888', branch_id: Branch.find_by(name: 'Centro Terapeutico Educativo').id )
 Telephone.create!(ext:'011', num:'47208195', branch_id: Branch.find_by(name: 'Atencion Terapeutica Interdisciplinaria').id)
 
