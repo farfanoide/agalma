@@ -24,9 +24,9 @@
 <div class="form-group">
   <%= f.simple_fields_for(:external_telephones) do |tel| %>
     <%= render 'external_telephone_fields', f: tel %>
-<% end %></div>
+  <% end %></div>
+<br>
 <%= link_to_add_fields '+ agregar telefono', f, :external_telephones %>
-<div class="form-actions">
-  <%= f.button :submit %>
-</div>
+</br>
+  <%= f.submit 'Guardar', class: 'btn btn-primary' %>
 <% end %>
