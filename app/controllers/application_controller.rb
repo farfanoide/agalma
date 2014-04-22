@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  def intro
+    session[:active_branch] = Branch.first.id
+    render template: 'application/intro', layout: 'intro'
+  end
+
   private
 
   def fetch_static_pages
