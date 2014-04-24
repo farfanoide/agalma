@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416222658) do
+ActiveRecord::Schema.define(version: 20140419222655) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -22,7 +22,11 @@ ActiveRecord::Schema.define(version: 20140416222658) do
     t.string   "email"
     t.integer  "zipcode"
     t.string   "zone"
-    t.boolean  "external",    default: false
+  end
+
+  create_table "branches_external_branches", id: false, force: true do |t|
+    t.integer "branch_id",          null: false
+    t.integer "external_branch_id", null: false
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -40,6 +44,27 @@ ActiveRecord::Schema.define(version: 20140416222658) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "external_branches", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "address"
+    t.string   "email"
+    t.integer  "zipcode"
+    t.string   "zone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "external_telephones", force: true do |t|
+    t.integer  "ext"
+    t.integer  "num"
+    t.integer  "external_branch_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "external_telephones", ["external_branch_id"], name: "index_external_telephones_on_external_branch_id", using: :btree
 
   create_table "galeries", force: true do |t|
     t.string   "name"
@@ -61,6 +86,7 @@ ActiveRecord::Schema.define(version: 20140416222658) do
     t.integer  "galery_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
   end
 
   add_index "images", ["galery_id"], name: "index_images_on_galery_id", using: :btree

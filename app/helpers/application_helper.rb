@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def link_to_add_fields(name, f, association)
     new_object = f.object.send(association).klass.new
     id = new_object.object_id
@@ -10,7 +11,7 @@ module ApplicationHelper
 
   def link_to_add_galery(name, f, association)
 
-    if f.object.new_record?
+    if !f.object.galery
       new_object = f.object.build_galery
     else
       new_object = f.object.galery
@@ -19,7 +20,7 @@ module ApplicationHelper
     fields = f.fields_for(association, new_object, child_index: id) do |builder|
       render(association.to_s + "_fields", f: builder)
     end
-    if f.object.new_record?
+    if f.object.galery.new_record?
       link_to(name, '#', class: "add_galery", data: {id: id, fields: fields.gsub("\n", "")})
     end
   end
@@ -30,8 +31,21 @@ module ApplicationHelper
     end
   end
 
+  def backend_edit_link(object)
+    link_to 'editar',
+      edit_polymorphic_path([:backend, object]),
+      class: :'button'
+  end
 
+  def backend_destroy_link(object)
+    link_to 'Borrar',
+      polymorphic_path([:backend, object]),
+      method: :delete,
+      data: { confirm: 'Esta seguro?' },
+      class: :button
+  end
 
+  # devise helpers
   def resource_name
     :user
   end

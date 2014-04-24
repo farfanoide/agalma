@@ -1,0 +1,9 @@
+<h1>Editar sucursal externa</h1>
+
+<%= render 'form' %>
+<br />
+<div class="btn-group">
+  <%= link_to 'Ver', backend_external_branch_path(@external_branch), class: 'btn btn-primary'%>
+  <%= link_to 'Borrar', backend_external_branch_path(@external_branch), method: :delete, data: { confirm: 'Estas seguro?' }, class: 'btn btn-danger' %>
+</div>
+<%= link_to 'Volver', :back, class: 'btn btn-primary'%>

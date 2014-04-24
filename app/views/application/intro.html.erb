@@ -1,19 +1,8 @@
 <div class="all-container">
   <div class="row">
-    <div class="small-8 small-centered columns">
-      <h1>Seleccione su sucursal de interes</h1>
+    <div class="small-8 small-centered columns intro-content">
+      <h1><%= link_to image_tag('logo.png'), posts_path %></h1>
+      <p> <%= link_to 'entrar', posts_path %> </p>
     </div>
   </div>
-  <% @internal_branches.each do |branch| %>
-    <div class="row">
-      <div class="small-6 small-centered columns ">
-        <section class="branch-container">
-        <%= form_tag set_frontend_branch_path, method: :post %>
-        <input type="hidden" name="branch_id" value="<%= branch.id %>">
-        <input type="submit" value="<%= branch.name %>">
-      </form>
-      </section>
-    </div>
-  </div>
-<% end %>
 </div>

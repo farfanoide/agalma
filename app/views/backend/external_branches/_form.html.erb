@@ -1,0 +1,32 @@
+<%= simple_form_for([:backend, @external_branch], defaults: {input_html: {class: :'form-control'}}) do |f| %>
+
+  <div class="form-group">
+  <%= f.input :name, placeholder: "nombre para la sucursal", label: "nombre" %>
+</div>
+<div class="form-group">
+  <%= f.input :description, placeholder: "informacion extra", label: "descripcion" %><br>
+</div>
+<div class="form-group">
+  <%= f.input :address, placeholder: "calle Altura - piso dpto ", label: "Direccion" %><br>
+</div>
+<div class="form-group">
+  <%= f.input :zipcode, placeholder: "", label: "Codigo Postal" %><br>
+</div>
+<div class="form-group">
+  <%= f.input :zone, placeholder: "Localidad - Provincia", label: "Localidad" %>
+</div>
+<div class="form-group">
+  <%= f.input :email, placeholder: "ejemplo@dominio.com", label: "E-Mail" %><br>
+</div>
+<div class="form-group">
+  <%= f.association :branches, label: 'Sucursales', as: :check_boxes %><br>
+</div>
+<div class="form-group">
+  <%= f.simple_fields_for(:external_telephones) do |tel| %>
+    <%= render 'external_telephone_fields', f: tel %>
+  <% end %></div>
+<br>
+<%= link_to_add_fields '+ agregar telefono', f, :external_telephones %>
+</br>
+  <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+<% end %>
