@@ -12,41 +12,33 @@ class Backend::GaleriesController < ApplicationController
   end
 
   # POST /galeries
-  # POST /galeries.json
   def create
     @galery = Galery.new(galery_params) 
     respond_to do |format|
       if @galery.save
         format.html { redirect_to @galery, notice: 'Galery was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @galery }
       else
         format.html { render action: 'new' }
-        format.json { render json: @galery.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /galeries/1
-  # PATCH/PUT /galeries/1.json
   def update
     respond_to do |format|
       if @galery.update(galery_params)
         format.html { redirect_to @galery, notice: 'Galery was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @galery.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /galeries/1
-  # DELETE /galeries/1.json
   def destroy
     @galery.destroy
     respond_to do |format|
       format.html { redirect_to galeries_url }
-      format.json { head :no_content }
     end
   end
 
