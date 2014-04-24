@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   before_action :fetch_slider_images
   before_action :set_internal_branches
   before_action :set_menus
+  before_action :set_active_branch
   protect_from_forgery with: :exception
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -45,6 +46,10 @@ class ApplicationController < ActionController::Base
 
   def active_branch_id
     session[:active_branch].to_i if !session[:active_branch].nil?
+  end
+
+  def set_active_branch
+    session[:active_branch] = Branch.default_branch.id if session[:active_branch].nil?
   end
 
   protected

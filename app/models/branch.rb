@@ -12,15 +12,17 @@ class Branch < ActiveRecord::Base
 
   validates_presence_of :name
 
-#  searchable do
-#    text :name
-#  end
+  #  searchable do
+  #    text :name
+  #  end
 
   scope :external, -> { where(external: true) }
   scope :internal, -> { where(external: false) }
 
-  #def self << default_branch
-    #first
-  #end
+  class << self
+    def default_branch
+      last
+    end
+  end
 end
 
