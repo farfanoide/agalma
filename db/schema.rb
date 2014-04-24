@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422201534) do
+ActiveRecord::Schema.define(version: 20140419222655) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20140422201534) do
     t.integer  "galery_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
   end
 
   add_index "images", ["galery_id"], name: "index_images_on_galery_id", using: :btree

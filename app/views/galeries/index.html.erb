@@ -1,5 +1,8 @@
-<h1>Listing galeries</h1>
-
+<p class="page-title"><%= t '.galerias' %></p>
+<% @galeries.each do |gallery| %>
+  <%= render 'gallery', gallery: gallery  %>
+<% end %>
+<!--
 <table>
   <thead>
     <tr>
@@ -27,3 +30,4 @@
 <br>
 
 <%= link_to 'New Galery', new_backend_galery_path %>
+-->

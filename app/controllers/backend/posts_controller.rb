@@ -50,7 +50,7 @@ class Backend::PostsController < BackendController
     end
 
     def post_params
-      image_attrs   = [:id, :file_name, :name, :_destroy]
+      image_attrs   = [:id, :file_name, :name, :_destroy, :description]
       gallery_attrs = [:id, :post_id, :name, :description, :_destroy, images_attributes: image_attrs]
       params.require(:post).permit(:title, :description, :content, :branch_id, galery_attributes: gallery_attrs)
     end
