@@ -1,12 +1,12 @@
 class BranchCell < Cell::Rails
 
   def internal_branches
-    @internal_branches ||= Branch.internal
+    @internal_branches ||= Branch.all
     render
   end
 
   def external_branches
-    @external_branches ||= Branch.external
+    @external_branches ||= ExternalBranch.all
     render
   end
 end

@@ -6,7 +6,6 @@
     <% if @posts.empty? %>
     <div class="alert alert-info alert-dismissable">
       <i class="fa fa-info"></i>
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       Todavia no tiene noticias cargadas.  <%= link_to "Crear noticia", new_backend_post_path, class: 'button'%>
     </div>
     <% else %>
