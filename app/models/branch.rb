@@ -13,17 +13,12 @@ class Branch < ActiveRecord::Base
 
   validates_presence_of :name
 
-  #  searchable do
-  #    text :name
-  #  end
+  def zone_data
+     "#{self.zone} (#{self.zipcode})"
+  end
 
-#  scope :external, -> { where(external: true) }
- # scope :internal, -> { where(external: false) }
-
-  class << self
-    def default_branch
-      last
-    end
+  def self.default_branch
+    first
   end
 end
 

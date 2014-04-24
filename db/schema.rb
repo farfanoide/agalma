@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419222655) do
+ActiveRecord::Schema.define(version: 20140422201534) do
 
   create_table "branches", force: true do |t|
     t.string   "name"

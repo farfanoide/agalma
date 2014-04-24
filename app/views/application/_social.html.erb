@@ -11,8 +11,7 @@
   <a class="social-icon" href="#ubicacion">
     <%= image_tag 'social/ubicacion.png' %>
   </a>
-  <p>Teléfono:(011) 4567-8769</p>
-  <p>Lacroze 7178</p>
-  <p>José León Suárez- Buenos Aires</p>
-  <p>Argentina</p>
+  <p><%= active_branch.telephones.first %></p>
+  <p><%= active_branch.address %></p>
+  <p><%= "#{active_branch.zone} (#{active_branch.zipcode})" %></p>
 </div>
