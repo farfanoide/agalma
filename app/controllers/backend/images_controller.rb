@@ -2,7 +2,6 @@ class Backend::ImagesController < ApplicationController
   before_action :set_image, only: [:show]
 
   # GET /images/1
-  # GET /images/1.json
   def show
   end
 
