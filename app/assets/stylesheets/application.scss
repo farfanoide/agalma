@@ -7,7 +7,8 @@
 @import 'modules/typography';
 @import 'modules/navs';
 @import 'modules/forms';
- @import 'modules/posts';
+@import 'modules/posts';
+@import 'modules/media-object';
 
 // Header
 .header-container {
@@ -229,7 +230,10 @@
 }
 
 .page-container {
-  section { margin-top: 2em; }
+  section { 
+    margin-top: .5em;
+    border-top: 1px solid $grey;
+  }
 }
 
 .page-content img {
@@ -239,10 +243,27 @@
 }
 
 // FIXME: arreglar estooooooo!
-.search-container > .row { margin: 0 100px; }
+//.search-container > .row { margin: 0 100px; }
 
 
 .gallery-thumb {
   border: .5em solid $white;
   box-shadow: 1px 1px $black;
+}
+
+.intro-content{
+  background: $white image-url('bg_header_lines.svg') no-repeat;
+  background-position: 0 70%;
+
+  padding-top:2em;
+  margin: 3em;
+  border-radius: 1em;
+  box-shadow: .2em .2em .2em .2em #333;
+  p{
+    a{
+    color: $blue;
+    }
+    text-align:center;
+    margin-top:300px;
+    }
 }

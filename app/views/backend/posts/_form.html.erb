@@ -21,11 +21,11 @@
   </div>
 
   <div class="form-inputs">
-  <%= f.simple_fields_for (:galery) do |gallery| %>
-   <%= render 'galery_fields', f: gallery %>
+    <%= f.simple_fields_for (:galery) do |gallery| %>
+      <%= render 'galery_fields', f: gallery %>
+    <% end %>
+    <%= link_to_add_galery('agregar galeria', f, :galery) unless f.object.galery %>
+    <div class="form-actions">
+      <%= f.submit 'Publicar', class: 'btn btn-primary' %>
+    </div>
   <% end %>
-  <%= link_to_add_galery 'agregar galeria', f, :galery %>
-  <div class="form-actions">
-    <%= f.submit 'Publicar', class: 'btn btn-primary' %>
-  </div>
-<% end %>

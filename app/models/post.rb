@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
   has_one :galery
 
-  validates_presence_of :title
+  validates_presence_of :title, :description
 
   accepts_nested_attributes_for :galery, allow_destroy: true
 

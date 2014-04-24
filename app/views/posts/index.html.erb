@@ -2,9 +2,6 @@
 
 <%= render @posts  %>
 
-
-<%# <%= will_paginate @posts, previous_label: '<<', next_label: '>>'%>
-
 <% if user_signed_in? and policy(current_user).admin? %>
   <%= link_to "crear noticia", new_backend_post_path, class: :'button' %>
 <% end %>
