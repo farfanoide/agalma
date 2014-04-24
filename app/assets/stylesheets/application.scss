@@ -38,23 +38,24 @@
   }
 
   .search-input {
-    margin: 0;
-    padding: 0px 10px;
-    font-size: 10px;
+    border: 0;
     border-radius: 5px 0 0 5px;
-    border: none;
+    font-size: 10px;
     height: 22px;
+    margin: 0;
+    padding: 0 10px;
   }
 
   .row {
     margin-bottom: 0;
     padding: 0;
   }
+
   input.button{
-    margin:0;
     border-radius: 0 5px 5px 0;
+    margin:0;
     padding: .27em 1em;
-    }   
+  }
 }
 
 .branch-container {
@@ -132,16 +133,16 @@
 
   ul { background-color: $white; }
 
-  li{ 
+  li{
     img{
       border: .5em solid $white;
-      }
-    }   
+    }
+  }
 
   li.active {
     display: inherit;
     width: em-calc(400);
-    }
+  }
 
   ol.orbit-bullets {
     background-color: $blue;
@@ -193,7 +194,7 @@
   .reveal-modal {
     border-radius: 5em 0;
     img { width: 75%; }
-    }
+  }
 }
 
 // sesssion modal
@@ -217,20 +218,20 @@
 
 
 .register-modal-wrapper{
-   @import 'modules/modals';
-   .form-wrapper{ border:none}
-   .modal-header{
-     text-align: center
-   }
-   img {
-     min-width: 200px;
-     }
+  @import 'modules/modals';
+  .form-wrapper{ border:none}
+  .modal-header{
+    text-align: center
+  }
+  img {
+    min-width: 200px;
+  }
 
-   padding: 0 5em;
+  padding: 0 5em;
 }
 
 .page-container {
-  section { 
+  section {
     margin-top: .5em;
     border-top: 1px solid $grey;
   }
@@ -238,7 +239,7 @@
 
 .page-content img {
   border: 3px solid $white;
-  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
   margin: .5em;
 }
 
@@ -258,12 +259,12 @@
   padding-top:2em;
   margin: 3em;
   border-radius: 1em;
-  box-shadow: .2em .2em .2em .2em #333;
-  p{
-    a{
-    color: $blue;
-    }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+
+  p {
     text-align:center;
     margin-top:300px;
-    }
+
+    a { color: $blue; }
+  }
 }
