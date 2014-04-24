@@ -13,10 +13,12 @@ class Branch < ActiveRecord::Base
 
   validates_presence_of :name
 
-  class << self
-    def default_branch
-      first
-    end
+  def zone_data
+     "#{self.zone} (#{self.zipcode})"
+  end
+
+  def self.default_branch
+    first
   end
 end
 

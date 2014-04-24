@@ -4,14 +4,14 @@
     <% @branches.each do |branch| %>
     <li>
       <%= link_to branch.name, branch, class: :'branch-header' %>
-      <% if user_signed_in? and policy(current_user).admin? %>  
+      <% if user_signed_in? and policy(current_user).admin? %>
       <%= link_to 'Editar', edit_backend_branch_path(branch) %>
       <% end %>
     </li>
     <% end %>
 
     <br>
-    <% if user_signed_in? and policy(current_user).admin? %> 
+    <% if user_signed_in? and policy(current_user).admin? %>
       <%= link_to 'Crear Sucursal', new_backend_branch_path %>
     <% end %>
   </div>
