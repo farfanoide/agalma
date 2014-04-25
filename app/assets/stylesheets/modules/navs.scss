@@ -1,4 +1,7 @@
-.top-bar-container{ padding: 0 }
+.top-bar-container{ 
+  padding: 0;
+  z-index:1;
+}
 
 .top-bar {
   border-radius: 0 0 .5em .5em;
@@ -16,8 +19,8 @@
   display: block;
   width: 300px;
   height: 100px;
-  top: 0;
   background: image-url('logo_hh.png') no-repeat;
+  z-index:1;
 }
 
 .logo, .logo:hover { color: transparent; }

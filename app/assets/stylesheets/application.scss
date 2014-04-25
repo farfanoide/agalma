@@ -19,23 +19,29 @@
 
 // Search
 .search-container {
-
   background-color: $grey;
   border: solid 3px $white;
   padding: .5em;
+
   .columns {
     padding: 0
   }
 
-  a {
-    background-color: $white;
-    border-radius: 0 .7em .7em 0;
-    color: $black;
-    font-size: .7em;
-    height: 22px;
-    margin: 0;
-    margin-bottom: 0;
-  }
+  li.item {
+    display: inline;
+    float: right;
+
+    a {
+      border-radius: 0 .7em .7em 0;
+      color: $black;
+      font-size: .7em;
+      height: 22px;
+      margin-bottom: 0;
+      margin: 0 1em;
+      }
+    }
+
+
 
   .search-input {
     margin: 0;
@@ -50,11 +56,13 @@
     margin-bottom: 0;
     padding: 0;
   }
-  input.button{
-    margin:0;
+
+  input.button {
+    background-color: $blue;
     border-radius: 0 5px 5px 0;
+    margin:0;
     padding: .27em 1em;
-    }   
+    }
 }
 
 .branch-container {
@@ -65,15 +73,17 @@
 
   a {color: $dark-grey;}
 
-  h2{
+  h2 {
     color: $black;
     margin:.5em 1.3em;
   }
 }
+
 .branch-container.small {
   padding: 1em;
   margin: 0;
 }
+
 .main-wrapper {
   padding: 2em 0;
 
@@ -113,59 +123,16 @@
 //.error {
 //  background: #f04124
 //}
+.slider-wrapper{
+  position:relative;
+  bottom: 45px;
+  margin:0;
+  margin-bottom: -45px;
+  padding:0;
 
-.orbit-container {
-  background-color: $white;
-  box-shadow: em-calc(10) em-calc(10) em-calc(10) $black;
-  height: em-calc(208);
-  margin-bottom: em-calc(40);
-  overflow: inherit;
-  position: relative;
-  top: 50px;
-  width: em-calc(400);
-
-  .orbit-slides-container {
-    margin: 0;
-    width: em-calc(400);
-    z-index: 1;
-  }
-
-  ul { background-color: $white; }
-
-  li{ 
-    img{
-      border: .5em solid $white;
-      }
-    }   
-
-  li.active {
-    display: inherit;
-    width: em-calc(400);
-    }
-
-  ol.orbit-bullets {
-    background-color: $blue;
-    border-radius: 1em;
-    margin: 0;
-    padding: .3em 1em;
-    position: relative;
-    right: 38%;
-    top: em-calc(-30);
-
-    li {
-      background-color: $white;
-      float: left;
-      height: em-calc(15);
-      margin: 0 .4em;
-      width: em-calc(15);
-    }
-
-    li.active { background-color: $light-blue; }
-  }
+  z-index:0;
+  .columns {padding:0}
 }
-.orbit-timer { display: none !important }
-
-.orbit-bullets:empty { display: none; }
 
 //*-*-*-*-*-*-*-*-*-*-*-*-* Media Querys
 @media #{$medium-only}{
@@ -230,7 +197,7 @@
 }
 
 .page-container {
-  section { 
+  section {
     margin-top: .5em;
     border-top: 1px solid $grey;
   }

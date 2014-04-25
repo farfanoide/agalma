@@ -1,6 +1,9 @@
 <div class="header-container">
+
+  
   <div class="row">
-    <div class="small-12 large-8 large-offset-4 columns top-bar-container">
+
+    <div class="small-12 large-6 large-offset-6 columns top-bar-container">
       <nav class="top-bar" data-topbar data-options="custom_back_text: true; back_text: Volver">
         <ul class="title-area">
           <li class="name"> <h1> <a class=""  href="<%= url_for :root %>"><%= image_tag 'home_btn.png'  %></a> </h1> </li>
@@ -10,28 +13,18 @@
           <ul class="links-container">
             <%= render partial: 'top_menu' if @top_menu %>
 
-            <%= render 'devise/menu/login_items' %>
-            <% if user_signed_in? %>
-              <% if policy(current_user).admin? %>
-                <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
-              <% end %>
-            <% else %>
-              <%= render 'devise/menu/registration_items' %>
-            <% end %>
           </ul>
         </section>
       </nav>
     </div>
   </div>
-  <div class="row">
-    <div class="small-12 large-6 columns">
-      <a class="logo"  href="<%= url_for :root %>">Agalma</a>
-    </div>
-    <div class="small-12 large-6 columns">
+  
+  <div class="row slider-wrapper">
+    <div class="small-12 columns">
       <%= render "slide" %>
     </div>
+    <a class="logo"  href="<%= url_for :root %>">Agalma</a>
   </div>
-
   <% if !user_signed_in? %>
   <div id="registration-modal" class="reveal-modal medium" data-reveal>
     <div class="register-modal-wrapper" >
