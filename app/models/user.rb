@@ -7,10 +7,11 @@ class User < ActiveRecord::Base
   has_many :rolifications
   has_many :posts
   has_many :roles, through: :rolifications
+  has_many :position_users
   has_many :branches, through: :rolifications
-  has_many :positions
+  has_many :positions, through: :position_users
   accepts_nested_attributes_for :rolifications, allow_destroy: true
-  accepts_nested_attributes_for :positions, allow_destroy: true
+  accepts_nested_attributes_for :position_users, allow_destroy: true
   mount_uploader :avatar, AvatarUploader
   mount_uploader :curriculum, FilesUploader
 

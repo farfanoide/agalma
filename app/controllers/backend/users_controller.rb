@@ -75,9 +75,9 @@ class Backend::UsersController < BackendController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    positions_attrs = [:id, :branch_id, :user_id, :_destroy, :name]
+    position_user_attrs = [:id, :branch_id, :user_id, :_destroy, :position_id]
     rolif_attrs = [:id, :role_id, :user_id, :branch_id, :_destroy]
     params.require(:user).permit(:name, :avatar, :email, :admin, rolifications_attributes: rolif_attrs,
-                                 positions_attributes: positions_attrs)
+                                 position_users_attributes: position_user_attrs)
   end
 end

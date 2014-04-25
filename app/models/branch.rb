@@ -5,13 +5,14 @@ class Branch < ActiveRecord::Base
   has_many :roles, through: :rolifications
   has_many :telephones
   has_many :pages
-  has_many :positions
+  has_many :position_users
+  has_many :positions, through: :position_users
   has_and_belongs_to_many :external_branches
   has_one :menu
   accepts_nested_attributes_for :rolifications, allow_destroy: true
   accepts_nested_attributes_for :telephones, allow_destroy: true
   accepts_nested_attributes_for :posts, allow_destroy: true
-  accepts_nested_attributes_for :positions, allow_destroy: true
+  accepts_nested_attributes_for :position_users, allow_destroy: true
 
   validates_presence_of :name
 

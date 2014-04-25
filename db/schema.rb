@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425015238) do
+ActiveRecord::Schema.define(version: 20140425232932) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -133,16 +133,21 @@ ActiveRecord::Schema.define(version: 20140425015238) do
     t.integer "widget_id", null: false
   end
 
-  create_table "positions", force: true do |t|
+  create_table "position_users", force: true do |t|
     t.integer  "branch_id"
     t.integer  "user_id"
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position_id"
   end
 
-  add_index "positions", ["branch_id"], name: "index_positions_on_branch_id", using: :btree
-  add_index "positions", ["user_id"], name: "index_positions_on_user_id", using: :btree
+  add_index "position_users", ["branch_id"], name: "index_position_users_on_branch_id", using: :btree
+  add_index "position_users", ["position_id"], name: "index_position_users_on_position_id", using: :btree
+  add_index "position_users", ["user_id"], name: "index_position_users_on_user_id", using: :btree
+
+  create_table "positions", force: true do |t|
+    t.string "name"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"
