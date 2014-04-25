@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   devise :database_authenticatable, :registerable,
-         :recoverable,:trackable, :rememberable, :validatable
+    :recoverable,:trackable, :rememberable, :validatable
   has_many :rolifications
   has_many :posts
   has_many :roles, through: :rolifications
@@ -27,6 +27,14 @@ class User < ActiveRecord::Base
 
   def has_backend_role?
     Rolification.where(user_id: self.id).map{ |r| r.role.name }.any?
+  end
+
+  def all_user_roles
+    Rolification.where(user_id: self.id).map{ |r| r.role.name }
+  end
+
+  def professional?
+    all_user_roles.include?('profesional')
   end
 
   def can_edit_branch?(branch)
