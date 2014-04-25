@@ -120,20 +120,17 @@
 
 .success { background: $green; }
 
-
-//.error {
-//  background: #f04124
-//}
-.slider-wrapper{
-  position:relative;
-  bottom: 45px;
-  margin:0;
-  margin-bottom: -45px;
+.slider-wrapper {
+  margin:0 auto;
+  margin-top: -45px;
+  max-width: 1170px;
   padding:0;
-
+  position:relative;
   z-index:0;
+
   .columns {padding:0}
 }
+.row { max-width: 1170px; }
 
 //*-*-*-*-*-*-*-*-*-*-*-*-* Media Querys
 @media #{$medium-only}{

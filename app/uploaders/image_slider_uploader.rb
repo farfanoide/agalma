@@ -5,7 +5,7 @@ class ImageSliderUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   storage :file
 
-  process resize_to_fill: [1170, 310]
+  process resize_to_fill: [1170, 410]
   version :thumb do
     process resize_to_fill: [200,200]
   end

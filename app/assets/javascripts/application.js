@@ -21,5 +21,9 @@
 $(function(){ $(document).foundation(); });
 
 $(window).load(function() {
-  $('#slider').nivoSlider();
+  $('#slider').nivoSlider({
+    controlNav: false,
+    directionNav: true,
+    pauseOnHover: false
+  });
 });
