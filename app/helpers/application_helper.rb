@@ -25,6 +25,26 @@ module ApplicationHelper
     end
   end
 
+  def authorize_content
+    if current_user
+      current_user.admin?
+    end
+  end
+
+  def backend_edit_link(object)
+    link_to 'editar',
+      edit_polymorphic_path([:backend, object]),
+      class: :'button'
+  end
+
+  def backend_destroy_link(object)
+    link_to 'Borrar',
+      polymorphic_path([:backend, object]),
+      method: :delete,
+      data: { confirm: 'Esta seguro?' },
+      class: :button
+  end
+
   # devise helpers
   def resource_name
     :user

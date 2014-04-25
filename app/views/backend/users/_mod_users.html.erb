@@ -6,7 +6,6 @@
     <% if @users.empty? %>
     <div class="alert alert-info alert-dismissable">
       <i class="fa fa-info"></i>
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       Todavia no tiene usuarios cargadas.  <%= link_to "Crear usuario", new_backend_user_path, class: 'button'%>
     </div>
     <% else %>

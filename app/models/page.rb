@@ -7,6 +7,7 @@ class Page < ActiveRecord::Base
   before_validation :slugify
 
   scope :general, -> { where(branch_id: nil) }
+  scope :active, -> { where(active: true) }
 
   def slugify
     self.slug ||= title.parameterize

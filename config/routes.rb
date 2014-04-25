@@ -1,5 +1,6 @@
 Agalma::Application.routes.draw do
 
+
   get 'search/index'
   resources :galeries, only: [:index, :show]
   resources :images, only: [:show]
@@ -23,6 +24,7 @@ Agalma::Application.routes.draw do
     resources :image_sliders
     post 'dashboard/set_current_branch' => 'dashboard#set_current_branch'
     resources :galleries
+    resources :external_branches
     resources :pages
     resources :contacts, only: [:new, :create]
     get "mailer/index"

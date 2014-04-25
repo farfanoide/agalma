@@ -1,0 +1,11 @@
+<section class="branch-container">
+  <h2 class="branch-header"><%= link_to branch.name, branch_path(branch) %></h2>
+  <div class="info-wrapper">
+    <p><%= branch.address %></p>
+    <p><%= branch.zone_data %></p>
+    <% branch.telephones.each do |telephone| %>
+      <%= telephone %>
+    <% end %>
+    <p><%= "E-Mail: #{branch.email}" %></p>
+  </div>
+</section>

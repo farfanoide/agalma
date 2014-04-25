@@ -1,0 +1,25 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title">Sucursales Externas: </h3>
+  </div><!-- /.box-header -->
+  <div class="box-body no-padding">
+    <table class="table table-condensed">
+      <tbody><tr>
+        <th>Sucursal</th>
+        <th>Acciones</th>
+      </tr>
+      <% @external_branches.each do |branch| %>
+        <tr>
+        <td class="title-field"><%= link_to branch.name, edit_backend_external_branch_path(branch) %></td>
+        <td class="table-actions">
+          <%= link_to fa_icon(:edit), edit_backend_external_branch_path(branch), class: 'btn btn-success btn-sm', data:{toggle: 'tooltip', 'original-title' => 'Editar'}  %>
+          <%= link_to fa_icon(:'trash-o'), backend_external_branch_path(branch), method: :delete, data: { confirm: 'Esta seguro?', toggle: 'tooltip', 'original-title' => 'Borrar' }, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody></table>
+  </div><!-- /.box-body -->
+</div>
+<br>
+
+<%= link_to 'Nueva sucursal externa', new_backend_external_branch_path %>

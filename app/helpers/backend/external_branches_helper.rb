@@ -1,0 +1,2 @@
+module Backend::ExternalBranchesHelper
+end

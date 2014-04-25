@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="small-6 columns small-centered">
+
+    <p>
+    <strong>Nombre:</strong>
+    <%= @external_branch.name %>
+    </p>
+    <% if !@external_branch.description.blank? %>
+      <p>
+    <strong>Descripcion:</strong>
+    <%= @external_branch.description %>
+    </p>
+  <% end %>
+    <% if !@external_branch.external_telephones.empty? %>
+      <strong>Telefonos:</strong>
+    <% @external_branch.external_telephones.each do |tel| %>
+      <p>(<%= tel.ext %>)-<%= tel.num %></p>
+  <% end %>
+  <% end %>
+     <p>
+
+    <%= link_to 'Edit', edit_backend_external_branch_path(@external_branch) %> |
+    <%= link_to 'Back', backend_external_branches_path %>
+  </div>
+</div>

@@ -53,7 +53,7 @@ class Backend::PagesController < BackendController
     authorize @page
     @page.destroy
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to backend_pages_path  }
     end
   end
 
