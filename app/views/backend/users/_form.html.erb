@@ -27,6 +27,13 @@
   <%= render 'rolification_fields', f: rolif %>
 <% end %>
 <%= link_to_add_fields '+ agregar rol', f, :rolifications %>
+<div>
+<%= f.simple_fields_for(:positions) do |posit| %>
+  <%= render 'position_fields', f: posit %>
+<% end %>
+<%= link_to_add_fields '+ agregar cargo', f, :positions %>
+<
+</div>
 <br>
 <br>
 

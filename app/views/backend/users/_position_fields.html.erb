@@ -1,0 +1,6 @@
+<fieldset class="form-group">
+ <%= f.input :name, label: "cargo",label_method: :name%>
+ <%= f.association :branch, label: "sucursal",label_method: :name, include_blank: false %>
+ <%= f.hidden_field :_destroy %>
+ <%= link_to "Borrar", '#', class: "remove_fields" %>
+</fieldset>
