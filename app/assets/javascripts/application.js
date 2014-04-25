@@ -23,7 +23,7 @@ $(function(){ $(document).foundation(); });
 $(window).load(function() {
   $('#slider').nivoSlider({
     controlNav: false,
-    directionNav: true,
+    directionNav: false,
     pauseOnHover: false
   });
 });
