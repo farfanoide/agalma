@@ -1,0 +1,18 @@
+/*
+Example of animation applied: ----------------------------
+nav .link:hover{ @include animation(scale .5s ease-in-out); }
+----------------------------------------------------------
+*/
+
+@include keyframes(scale) {
+  from { @include transform(scale(1)); }
+  50%  { @include transform(scale(1.5)); }
+  to   { @include transform(scale(1)); }
+}
+
+@include keyframes(linkspacing){
+  from { letter-spacing: 1px; }
+  50%  { letter-spacing: 5px; }
+  to   { letter-spacing: 1px; }
+}
+

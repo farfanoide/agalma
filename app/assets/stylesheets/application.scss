@@ -1,15 +1,16 @@
 // some variables
 @import 'variables';
 @import 'foundation_and_overrides';
+@import 'bourbon';
 @import 'general';
 @import 'foundation/components/orbit';
-@import 'bourbon';
 @import 'modules/typography';
 @import 'modules/navs';
 @import 'modules/forms';
 @import 'modules/posts';
 @import 'modules/nivo-slider';
 @import 'modules/media-object';
+@import 'modules/animations';
 
 // Header
 .header-container {

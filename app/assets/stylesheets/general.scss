@@ -19,4 +19,6 @@ $all-container-br: 2em;
 }
 
 
-
+a, li {
+  @include transition(border-color .2s, color .2s, background .2s);
+}

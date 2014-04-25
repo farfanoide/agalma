@@ -1,4 +1,4 @@
-.top-bar-container{ 
+.top-bar-container{
   padding: 0;
   z-index:1;
 }
@@ -32,6 +32,7 @@
 // =side nav module
 .side-nav {
   margin: 0;
+  text-align: center;
 
   .items-container {
     border-right: $white-border;
@@ -42,24 +43,14 @@
       padding: .67em .5em;
       margin: 0;
       font-size: 16px;
-    .item { color: $white }
+      .item {
+        color: $white;
+        @include animation(scale .4s ease-in-out);
+      }
     }
 
     .item-container:hover {
-      background-color: $white;
-      box-shadow: 3px 3px 5px $black;
-      a { color: $black; }
-    }
-    .item-container:hover:after {
-      content: " ";
-      position: absolute;
-      width: 47px;
-      height: 47px;
-      top: 0;
-      right: -1.45em;
-      background-color: $white;
-      box-shadow: 3px -3px 3px $black;
-      @include transform(rotate(45deg) scale(0.7, 0.7));
+      border-color: $transparent;
     }
 
     .nav-footer {
