@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :branches, through: :rolifications
   accepts_nested_attributes_for :rolifications, allow_destroy: true
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :curriculum, FilesUploader
 
   # TODO: add last name to users
   def full_name

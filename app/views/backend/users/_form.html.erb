@@ -19,7 +19,10 @@
     <%= f.input :admin, label: "Administrador" %>
   </div>
 <% end %>
-
+<div>
+<%= image_tag f.object.avatar.url :thumb %>
+<%= f.input :avatar %>
+</div>
 <%= f.simple_fields_for(:rolifications) do |rolif| %>
   <%= render 'rolification_fields', f: rolif %>
 <% end %>
