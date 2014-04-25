@@ -15,6 +15,11 @@
 //= require foundation
 //= require ckeditor/override
 //= require ckeditor/init
+//= require jquery.nivo.slider
 //= require branches
 
 $(function(){ $(document).foundation(); });
+
+$(window).load(function() {
+  $('#slider').nivoSlider();
+});
