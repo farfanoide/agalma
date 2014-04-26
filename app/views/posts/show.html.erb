@@ -11,7 +11,7 @@
     </div>
     <div>
       <% if !@gallery.nil? %>
-        <%= render "post_gallery" %>
+        <%= render partial: "galeries/gallery", locals: {gallery: @gallery }%>
     <% end %>
     </div>
   </section>
