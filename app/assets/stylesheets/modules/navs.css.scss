@@ -43,9 +43,13 @@
       padding: .67em .5em;
       margin: 0;
       font-size: 16px;
+
       .item {
         color: $white;
-        @include animation(scale .4s ease-in-out);
+
+        &:hover {
+          @include animation(scale .4s ease-in-out);
+        }
       }
     }
 

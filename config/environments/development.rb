@@ -50,6 +50,7 @@ Agalma::Application.configure do
   config.assets.compress = false
   # config.assets.compile = true
   # config.serve_static_assets = false
+
 end
 
 silence_warnings do

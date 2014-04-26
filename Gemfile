@@ -50,6 +50,12 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'sass-rails-source-maps'
+
+  #live-reload
+  gem 'guard', require: false
+  gem 'rb-fsevent', require: false
+  gem "rack-livereload"
+  gem 'guard-livereload', require: false
 end
 
 gem 'cells'
