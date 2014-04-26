@@ -53,7 +53,8 @@ group :development do
 
   #live-reload
   gem 'guard', require: false
-  gem 'rb-fsevent', require: false
+  gem 'rb-inotify', require: false # event lib for linux
+  gem 'rb-fsevent', require: false # event lib for mac
   gem "rack-livereload"
   gem 'guard-livereload', require: false
 end
