@@ -5,7 +5,7 @@
   </section>
   <section class="widgets-container">
     <% @page.widgets.each do |w| %>
-      <%= render_cell w.cell_class, w.method_name %>
+      <%= render_cell w.cell_class, w.method_name, branch: @page.branch %>
     <% end %>
   </section>
 </div>

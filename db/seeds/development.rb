@@ -75,3 +75,5 @@ Widget.create!(name: 'consultorios internos', description: 'este widget lista to
 Widget.create!(name: 'consultorios externos', description: 'este widget lista todos los consultorios externos del sistema', cell_class:'branch', method_name:'external_branches')
 Widget.create!(name: 'contacto', description: 'este widget presenta un formulario de contacto', cell_class:'contact', method_name:'contact_form')
 Widget.create!(name: 'galeria', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'gallery_slider')
+Widget.create!(name: 'galerias de sucursal', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'branch_galleries')
+Widget.create!(name: 'todas las galerias', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'all_galleries')

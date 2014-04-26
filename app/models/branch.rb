@@ -1,6 +1,7 @@
 class Branch < ActiveRecord::Base
   has_many :rolifications
   has_many :posts
+  has_many :galeries, through: :posts
   has_many :users, through: :rolifications
   has_many :roles, through: :rolifications
   has_many :telephones
