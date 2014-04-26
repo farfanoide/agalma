@@ -7,4 +7,5 @@ class PositionUser < ActiveRecord::Base
   validates_associated :user
   validates_associated :branch
  
+  validates_uniqueness_of :position, scope: [:user, :branch]
 end
