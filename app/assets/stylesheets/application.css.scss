@@ -1,9 +1,17 @@
-//= require ./modules/nivo-slider
+/*
+*= require ./modules/nivo-slider
+*= require ./mq/medium-only
+*= require ./mq/small-only
+*= require ./mq/medium
+*= require ./mq/large
+*= require ./modules/forms
+*/
 
 // some variables
+@import 'foundation/components/grid';
 @import 'variables';
 @import 'bourbon_custom';
-@import 'general';
+@import 'modules/general';
 
 
 // Header
@@ -127,7 +135,6 @@
 }
 .row { max-width: 1170px; }
 
-//*-*-*-*-*-*-*-*-*-*-*-*-* Media Querys
 
 
 // contacts
@@ -199,18 +206,17 @@
 }
 
 .intro-content{
-  background: $white image-url('bg_header_lines.svg') no-repeat;
   background-position: 0 70%;
-
-  padding-top:2em;
-  margin: 3em;
+  background: $white image-url('bg_header_lines.svg') no-repeat;
   border-radius: 1em;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  margin: 3em;
+  padding-top:2em;
 
   p {
-    text-align:center;
-    margin-top:300px;
     color: magenta;
+    margin-top:300px;
+    text-align:center;
   }
 }
 

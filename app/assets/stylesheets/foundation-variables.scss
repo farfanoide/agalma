@@ -1,0 +1,62 @@
+@import 'variables';
+
+// foundation variables
+$base-font-size: 100% !default;
+$em-base: 16px !default;
+
+// general variables
+$default-float: left;
+
+// grid variables
+$row-width: em-calc(1299);
+
+// Media Queries
+// lb = lower bound // ub = upper bound
+$small-lb: 0em;
+$small-ub: 40em;
+$medium-lb:40.063em;
+$medium-ub: 64em; 
+$large-lb: 64.063em;
+$large-ub: 90em; 
+$xlarge-lb: 90.063em;
+$xlarge-ub: 120em; 
+$xxlarge-lb: 120.063em;
+$screen: "only screen";
+$small-up: $screen !default;
+$small-only: "#{$screen} and (max-width:#{$small-ub})" !default;
+$medium-up: "#{$screen} and (min-width:#{$medium-lb})" !default;
+$medium-only: "#{$screen} and (min-width:#{$medium-lb}) and (max-width:#{$medium-ub})" !default;
+$large-up: "#{$screen} and (min-width:#{$large-lb})" !default;
+$large-only: "#{$screen} and (min-width:#{$large-lb}) and (max-width:#{$large-ub})" !default;
+$xlarge-up: "#{$screen} and (min-width:#{$xlarge-lb})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{$xlarge-lb}) and (max-width:#{$xlarge-ub})" !default;
+$xxlarge-up: "#{$screen} and (min-width:#{$xxlarge-lb})" !default;
+
+
+
+// header font styles
+$include-open-sans: false;
+$header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+$fieldset-border-style: none;
+$fieldset-padding: 0;
+$fieldset-margin: 0;
+
+$reveal-box-shadow: 0 0 30px rgba(#000,.9);
+$reveal-close-weight: thin;
+$reveal-border-width: 0px;
+
+// anchor styling
+$anchor-text-decoration: none;
+$anchor-font-color: $white;
+$anchor-font-color-hover:white;
+
+//buttons
+$button-font-family: inherit;
+$button-font-color: $black;
+$button-font-color-alt: $black;
+$button-function-factor: 0%;
+// input
+// No shadow for the input
+$input-box-shadow: 0;
+$input-include-glowing-effect: false;

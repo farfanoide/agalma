@@ -1,2 +1,5 @@
-.pages-dropdown { display: none }
+@import '../foundation-variables';
 
+@media #{$medium-up}{
+.pages-dropdown { display: none }
+}
