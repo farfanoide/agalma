@@ -1,16 +1,17 @@
 // some variables
 @import 'variables';
-@import 'foundation_and_overrides';
-@import 'bourbon';
+/* @import 'foundation_and_overrides'; */
+/* @import "foundation/components/grid"; */
+@import 'bourbon_custom';
+/* @import 'foundation/components/orbit'; */
 @import 'general';
-@import 'foundation/components/orbit';
-@import 'modules/typography';
-@import 'modules/navs';
-@import 'modules/forms';
-@import 'modules/posts';
+/* @import 'modules/animations'; */
+/* @import 'modules/forms'; */
+/* @import 'modules/media-object'; */
+/* @import 'modules/navs'; */
 @import 'modules/nivo-slider';
-@import 'modules/media-object';
-@import 'modules/animations';
+/* @import 'modules/posts'; */
+/* @import 'modules/typography'; */
 
 // Header
 .header-container {
@@ -134,26 +135,13 @@
 .row { max-width: 1170px; }
 
 //*-*-*-*-*-*-*-*-*-*-*-*-* Media Querys
-@media #{$medium-only}{
-  @import 'mq/medium-only';
-}
-@media #{$large-only} {
-  @import 'mq/large';
-}
-@media #{$medium-up} {
-  @import 'mq/medium';
-}
-
-@media #{$small-only}{
-  @import 'mq/small-only';
-}
 
 
 // contacts
 
-.contact-wrapper {
-  .button { width: 6em; }
-}
+/* .contact-wrapper { */
+/*   .button { width: 6em; } */
+/* } */
 
 .registration-wrapper{
   .reveal-modal {
@@ -229,5 +217,8 @@
   p {
     text-align:center;
     margin-top:300px;
+    color: magenta;
   }
 }
+
+[class*='-modal'] {display: none;}

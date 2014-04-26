@@ -1361,13 +1361,7 @@ $input-include-glowing-effect: false;
 // the bg color lighten
  $reveal-overlay-bg: rgba(#fff, .80);
 
-// @import 'foundation/components/global';
-// @import 'foundation/components/alert-boxes';
-// @import 'foundation/components/forms';
-// @import 'foundation/components/block-grid';
-// @import 'foundation/components/buttons';
-// @import 'foundation/components/forms';
-// @import "foundation/components/reveal";
+@import "foundation/components/grid";
 
-@import 'foundation';
+/* @import 'foundation'; */
 
