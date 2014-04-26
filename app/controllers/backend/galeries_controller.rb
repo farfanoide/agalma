@@ -1,4 +1,4 @@
-class Backend::GaleriesController < ApplicationController
+class Backend::GaleriesController < BackendController
   before_action :set_galery, only: [ :edit, :update, :destroy]
 
   # GET /galeries/new
@@ -23,6 +23,9 @@ class Backend::GaleriesController < ApplicationController
     end
   end
 
+  def index
+    @galeries= Galery.all
+  end
   # PATCH/PUT /galeries/1
   def update
     respond_to do |format|
@@ -38,18 +41,18 @@ class Backend::GaleriesController < ApplicationController
   def destroy
     @galery.destroy
     respond_to do |format|
-      format.html { redirect_to galeries_url }
+      format.html { redirect_to backend_galeries_url }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_galery
-      @galery = Galery.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_galery
+    @galery = Galery.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def galery_params
-      params.require(:galery).permit(:name, :description, images_attributes: [:id, :file_name, :name, :_destroy  ])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def galery_params
+    params.require(:galery).permit(:name, :description, images_attributes: [:id, :file_name, :name, :_destroy  ])
+  end
 end

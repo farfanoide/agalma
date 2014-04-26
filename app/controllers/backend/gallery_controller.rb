@@ -1,2 +1,2 @@
-class Backend::GalleryController < ApplicationController
+class Backend::GalleryController < BackendController
 end

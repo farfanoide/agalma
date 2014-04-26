@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+  <%= render 'gallery', gallery: @galery  %>
 <p>
   <strong>Name:</strong>
   <%= @galery.name %>
@@ -10,10 +11,5 @@
   <%= @galery.description %>
   </p>
 
-  <% @galery.images.each do |image| %>
-  <div>
-  <%=link_to image_tag(image.file_name.url(:thumb)),image_path(image) %>   
-  </div>
-<% end %>
-<%= link_to 'Edit', edit_backend_galery_path(@galery) %> |
+ <%= link_to 'Edit', edit_backend_galery_path(@galery) %> |
 <%= link_to 'Back', galeries_path %>

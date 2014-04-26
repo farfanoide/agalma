@@ -16,7 +16,7 @@ Agalma::Application.routes.draw do
   resources :roles
   resources :contacts, only: [:new, :create]
   namespace :backend do
-    resources :galeries, only: [:new, :create, :edit, :update, :destroy]
+    resources :galeries, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :posts
     resources :menus
     resources :users

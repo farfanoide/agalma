@@ -1,0 +1,30 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title">Galerias: </h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body no-padding">
+    <table class="table table-condensed">
+      <tbody>
+      <tr>
+        <th>Galerias</th>
+        <th>Acciones</th>
+      </tr>
+      <% @galeries.each do |gallery| %>
+        <tr>
+        <td><%= link_to gallery.name, edit_backend_galery_path(gallery) %></td>
+        <td class="table-actions">
+          <%= show_link gallery %>
+          <%= edit_link gallery %>
+          <%= destroy_link gallery %>
+        </td>
+        </tr>
+      <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <br>
+
+  <%= link_to 'Crear Nueva Galeria', new_backend_galery_path, class: :'btn btn-primary' %>
