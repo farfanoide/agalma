@@ -63,10 +63,12 @@ gem 'cells'
 gem 'simple_form'
 gem 'devise'
 gem 'bourbon'
+gem 'nav_lynx'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
 gem 'pundit'
 gem 'will_paginate', '~> 3.0'
+
 # editor
 gem "ckeditor"
 gem "carrierwave"

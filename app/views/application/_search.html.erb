@@ -6,20 +6,15 @@
         <div class="small-8 columns">
           <%= text_field_tag :search,  params[:search], class: :'search-input', placeholder: 'Ingrese su busqueda...' %>
         </div>
-        <div class="small-4 columns">        
+        <div class="small-4 columns">
           <!-- TODO: fix mamarrach -->
           <%= submit_tag "BUSCAR", class: :button, :name => nil %>
         </div>
         <% end %>
-        <!--        <input class="search-input" type="text" placeholder="Ingrese busqueda...">
-                    </div>
-
-      <a href="#" class="button"> BUSCAR </a>
-      <!--        <button class="button" type="button"> BUSCAR </button> -->
-    </div>    
+      </div>
     </div>
-  <div class="small-12 large-4 columns" >
-    <div class="items-container">
+    <div class="small-12 large-4 columns" >
+      <div class="items-container">
         <%= render 'devise/menu/login_items' %>
         <li class="item"> <b>|</b> </li>
         <% if user_signed_in? %>
@@ -31,7 +26,7 @@
         <% end %>
       </div>
     </div>
-  
-</div>
+
+  </div>
 </div>
 </div>
