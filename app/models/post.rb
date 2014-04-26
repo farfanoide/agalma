@@ -2,9 +2,9 @@ class Post < ActiveRecord::Base
   belongs_to :branch
   belongs_to :user
 
-  searchable do
-    text :title, :content
-  end
+  #  searchable do
+  #    text :title, :content
+  #  end
 
   has_one :galery
 

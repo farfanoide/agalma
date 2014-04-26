@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422201534) do
+ActiveRecord::Schema.define(version: 20140426203423) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140422201534) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "post_id"
+    t.boolean  "public",      default: true
   end
 
   create_table "image_sliders", force: true do |t|
@@ -133,6 +134,22 @@ ActiveRecord::Schema.define(version: 20140422201534) do
     t.integer "widget_id", null: false
   end
 
+  create_table "position_users", force: true do |t|
+    t.integer  "branch_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "position_id"
+  end
+
+  add_index "position_users", ["branch_id"], name: "index_position_users_on_branch_id", using: :btree
+  add_index "position_users", ["position_id"], name: "index_position_users_on_position_id", using: :btree
+  add_index "position_users", ["user_id"], name: "index_position_users_on_user_id", using: :btree
+
+  create_table "positions", force: true do |t|
+    t.string "name"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "description"
@@ -192,6 +209,9 @@ ActiveRecord::Schema.define(version: 20140422201534) do
     t.string   "avatar"
     t.boolean  "admin",                  default: false
     t.integer  "active_branch"
+    t.string   "curriculum"
+    t.string   "profession"
+    t.text     "titles"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
