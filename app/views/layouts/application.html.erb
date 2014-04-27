@@ -13,7 +13,7 @@
 
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
     <title><%= content_for?(:title) ? yield(:title) : "Agalma" %></title>
 
 
@@ -27,26 +27,27 @@
     <%= render "header" %>
     <%= render "search" %>
     <div class="all-container">
-      <div class="row main-wrapper">
-        <div class="small-12 large-3 columns">
-          <%= render 'side_nav' %>
-        </div>
-        <div class="small-12 large-6 columns">
-          <main>
-            <%= yield %>
-          </main>
-        </div>
-        <div class="small-12 large-3 columns">
-          <ul class="items-container">
-            <li>
-              <%= render 'social' %>
-            </li>
-          </ul>
+      <div class="row" data-equalizer>
+        <div class="main-wrapper" >
+          <div class="small-12 large-3 columns" data-equalizer-watch>
+            <%= render 'side_nav' %>
+          </div>
+          <div class="small-12 large-6 columns" data-equalizer-watch>
+            <main>
+              <%= yield %>
+            </main>
+          </div>
+          <div class="small-12 large-3 columns" data-equalizer-watch>
+            <ul class="items-container">
+              <li>
+                <%= render 'social' %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <%= render "footer" %>
-    <%= javascript_include_tag "application" %>
+      <%= render "footer" %>
+      <%= javascript_include_tag "application" %>
 
   </body>
 </html> 
