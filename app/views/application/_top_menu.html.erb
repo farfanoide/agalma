@@ -1,3 +1,5 @@
-<% @top_menu.pages.each do |page| %>
- <%= nav_link_to page.title, page_path(page) %> </li>
-<% end %>
+<ul>
+  <% @top_menu.pages.each do |page| %>
+    <li> <%= nav_link_to page.title, page_path(page) %> </li>
+  <% end %>
+</ul>
