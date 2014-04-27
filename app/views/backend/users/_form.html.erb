@@ -19,11 +19,20 @@
     <%= f.input :admin, label: "Administrador" %>
   </div>
 <% end %>
-
+<div>
+<%= image_tag f.object.avatar.url :thumb %>
+<%= f.input :avatar %>
+</div>
 <%= f.simple_fields_for(:rolifications) do |rolif| %>
   <%= render 'rolification_fields', f: rolif %>
 <% end %>
 <%= link_to_add_fields '+ agregar rol', f, :rolifications %>
+<div>
+<%= f.simple_fields_for(:position_users) do |posit| %>
+  <%= render 'position_user_fields', f: posit %>
+<% end %>
+<%= link_to_add_fields '+ agregar cargo', f, :position_users %>
+</div>
 <br>
 <br>
 

@@ -68,14 +68,16 @@ class Backend::UsersController < BackendController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_backend_user
-      @user = User.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_backend_user
+    @user = User.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      rolif_attrs = [:id, :role_id, :user_id, :branch_id, :_destroy]
-      params.require(:user).permit(:name, :email, :admin, rolifications_attributes: rolif_attrs)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    position_user_attrs = [:id, :branch_id, :user_id, :_destroy, :position_id]
+    rolif_attrs = [:id, :role_id, :user_id, :branch_id, :_destroy]
+    params.require(:user).permit(:name, :avatar, :email, :admin, rolifications_attributes: rolif_attrs,
+                                 position_users_attributes: position_user_attrs)
+  end
 end

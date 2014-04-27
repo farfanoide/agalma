@@ -40,6 +40,7 @@ User.create!(name: 'maria victoria', email: 'toia_gf@hotmail.com', password: _pa
 Role.create!(name: 'visitante', description: 'usuario con menos privilegios')
 Role.create!(name: 'moderador', description: 'privilegios de lectura y modificacion')
 Role.create!(name: 'admin', description: 'Todos los privilegios')
+Role.create!(name: 'profesional', description: 'usuario que es profesional')
 
 _admin = Role.find_by!(name: 'admin')
 Rolification.create!(user: User.find_by!(name: 'veronica'), branch: Branch.find(1), role: _admin)

@@ -60,7 +60,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:name, :current_password ,:email, :password, :password_confirmation, :curriculum, :profession, :titles)
+    end
   end
 
   def set_internal_branches
