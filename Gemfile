@@ -50,16 +50,25 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'sass-rails-source-maps'
+
+  #live-reload
+  gem 'guard', require: false
+  gem 'rb-inotify', require: false # event lib for linux
+  gem 'rb-fsevent', require: false # event lib for mac
+  gem "rack-livereload"
+  gem 'guard-livereload', require: false
 end
 
 gem 'cells'
 gem 'simple_form'
 gem 'devise'
 gem 'bourbon'
+gem 'nav_lynx'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
 gem 'pundit'
 gem 'will_paginate', '~> 3.0'
+
 # editor
 gem "ckeditor"
 gem "carrierwave"

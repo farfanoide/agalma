@@ -1,12 +1,14 @@
-.side-nav {
-  display: none
-}
-.orbit-container {
-  display: none
-}
-.gallery-media .img {
-  display: block;
-  float: none;
-  clear: both;
-  margin: 5px auto;
+@import '../foundation-variables';
+
+@media #{$small-only}{
+  .side-nav {
+    display: none
+  }
+
+  .gallery-media .img {
+    clear: both;
+    display: block;
+    float: none;
+    margin: 5px auto;
+  } 
 }
