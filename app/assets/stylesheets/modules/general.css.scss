@@ -1,3 +1,6 @@
+@import '../general_imports';
+@import '../bourbon_custom';
+
 body{
   background-color: $light-grey;
   color: $white;
@@ -8,6 +11,9 @@ $all-container-br: 2em;
   background: $blue image-url('bg_main_lines.svg') no-repeat;
   background-size: 100%;
   border-radius: 0  0 $all-container-br $all-container-br;
+}
+main{
+  background-color:$white;
 }
 .main-footer{
   background: $light-grey;
@@ -20,5 +26,76 @@ $all-container-br: 2em;
 
 
 a, li {
+  text-decoration: none;
   @include transition(border-color .2s, color .2s, background .2s);
 }
+
+.intro-content{
+  background-position: 0 70%;
+  background: $white image-url('bg_header_lines.svg') no-repeat;
+  border-radius: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  margin: 3em;
+  padding-top:2em;
+
+  p {
+    color: magenta;
+    margin-top:300px;
+    text-align:center;
+  }
+}
+.header-container {
+  background: $white image-url('bg_header_lines.svg') no-repeat;
+  background-size: cover;
+}
+
+
+.main-wrapper {
+  padding: 2em 0;
+
+  .post {
+
+    h2 { padding: 2em; }
+  }
+}
+
+
+.alert { padding: 1em; }
+
+.success { background: $green; }
+
+.slider-wrapper {
+  margin:0 auto;
+  margin-top: -65px;
+  max-width: 1170px;
+  padding:0;
+  position:relative;
+  z-index:0;
+
+}
+
+.page-container {
+  section {
+    margin-top: .5em;
+    border-top: 1px solid $grey;
+  }
+}
+
+.page-content img {
+  border: 3px solid $white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  margin: .5em;
+}
+
+// FIXME: arreglar estooooooo!
+//.search-container > .row { margin: 0 100px; }
+
+
+.gallery-thumb {
+  border: .5em solid $white;
+  box-shadow: 1px 1px $black;
+}
+
+
+//o[class*='-modal'] {display: none;}
+

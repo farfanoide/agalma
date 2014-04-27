@@ -5,30 +5,32 @@
 
 .logo {
   background: image-url('logo.png') no-repeat;
-  bottom: 4em;
+//  bottom: 4em;
   height: 212px;
-  left: 3em;
+//  left: 3em;
   position: absolute;
   width: 400px;
-//  margin: 0 auto; 
+  //  margin: 0 auto; 
   }
 
 .header-container{ border-top: solid 10px $blue }
 
 .reveal-modal{
 
-  .form-wrapper{
-    border-right: 1px solid $black;
-    padding : 2em;
-    }
-
     a.close-reveal-modal{
       background-color: #fff;
       border-radius:10em;
       box-shadow: 0em 0em 1em $black;
-      padding:.1em .3em;
+      padding:0 .3em .1em .3em;
       right: -.6em !important;
       top: -.5em !important;
       }
     }
   }
+.session-modal-wrapper{
+    
+  .form-wrapper{
+    border-right: 1px solid $black;
+    padding : 2em;
+    }
+}
