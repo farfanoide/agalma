@@ -1,26 +1,13 @@
-<h1>Listing image_sliders</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @image_sliders.each do |image_slider| %>
-      <tr>
-        <td><%= image_tag(image_slider.image) %></td>
-        <td><%= link_to 'Edit', edit_backend_image_slider_path(image_slider) %></td>
-        <td><%= link_to 'Destroy', backend_image_slider_path(image_slider), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<h1>Imagenes para el slider principal</h1>
+<% @image_sliders.each do |image_slider| %>
+  <%= image_tag image_slider.image, class: :thumb %>
+<br />
+<br />
+  <%= link_to 'Cambiar', edit_backend_image_slider_path(image_slider), class: :'btn btn-primary' %>
+  <%= link_to 'Borrar', backend_image_slider_path(image_slider), method: :delete, data: { confirm: 'Are you sure?' }, class: :'btn btn-danger' %>
+<br />
+<br />
+<% end %>
 <br>
 
-<%= link_to 'New Image slider', new_backend_image_slider_path %>
+<%= link_to 'Agregar Imagen', new_backend_image_slider_path, class: :'btn btn-success' %>
