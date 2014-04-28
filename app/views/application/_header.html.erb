@@ -1,12 +1,20 @@
 <div class="header-container">
   <div class="row"> <!-- First row -->
-    <div class="small-12 large-6 large-offset-6 columns">
+    <div class="small-12 large-9 large-offset-3 columns">
       <div class="top-bar-container hide-for-small-only"> <!-- desktop nav -->
         <nav class="top-bar" >
         <section class="top-bar-section">
         <ul class="links-container">
           <%= nav_link_to '', :root, class: 'home_button item' %>
           <%= render partial: 'top_menu' if @top_menu %>
+          <%= render 'devise/menu/login_items' %>
+          <% if user_signed_in? %>
+            <% if policy(current_user).admin? %>
+              <%= link_to "Administrar", [:backend, :root], class: 'item' %>
+            <% end %>
+          <% else %>
+            <%= render 'devise/menu/registration_items' %>
+          <% end %>
         </ul>
         </section>
         </nav>

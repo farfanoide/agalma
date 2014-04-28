@@ -13,19 +13,5 @@
         <% end %>
       </div>
     </div>
-    <div class="small-12 large-4 columns" >
-      <div class="items-container">
-        <%= render 'devise/menu/login_items' %>
-        <li class="item"> <b>|</b> </li>
-        <% if user_signed_in? %>
-        <% if policy(current_user).admin? %>
-        <li class="item"><%= link_to "Administrar", [:backend, :root] %></li>
-        <% end %>
-        <% else %>
-        <%= render 'devise/menu/registration_items' %>
-        <% end %>
-      </div>
-    </div>
-
   </div>
 </div>
