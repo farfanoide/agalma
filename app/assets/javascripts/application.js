@@ -17,14 +17,16 @@
 //= require ckeditor/init
 //= require jquery.nivo.slider
 //= require branches
-//= require ./menu
 
 $(function(){ $(document).foundation(); });
 
 $(window).load(function() {
-  $('#slider').nivoSlider({
-    controlNav: false,
-    directionNav: false,
-    pauseOnHover: false
-  });
+  if ($( document ).width() > 640 ) {
+    $('#slider').nivoSlider({
+      controlNav: false,
+      directionNav: false,
+      pauseOnHover: false
+    });
+  }
+  // stop slider: $('#slider').data('nivoslider').stop();
 });

@@ -1,10 +1,5 @@
 <% if user_signed_in? %>
-  <li class="item">
-    <%= link_to('Cerrar Sesion', destroy_user_session_path, :method => :delete) %>
-  </li>
+  <%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete, class: 'item' %>
 <% else %>
-  <li class="item">
-    <%= link_to('Iniciar sesion', "#", data: { "reveal-id" => "login-modal" } ) %>
-
-  </li>
+  <%= link_to 'Iniciar sesion', "#", data: { "reveal-id" => "login-modal" }, class: 'item' %>
 <% end %>
