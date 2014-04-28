@@ -1,5 +1,5 @@
-<div class="search-container">
-  <div class="row">
+<div class="row">
+  <div class="search-container">
     <div class="small-12 columns">
       <div class="row collapse">
         <%= form_tag search_index_path, :method => :get do %>
@@ -8,7 +8,7 @@
           </div>
           <div class="small-4 columns">
             <!-- TODO: fix mamarrach -->
-            <%= submit_tag "BUSCAR", class: :button, :name => nil %>
+            <%= submit_tag "BUSCAR", class: 'button post-fix', :name => nil %>
           </div>
         <% end %>
       </div>

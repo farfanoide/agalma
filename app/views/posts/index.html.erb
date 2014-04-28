@@ -1,4 +1,6 @@
-<p class="page-title"> <%= t '.noticias' %> </p>
+<% content_for(:page_title) do %>
+  <%= t '.noticias' %>
+<% end %>
 
 <%= render @posts  %>
 
