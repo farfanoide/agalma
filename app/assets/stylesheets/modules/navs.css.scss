@@ -36,9 +36,9 @@
 .side-nav {
   margin: 0;
   text-align: center;
-
+  background-color:$blue;
   .items-container {
-    border-right: $white-border;
+//    border-right: $white-border;
     padding: 0 10px 0 0;
     .item-container {
       position: relative;

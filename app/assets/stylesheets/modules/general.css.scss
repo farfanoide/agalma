@@ -2,13 +2,13 @@
 @import '../bourbon_custom';
 
 body{
-  background-color: $light-grey;
+  background-color: $light-light-blue;
   color: $white;
   font-family:'Maven Pro', sans-serif;
 }
 $all-container-br: 2em;
 .all-container{
-  background: $blue image-url('bg_main_lines.svg') no-repeat;
+  background: $light-light-blue;
   background-size: 100%;
   border-radius: 0  0 $all-container-br $all-container-br;
 }
@@ -99,3 +99,7 @@ a, li {
 
 //o[class*='-modal'] {display: none;}
 
+.vomit-turquoise {
+  padding: auto;
+  text-align: center;
+}

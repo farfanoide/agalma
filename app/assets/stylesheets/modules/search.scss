@@ -1,12 +1,13 @@
 @import '../general_imports';
 
 .search-container {
-  background-color: $grey;
-  border: solid 3px $white;
   padding: .5em;
 
-  .columns {
-    padding: 0
+  .collapse {
+
+    .columns {
+       padding: 0
+    }
   }
 
   li.item {
@@ -22,8 +23,6 @@
       margin: 0 1em;
     }
   }
-
-
 
   .search-input {
     border: 0;
