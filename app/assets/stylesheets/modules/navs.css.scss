@@ -1,7 +1,7 @@
 @import '../general_imports';
 @import '../bourbon_custom';
 
-.top-bar-container{
+.top-bar-container {
   padding: 0;
   position: relative;
   z-index:1;
@@ -16,6 +16,7 @@
     margin-top: 0;
     padding: 1em;
     background-color: transparent;
+
     .item {
       font-size: .8em;
       font-weight: bold;
@@ -37,15 +38,15 @@
 .items-container {
   list-style: none;
 
-  .item-container{ text-transform: capitalize; }
+  .item-container { text-transform: capitalize; }
 }
 // =side nav module
 .side-nav {
+  background-color: $blue;
   margin: 0;
   text-align: center;
-  background-color:$blue;
+
   .items-container {
-//    border-right: $white-border;
     padding: 0 10px 0 0;
 
     .item-container {
@@ -69,9 +70,10 @@
     }
 
     .nav-footer {
+      line-height: 30px;
       margin: 30px 0;
       text-align: center;
-      line-height: 30px;
+
       a {
         display: inline-block;
         margin-bottom: 2em;
@@ -80,6 +82,4 @@
     }
   }
 }
-
-
 
