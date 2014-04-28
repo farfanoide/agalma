@@ -17,7 +17,6 @@
 //= require ckeditor/init
 //= require jquery.nivo.slider
 //= require branches
-//= require ./menu
 
 $(function(){ $(document).foundation(); });
 

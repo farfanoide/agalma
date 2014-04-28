@@ -1,22 +1,23 @@
 <div class="header-container">
   <div class="row"> <!-- First row -->
     <div class="small-12 large-6 large-offset-6 columns">
-      <div class=" top-bar-container">
-        <nav class="top-bar" data-topbar data-options="custom_back_text: true; back_text: Volver">
-          <ul class="title-area">
-            <li class="name"> <h1> <a class=""  href="<%= url_for :root %>"><%= image_tag 'home_btn.png'  %></a> </h1> </li>
-            <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-          </ul>
-          <section class="top-bar-section">
-            <ul class="links-container">
-              <%= render partial: 'top_menu' if @top_menu %>
-            </ul>
-          </section>
+      <div class="top-bar-container hide-for-small-only"> <!-- desktop nav -->
+        <nav class="top-bar" >
+        <section class="top-bar-section">
+        <ul class="links-container">
+          <%= nav_link_to '', :root, class: 'home_button item' %>
+          <%= render partial: 'top_menu' if @top_menu %>
+        </ul>
+        </section>
         </nav>
+      </div> <!-- end desktop nav -->
+      <div class="show-for-small-only">
+        <a class="left-off-canvas-toggle" href="#" >Menu</a>
+        <%= link_to 'Agalma', :root, class: 'logo' %>
       </div>
     </div>
   </div> <!-- First row close -->
-  <div class="row"> <!-- Second Row -->
+  <div class="row show-for-large-up"> <!-- Second Row -->
     <div class="slider-wrapper">
       <div class="small-12 columns">
         <%= render "slide" %>
