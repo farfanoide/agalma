@@ -1,10 +1,11 @@
 @import '../foundation-variables';
 
 @media #{$small-only}{
+
   .side-nav {
     display: none
   }
-
+  .slider-wrapper{ display: none; }
   .gallery-media .img {
     clear: both;
     display: block;

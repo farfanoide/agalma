@@ -1,9 +1,8 @@
 @import '../foundation-variables';
 
 @media #{$medium-only}{
-  .all-container { background: red !important; background-image: none !important; }
-  .logo { margin: 0 auto; }
 
+  .logo { margin: 0 auto; }
 
   .side-nav {
     .items-container{
