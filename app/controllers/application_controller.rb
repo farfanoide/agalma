@@ -15,14 +15,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  def intro
-    if request.referer.nil?
-      session[:active_branch] = Branch.first.id
-      render template: 'application/intro', layout: 'intro'
-    else
-      redirect_to posts_path
-    end
-  end
 
   private
 
