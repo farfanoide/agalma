@@ -3,6 +3,7 @@ class Branch < ActiveRecord::Base
   has_many :telephones
   has_many :pages
   has_many :positions, through: :position_users
+  has_many :users, through: :position_users
   has_and_belongs_to_many :external_branches
   has_one :menu
 
