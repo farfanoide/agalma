@@ -88,9 +88,22 @@ a, li {
 //o[class*='-modal'] {display: none;}
 
 .vomit-turquoise {
-  background-color: $turquoise;
-  padding: auto;
+  background: linear-gradient(135deg, $turquoise, $white, $turquoise);
+  background: -webkit-linear-gradient(135deg, $turquoise, $white, $turquoise);
+  background: -o-linear-gradient(135deg, $turquoise, $white, $turquoise);
+  background: -moz-linear-gradient(135deg, $turquoise, $white, $turquoise);
+  padding: 1em;
   text-align: center;
+
+  p {
+      font-size: 1.5em;
+    margin-bottom:0;
+    line-height: 3em;
+    
+    a {
+      color: $black;
+    }
+  }
 }
 
 ul {
