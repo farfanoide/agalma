@@ -34,12 +34,12 @@ Telephone.create!(ext:'011', num:'47208195', branch_id: Branch.find_by(name: 'At
 
 # Users -------------------------------------
 _pass = "12345678"
-User.create!(name: 'erica', email: 'sanchezvitale@gmail.com', password: _pass, admin: true)
-User.create!(name: 'veronica', email: 'veruhkieck@gmail.com', password: _pass, admin: true)
-User.create!(name: 'ivan', email: 'ivan6258@gmail.com', password: _pass, admin: true)
-User.create!(name: 'fernan', email: 'fernan.nestier@gmail.com', password: _pass, admin: true)
-User.create!(name: 'administrador', email: 'admin@centroagalma.com.ar', password: _pass, admin: true)
-User.create!(name: 'maria victoria', email: 'toia_gf@hotmail.com', password: _pass, admin: true)
+User.create!(name: 'erica', email: 'sanchezvitale@gmail.com', password: _pass)
+User.create!(name: 'veronica', email: 'veruhkieck@gmail.com', password: _pass)
+User.create!(name: 'ivan', email: 'ivan6258@gmail.com', password: _pass)
+User.create!(name: 'fernan', email: 'fernan.nestier@gmail.com', password: _pass)
+User.create!(name: 'administrador', email: 'admin@centroagalma.com.ar', password: _pass)
+User.create!(name: 'maria victoria', email: 'toia_gf@hotmail.com', password: _pass)
 
 # Roles -------------------------------------
 Role.create!(name: 'visitante', description: 'usuario con menos privilegios')

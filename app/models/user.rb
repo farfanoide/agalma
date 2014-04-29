@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def has_backend_role?
-    user_roles.include?('admin')
+    user_roles.include?('admin') || user_roles.include?('moderador')
   end
 
   def professional?

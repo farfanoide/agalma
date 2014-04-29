@@ -1,34 +1,33 @@
 <%= simple_form_for([:backend, @user], defaults: {input_html:{class: 'form-control'}}) do |f| %>
   <%if current_user == @user %>
   <div class="form-group">
-<%= f.input :name, placeholder: "Nombre de Usuario", label: "Nombre" %>
-  </div>
-  <div class="form-group">
-<%= f.input :email, placeholder: "Email del Usuario", label: "Email" %><br>
+  <%= f.input :name, placeholder: "Nombre de Usuario", label: "Nombre" %>
+</div>
+<div class="form-group">
+  <%= f.input :email, placeholder: "Email del Usuario", label: "Email" %><br>
 </div>
 <% else %>
   <div class="form-group">
   <%= f.object.name %><br>
-  </div>
-  <div class="form-group">
+</div>
+<div class="form-group">
   <%= f.object.email %>
-  </div>
+</div>
 <% end %>
 <% if current_user.admin? %>
-  <div class="checkbox">
-    <%= f.input :admin, label: "Administrador" %>
-  </div>
-<% end %>
-<div>
-<%= image_tag f.object.avatar.url :thumb %>
-<%= f.input :avatar %>
+  <div>
+  <%= f.association :roles, as: :check_boxes %>
 </div>
-<%= f.association :roles, as: :check_boxes %>
-<div>
-<%= f.simple_fields_for(:position_users) do |posit| %>
-  <%= render 'position_user_fields', f: posit %>
 <% end %>
-<%= link_to_add_fields '+ agregar cargo', f, :position_users %>
+<div>
+  <%= image_tag f.object.avatar.url :thumb %>
+  <%= f.input :avatar %>
+</div>
+<div>
+  <%= f.simple_fields_for(:position_users) do |posit| %>
+    <%= render 'position_user_fields', f: posit %>
+<% end %>
+  <%= link_to_add_fields '+ agregar cargo', f, :position_users %>
 </div>
 <br>
 <br>
