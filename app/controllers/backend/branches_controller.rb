@@ -56,11 +56,9 @@ class Backend::BranchesController < BackendController
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def branch_params
-    rolif_attrs = [:id, :role_id, :user_id, :branch_id, :_destroy]
     telep_attrs = [:id, :ext, :num, :branch_id, :_destroy]
     menu_attrs  = [:id, :position, :name, :branch_id]
     params.require(:branch).permit(:id, :name, :description, :zone,:email, :zipcode , :address,
-                                   rolifications_attributes: rolif_attrs,
                                    telephones_attributes: telep_attrs,
                                    menu_attributes: menu_attrs)
   end

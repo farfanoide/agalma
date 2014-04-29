@@ -23,10 +23,7 @@
 <%= image_tag f.object.avatar.url :thumb %>
 <%= f.input :avatar %>
 </div>
-<%= f.simple_fields_for(:rolifications) do |rolif| %>
-  <%= render 'rolification_fields', f: rolif %>
-<% end %>
-<%= link_to_add_fields '+ agregar rol', f, :rolifications %>
+<%= f.association :roles, as: :check_boxes %>
 <div>
 <%= f.simple_fields_for(:position_users) do |posit| %>
   <%= render 'position_user_fields', f: posit %>

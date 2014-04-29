@@ -3,8 +3,6 @@ class BranchPolicy < Struct.new(:user, :branch)
     def resolve
       if user.admin?
         scope.all
-      else
-        user.branches
       end
     end
   end
@@ -14,7 +12,7 @@ class BranchPolicy < Struct.new(:user, :branch)
   end
 
   def edit?
-    user.admin? || user.can_edit_branch?(branch)
+    user.admin? || user.can_edit_branch?
   end
 
   def destroy?
