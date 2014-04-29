@@ -43,6 +43,10 @@
 // =side nav module
 .side-nav {
   background-color: $blue;
+  background: radial-gradient(darken($blue,15) 20%, $blue);
+  background: -moz-radial-gradient(darken($blue,15) 20%, $blue);
+  background: -o-radial-gradient(darken($blue,15) 20%, $blue);
+  background: -webkit-radial-gradient(darken($blue,15) 20%, $blue);
   margin: 0;
   text-align: center;
   
