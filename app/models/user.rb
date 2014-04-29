@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    admin
+    user_roles.include?('admin')
   end
 
   def user_roles

@@ -10,6 +10,6 @@ class BackendController < ActionController::Base
   def authorize_user
     authenticate_user!
     # TODO: refactor this to pundit!
-    redirect_to :root if !current_user.has_backend_role?
+    redirect_to :root unless current_user.has_backend_role?
   end
 end
