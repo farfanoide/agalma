@@ -1,0 +1,16 @@
+@import 'plugins/bootstrap.min';
+@import 'backend/AdminLTE';
+
+.title-field {
+  text-transform: capitalize;
+}
+
+@import 'font-awesome';
+
+.cke_top, .cke_bottom {
+  background-image: none !important;
+  background: #ECEEEC !important;
+}
+.thumb {
+  max-width: 100%;
+}

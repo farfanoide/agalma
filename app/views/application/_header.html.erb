@@ -1,63 +1,38 @@
 <div class="header-container">
-
-  
-  <div class="row">
-
-    <div class="small-12 large-6 large-offset-6 columns top-bar-container">
-      <nav class="top-bar" data-topbar data-options="custom_back_text: true; back_text: Volver">
-        <ul class="title-area">
-          <li class="name"> <h1> <a class=""  href="<%= url_for :root %>"><%= image_tag 'home_btn.png'  %></a> </h1> </li>
-          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-        </ul>
+  <div class="row"> <!-- First row -->
+    <div class="small-12 large-9 large-offset-3 columns">
+      <div class="top-bar-container hide-for-small-only"> <!-- desktop nav -->
+        <nav class="top-bar" >
         <section class="top-bar-section">
-          <ul class="links-container">
-            <%= render partial: 'top_menu' if @top_menu %>
-
-          </ul>
+        <ul class="links-container">
+          <%= nav_link_to '', :root, class: 'home_button item' %>
+          <%= render partial: 'top_menu' if @top_menu %>
+          <%= render 'devise/menu/login_items' %>
+          <% if user_signed_in? %>
+            <% if policy(current_user).admin? %>
+              <%= link_to "Administrar", [:backend, :root], class: 'item' %>
+            <% end %>
+          <% else %>
+            <%= render 'devise/menu/registration_items' %>
+          <% end %>
+        </ul>
         </section>
-      </nav>
+        </nav>
+      </div> <!-- end desktop nav -->
+      <div class="show-for-small-only">
+        <a class="left-off-canvas-toggle" href="#" >Menu</a>
+        <%= link_to 'Agalma', :root, class: 'logo' %>
+      </div>
     </div>
-  </div>
-  
-  <div class="row slider-wrapper">
-    <div class="small-12 columns">
-      <%= render "slide" %>
+  </div> <!-- First row close -->
+  <div class="row show-for-large-up"> <!-- Second Row -->
+    <div class="slider-wrapper">
+      <div class="small-12 columns">
+        <%= render "slide" %>
+      </div>
     </div>
-    <a class="logo"  href="<%= url_for :root %>">Agalma</a>
-  </div>
-  <% if !user_signed_in? %>
-  <div id="registration-modal" class="reveal-modal medium" data-reveal>
-    <div class="register-modal-wrapper" >
-      <div class="row" >
-        <div class="small-12 columns modal-header">
-          <%= image_tag 'agalma_logo.png'  %>
-        </div>
-      </div>
-      <div class="small-12 form-wrapper" >
-        <%= render 'devise/registrations/new' %>
-      </div>
-      <a class="close-reveal-modal"> &#215 </a>
-    </div>
-  </div>
-
-  <div id="login-modal" class="reveal-modal medium" data-reveal>
-    <div class="session-modal-wrapper">
-      <div class="row">
-        <div class="small-12 large-10 large-offset-2 columns">
-          <%= image_tag 'agalma_logo.png'  %>
-        </div>
-      </div>
-      <div class="small-12 large-8 columns form-wrapper" >
-        <%= render 'devise/sessions/new' %>
-      </div>
-      <div class="small-12 large-4 columns register">
-        <h3> Registrarse </h3>
-        <p> Si usted no tiene una cuenta aun puede crearla aquí. </p>
-        <%= link_to('Crear Cuenta', "#", class: "button", data: { "reveal-id" => "registration-modal" } ) %>
-      </div>
-
-      <a class="close-reveal-modal"> &#215 </a>
-    </div>
-  </div>
+  </div><!-- Sencond Row close -->
+  <% if !user_signed_in? %> <!-- Modal -->
+    <%= render 'registration_modals' %>
   <% end %>
 </div>

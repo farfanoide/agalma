@@ -1,6 +1,12 @@
 <footer class="main-footer">
   <div class="row">
-    <div class="small-12 large-4 large-offset-8">
+    <div class="small-12 large-8 columns">
+      <p class="copyright"><%= active_branch.telephones.first %> |
+        <%= active_branch.address %> |
+        <%= "#{active_branch.zone} (#{active_branch.zipcode})" %>
+      </p>
+    </div>
+    <div class="small-12 large-4 columns">
       <p class="copyright">2014 Agalma ® Todos los derechos reservados </p>
     </div>
   </div>

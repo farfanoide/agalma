@@ -1,0 +1,7 @@
+<%= simple_form_for([:backend, @position], defaults: {input_html:{class: 'form-control'}}) do |f| %>
+  <div class="form-group">
+  <%= f.input :name, placeholder: "Nombre de Cargo", label: "Nombre" %>
+  </div>
+  <br>
+  <%= f.submit "Guardar", class: 'btn btn-primary' %>
+<%end%> 

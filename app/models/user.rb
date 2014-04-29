@@ -3,13 +3,18 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   devise :database_authenticatable, :registerable,
-         :recoverable,:trackable, :rememberable, :validatable
-  has_many :rolifications
+    :recoverable,:trackable, :rememberable, :validatable
+
   has_many :posts
-  has_many :roles, through: :rolifications
-  has_many :branches, through: :rolifications
-  accepts_nested_attributes_for :rolifications, allow_destroy: true
+  has_and_belongs_to_many :roles
+  has_many :position_users
+  has_many :branches
+  has_many :positions, through: :position_users
+
+  accepts_nested_attributes_for :roles
+  accepts_nested_attributes_for :position_users, allow_destroy: true
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :curriculum, FilesUploader
 
   # TODO: add last name to users
   def full_name
@@ -18,26 +23,27 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    admin
+    user_roles.include?('admin')
   end
 
-  def user_roles(branch)
-    Rolification.where(branch_id: branch.id).where(user_id: self.id).map{ |r| r.role.name }
+  def user_roles
+    roles.all.map{ |r| r.name }
   end
 
   def has_backend_role?
-    Rolification.where(user_id: self.id).map{ |r| r.role.name }.any?
+    user_roles.include?('admin') || user_roles.include?('moderador')
   end
 
-  def can_edit_branch?(branch)
-    user_roles(branch).include?('moderador')
+  def professional?
+    user_roles.include?('profesional')
+  end
+
+  def can_edit_branch?
+    user_roles.include?('moderador')
   end
 
   def can_manage_post?(post)
-    user_roles(post.branch).include?('moderador')
+    user_roles.include?('moderador')
   end
 
-  def has_many_branches?
-    branches.size > 1
-  end
 end

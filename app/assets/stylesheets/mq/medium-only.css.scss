@@ -1,0 +1,26 @@
+@import '../foundation-variables';
+
+@media #{$medium-only}{
+
+  .logo { margin: 0 auto; }
+
+  .side-nav {
+    .items-container{
+      border-right: none;
+      padding: 0;
+      margin-left: 0;
+      text-align: center;
+//      @include clearfix();
+      .item-container{
+        width: 50%;
+        float: left;
+        backgreound: red;
+        &:hover, &:active{
+          border-radius: .2em;
+          border-bottom-color: transparent;
+        }
+        &:hover:after{content: none}
+      }
+    }
+  }
+}

@@ -54,25 +54,23 @@ class Backend::BranchesController < BackendController
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def branch_params
-      rolif_attrs = [:id, :role_id, :user_id, :branch_id, :_destroy]
-      telep_attrs = [:id, :ext, :num, :branch_id, :_destroy]
-      menu_attrs  = [:id, :position, :name, :branch_id]
-      params.require(:branch).permit(:id, :name, :description, :zone,:email, :zipcode , :address,
-                                     rolifications_attributes: rolif_attrs,
-                                     telephones_attributes: telep_attrs,
-                                     menu_attributes: menu_attrs)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def branch_params
+    telep_attrs = [:id, :ext, :num, :branch_id, :_destroy]
+    menu_attrs  = [:id, :position, :name, :branch_id]
+    params.require(:branch).permit(:id, :name, :description, :zone,:email, :zipcode , :address,
+                                   telephones_attributes: telep_attrs,
+                                   menu_attributes: menu_attrs)
+  end
 
-    def set_branch
-      @branch = Branch.find(params[:id])
-    end
+  def set_branch
+    @branch = Branch.find(params[:id])
+  end
 
-    def set_branch_menu(branch)
-      menu_attrs = {}
-      menu_attrs[:position] = 'left'
-      menu_attrs[:name] = "Menu - #{branch.name}"
-      branch.build_menu(menu_attrs)
-    end
+  def set_branch_menu(branch)
+    menu_attrs = {}
+    menu_attrs[:position] = 'left'
+    menu_attrs[:name] = "Menu - #{branch.name}"
+    branch.build_menu(menu_attrs)
+  end
 end

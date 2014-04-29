@@ -1,0 +1,14 @@
+<div class="form-group">
+  <%= f.input :titles , label: 'Titulos' %>
+</div>
+<div class="form-group">
+  <% if f.object.curriculum.file %>
+    <%= f.object.curriculum.file.filename %>
+  <% end %>
+  <%= f.input :curriculum , label: 'Curriculum' %>
+</div>
+<div class="form-group">
+  <%= f.input :profession , label: 'Profesión' %>
+</div>
+
+

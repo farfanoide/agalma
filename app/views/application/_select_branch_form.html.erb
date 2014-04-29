@@ -1,5 +1,6 @@
 <%= form_tag set_frontend_branch_path, method: :post, id: "edit_current_branch" %>
 <select name="branch_id">
+  <% puts @internal_branches %>
   <% @internal_branches.each do |branch| %>
     <% if active_branch_id == branch.id %>
       <option selected=selected value="<%= branch.id %>"><%= branch.name %></option>

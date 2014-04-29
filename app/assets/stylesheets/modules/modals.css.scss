@@ -1,0 +1,49 @@
+@import '../general_imports';
+
+.reveal-modal{
+
+  p { color: $black; }
+  a { color: $black; }
+
+  img {
+    height: 100px;
+    width: 200px;
+  }
+
+  label.inline {
+    color: $black;
+  }
+
+  input {
+    border-radius: 0;
+  }
+
+  .button {
+    border: 0;
+    background-color: $dark-grey;
+    color: $white;
+    display:block;
+    margin:0;
+    padding:1em;
+    width:auto;
+  }
+
+  h3 { color:$black; }
+}
+
+.session-modal-wrapper {
+
+  .user_remember_me { margin-left: 1.5em; }
+  .register * { margin: 1em 0; }
+}
+
+.register-modal-wrapper {
+
+  padding: 0 5em;
+
+  .form-wrapper { border: none; }
+
+  .modal-header { text-align: center; }
+
+  img { min-width: 200px; }
+}

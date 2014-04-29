@@ -16,23 +16,23 @@ Agalma::Application.routes.draw do
   resources :roles
   resources :contacts, only: [:new, :create]
   namespace :backend do
-    resources :galeries, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :posts
-    resources :menus
-    resources :users
     resources :branches
-    resources :image_sliders
-    post 'dashboard/set_current_branch' => 'dashboard#set_current_branch'
-    resources :galleries
-    resources :external_branches
-    resources :pages
     resources :contacts, only: [:new, :create]
+    post 'dashboard/set_current_branch' => 'dashboard#set_current_branch'
+    resources :external_branches
+    resources :galeries, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :image_sliders
+    resources :menus
+    resources :pages
+    resources :positions
+    resources :posts
+    resources :users
     get "mailer/index"
     post "mailer/send"
     root 'dashboard#home'
   end
 
-  root 'application#intro'
+  root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

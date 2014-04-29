@@ -6,6 +6,24 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
+
+<% if !@user.positions.blank? %>
+<p>
+<strong>Cargos en sucursales:</strong>
+<ul>
+  <% @user.position_users.each do |pu| %>
+    <li><%= "#{pu.position.name} en la sucursal: #{pu.branch.name}" %></li>
+  <% end %>
+</ul>
+<strong>Cargos en la pagina:</strong>
+<ul>
+  <% @user.roles.each do |role| %>
+    <li><%= role.name %></li>
+  <% end %>
+</ul>
+</p>
+<% end %>
 <div class="actions">
 <%= link_to 'enviar Mail', "mailto:#{@user.email}"  %>
 <%= link_to 'Editar', edit_backend_user_path(@user) %>

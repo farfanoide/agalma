@@ -15,14 +15,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  def intro
-    if request.referer.nil?
-      session[:active_branch] = Branch.first.id
-      render template: 'application/intro', layout: 'intro'
-    else
-      redirect_to posts_path
-    end
-  end
 
   private
 
@@ -60,7 +52,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:name, :current_password , :avatar, :email, :password, :password_confirmation, :curriculum, :profession, :titles)
+    end
   end
 
   def set_internal_branches
