@@ -9,17 +9,11 @@ a {
 h1,
 .page-title {
   color: $black;
+  font-family: 'Trebuchet MS', OfficinaSans-Italic, sans-serif;
   font-size: 2.3em;
-  font-style: italic;
   font-weight: 300;
-  margin-bottom:0;
-//  padding: .2em auto;
   text-align: center;
   text-transform: capitalize;
-  position: relative;
-  top: -1em;
-//  border-bottom: 1px solid $grey;
-//  font-family: 'Trebuchet MS', OfficinaSans-Italic, sans-serif;
 }
 
 .page-content {
