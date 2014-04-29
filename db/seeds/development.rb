@@ -81,3 +81,8 @@ _calvicie_content = 'El afectado, sin antecedentes en esta afección, presentaba
 Post.create!(title: 'Calvicie genital: La patologia de los empresarios y yuppies', content: _calvicie_content, description: _calvicie_descrip, branch_id: 1)
 
 Role.find(3).user_ids=[3,4,5]
+
+# Positions ---------------------------------
+Position.create!(name: 'Profesor')
+Position.create!(name: 'Director')
+Position.create!(name: 'Vicedirector')
