@@ -2,11 +2,13 @@
   <%= f.input :titles , label: 'Titulos' %>
 </div>
 <div class="form-group">
-  <%= f.object.curriculum.file.filename %>
+  <% if f.object.curriculum.file %>
+    <%= f.object.curriculum.file.filename %>
+  <% end %>
   <%= f.input :curriculum , label: 'Curriculum' %>
 </div>
 <div class="form-group">
-  <%= f.input :profession , label: 'Profesion' %>
+  <%= f.input :profession , label: 'Profesión' %>
 </div>
 
 
