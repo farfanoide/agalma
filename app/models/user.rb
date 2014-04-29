@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_and_belongs_to_many :roles
   has_many :position_users
-  has_many :branches
+  has_many :branches, through: :position_users
   has_many :positions, through: :position_users
 
   accepts_nested_attributes_for :roles
