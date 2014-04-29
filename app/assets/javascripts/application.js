@@ -30,3 +30,7 @@ $(window).load(function() {
   }
   // stop slider: $('#slider').data('nivoslider').stop();
 });
+
+$(document).on('change', '#edit_current_branch', function() {
+  $(this).submit();
+});

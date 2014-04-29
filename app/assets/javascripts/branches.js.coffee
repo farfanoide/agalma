@@ -19,6 +19,3 @@ jQuery ->
     $(this).before($(this).data('fields').replace(regexp, time))
     $(this).remove()
     event.preventDefault()
-
-  $('#edit_current_branch').on 'change', (event) ->
-    $(this).submit()

@@ -1,5 +1,6 @@
 @import '../general_imports';
 
+
 .search-container {
   padding: .5em;
 
@@ -7,20 +8,6 @@
 
     .columns {
        padding: 0
-    }
-  }
-
-  li.item {
-    display: inline;
-    float: right;
-
-    a {
-      border-radius: 0 .7em .7em 0;
-      color: $black;
-      font-size: .7em;
-      height: 22px;
-      margin-bottom: 0;
-      margin: 0 1em;
     }
   }
 
@@ -33,15 +20,16 @@
     padding: 0 10px;
   }
 
-  .row {
+/*  .row {
     margin-bottom: 0;
     padding: 0;
   }
-
+*/
   input.button {
-    background-color: $blue;
+    background-color: $light-light-blue;
     border-radius: 0 5px 5px 0;
     margin:0;
-    padding: .2em 1em;
+    padding: .35em 1em;
+    float:left;
   }
 }

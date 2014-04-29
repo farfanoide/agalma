@@ -43,43 +43,40 @@
 // =side nav module
 .side-nav {
   background-color: $blue;
+  background: radial-gradient(darken($blue,15) 20%, $blue);
+  background: -moz-radial-gradient(darken($blue,15) 20%, $blue);
+  background: -o-radial-gradient(darken($blue,15) 20%, $blue);
+  background: -webkit-radial-gradient(darken($blue,15) 20%, $blue);
   margin: 0;
   text-align: center;
-
+  
+  
   .items-container {
-    padding: 0 10px 0 0;
-
-    .item-container {
-      border-bottom: $white-border;
-      font-size: 16px;
-      margin: 0;
-      padding: .67em .5em;
-      position: relative;
-
+        font-size: .9em;
+        padding:2em 0;
+        
+    li{ margin:2em 0;}
       .item {
         color: $white;
-
+        font-size: 1.5em;
+        font-weight: bolder;
+        text-transform:capitalize;
         &:hover {
           @include animation(scale .4s ease-in-out);
         }
       }
-    }
+  }
+}
 
-    .item-container:hover {
-      border-color: $transparent;
-    }
 
-    .nav-footer {
-      line-height: 30px;
-      margin: 30px 0;
-      text-align: center;
+.nav-footer {
+    line-height: 30px;
+    margin: 30px 0;
+    text-align: center;
 
-      a {
+    a {
         display: inline-block;
         margin-bottom: 2em;
       }
 
     }
-  }
-}
-

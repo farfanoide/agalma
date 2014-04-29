@@ -32,7 +32,7 @@ Agalma::Application.routes.draw do
     root 'dashboard#home'
   end
 
-  root 'application#intro'
+  root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

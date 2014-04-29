@@ -6,20 +6,22 @@ body{
   color: $white;
   font-family:'Maven Pro', sans-serif;
 }
-$all-container-br: 2em;
-.all-container{
+
+.all-container {
   background: $light-light-blue;
   background-size: 100%;
-  border-radius: 0  0 $all-container-br $all-container-br;
 }
+
 main{
   background-color:$white;
 }
+
 .main-footer{
   background: $light-grey;
   padding: 2em;
 }
-.copyright{
+
+.copyright {
   color: $dark-grey;
   font-size: .8em;
 }
@@ -30,22 +32,8 @@ a, li {
   @include transition(border-color .2s, color .2s, background .2s);
 }
 
-.intro-content{
-  background-position: 0 70%;
-  background: $white image-url('bg_header_lines.svg') no-repeat;
-  border-radius: 1em;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
-  margin: 3em;
-  padding-top:2em;
-
-  p {
-    color: magenta;
-    margin-top:300px;
-    text-align:center;
-  }
-}
 .header-container {
-  background: $white image-url('bg_header_lines.svg') no-repeat;
+    background: $light-light-blue; // image-url('bg_header_lines.svg') no-repeat;
   background-size: cover;
 }
 
@@ -100,6 +88,24 @@ a, li {
 //o[class*='-modal'] {display: none;}
 
 .vomit-turquoise {
-  padding: auto;
+  background: linear-gradient(135deg, $turquoise, $white, $turquoise);
+  background: -webkit-linear-gradient(135deg, $turquoise, $white, $turquoise);
+  background: -o-linear-gradient(135deg, $turquoise, $white, $turquoise);
+  background: -moz-linear-gradient(135deg, $turquoise, $white, $turquoise);
+  padding: 1em;
   text-align: center;
+
+  p {
+      font-size: 1.5em;
+    margin-bottom:0;
+    line-height: 3em;
+    
+    a {
+      color: $black;
+    }
+  }
+}
+
+ul {
+  margin-left:0
 }
