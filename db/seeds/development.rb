@@ -52,6 +52,10 @@ _widg_consult = Widget.create!(name: 'consultorios internos', description: 'este
 Widget.create!(name: 'consultorios externos', description: 'este widget lista todos los consultorios externos del sistema', cell_class:'branch', method_name:'external_branches')
 Widget.create!(name: 'contacto', description: 'este widget presenta un formulario de contacto', cell_class:'contact', method_name:'contact_form')
 Widget.create!(name: 'galeria', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'gallery_slider')
+Widget.create!(name: 'galerias de sucursal', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'branch_galleries')
+Widget.create!(name: 'todas las galerias', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'all_galleries')
+Widget.create!(name: 'Usuarios con cargos', description: 'este widget presenta todos los perfiles de los usuarios con cargos', cell_class:'users', method_name:'professionals')
+
 
 # General Pages -----------------------------
 _quienes_body = "<p>Los Centros en Salud Mental Agalma están al servicio de la sociedad. Prestan  una amplia cobertura asistencial y terapéutica que permite dar respuesta a las diversas problemáticas propias de la niñez, la infancia y la adolescencia, con un enfoque especializado y un criterio integral, en las áreas de psicología, musicoterapia, psicopedagogía, terapia ocupacional, psicomotricidad, nutrición, kinesiología y asistencia social,  promoviendo la excelencia en la calidad de los tratamientos, la optimización de los recursos y sustentando una particular práctica transdisciplinaria, que incluye la orientación y apoyo a las familias. También cuenta con el área de formación profesional dedicada a la enseñanza, trasmisión y capacitación de profesionales de la salud, sobre distintas temáticas de incidencia eminentemente clínica, relacionadas con los campos disciplinarios que abarca nuestro Equipo.</p>"

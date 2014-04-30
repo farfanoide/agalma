@@ -1,8 +1,8 @@
-class BranchCell < Cell::Rails
+class BranchCell < BaseCell
 
   append_view_path "app/views/"
 
-  def internal_branches
+  def internal_branches(args)
     @internal_branches ||= Branch.all
     render
   end

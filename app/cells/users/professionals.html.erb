@@ -1,0 +1,21 @@
+<% @professionals.each do |p| %>
+  <%= image_tag p.avatar.url %>
+ <p>
+  <strong>Nombre:</strong>
+  <%= p.name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= p.email %>
+</p>
+
+
+<% if !p.positions.blank? %>
+<ul>
+  <% p.position_users.each do |pu| %>
+    <li><%= "#{pu.position.name} en la sucursal: #{pu.branch.name}" %></li>
+  <% end %>
+</ul>
+</p>
+<% end %>
+<% end %>
