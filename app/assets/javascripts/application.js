@@ -17,6 +17,8 @@
 //= require ckeditor/init
 //= require jquery.nivo.slider
 //= require branches
+//= require plugins/jquery.lettering
+//= require plugins/jquery.textillate
 
 $(function(){ $(document).foundation(); });
 
@@ -34,3 +36,13 @@ $(window).load(function() {
 $(document).on('change', '#edit_current_branch', function() {
   $(this).submit();
 });
+
+$(function() {
+  var $navLinks = $('.item').textillate({
+    autoStart: false,
+      in: { effect: 'tada'
+      }
+  });
+
+  $navLinks.on('mouseenter', function () { $(this).textillate('start');  });
+})
