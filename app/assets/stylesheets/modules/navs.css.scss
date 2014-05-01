@@ -14,8 +14,6 @@
   margin-top: -5px;
 
   .links-container {
-    /* margin-top: 0; */
-    /* padding: 1em; */
     background-color: transparent;
 
     .item {
@@ -25,10 +23,13 @@
       padding: 1em;
     }
 
-    .item:hover, .selected{
-        background: radial-gradient(circle 10px at center 10px, $light-light-blue, $turquoise);
-        color: $light-light-blue;
+    .item:hover, .selected {
+      color: $light-light-blue;
     }
+    .selected {
+      background: radial-gradient(circle 10px at center 10px, $light-light-blue, $turquoise);
+    }
+    .home_button{background: none;}
   }
 }
 
@@ -49,11 +50,6 @@
 
 // =side nav module
 .side-nav {
-  background-color: $blue;
-  background-image: radial-gradient(darken($blue, 15) 20%, $blue);
-  background-image: -moz-radial-gradient(darken($blue, 15) 20%, $blue);
-  background-image: -o-radial-gradient(darken($blue, 15) 20%, $blue);
-  background-image: -webkit-radial-gradient(darken($blue, 15) 20%, $blue);
   margin: 0;
   text-align: center;
 

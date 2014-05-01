@@ -36,7 +36,7 @@
                 <aside class="left-sidebar">
                   <%= render 'side_nav' %>
                   <div class="small-12 large-10 large-offset-2 columns">
-                    <div class="vomit-turquoise vomit-box-shadow" >
+                    <div class="vomit-turquoise vomit-box-shadow side-nav" >
                       <p> <%= link_to 'Galeria de Fotos', galeries_path %></p>
                       <p> <a href="#"> Links de Interes </a></p>
                     </div>
@@ -44,6 +44,7 @@
                 </aside>
               </div>
               <div class="small-12 large-6 columns">
+                <div class="main-container">
                 <% if content_for?(:page_title) %>
                 <h1 class="page-title"><%= yield(:page_title)  %></h1>
               <% end %>
@@ -51,9 +52,10 @@
                   <%= yield %>
                 </main>
               </div>
+                </div>
               <div class="small-12 large-3 columns" data-equalizer-watch>
                 <aside class="right-sidebar">
-                  <div class="side-nav vomit-box-shadow">
+                  <div class="side-nav vomit-box-shadow vomit-blue">
                     <ul class="items-container">
                       <li><a class=" header" href="#">Prestaciones via web</a></li>
                     <li> <a class="item" href="#">Atencion psicoanalitica </a> </li>

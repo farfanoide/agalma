@@ -1,7 +1,7 @@
 @import '../foundation-variables';
 @import '../general_imports';
 
-@media #{$large-up}{
+@media #{$large-up} {
 
   .logo {
     background: image-url('logo.png') no-repeat;
@@ -10,9 +10,9 @@
     width: 400px;
   }
 
-  .header-container{ border-top: solid 20px $light-light-blue; }
+  .header-container { border-top: solid 30px $light-light-blue; }
 
-  .reveal-modal{
+  .reveal-modal {
 
     a.close-reveal-modal{
       background-color: #fff;
@@ -31,4 +31,31 @@
     border-right: 1px solid $black;
     padding : 2em;
   }
+}
+
+
+.left-sidebar,
+.right-sidebar,
+.main-container {
+  position: relative;
+}
+
+.left-sidebar .side-nav {
+  margin-right: -3em;
+}
+
+.right-sidebar .side-nav {
+  margin-left: -3em;
+}
+
+.main-container main {
+  z-index: 1;
+}
+
+.left-sidebar {
+  z-index: 4;
+}
+
+.left-sidebar .side-nav {
+  z-index: 5;
 }
