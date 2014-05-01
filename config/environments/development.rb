@@ -50,7 +50,7 @@ Agalma::Application.configure do
   config.assets.compress = false
   # config.assets.compile = true
   # config.serve_static_assets = false
-
+  assets.paths << "#{Rails.root}/app/assets/fonts"
   # live-reload
   config.middleware.use Rack::LiveReload
 end

@@ -15,7 +15,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><%= content_for?(:title) ? yield(:title) : "Agalma" %></title>
-<link rel="stylesheet" href="http://i.icomoon.io/public/temp/8a45f200f3/UntitledProject1/style.css">
+
 
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'vendor/custom.modernizr' %>
@@ -32,7 +32,7 @@
         <div class="all-container">
           <div class="row" data-equalizer>
             <div class="main-wrapper">
-              <div class="small-12 large-4 columns" data-equalizer-watch>
+              <div class="small-12 large-3 columns" data-equalizer-watch>
                 <aside class="left-sidebar">
                   <%= render 'side_nav' %>
                   <div class="vomit-turquoise" >
@@ -41,7 +41,7 @@
                   </div>
                 </aside>
               </div>
-              <div class="small-12 large-5 columns">
+              <div class="small-12 large-6 columns">
                 <% if content_for?(:page_title) %>
                 <h1 class="page-title"><%= yield(:page_title)  %></h1>
               <% end %>

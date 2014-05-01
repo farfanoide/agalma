@@ -87,6 +87,9 @@ Agalma::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  # add fonts directory to asset pipeline
+  assets.paths << "#{Rails.root}/app/assets/fonts"
+
   # ckeditor stuff for production
   config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   config.assets.precompile += Ckeditor.assets
