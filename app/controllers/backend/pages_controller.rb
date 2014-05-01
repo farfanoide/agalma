@@ -28,6 +28,8 @@ class Backend::PagesController < BackendController
     authorize @page
     if @page.branch
       @page.branch.menu.add_page @page if @page.valid?
+    else
+      Menu.general.first.add_page @page if page.active
     end
     respond_to do |format|
       if @page.save

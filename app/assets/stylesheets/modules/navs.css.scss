@@ -26,9 +26,7 @@
     .item:hover, .selected {
       color: $light-light-blue;
     }
-    .selected {
-      background: radial-gradient(circle 10px at center 10px, $light-light-blue, $turquoise);
-    }
+
     .home_button{background: none;}
   }
 }
@@ -61,7 +59,7 @@
 
     .item, .header {
       color: $white;
-      font-size: 1.5em;
+      font-size: 1.2em;
       font-weight: bolder;
 
       &:hover {
@@ -85,7 +83,7 @@
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1);
   color: #b1b6ba;
   font-size: 2em;
-  margin: 5px;
+  margin: 0;
   padding: .2em;
 
   &:hover {
