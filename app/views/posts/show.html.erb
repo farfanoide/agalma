@@ -2,10 +2,10 @@
 <div class="page-container">
   <section class="post-container">
     <div class="post-main">
-      <p> <%= raw(@post.description)  %> </p>
+      <p> <%= simple_format(@post.description)  %> </p>
       <br>
       <br>
-      <p><%= raw(@post.content) %></p>
+      <p><%= simple_format(@post.content) %></p>
     </div>
     <div>
       <% if !@gallery.nil? %>

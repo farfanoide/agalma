@@ -1,5 +1,6 @@
 @import '../general_imports';
 @import '../bourbon_custom';
+
 .top-bar-container {
   padding: 0;
   position: relative;
@@ -7,16 +8,16 @@
 }
 
 .top-bar {
-  background-color: $blue;
-  border-radius: 0 0 .5em .5em;
+  background-color: $turquoise;
   text-align: center;
 
   .links-container {
-    margin-top: 0;
-    padding: 1em;
+    /* margin-top: 0; */
+    /* padding: 1em; */
     background-color: transparent;
 
     .item {
+      color: $black;
       font-size: .8em;
       font-weight: bold;
       padding: 1em;
@@ -51,11 +52,11 @@
 
   .items-container {
     font-size: .9em;
-    padding:2em 0;
+    padding: 1em 0;
 
-    li { margin:2em 0;}
+    li { margin: 1.3em 0;}
 
-    .item {
+    .item, .header {
       color: $white;
       font-size: 1.5em;
       font-weight: bolder;
@@ -91,4 +92,7 @@
 
 .item, .item:hover {
   color: $white;
+}
+.header {
+  font-style: italic;
 }

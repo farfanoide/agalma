@@ -1,31 +1,43 @@
-<%= simple_form_for([:backend, @post], defaults: {input_html: {class: 'form-control'}}) do |f| %>
+<%= simple_form_for([:backend, @post], html: {multipart: true}, defaults: {input_html: {class: 'form-control'}}) do |f| %>
 
   <% if f.error_notification  %>
-    <div class="alert alert-danger alert-dismissable">
-      <i class="fa fa-ban"></i>
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-      <%= f.error_notification %>
-    </div>
+  <div class="alert alert-danger alert-dismissable">
+  <i class="fa fa-ban"></i>
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <%= f.error_notification %>
+</div>
   <% end %>
-  <div class="form-group">
-    <%= f.input :title , label: 'Titulo' %>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+      <%= f.input :title , label: 'Titulo' %>
+    </div>
+    <div class="form-group">
+      <%= f.input :description , label: 'Descripcion' %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.input :description , label: 'Descripcion' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :content, label: 'Contenido', :as => :ckeditor %>
-  </div>
-  <div class="form-group">
-    <%= f.association :branch, label: 'Sucursal', as: :select, include_blank: false%>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.simple_fields_for (:galery) do |gallery| %>
-      <%= render 'galery_fields', f: gallery %>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <% if f.object.post_image %>
+        <%= image_tag f.object.post_image.url(:thumb) %>
     <% end %>
-    <%= link_to_add_galery('agregar galeria', f, :galery) unless f.object.galery %>
-    <div class="form-actions">
-      <%= f.submit 'Publicar', class: 'btn btn-primary' %>
+      <%= f.input :post_image, label: 'Imagen de portada:' %>
     </div>
-  <% end %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.input :content, label: 'Contenido', :as => :ckeditor %>
+</div>
+<div class="form-group">
+  <%= f.association :branch, label: 'Sucursal', as: :select, include_blank: false%>
+</div>
+
+<div class="form-inputs">
+  <%= f.simple_fields_for (:galery) do |gallery| %>
+    <%= render 'galery_fields', f: gallery %>
+<% end %>
+  <%= link_to_add_galery('agregar galeria', f, :galery) unless f.object.galery %>
+  <div class="form-actions">
+    <%= f.submit 'Publicar', class: 'btn btn-primary' %>
+  </div>
+<% end %>

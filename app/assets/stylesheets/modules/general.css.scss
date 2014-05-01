@@ -12,11 +12,11 @@ body{
   background-size: 100%;
 }
 
-main{
-  background-color:$white;
+main {
+  background-color: $white;
 }
 
-.main-footer{
+.main-footer {
   background: $light-grey;
   padding: 2em;
 }
@@ -33,10 +33,9 @@ a, li {
 }
 
 .header-container {
-    background: $light-light-blue; // image-url('bg_header_lines.svg') no-repeat;
+  background: $light-light-blue; // image-url('bg_header_lines.svg') no-repeat;
   background-size: cover;
 }
-
 
 .main-wrapper {
   padding: 2em 0;
@@ -47,7 +46,6 @@ a, li {
   }
 }
 
-
 .alert { padding: 1em; }
 
 .success { background: $green; }
@@ -56,16 +54,16 @@ a, li {
   margin:0 auto;
   margin-top: -22px;
   max-width: 1170px;
-  padding:0;
-  position:relative;
-  z-index:0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
 
 }
 
 .page-container {
   section {
-    margin-top: .5em;
     border-top: 1px solid $grey;
+    margin-top: .5em;
   }
 }
 
@@ -75,17 +73,10 @@ a, li {
   margin: .5em;
 }
 
-// FIXME: arreglar estooooooo!
-//.search-container > .row { margin: 0 100px; }
-
-
 .gallery-thumb {
   border: .5em solid $white;
   box-shadow: 1px 1px $black;
 }
-
-
-//o[class*='-modal'] {display: none;}
 
 .vomit-turquoise {
   background: linear-gradient(135deg, $turquoise, $white, $turquoise);
@@ -96,16 +87,18 @@ a, li {
   text-align: center;
 
   p {
-      font-size: 1.5em;
-    margin-bottom:0;
+    font-size: 1.5em;
     line-height: 3em;
-    
+    margin-bottom: 0;
+
     a {
       color: $black;
     }
   }
 }
 
-ul {
-  margin-left:0
+ul { margin-left: 0; }
+
+.vomit-box-shadow {
+  box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, .3);
 }

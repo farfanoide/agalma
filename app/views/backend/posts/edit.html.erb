@@ -5,6 +5,6 @@
 <br>
 <br>
 <div class="btn-group">
-  <%= link_to 'Ver', backend_post_path(@post), class: :'btn btn-success'  %>
-  <%= link_to 'Eliminar', backend_post_path(@post), method: :delete, data: { confirm: 'Esta seguro?' }, class: :'btn btn-danger' %>
+  <%= show_link @post %>
+  <%= destroy_link @post %>
 </div>

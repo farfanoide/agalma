@@ -2,26 +2,32 @@
 @import '../foundation-variables';
 
 .media {
-  margin:10px;
-  padding:25px;
+  margin: 10px;
+  padding: 25px;
 }
+
 .media, .bd {
   overflow:hidden;
   _overflow:visible;
   zoom:1;
 }
+
 .media {
+
   .img {
     max-width: 200px;
     margin-right: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
   }
 
   .img, .thumb {
     float:left;
-    border: 4px solid $white;
+    border: 4px solid white;
   }
+
   .thumb { max-width: 100px; }
 }
+
 .media .img img {
   display:block;
 }

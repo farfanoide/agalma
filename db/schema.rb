@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429005349) do
+ActiveRecord::Schema.define(version: 20140501160431) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 20140429005349) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "post_image"
   end
 
   add_index "posts", ["branch_id"], name: "index_posts_on_branch_id", using: :btree
@@ -174,6 +175,18 @@ ActiveRecord::Schema.define(version: 20140429005349) do
     t.integer "role_id", null: false
     t.integer "user_id", null: false
   end
+
+  create_table "rolifications", force: true do |t|
+    t.integer  "branch_id"
+    t.integer  "role_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rolifications", ["branch_id"], name: "index_rolifications_on_branch_id", using: :btree
+  add_index "rolifications", ["role_id"], name: "index_rolifications_on_role_id", using: :btree
+  add_index "rolifications", ["user_id"], name: "index_rolifications_on_user_id", using: :btree
 
   create_table "telephones", force: true do |t|
     t.integer  "ext"
