@@ -2,8 +2,10 @@
 @import '../bourbon_custom';
 
 a {
-  color: $white;
+  color: $black;
   font-weight: 100;
+
+  &:hover, &:focus { color: $black; }
 }
 
 h1,
