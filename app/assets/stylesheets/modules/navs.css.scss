@@ -22,6 +22,11 @@
       font-weight: bold;
       padding: 1em;
     }
+
+    .item:hover, .selected{
+        background: radial-gradient(circle 10px at center 10px, $light-light-blue, $turquoise);
+        color: $light-light-blue;
+    }
   }
 }
 
