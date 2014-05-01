@@ -5,11 +5,13 @@
   padding: 0;
   position: relative;
   z-index:1;
+  top: -10px;
 }
 
 .top-bar {
   background-color: $turquoise;
   text-align: center;
+  margin-top: -5px;
 
   .links-container {
     /* margin-top: 0; */
@@ -24,6 +26,7 @@
     }
   }
 }
+
 
 .logo {
   background: image-url('logo_hh.png') no-repeat;
@@ -42,13 +45,12 @@
 // =side nav module
 .side-nav {
   background-color: $blue;
-  background: radial-gradient(darken($blue, 15) 20%, $blue);
-  background: -moz-radial-gradient(darken($blue, 15) 20%, $blue);
-  background: -o-radial-gradient(darken($blue, 15) 20%, $blue);
-  background: -webkit-radial-gradient(darken($blue, 15) 20%, $blue);
+  background-image: radial-gradient(darken($blue, 15) 20%, $blue);
+  background-image: -moz-radial-gradient(darken($blue, 15) 20%, $blue);
+  background-image: -o-radial-gradient(darken($blue, 15) 20%, $blue);
+  background-image: -webkit-radial-gradient(darken($blue, 15) 20%, $blue);
   margin: 0;
   text-align: center;
-
 
   .items-container {
     font-size: .9em;
@@ -93,6 +95,7 @@
 .item, .item:hover {
   color: $white;
 }
+
 .header {
   font-style: italic;
 }

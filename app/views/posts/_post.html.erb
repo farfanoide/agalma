@@ -1,25 +1,27 @@
 <div class="page-container">
   <section class="media">
-    <div class="post-header">
-      <h1 class="post-title"> <%= link_to post.title, post_path(post) %> </h1>
-    </div>
+  <div class="post-header">
+    <h1 class="post-title"> <%= link_to post.title, post_path(post) %> </h1>
+  </div>
 
+  <% if post.post_image?  %>
     <div class="img">
-      <% if post.post_image?  %>
-        <%= link_to image_tag(post.post_image.url(:thumb)), post_path(post), class: :thumb %>
-      <% else %>
-        <% if post.galery %>
-          <%= link_to image_tag(post.galery.images.first.file_name), post_path(post) %>
-        <% end %>
-      <% end %>
+      <%= link_to image_tag(post.post_image.url(:thumb)), post_path(post), class: :thumb %>
     </div>
-    <div class="bd">
-      <p> <%=   "#{post.description}..."   %> <%=  link_to("(leer mas)", post_path(post))  %></p>
-    </div>
+  <% else %>
+    <% if post.galery %>
+      <div class="img">
+        <%= link_to image_tag(post.galery.images.first.file_name), post_path(post) %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="bd">
+    <p> <%=   "#{post.description}..."   %> <%=  link_to("(leer mas)", post_path(post))  %></p>
+  </div>
   </section>
 </div>
 
 <!-- TODO: tirarle un iconito a esto y hacer q aparezca el texto on hover ;) -->
 <% if user_signed_in? and policy(current_user).admin? %>
-<%= link_to("Editar", edit_backend_post_path(post), class: 'button') %>
+  <%= link_to("Editar", edit_backend_post_path(post), class: 'button') %>
 <% end %>
