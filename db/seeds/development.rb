@@ -59,9 +59,9 @@ Widget.create!(name: 'Usuarios con cargos', description: 'este widget presenta t
 
 # General Pages -----------------------------
 _quienes_body = "<p>Los Centros en Salud Mental Agalma están al servicio de la sociedad. Prestan  una amplia cobertura asistencial y terapéutica que permite dar respuesta a las diversas problemáticas propias de la niñez, la infancia y la adolescencia, con un enfoque especializado y un criterio integral, en las áreas de psicología, musicoterapia, psicopedagogía, terapia ocupacional, psicomotricidad, nutrición, kinesiología y asistencia social,  promoviendo la excelencia en la calidad de los tratamientos, la optimización de los recursos y sustentando una particular práctica transdisciplinaria, que incluye la orientación y apoyo a las familias. También cuenta con el área de formación profesional dedicada a la enseñanza, trasmisión y capacitación de profesionales de la salud, sobre distintas temáticas de incidencia eminentemente clínica, relacionadas con los campos disciplinarios que abarca nuestro Equipo.</p>"
-Page.create!(title: "quienes somos", body: _quienes_body, branch_id: nil, menu: Menu.general.first, active: TRUE)
-Page.create!(title: 'investigacion y docencia', body: _quienes_body, branch_id: nil, menu: Menu.general.first, active: TRUE)
-nuestras_sedes = Page.create!(title: 'nuestras sedes', body: _quienes_body, branch_id: nil, menu: Menu.general.first, active: TRUE)
+Page.create!(title: "Quienes Somos", body: _quienes_body, branch_id: nil, menu: Menu.general.first, active: TRUE)
+Page.create!(title: 'Investigacion y Docencia', body: _quienes_body, branch_id: nil, menu: Menu.general.first, active: TRUE)
+nuestras_sedes = Page.create!(title: 'Nuestras Sedes', body: _quienes_body, branch_id: nil, menu: Menu.general.first, active: TRUE)
 nuestras_sedes.widget_ids = [_widg_consult.id]
 
 _centros_terapeuticos_body = "<p>Nuestro centro trabaja con profesionales de diferentes disciplinas de la salud mental y&nbsp; médicas. Bajo un particular enfoque transdisciplinario cada profesional trabaja con las herramientas propias de su disciplina, pero comparte con el resto del equipo la misma lógica y direccionalidad de tratamiento. Desde cada especificidad disciplinaria, apostamos en todos los casos a la mayor autonomía y al menor grado de padecimiento posibles de cada paciente.</p><p>Se brindan tratamientos personalizados y grupales en todos los casos.</p><h2>Orientación y Apoyo Familiar:</h2><p>Se realizan entrevistas familiares periódicas, según los requerimientos del caso, con una frecuencia quincenal. Se brinda a los padres y familiares de los pacientes contención y apoyo, al mismo tiempo que se complementa la actividad asistencial, trabajando sobre aquellas cuestiones familiares que están implicadas en la estrategia y la dirección del tratamiento del paciente.</p><h3>Nuestros objetivos&nbsp;</h3><p>Generar en el paciente la emergencia de una posición subjetiva, opuesta a la de la alienación y mecanización del comportamiento y en dirección a lograr la mayor autonomía personal posible.</p><p>Fomentar el consentimiento del paciente hacia la producción y el establecimiento de un lazo social que le permita la habilitación e inserción en su medio habitual desde una posición nueva singularmente creada.</p><p>Ofrecer al sujeto un marco institucional donde pueda desplegar y alojar un trabajo bio-psico-social sobre aquello que lo hace padecer.</p><p>Apoyar y orientar al grupo familiar del paciente.</p><p>En función de su singularidad, viabilizar un accionar saludable del paciente&nbsp; en su vida cotidiana y en el desarrollo de actividades y conocimientos ocupacionales con fines de participación social y laboral, a través de la implementación de actividades tendientes a alcanzar el máximo desarrollo posible de sus potencialidades.&nbsp;</p><p>Plantear estrategias que posibiliten alcanzar el mayor nivel de autovalimiento e integración psicosocial, respetando las características propias de cada paciente.</p>"
@@ -69,9 +69,9 @@ _centro_estimulacion_temprana = "[cargar informacion]"
 
 # Branch specific Pages ---------------------
 _branch_menu.add_pages([
-  Page.create!(title: "sarasa saramean", body: _centro_estimulacion_temprana, active: TRUE),
-  Page.create!(title: "centro de estimulacion temprana", body: _centro_estimulacion_temprana, active: TRUE),
-  Page.create!(title: "centros terapeuticos educativos", body: _centros_terapeuticos_body, active: TRUE)
+  Page.create!(title: "Sarasa Saramean", body: _centro_estimulacion_temprana, active: TRUE),
+  Page.create!(title: "Centro de Estimulacion Temprana", body: _centro_estimulacion_temprana, active: TRUE),
+  Page.create!(title: "Centros Terapeuticos Educativos", body: _centros_terapeuticos_body, active: TRUE)
 ])
 
 

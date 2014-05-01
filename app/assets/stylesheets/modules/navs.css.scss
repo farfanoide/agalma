@@ -38,7 +38,7 @@
 .items-container {
   list-style: none;
 
-  .item-container { text-transform: capitalize; }
+  /* .item-container { text-transform: capitalize; } */
 }
 // =side nav module
 .side-nav {
@@ -49,34 +49,36 @@
   background: -webkit-radial-gradient(darken($blue,15) 20%, $blue);
   margin: 0;
   text-align: center;
-  
-  
+
+
   .items-container {
-        font-size: .9em;
-        padding:2em 0;
-        
-    li{ margin:2em 0;}
-      .item {
-        color: $white;
-        font-size: 1.5em;
-        font-weight: bolder;
-        text-transform:capitalize;
-        &:hover {
-          @include animation(scale .4s ease-in-out);
-        }
+    font-size: .9em;
+    padding:2em 0;
+
+    li { margin:2em 0;}
+    .item {
+      color: $white;
+      font-size: 1.5em;
+      font-weight: bolder;
+      &:hover {
+        @include animation(scale .4s ease-in-out);
       }
+    }
   }
 }
 
 
 .nav-footer {
-    line-height: 30px;
-    margin: 30px 0;
-    text-align: center;
+  line-height: 30px;
+  margin: 30px 0;
+  text-align: center;
 
-    a {
-        display: inline-block;
-        margin-bottom: 2em;
-      }
+  a {
+    display: inline-block;
+    margin-bottom: 2em;
+  }
 
-    }
+}
+.social i {
+  font-size: 2em;
+}
