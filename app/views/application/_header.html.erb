@@ -5,7 +5,7 @@
         <nav class="top-bar" >
         <section class="top-bar-section">
         <ul class="links-container">
-          <%= nav_link_to '', :root, class: 'home_button item' %>
+          <%= nav_link_to image_tag('home_btn.png'), :root, class: 'home_button' %>
           <%= render partial: 'top_menu' if @top_menu %>
           <%= render 'devise/menu/login_items' %>
           <% if user_signed_in? %>

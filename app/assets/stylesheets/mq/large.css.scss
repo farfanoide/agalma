@@ -3,34 +3,32 @@
 
 @media #{$large-up}{
 
-.logo {
-  background: image-url('logo.png') no-repeat;
-//  bottom: 4em;
-  height: 212px;
-//  left: 3em;
-  position: absolute;
-  width: 400px;
-  //  margin: 0 auto;
+  .logo {
+    background: image-url('logo.png') no-repeat;
+    height: 212px;
+    position: absolute;
+    width: 400px;
   }
 
-.header-container{ border-top: solid 10px $blue }
+  .header-container{ border-top: solid 20px $light-light-blue; }
 
-.reveal-modal{
+  .reveal-modal{
 
     a.close-reveal-modal{
       background-color: #fff;
-      border-radius:10em;
+      border-radius: 10em;
       box-shadow: 0em 0em 1em $black;
       padding:0 .3em .1em .3em;
       right: -.6em !important;
       top: -.5em !important;
-      }
     }
   }
+}
+
 .session-modal-wrapper{
 
   .form-wrapper{
     border-right: 1px solid $black;
     padding : 2em;
-    }
+  }
 }
