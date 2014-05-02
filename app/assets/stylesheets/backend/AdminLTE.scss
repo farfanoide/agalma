@@ -2782,7 +2782,7 @@ Component: timeline
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
   .icheckbox_minimal,
   .iradio_minimal {
-    background-image: url('iCheck/minimal/minimal@2x.png');
+    background-image: image-url('iCheck/minimal/minimal@2x.png');
     -webkit-background-size: 200px 20px;
     background-size: 200px 20px;
   }
@@ -2814,7 +2814,7 @@ Component: timeline
     padding: 0;
     width: 20px;
     height: 20px;
-    background: url(iCheck/flat/green.png) no-repeat;
+    background: image-url('iCheck/flat/green.png') no-repeat;
     border: none;
     cursor: pointer;
 }
@@ -2854,7 +2854,7 @@ Component: timeline
        only screen and (min-device-pixel-ratio: 1.5) {
     .icheckbox_flat-green,
     .iradio_flat-green {
-        background-image: url(iCheck/flat/green@2x.png);
+        background-image: image-url('iCheck/flat/green@2x.png');
         -webkit-background-size: 176px 22px;
         background-size: 176px 22px;
     }
