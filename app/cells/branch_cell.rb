@@ -7,7 +7,7 @@ class BranchCell < BaseCell
     render
   end
 
-  def external_branches
+  def external_branches(args)
     @external_branches ||= ExternalBranch.all
     render
   end
