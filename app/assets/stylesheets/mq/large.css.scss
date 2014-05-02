@@ -10,7 +10,10 @@
     width: 400px;
   }
 
-  .header-container { border-top: solid 30px $light-light-blue; }
+  .header-container { 
+    border-top: solid 30px $light-light-blue;
+    min-height: 310px;
+ }
 
   .reveal-modal {
 
