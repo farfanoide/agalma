@@ -39,6 +39,7 @@ $(document).on('change', '#edit_current_branch', function() {
 
 $(function() {
   var $navLinks = $('.item').textillate({
+    autoStart: false,
     initialDelay: 1000,
     in: {
       effect: 'fadeInDown',

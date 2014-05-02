@@ -1,6 +1,5 @@
 <div class="contact-wrapper">
 
-  <div class="small-12 medium-6 medium-centered columns" >
     <%= simple_form_for @contact, defaults: {label:{ class: "right inline "}}  do |c| %>
       <div class="row">
       <div class="small-3 columns">
@@ -52,5 +51,4 @@
         <%= c.button :submit, "Enviar" %>
       </div>
     </div>
-  </div>
 <% end %>
