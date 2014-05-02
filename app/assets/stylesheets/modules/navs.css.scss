@@ -54,13 +54,21 @@
   .items-container {
     font-size: .9em;
     padding: 1em 0;
+    position: relative;
 
-    li { margin: 1.3em 0;}
 
     .item, .header {
+      margin: 1.3em 0;
       color: $white;
       font-size: 1.2em;
       font-weight: bolder;
+      display: block;
+      width: 100%;
+      min-height:1.5em;
+      z-index: 99;
+      & span {
+        z-index: 0;
+      }
 
       &:hover {
         @include animation(scale .4s ease-in-out);
