@@ -1,4 +1,6 @@
-<% @professionals.each do |professional| %>
-  <%= link_to image_tag(professional.avatar.url), "#", data: { "reveal-id" => "userModal#{professional.id}" } %>
-  <%= render partial: 'professional_modal', locals: {professional: professional} %>
-<% end %>
+<ul id="js-professionals-carousel">
+  <% @professionals.each do |professional| %>
+    <li> <%= link_to image_tag(professional.avatar.url), "#", data: { "reveal-id" => "userModal#{professional.id}" } %> </li>
+    <%= render partial: 'professional_modal', locals: {professional: professional} %>
+  <% end %>
+</ul>

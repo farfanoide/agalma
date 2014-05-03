@@ -19,6 +19,7 @@
 //= require branches
 //= require plugins/jquery.lettering
 //= require plugins/jquery.textillate
+//= require plugins/jquery.carouFredSel
 
 $(function(){ $(document).foundation(); });
 
@@ -31,6 +32,7 @@ $(window).load(function() {
     });
   }
   // stop slider: $('#slider').data('nivoslider').stop();
+  $('#js-professionals-carousel').carouFredSel();
 });
 
 $(document).on('change', '#edit_current_branch', function() {
