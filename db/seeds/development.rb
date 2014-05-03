@@ -54,7 +54,7 @@ Widget.create!(name: 'contacto', description: 'este widget presenta un formulari
 Widget.create!(name: 'galeria', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'gallery_slider')
 Widget.create!(name: 'galerias de sucursal', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'branch_galleries')
 Widget.create!(name: 'todas las galerias', description: 'este widget presenta galerias de imagenes', cell_class:'gallery', method_name:'all_galleries')
-Widget.create!(name: 'Usuarios con cargos', description: 'este widget presenta todos los perfiles de los usuarios con cargos', cell_class:'users', method_name:'professionals')
+Widget.create!(name: 'Profesionales', description: 'este widget presenta todos los perfiles de los usuarios con cargos', cell_class:'users', method_name:'professionals')
 
 
 # General Pages -----------------------------

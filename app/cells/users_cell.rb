@@ -9,7 +9,7 @@ class UsersCell < BaseCell
       Branch.all.each {|branch| @professionals += branch.users}
       @professionals.uniq!
     end
-
     render
   end
+
 end
