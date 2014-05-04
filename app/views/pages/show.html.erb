@@ -6,11 +6,20 @@
   <section class="widgets-container">
     <% @page.widgets.each do |w| %>
       <%= render_cell w.cell_class, w.method_name, branch: @page.branch %>
-    <% end %>
+  <% end %>
   </section>
+  <% if !@page.child_pages.blank? %>
+    <p>encuentre estos servicios en:</p>
+    <% @page.child_pages.each do |child| %>
+      <%= link_to child.branch.name, child %><br/>
+    <% end %>
+  <% end %>
+  <br/>
+  <br/>
+
 </div>
 <% if user_signed_in? and policy(current_user).admin? %>
   <%= backend_edit_link @page %>
-  <%= backend_destroy_link @page %>
+<%= backend_destroy_link @page %>
 <% end %>
-<%= link_to "Volver", :back, class: :button %>
+<%= link_to "Volver", :back, clasdis: :button %>

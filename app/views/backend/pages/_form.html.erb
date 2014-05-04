@@ -12,10 +12,15 @@
 <div class="form-group">
   <%= f.association :widgets, label: "widgets", label_method: :name, include_blank: true, as: :check_boxes%>
 </div>
+
 <div class="form-group">
-  <!-- TODO: add "general" option to select -->
-  <%= f.association :branch, label: "sucursal", label_method: :name, include_blank: true%>
+<% if @page.general?  %>
+  <%= f.association :menu, collection: Menu.general, as: :radio_buttons %>
+<% else %>
+  <%= render 'child_page_fields', f: f  %>
+<% end %>
 </div>
+
 <div class="form-actions">
   <%= f.button :submit, 'Guardar', class: 'btn btn-primary' %>
 </div>

@@ -14,6 +14,7 @@ class Backend::PagesController < BackendController
   # GET /pages/new
   def new
     @page = Page.new
+    @page.branch = Branch.first unless params[:general_page].nil?
     authorize @page
   end
 
@@ -26,11 +27,6 @@ class Backend::PagesController < BackendController
   def create
     @page = Page.new(page_params)
     authorize @page
-    if @page.branch
-      @page.branch.menu.add_page @page if @page.valid?
-    else
-      Menu.general.first.add_page @page if page.active
-    end
     respond_to do |format|
       if @page.save
         format.html { redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.' }
@@ -67,7 +63,7 @@ class Backend::PagesController < BackendController
   end
 
   def page_params
-    params.require(:page).permit(:title, :slug, :body, :active, :branch_id, :menu_id,
+    params.require(:page).permit(:title, :slug, :body, :active, :branch_id, :menu_id, :parent_page_id,
                                  widget_ids: [])
   end
 end
