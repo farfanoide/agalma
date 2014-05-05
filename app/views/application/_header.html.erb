@@ -9,6 +9,7 @@
           <%= render partial: 'top_menu' if @top_menu %>
           <%= render 'devise/menu/login_items' %>
           <% if user_signed_in? %>
+              <%= link_to "Editar cuenta", edit_user_registration_path, class: 'item' %>
             <% if policy(current_user).admin? %>
               <%= link_to "Administrar", [:backend, :root], class: 'item' %>
             <% end %>
