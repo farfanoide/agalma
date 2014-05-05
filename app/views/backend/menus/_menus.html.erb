@@ -1,7 +1,7 @@
 
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title"><%= title || 'Menus: ' %></h3>
+    <h3 class="box-title"><%= 'Menues: ' %></h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body no-padding">
@@ -10,7 +10,7 @@
       <tr>
         <th>Menu</th> <th>Cantidad de Paginas</th> <th>Acciones</th>
       </tr>
-      <% menus.each do |menu| %>
+      <% @menus.each do |menu| %>
         <tr>
           <td><%= link_to menu.name, edit_backend_menu_path(menu) %></td>
           <td><%= menu.pages.size %></td>
