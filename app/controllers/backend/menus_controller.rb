@@ -13,12 +13,12 @@ class Backend::MenusController < BackendController
   # GET /backend/menus/new
   def new
     @menu = Menu.new
-    @general_pages = Page.general
+    @pages = Page.all
   end
 
   # GET /backend/menus/1/edit
   def edit
-    @general_pages = Page.general if @menu.general?
+    @pages = Page.all
   end
 
   # POST /backend/menus
