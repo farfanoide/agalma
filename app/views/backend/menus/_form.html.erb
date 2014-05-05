@@ -1,15 +1,12 @@
 <%= simple_form_for([:backend, @menu], defaults: {input_html: {class: :'form-control'}}) do |f| %>
   <%= f.error_notification %>
-
-<% if @menu.general?  %>
-
   <div class="form-group">
   <%= f.input :name, label: :nombre %>
 </div>
 
 <div class="form-group">
   <%= f.association :pages,
-    collection: @general_pages,
+    collection: @pages,
     group_method: :pages,
     label: "Paginas: ", label_method: :title,
     include_blank: false,
@@ -17,27 +14,10 @@
 </div>
   <div class="form-group">
     <%= f.input :position, label: 'Posicion',
-      collection: { arriba: 'top', derecha: 'right', abajo: 'bottom' },
+      collection: { arriba: 'top', derecha: 'right', izquierda: 'left', abajo: 'bottom' },
       as: :radio_buttons
     %>
   </div>
-  <% else %>
-      <div>  <%= f.object.name %></div>
-    <!-- TODO: darles orden -->
-    <label>Paginas: </label>
-    <ol>
-      <%= f.fields_for :pages, f.object.pages do |page| %>
-        <li>
-      <%= page.input :position, label: page.object.title %>
-      <%= page.input :active, label: 'activa', as: :boolean %>
-      <% if !page.object.active? %>
-        <%= link_to 'vista previa', page_path(page.object) %>
-      <% end %>  
-      </li>
-    <% end %>
-    </ol>
-
-  <% end %>
     <div class="form-group">
       <%= f.button :submit, 'guardar', class: :'btn btn-primary' %>
     </div>

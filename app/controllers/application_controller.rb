@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :side_menu
+  helper_method :side_menu, :bottom_menu
 
   include Pundit
 
@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
   def set_menus
     @top_menu ||= Menu.top.first
     @side_menu ||= Menu.left.first
+    @bottom_menu ||= Menu.bottom.first
   end
 
   def user_not_authorized
@@ -35,6 +36,9 @@ class ApplicationController < ActionController::Base
     @side_menu ||= Menu.find_by!(position: 'left')
   end
 
+  def bottom_menu
+    @bottom_menu ||= Menu.find_by!(position: 'bottom')
+  end
   protected
 
   def configure_permitted_parameters
