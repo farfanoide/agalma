@@ -5,11 +5,10 @@ class Menu < ActiveRecord::Base
   accepts_nested_attributes_for :pages, allow_destroy: true
 
   # TODO: implement menu_policy
-  scope :general, -> { where(branch_id: nil) }
-  scope :dedicated, -> { where.not(branch_id: nil) }
   scope :top, ->     { where(position: "top") }
   scope :right, ->   { where(position: "right") }
   scope :bottom, ->  { where(position: "bottom") }
+  scope :left, ->    { where(position: "left") }
 
   def add_page(page)
     page.menu_id = self.id
@@ -30,10 +29,6 @@ class Menu < ActiveRecord::Base
 
   def sorted_pages
     pages.active.order(:position)
-  end
-
-  def general?
-    !branch_id
   end
 
 end

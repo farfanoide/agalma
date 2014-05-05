@@ -112,35 +112,9 @@ ul { margin-left: 0; }
 }
 
 .big-logo {
+  background: asset-url('rombo.png') no-repeat;
   position: absolute;
   top: -1.5em;
   z-index: 9999;
 }
 
-.list_carousel {
-  width: 100%;
-  height: auto;
-}
-.list_carousel ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: block;
-}
-.list_carousel li {
-  font-size: 40px;
-  color: #999;
-  text-align: center;
-  background-color: #eee;
-  border: 5px solid #999;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 6px;
-  display: block;
-  float: left;
-}
-.clearfix {
-  float: none;
-  clear: both;
-}

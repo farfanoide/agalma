@@ -1,13 +1,9 @@
 class Backend::ImageSlidersController <  BackendController
-  before_action :set_image_slider, only: [:show, :edit, :update, :destroy]
+  before_action :set_image_slider, only: [:edit, :update, :destroy]
 
   # GET /image_sliders
   def index
     @image_sliders = ImageSlider.all
-  end
-
-  # GET /image_sliders/1
-  def show
   end
 
   # GET /image_sliders/new
@@ -52,12 +48,10 @@ class Backend::ImageSlidersController <  BackendController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_image_slider
       @image_slider = ImageSlider.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def image_slider_params
       params.require(:image_slider).permit(:image)
     end

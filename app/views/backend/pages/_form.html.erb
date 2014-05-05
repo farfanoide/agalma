@@ -15,7 +15,7 @@
 
 <div class="form-group">
 <% if @page.general?  %>
-  <%= f.association :menu, collection: Menu.general, as: :radio_buttons %>
+  <%= f.association :menu, collection: Menu.all, as: :radio_buttons %>
 <% else %>
   <%= render 'child_page_fields', f: f  %>
 <% end %>

@@ -1,0 +1,30 @@
+.list_carousel {
+  height: auto;
+  width: 100%;
+}
+
+.list_carousel ul {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list_carousel li {
+  background-color: #eee;
+  border: 5px solid #999;
+  color: #999;
+  display: block;
+  float: left;
+  font-size: 40px;
+  height: auto;
+  margin: 6px;
+  padding: 0;
+  text-align: center;
+  width: auto;
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}

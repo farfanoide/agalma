@@ -6,6 +6,7 @@
   <div class="bd">
     <p> <strong>Nombre:</strong> <%= professional.name %> </p>
     <p> <strong>Email:</strong> <%= professional.email %> </p>
+    <p><strong>CV:</strong><%= link_to 'descargar', professional.curriculum.url %></p>
 
     <% if !professional.positions.blank? %>
       <ul>
