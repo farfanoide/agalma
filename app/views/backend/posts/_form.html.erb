@@ -19,7 +19,7 @@
   <div class="col-sm-4">
     <div class="form-group">
       <p> <small class="label label-default"></small> </p>
-      <div class="callout callout-info"><i class="fa fa-clock-o"></i> Nota: si no se selecciona una imagen de portada se utilizara la primer imagen de la galeria.</div>
+      <div class="callout callout-info"><i class="fa fa-info"></i> Nota: si no se selecciona una imagen de portada se utilizara la primer imagen de la galeria.</div>
       <% if f.object.post_image %>
         <%= image_tag f.object.post_image.url(:thumb) %>
     <% end %>

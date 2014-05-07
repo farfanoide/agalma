@@ -10,7 +10,7 @@ $(function() {
 
     // sortable pages menu
     $(function() {
-      $( "#selected_pages, #unselected_pages" ).sortable({
+      $( "#selected_pages, #unselected_pages, #no_menu_pages" ).sortable({
         connectWith: ".menu_pages"
       }).disableSelection();
 
