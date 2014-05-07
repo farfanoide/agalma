@@ -23,3 +23,19 @@
 .callout {
   margin: 0;
 }
+
+.sortable-list {
+
+  ul {
+    list-style: none;
+    background: white;
+    min-height: 1em;
+    /* background: rgba(0, 0, 0, 0.1); */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  li:hover {
+    cursor: move;
+  }
+
+}

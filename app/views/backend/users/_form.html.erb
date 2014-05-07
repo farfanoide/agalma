@@ -16,7 +16,7 @@
 <% end %>
 <% if current_user.admin? %>
   <div>
-  <%= f.association :roles, as: :check_boxes %>
+  <%= f.association :roles, label: 'Roles dentro de la pagina: ', as: :check_boxes %>
 </div>
 <% end %>
 <div>
@@ -24,10 +24,13 @@
   <%= f.input :avatar %>
 </div>
 <div>
+  <br />
+  <label>Cargos dentro de las sucursales: </label>
+  <br />
   <%= f.simple_fields_for(:position_users) do |posit| %>
     <%= render 'position_user_fields', f: posit %>
 <% end %>
-  <%= link_to_add_fields '+ agregar cargo', f, :position_users %>
+  <%= link_to_add_fields '+ agregar cargo ', f, :position_users %>
 </div>
 <br>
 <br>

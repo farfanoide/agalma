@@ -1,24 +1,32 @@
-<%= simple_form_for([:backend, @menu], defaults: {input_html: {class: :'form-control'}}) do |f| %>
+<%= simple_form_for([:backend, @menu], html: { id: 'menu_edit' }, defaults: {input_html: {class: :'form-control'}}) do |f| %>
   <%= f.error_notification %>
 <div class="form-group">
   <%= f.input :name, label: :nombre %>
 </div>
 
-<div class="form-group">
+<div class="form-group sortable-list">
+  <div class="callout callout-info"><i class="fa fa-clock-o"></i> Arrastrar las paginas para darle orden.</div>
+  <h4>Paginas acutalmente en  menu: </h4>
   <ul id="selected_pages" class="menu_pages">
-    <h3>paginas del menu</h3>
     <% @menu.pages.each do |page| %>
       <li id="<%= page.id %>"><%= page.title %></li>
   <% end %>
   </ul>
+  <h4>Paginas disponibles: </h4>
   <ul id='unselected_pages' class="menu_pages">
-    <!-- TODO: remove unselected pages from menu -->
-    <h3>paginas disponibles (pueden estar asignadas a otro menu)</h3>
-    <% @pages.each do |page| %>
+    <% @no_menu_pages.each do |page| %>
+      <li id="<%= page.id %>"><%= page.title %></li>
+  <% end %>
+  </ul>
+
+  <h4>Paginas en otros menues: </h4>
+  <ul id='no_menu_pages' class="menu_pages">
+    <% @other_menu_pages.each do |page| %>
       <li id="<%= page.id %>"><%= page.title %></li>
   <% end %>
   </ul>
   <%= tag :input, type: :hidden, name: 'menu[page_ids][]', id: 'page_ids' %>
+  <%= tag :input, type: :hidden, name: 'menu[non_selected][]', id: 'non_selected' %>
 </div>
 <div class="form-group">
   <%= f.input :position, label: 'Posicion',

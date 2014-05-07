@@ -18,12 +18,13 @@ class Backend::MenusController < BackendController
 
   # GET /backend/menus/1/edit
   def edit
-    @pages = Page.where.not(menu: @menu)
+    @other_menu_pages = Page.where.not(menu: @menu)
+    @no_menu_pages = Page.where(menu_id: nil)
   end
 
   # POST /backend/menus
   def create
-    @menu = Menu.new(backend_menu_params)
+    @menu = Menu.new(menu_params)
 
     respond_to do |format|
       if @menu.save
@@ -36,12 +37,13 @@ class Backend::MenusController < BackendController
 
   # PATCH/PUT /backend/menus/1
   def update
-    p params
-    local_params = backend_menu_params
-    page_ids = local_params.delete :page_ids
+    local_params = menu_params
+    page_ids = ids_str_to_array local_params.delete(:page_ids)
+    unselect = ids_str_to_array local_params.delete(:non_selected)
     respond_to do |format|
       if @menu.update(local_params)
         sort_pages(page_ids)
+        unselect_pages(unselect)
         format.html { redirect_to backend_menus_url, notice: 'Menu was successfully updated.' }
       else
         format.html { render action: 'edit' }
@@ -64,9 +66,9 @@ class Backend::MenusController < BackendController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def backend_menu_params
+  def menu_params
     pages_attrs = [:id, :position, :active]
-    params.require(:menu).permit(:name, :position, :_destroy, pages_attributes: pages_attrs, page_ids:[])
+    params.require(:menu).permit(:name, :position, :_destroy, pages_attributes: pages_attrs, page_ids:[], non_selected: [])
   end
 
   def pages_hash(ids)
@@ -77,13 +79,20 @@ class Backend::MenusController < BackendController
     pages
   end
 
-  def ids_arrary_from_string(string)
-    ids = page_ids.first.split ','
-    ids.delete ''
+  # TODO: check for helper methods here
+  def ids_str_to_array(string)
+    string.first.split ','
   end
 
   def sort_pages(page_ids)
-    pages = pages_hash(ids_arrary_from_string(page_ids))
+    pages = pages_hash page_ids
     Page.update(pages.keys, pages.values)
+  end
+
+  def unselect_pages(page_ids)
+    page_ids.each do |id|
+      page = Page.find id
+      page.update_attributes(menu_id: nil, position: nil) if page.menu = @menu
+    end
   end
 end
