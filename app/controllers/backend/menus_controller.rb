@@ -18,7 +18,7 @@ class Backend::MenusController < BackendController
 
   # GET /backend/menus/1/edit
   def edit
-    @pages = Page.all
+    @pages = Page.where.not(menu: @menu)
   end
 
   # POST /backend/menus
@@ -36,8 +36,12 @@ class Backend::MenusController < BackendController
 
   # PATCH/PUT /backend/menus/1
   def update
+    p params
+    local_params = backend_menu_params
+    page_ids = local_params.delete :page_ids
     respond_to do |format|
-      if @menu.update(backend_menu_params)
+      if @menu.update(local_params)
+        sort_pages(page_ids)
         format.html { redirect_to backend_menus_url, notice: 'Menu was successfully updated.' }
       else
         format.html { render action: 'edit' }
@@ -63,5 +67,23 @@ class Backend::MenusController < BackendController
   def backend_menu_params
     pages_attrs = [:id, :position, :active]
     params.require(:menu).permit(:name, :position, :_destroy, pages_attributes: pages_attrs, page_ids:[])
+  end
+
+  def pages_hash(ids)
+    pages = {}
+    ids.each_with_index do |id, position|
+      pages[id] = {position: position, menu: @menu}
+    end
+    pages
+  end
+
+  def ids_arrary_from_string(string)
+    ids = page_ids.first.split ','
+    ids.delete ''
+  end
+
+  def sort_pages(page_ids)
+    pages = pages_hash(ids_arrary_from_string(page_ids))
+    Page.update(pages.keys, pages.values)
   end
 end

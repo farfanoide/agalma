@@ -8,6 +8,19 @@
 $(function() {
     "use strict";
 
+    $(function() {
+      $( "#selected_pages, #unselected_pages" ).sortable({
+        connectWith: ".menu_pages"
+      }).disableSelection();
+      $('#edit_menu_1').submit(function(){
+        $('#page_ids').val($('#selected_pages').sortable('toArray'));
+        $(this).submit();
+      });
+      // $('#edit_menu_1').on('submit', function(){
+      //   // alert('tuvieja');
+      //   $(this).submit();
+      // });
+    });
     //Enable sidebar toggle
     $("[data-toggle='offcanvas']").click(function(e) {
         e.preventDefault();
