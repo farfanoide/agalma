@@ -27,15 +27,22 @@
 .sortable-list {
 
   ul {
-    list-style: none;
     background: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    list-style: none;
     min-height: 1em;
-    /* background: rgba(0, 0, 0, 0.1); */
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 1em 2em;
   }
 
   li:hover {
     cursor: move;
   }
 
+}
+.pages-middle-arrow{
+  text-align: center;
+}
+
+@media (max-width: 990px){
+  .pages-middle-arrow{display: none;}
 }

@@ -5,20 +5,40 @@
 </div>
 
 <div class="form-group sortable-list">
-  <div class="callout callout-info"><i class="fa fa-info"></i> Arrastrar las paginas para darle orden.</div>
-  <h4>Paginas acutalmente en  menu: </h4>
-  <ul id="selected_pages" class="menu_pages">
-    <% @menu.pages.each do |page| %>
-      <li id="<%= page.id %>"><%= page.title %></li>
-  <% end %>
-  </ul>
-  <h4>Paginas disponibles: </h4>
-  <ul id='unselected_pages' class="menu_pages">
-    <% @no_menu_pages.each do |page| %>
-      <li id="<%= page.id %>"><%= page.title %></li>
-  <% end %>
-  </ul>
 
+  <div class="callout callout-info"><i class="fa fa-info"></i> Arrastrar las paginas para darle orden.</div>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Paginas acutalmente en  menu: </h4>
+      <ul id="selected_pages" class="menu_pages">
+        <% @menu.pages.order(:position).each do |page| %>
+          <li id="<%= page.id %>"><%= page.title %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="col-md-1 pages-middle-arrow">
+      <br>
+      <br>
+      <br>
+      <i class="fa fa-arrows-h"></i>
+    </div>
+    <div class="col-md-5">
+      <h4>Paginas disponibles: </h4>
+      <ul id='unselected_pages' class="menu_pages">
+        <% @no_menu_pages.each do |page| %>
+          <li id="<%= page.id %>"><%= page.title %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <div class="callout callout-danger">
+    <i class="fa fa-warning"></i> 
+    Estas paginas pertenecen a otros menu, al sacarlas de aqui no estaran mas disponibles en el menu anterior.
+  </div>
   <h4>Paginas en otros menues: </h4>
   <ul id='no_menu_pages' class="menu_pages">
     <% @other_menu_pages.each do |page| %>
