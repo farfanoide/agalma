@@ -27,8 +27,8 @@
   <% if f.object.professional? %>
     <%= render 'professional_fields', f:f %>
 <% end %>
-</div>  
-<%= f.input :current_password, label: 'password actual', :hint => "we need your current password to confirm your changes", :required => true %>
+</div>
+<%= f.input :current_password, label: 'Ingrese su contraseña para actualizar su perfil.', :hint => "we need your current password to confirm your changes", :required => true %>
 <div class="form-actions">
   <%= f.button :submit, "Update" %>
 </div>
