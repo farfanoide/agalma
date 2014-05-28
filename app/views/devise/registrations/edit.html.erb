@@ -10,18 +10,25 @@
     <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
 <% end %>
 
-  <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
-  <%= f.input :password_confirmation, :required => false %>
-  <%= f.input :current_password, label: 'password actual', :hint => "we need your current password to confirm your changes", :required => true %>
 </div>
+
+<div class="form-inputs">
+  <button id="js-password-toggle" class='button'>cambiar contrasenia</button>
+  <div id="js-password-fields">
+    <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
+    <%= f.input :password_confirmation, :required => false %>
+  </div>
+</div>
+
 <%= f.input :name, label: 'nombre', :required => false %>
 <%= image_tag f.object.avatar.url :thumb %>
 <%= f.input :avatar %>
 <div>
   <% if f.object.professional? %>
     <%= render 'professional_fields', f:f %>
-  <% end %>
+<% end %>
 </div>  
+<%= f.input :current_password, label: 'password actual', :hint => "we need your current password to confirm your changes", :required => true %>
 <div class="form-actions">
   <%= f.button :submit, "Update" %>
 </div>
