@@ -2,14 +2,12 @@ class Backend::UsersController < BackendController
   before_action :set_backend_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
-  # GET /users.json
   def index
     authorize User
     @users = User.all
   end
 
   # GET /users/1
-  # GET /users/1.json
   def show
   end
 
@@ -25,7 +23,6 @@ class Backend::UsersController < BackendController
   end
 
   # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
     authorize @user
@@ -33,37 +30,30 @@ class Backend::UsersController < BackendController
     respond_to do |format|
       if @user.save
         format.html { redirect_to backend_user_url(@user), notice: 'User was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     authorize @user
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to backend_user_url(@user), notice: 'User was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     authorize @user
     respond_to do |format|
       format.html { redirect_to backend_users_url }
-      format.json { head :no_content }
     end
   end
 
