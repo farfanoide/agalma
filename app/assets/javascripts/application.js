@@ -40,6 +40,14 @@ $(document).on('change', '#edit_current_branch', function() {
 });
 
 $(function() {
+  // password fields toggle
+  $('#js-password-fields').slideUp();
+  $('#js-password-toggle').on('click', function(event) {
+    event.preventDefault();
+    $(this).next().slideToggle();
+  });
+
+  // Navigation animations
   var $navLinks = $('.item').textillate({
     autoStart: false,
     initialDelay: 1000,
