@@ -1,0 +1,7 @@
+** TODO's
+- TODOS [0/5]
+  - [ ] Gradient en quienes-somos.
+  - [ ] Cambio de contraseña. Crear formulario y vista.
+  - [ ] Meil-> contacto. Dot env... Le manda mails a nestie. Setear un mail.
+  - [ ] Moderadores. No tienen acceso al backend. Para que existen?
+  - [ ] Backend users show user. hacer, no se ve un choto.
