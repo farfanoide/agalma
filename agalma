@@ -1,0 +1,39 @@
+# Create new session and name first window 'Editor'
+new_session -n 'Editor'
+
+# our windows
+editor=1; general=2; db=3; server=4; log=5; assets=6;
+
+# setup those windows
+send_line $editor ${EDITOR:-vi}
+
+new_window -n 'General'
+split $general -h
+send_line $general.1 'git status -bs'
+send_line $general.2 'bundle exec console'
+
+new_window -n 'DB'
+send_line $db 'bundle exec rails db'
+
+new_window -n 'Server'
+split $server -v -p "20"
+send_line $server.1 'bundle exec server'
+send_line $server.2 'bundle exec guard'
+
+new_window -n 'Log'
+send_line $log 'tail -F log/development.log'
+
+new_window -n 'Assets'
+send_line $assets 'cd app/assets'
+
+# check if dropbox assets dir is present (farfanoide)
+dropbox_dir="$HOME/Dropbox/compartidas/ingenyo/AGALMA"
+if [ -d  $dropbox_dir ]; then
+  split $assets -h
+  send_line $assets.2 "cd $dropbox_dir"
+fi
+
+select_window $editor
+
+# -*- mode: sh -*-
+# vi: set ft=sh :
