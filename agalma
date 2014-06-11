@@ -10,14 +10,14 @@ send_line $editor ${EDITOR:-vi}
 new_window -n 'General'
 split $general -h
 send_line $general.1 'git status -bs'
-send_line $general.2 'bundle exec console'
+send_line $general.2 'bundle exec rails console'
 
 new_window -n 'DB'
 send_line $db 'bundle exec rails db'
 
 new_window -n 'Server'
 split $server -v -p "20"
-send_line $server.1 'bundle exec server'
+send_line $server.1 'bundle exec rails server'
 send_line $server.2 'bundle exec guard'
 
 new_window -n 'Log'
