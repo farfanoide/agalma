@@ -14,6 +14,7 @@ class Backend::PagesController < BackendController
   # GET /pages/new
   def new
     @page = Page.new
+    # assign branch to general pages only
     @page.branch = Branch.first unless params[:general_page].nil?
     authorize @page
   end
