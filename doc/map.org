@@ -1,83 +1,3 @@
-*** Agalma TODO [0/4]
-    - [ ] testear menus
-    - [ ] testear paginas
-    - [ ] testear noticias
-    - [ ] crear session de tmuxstart
-
-
-
-* Fix
-** TODO Grales [0/1]
-   - [ ] layout frontend tablets -> vomit menus side by side
-   - [ ] backend dynamic inputs se ve como el culo
-   - [ ] generalizar botones en backend (ej edit posts backend tienen iconos, el resto no)
-   - [ ] null object para users
-   - [ ] dashboard index -> limit amount
-
-** TODO Paginas [0/2]
-   - [ ] gral paginas [0/6]
-         - [ ] dashboard index -> only show active pages
-         - [ ] index -> filtros && controller check `authorize Page`
-         - [ ] destroy button alert -> poner algo mas coherente
-         - [ ] frontend show -> boton volver no pega ni con cola (padres e hijas)
-         - [ ] index -> crear nueva pagina (boton) especificar q tipo, agregar boton crear hija?
-         - [ ] new(gral) -> default menu || warning
-
-   - [ ] formulario backend [0/7]
-         - [ ] mostrar errores
-         - [ ] traducciones errores
-         - [ ] title -> titulo
-         - [ ] widgets mayuscula [titulo, nombres]
-         - [ ] diferenciar mas entre acciones formulario y acciones grales
-         - [ ] hace falta "activa"? la estamos usando ?
-         - [ ] (hijas) require pagina padre
-
-** TODO CKEDITOR [0/2]
-   - [ ] modificar opciones menu
-   - [ ] modificar lenguaje
-
-** TODO Menus [0/1]
-   - [ ] frontend menus [0/1]
-         - [ ] vomit turqoise color links no se ve
-
-   - [ ] backend menus [0/1]
-         - [ ] nombre -> esta en minuscula, cancelar cambio de nombre y posicion?
-         - [ ] diferenciar mas entre acciones formulario y acciones grales
-
-
-** TODO Noticias [0/2]
-   - [ ] frontend  [0/1]
-         - [ ] volver boton te lleva a cualquier lado, explota
-
-   - [ ] backend  [0/4]
-         - [ ] danger alert paddings
-         - [ ] al crear galeria, si hay errores con las imagenes, guardar galeria igualmente y tirar errores aparte
-         - [ ] permitir borrar galeria
-         - [ ] postprocesar imagenes galerias(pesan mucho)
-         - [ ] index posts no funca por seeds
-         - [ ] diferenciar mas entre acciones formulario y acciones grales
-
-
-** Paginas Docs
-
-   - definicion gral paginas
-         - explicacion acciones grales
-         - diff grales/hijas
-         - info paginas grales
-               - relacion con menus (ref menus)
-         - info paginas hijas
-               - relacion con pag grales
-         - info widgets (ref doc widgets)
-
-** Noticias Docs
-
-   - definicion gral noticias
-         - explicacion acciones grales
-         - explicacion casos de uso de cada atributo en el frontend
-         - explicacion imagen de portada
-         - galerias (ref galerias)
-         - explicacion relacion sucursal (ref sucursales)
-
 ** Menu Docs
 
    - definicion gral menu
@@ -85,3 +5,75 @@
          - explicacion casos de uso de cada posicion en el frontend
          - explicacion paginas [actuales, disponibles, de otro menu], implicaciones de sacarlas de otro menu
          - warning para sacar pagina de un menu?
+
+** User docs
+
+   - definicion gral usuarios
+# recordar explicar diferencia entre cargo y roles
+     - explicacion acciones grales
+       - registro
+       - inicio sesion
+       - borrar cuenta
+       - editar cuenta
+# explicar asignacion de cargo
+     - roles [ def alcance datos ]
+     - cargos
+       - definicion
+       - creacion
+       - asignacion
+
+
+* general docs
+** sistema gral
+** usuarios
+** sucursales
+** consultorios externos
+** paginas
+   - definicion gral paginas
+         - explicacion acciones grales (link backend)    
+         - diff grales/hijas
+** menus
+** noticias
+   - definicion gral noticias
+      - explicacion acciones grales (link backend)
+      - explicacion casos de uso de cada atributo en el frontend
+** formularios
+   - campos requeridos
+   - validaciones
+   - errores
+
+* frontend docs
+** usuarios
+   - registrarse
+   - iniciar sesion
+   - editar
+   - borra
+* backend docs
+** usuarios
+   - crear nuevo usuario
+   - editar
+     - campos grales
+     - campos especificos
+   - borrar
+** roles
+   -
+
+** noticias
+   - explicacion acciones grales
+   - creacion/edicion
+     - campos
+         - explicacion imagen de portada
+         - galerias (ref galerias)
+         - explicacion relacion sucursal (ref sucursales)
+
+# referencia a galerias
+
+
+** galerias
+** paginas
+   - info paginas grales
+     - relacion con menus (ref menus)
+       - info paginas hijas
+             - relacion con pag grales
+       - info widgets (ref doc widgets)
+
