@@ -68,10 +68,12 @@
 ** TODO Consultorios Ext [0/1]
    - [ ] Creacion -> show no anda el boton back
    - [ ] ver de edicion - lleva al frontend y muestra noticia debajo.
+
 ** TODO Usuarios [0/1]
    - [ ] Sacar cache de firefox al editar el usuario
    - [ ] Cuerencia de botones
    - [ ] Traducciones de errores y vistas devise
    - [ ] Busqueda de usuarios en el backend
+
 ** TODO Cargos [0/1]
    - [ ] Boton atras darle estilo
