@@ -1,0 +1,18 @@
+* Metodologia de reporte de errores:
+** Plataforma: [[https://trello.com/][Trello]]
+   Utilizaremos esta plataforma para el reporte de errores, cambios y mejoras de la aplicacion.
+   
+** Requerimientos de un reporte de errores:
+   - Descripcion del contexto de la situacion. (adjuntar imagenes si es posible)
+   - Comportamiento esperado.
+   - Comportamiento efectivo de la aplicacion.
+   - Url donde se dio el comportamiento inesperado. (Text completo de la barra de direcciones del navegador.)
+
+** Ejemplo:
+
+   - Descripcion: Al utilizar le editor de textos faltan opciones.
+   - Comportamiento esperado: Contar con  opción de cambio de color y justificado de párrafo y letras.
+   - Comportamiento efectivo: Dichas opciones no se encuentran disponibles.
+   - URL: http://centroagalma.com.ar/backend/posts/new
+   - Adjuntos:
+        [[./img/editor_without_buttons.png]]
