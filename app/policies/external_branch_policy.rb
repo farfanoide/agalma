@@ -1,4 +1,4 @@
-class BranchPolicy < Struct.new(:user, :branch)
+class ExternalBranchPolicy < Struct.new(:user, :branch)
   class Scope < Struct.new(:user, :scope)
     def resolve
       scope.all if user.admin?
@@ -10,10 +10,11 @@ class BranchPolicy < Struct.new(:user, :branch)
   end
 
   def edit?
-    user.admin? || user.can_edit_branch?
+    user.admin?
   end
 
   def destroy?
     user.admin?
   end
+
 end

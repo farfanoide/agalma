@@ -13,15 +13,18 @@ class Backend::ExternalBranchesController < BackendController
   # GET /backend/external_branches/new
   def new
     @external_branch = ExternalBranch.new
+    authorize @external_branch, :create?
   end
 
   # GET /backend/external_branches/1/edit
   def edit
+    authorize @external_branch
   end
 
   # POST /backend/external_branches
   def create
     @external_branch = ExternalBranch.new(external_branch_params)
+    authorize @external_branch
 
     respond_to do |format|
       if @external_branch.save
@@ -34,6 +37,7 @@ class Backend::ExternalBranchesController < BackendController
 
   # PATCH/PUT /backend/external_branches/1
   def update
+    authorize @external_branch, :edit?
     respond_to do |format|
       if @external_branch.update(external_branch_params)
         format.html { redirect_to backend_external_branch_url(@external_branch), notice: 'External branch was successfully updated.' }
@@ -45,6 +49,7 @@ class Backend::ExternalBranchesController < BackendController
 
   # DELETE /backend/external_branches/1
   def destroy
+    authorize @external_branch
     @external_branch.destroy
     respond_to do |format|
       format.html { redirect_to backend_external_branches_url }
