@@ -73,3 +73,5 @@
    - [ ] Cuerencia de botones
    - [ ] Traducciones de errores y vistas devise
    - [ ] Busqueda de usuarios en el backend
+** TODO Cargos [0/1]
+   - [ ] Boton atras darle estilo
