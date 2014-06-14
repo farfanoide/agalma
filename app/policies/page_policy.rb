@@ -1,10 +1,10 @@
 class PagePolicy < Struct.new(:user, :page)
-  def index?
-    user.admin?
-  end
-
-  def new?
-    user.admin?
+  class Scope < Struct.new(:user, :scope)
+    def resolve
+      if user.admin?
+        scope.all
+      end
+    end
   end
 
   def create?
@@ -12,10 +12,6 @@ class PagePolicy < Struct.new(:user, :page)
   end
 
   def edit?
-    user.admin?
-  end
-
-  def update?
     user.admin?
   end
 

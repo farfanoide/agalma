@@ -13,11 +13,13 @@ class Backend::MenusController < BackendController
   # GET /backend/menus/new
   def new
     @menu = Menu.new
+    authorize @menu, :create?
     @pages = Page.all
   end
 
   # GET /backend/menus/1/edit
   def edit
+    authorize @menu
     @other_menu_pages = Page.where.not(menu: @menu)
     @no_menu_pages = Page.where(menu_id: nil)
   end
@@ -53,6 +55,7 @@ class Backend::MenusController < BackendController
 
   # DELETE /backend/menus/1
   def destroy
+    authorize @menu
     @menu.destroy
     respond_to do |format|
       format.html { redirect_to backend_menus_url }

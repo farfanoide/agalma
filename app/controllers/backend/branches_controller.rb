@@ -47,6 +47,7 @@ class Backend::BranchesController < BackendController
 
   # DELETE /branches/1
   def destroy
+    authorize @branch
     @branch.destroy
     respond_to do |format|
       format.html { redirect_to backend_branches_url }

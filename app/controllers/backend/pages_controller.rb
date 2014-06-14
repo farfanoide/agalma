@@ -3,7 +3,6 @@ class Backend::PagesController < BackendController
 
   # GET /pages
   def index
-    authorize Page
     @pages = Page.all
   end
 
@@ -14,9 +13,9 @@ class Backend::PagesController < BackendController
   # GET /pages/new
   def new
     @page = Page.new
+    authorize @page, :create?
     # assign branch to general pages only
     @page.branch = Branch.first unless params[:general_page].nil?
-    authorize @page
   end
 
   # GET /pages/1/edit
@@ -40,7 +39,7 @@ class Backend::PagesController < BackendController
 
   # PATCH/PUT /pages/1
   def update
-    authorize @page
+    authorize @page, :edit?
     respond_to do |format|
       if @page.update(page_params)
         format.html { redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.' }
