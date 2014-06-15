@@ -5,7 +5,7 @@
       <p> <%= simple_format(@post.description)  %> </p>
       <br>
       <br>
-      <p><%= simple_format(@post.content) %></p>
+      <p><%= raw(@post.content) %></p>
     </div>
     <div>
       <% if !@gallery.nil? %>
