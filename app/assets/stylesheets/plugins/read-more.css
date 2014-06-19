@@ -1,0 +1,17 @@
+.gradient-text{
+  max-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-text .read-more{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  text-align: center;
+  margin: 0;
+  padding: 100px 0 0 0;
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #000), color-stop(1,#eee));
+  background-image: -webkit-linear-gradient(top, transparent,rgb(245,245,245));
+}

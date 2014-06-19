@@ -1,7 +1,11 @@
 <% content_for :page_title, @page.title %>
 <div class="page-container">
   <section class="page-content">
+
     <%= simple_format(@page.body) %>
+
+
+
   </section>
   <section class="widgets-container">
     <% @page.widgets.each do |w| %>
@@ -23,3 +27,27 @@
 <%= backend_destroy_link @page %>
 <% end %>
 <%= link_to "Volver", :back, clasdis: :button %>
+
+<%-# all the read more magic -%>
+<%= stylesheet_link_tag 'plugins/read-more' %>
+<script>
+ $(function (){
+   <%-# ONLY FOR QUIENES-SOMOS -%>
+   var pageName = location.pathname.split('/')[2]
+   if (pageName == 'quienes-somos'){
+     var read = '<p class="read-more"><a href="#" class="button"> Read more </a></p>'
+     var $pageContent = $(".page-content")
+   <%-# if the user has js enabled lets do the magic -%>
+     $pageContent.addClass("gradient-text");
+     $pageContent.append(read)
+        <%-# on click show the full text -%>
+     $(".gradient-text")
+        .find("p.read-more")
+        .on("click", function(e) {
+           e.preventDefault();
+           $(this).hide();
+           $(".gradient-text").toggleClass("gradient-text");
+        });
+     }
+   });
+</script>
