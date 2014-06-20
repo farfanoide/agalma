@@ -14,4 +14,5 @@
   padding: 100px 0 0 0;
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #000), color-stop(1,#eee));
   background-image: -webkit-linear-gradient(top, transparent,rgb(245,245,245));
+  text-indent: 0;
 }
