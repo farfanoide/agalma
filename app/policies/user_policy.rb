@@ -1,40 +1,40 @@
-class UserPolicy < Struct.new(:currentuser, :user)
+class UserPolicy < Struct.new(:user, :resource)
   # devuelve si el user es admin
   # TODO cambiar nombre a las variables
-  class Scope < Struct.new(:currentuser, :scope)
+  class Scope < Struct.new(:user, :scope)
     def resolve
-      if currentuser.admin?
+      if user.admin?
         scope.all
       end
     end
   end
 
   def admin?
-    currentuser.admin?
+    user.admin?
   end
 
   def create?
-    currentuser.admin?
+    user.admin?
   end
 
   def edit?
-    currentuser.admin? || my_user?
+    user.admin? || my_user?
   end
 
   def destroy?
-    currentuser.admin?
+    user.admin?
   end
 
   def index?
-    currentuser.admin?
+    user.admin?
   end
 
   def my_user?
-    true if currentuser.id==user.id
+    true if user.id == resource.id
   end
 
   def show?
-    currentuser.admin? || my_user?
+    user.admin? || my_user?
   end
 
 end
