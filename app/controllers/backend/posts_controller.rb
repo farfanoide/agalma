@@ -7,6 +7,7 @@ class Backend::PostsController < BackendController
 
   def new
     @post = Post.new
+    authorize @post, :create?
   end
 
   def edit
@@ -15,6 +16,7 @@ class Backend::PostsController < BackendController
 
   def create
     @post = Post.new(post_params)
+    authorize @post
     @post.user = current_user
 
     respond_to do |format|
@@ -27,6 +29,7 @@ class Backend::PostsController < BackendController
   end
 
   def update
+    authorize @post, :edit?
     @post.user = current_user
     respond_to do |format|
       if @post.update(post_params)
@@ -38,6 +41,7 @@ class Backend::PostsController < BackendController
   end
 
   def destroy
+    authorize @post
     @post.destroy
     respond_to do |format|
       format.html { redirect_to backend_posts_url }
