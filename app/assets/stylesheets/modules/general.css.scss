@@ -4,7 +4,7 @@
 body {
   background-color: $light-light-blue;
   color: $black;
-  font-family:'Maven Pro', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 .all-container {
@@ -24,7 +24,7 @@ main {
 }
 
 .copyright {
-  color: black;
+  color: #000;
   font-size: .8em;
 }
 
@@ -53,7 +53,7 @@ a, li {
 .success { background: $green; }
 
 .slider-wrapper {
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: -22px;
   padding: 0;
   position: relative;
@@ -90,10 +90,6 @@ a, li {
     font-size: 1.5em;
     line-height: 3em;
     margin-bottom: 0;
-
-    a & :hover {
-      color: $black;
-    }
   }
 }
 
@@ -112,7 +108,7 @@ ul { margin-left: 0; }
 }
 
 .big-logo {
-  background: asset-url('rombo.png') no-repeat;
+  background: image-url('rombo.png') top left no-repeat;
   position: absolute;
   top: -1.5em;
   z-index: 9999;
