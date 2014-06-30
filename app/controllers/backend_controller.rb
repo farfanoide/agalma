@@ -2,7 +2,7 @@ class BackendController < ActionController::Base
   add_flash_types :error
   include Pundit
 
- # before_filter :authorize_user
+  before_filter :authorize_user
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   layout 'backend'
 

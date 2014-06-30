@@ -7,11 +7,4 @@ class Backend::DashboardController < BackendController
     @users = User.all
     # @roles = Rolification.all.group :id, :user_id
   end
-
-  def set_current_branch
-    session[:active_branch] = params[:branch_id]
-    current_user.active_branch = session[:active_branch]
-    current_user.save
-    redirect_to :back
-  end
 end
