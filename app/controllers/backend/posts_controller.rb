@@ -17,31 +17,25 @@ class Backend::PostsController < BackendController
     @post = Post.new(post_params)
     @post.user = current_user
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to post_url(@post), notice: 'Noticia actualizada correctamente.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @post.save
+      redirect_to post_url(@post), notice: 'Noticia actualizada correctamente.'
+    else
+      render action: 'new'
     end
   end
 
   def update
     @post.user = current_user
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to post_url(@post), notice: 'Noticia actualizada correctamente.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @post.update(post_params)
+      redirect_to post_url(@post), notice: 'Noticia actualizada correctamente.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to backend_posts_url }
-    end
+    redirect_to backend_posts_url
   end
 
   private

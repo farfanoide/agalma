@@ -25,32 +25,26 @@ class Backend::BranchesController < BackendController
   def create
     @branch = Branch.new(branch_params)
     set_branch_menu @branch
-    respond_to do |format|
-      if @branch.save
-        format.html { redirect_to @branch, notice: 'La sucursal se ha creado correctamente.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @branch.save
+      redirect_to @branch, notice: 'La sucursal se ha creado correctamente.' 
+    else
+      render action: 'new' 
     end
   end
 
   # PATCH/PUT /branches/1
   def update
-    respond_to do |format|
-      if @branch.update(branch_params)
-        format.html { redirect_to @branch, notice: 'La sucursal se ha actualizado correctamente.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @branch.update(branch_params)
+      redirect_to @branch, notice: 'La sucursal se ha actualizado correctamente.' 
+    else
+      render action: 'edit' 
     end
   end
 
   # DELETE /branches/1
   def destroy
     @branch.destroy
-    respond_to do |format|
-      format.html { redirect_to backend_branches_url }
-    end
+    redirect_to backend_branches_url 
   end
 
   private

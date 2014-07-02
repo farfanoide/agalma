@@ -23,32 +23,26 @@ class Backend::ExternalBranchesController < BackendController
   def create
     @external_branch = ExternalBranch.new(external_branch_params)
 
-    respond_to do |format|
-      if @external_branch.save
-        format.html { redirect_to backend_external_branch_url(@external_branch), notice: 'External branch was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @external_branch.save
+      redirect_to backend_external_branch_url(@external_branch), notice: 'External branch was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /backend/external_branches/1
   def update
-    respond_to do |format|
-      if @external_branch.update(external_branch_params)
-        format.html { redirect_to backend_external_branch_url(@external_branch), notice: 'External branch was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @external_branch.update(external_branch_params)
+      redirect_to backend_external_branch_url(@external_branch), notice: 'External branch was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   # DELETE /backend/external_branches/1
   def destroy
     @external_branch.destroy
-    respond_to do |format|
-      format.html { redirect_to backend_external_branches_url }
-    end
+    redirect_to backend_external_branches_url
   end
 
   private

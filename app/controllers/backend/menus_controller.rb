@@ -7,8 +7,7 @@ class Backend::MenusController < BackendController
   end
 
   # GET /backend/menus/1
-  def show
-  end
+  def show; end
 
   # GET /backend/menus/new
   def new
@@ -26,12 +25,10 @@ class Backend::MenusController < BackendController
   def create
     @menu = Menu.new(menu_params)
 
-    respond_to do |format|
-      if @menu.save
-        format.html { redirect_to backend_menus_url, notice: 'Menu was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @menu.save
+      redirect_to backend_menus_url, notice: 'Menu was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
@@ -40,23 +37,19 @@ class Backend::MenusController < BackendController
     local_params = menu_params
     page_ids = ids_str_to_array local_params.delete(:page_ids)
     unselect = ids_str_to_array local_params.delete(:non_selected)
-    respond_to do |format|
-      if @menu.update(local_params)
-        sort_pages(page_ids)
-        unselect_pages(unselect)
-        format.html { redirect_to backend_menus_url, notice: 'Menu was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @menu.update(local_params)
+      sort_pages(page_ids)
+      unselect_pages(unselect)
+      redirect_to backend_menus_url, notice: 'Menu was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   # DELETE /backend/menus/1
   def destroy
     @menu.destroy
-    respond_to do |format|
-      format.html { redirect_to backend_menus_url }
-    end
+    redirect_to backend_menus_url
   end
 
   private

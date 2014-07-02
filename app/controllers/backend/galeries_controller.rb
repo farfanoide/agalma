@@ -13,13 +13,11 @@ class Backend::GaleriesController < BackendController
 
   # POST /galeries
   def create
-    @galery = Galery.new(galery_params) 
-    respond_to do |format|
-      if @galery.save
-        format.html { redirect_to @galery, notice: 'Galery was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    @galery = Galery.new(galery_params)
+    if @galery.save
+      redirect_to @galery, notice: 'Galery was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
@@ -28,21 +26,17 @@ class Backend::GaleriesController < BackendController
   end
   # PATCH/PUT /galeries/1
   def update
-    respond_to do |format|
-      if @galery.update(galery_params)
-        format.html { redirect_to @galery, notice: 'Galery was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @galery.update(galery_params)
+      redirect_to @galery, notice: 'Galery was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   # DELETE /galeries/1
   def destroy
     @galery.destroy
-    respond_to do |format|
-      format.html { redirect_to backend_galeries_url }
-    end
+    redirect_to backend_galeries_url
   end
 
   private

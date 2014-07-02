@@ -1,9 +1,7 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
-  # GET /images/1
-  # GET /images/1.json
-  def show
-  end
+
+  def show; end
 
   private
     # Use callbacks to share common setup or constraints between actions.

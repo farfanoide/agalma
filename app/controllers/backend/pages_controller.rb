@@ -28,24 +28,20 @@ class Backend::PagesController < BackendController
     @page = Page.new(page_params)
     authorize @page
     # @page.menu.add_page @page if @page.valid?
-    respond_to do |format|
-      if @page.save
-        format.html { redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @page.save
+      redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /pages/1
   def update
     authorize @page
-    respond_to do |format|
-      if @page.update(page_params)
-        format.html { redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @page.update(page_params)
+      redirect_to page_url(@page), notice: 'Pagina actualizada correctamente.'
+    else
+      render action: 'edit'
     end
   end
 
@@ -53,9 +49,7 @@ class Backend::PagesController < BackendController
   def destroy
     authorize @page
     @page.destroy
-    respond_to do |format|
-      format.html { redirect_to backend_pages_path  }
-    end
+    redirect_to backend_pages_path
   end
 
   private

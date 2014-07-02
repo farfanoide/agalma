@@ -4,21 +4,17 @@ class Backend::PositionsController < BackendController
   def create
     @position = Position.new(position_params)
 
-    respond_to do |format|
-      if @position.save
-        format.html { redirect_to backend_position_url(@position), notice: 'Cargo creado correctamente' }
-        format.html {render action: 'index'}
-      else
-        format.html {render action: 'new'}
-      end
+    if @position.save
+      redirect_to backend_position_url(@position), notice: 'Cargo creado correctamente'
+      render action: 'index'
+    else
+      render action: 'new'
     end
   end
 
   def destroy
     @position.destroy
-    respond_to do |format|
-      format.html { redirect_to backend_positions_url }
-    end
+    redirect_to backend_positions_url 
   end
 
   def edit
@@ -33,16 +29,14 @@ class Backend::PositionsController < BackendController
   end
 
   def show
-   redirect_to backend_positions_url
+    redirect_to backend_positions_url
   end
 
   def update
-     respond_to do |format|
-      if @position.update(position_params)
-        format.html { redirect_to backend_position_url(@position), notice: 'Cargo modificado correctamente' }
-      else
-        format.html {render action: 'edit'}
-      end
+    if @position.update(position_params)
+      redirect_to backend_position_url(@position), notice: 'Cargo modificado correctamente' 
+    else
+      render action: 'edit'
     end
   end
 

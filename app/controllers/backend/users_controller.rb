@@ -8,8 +8,7 @@ class Backend::UsersController < BackendController
   end
 
   # GET /users/1
-  def show
-  end
+  def show; end
 
   # GET /users/new
   def new
@@ -27,24 +26,20 @@ class Backend::UsersController < BackendController
     @user = User.new(user_params)
     authorize @user
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to backend_user_url(@user), notice: 'User was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @user.save
+      redirect_to backend_user_url(@user), notice: 'User was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /users/1
   def update
     authorize @user
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to backend_user_url(@user), notice: 'User was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @user.update(user_params)
+      redirect_to backend_user_url(@user), notice: 'User was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
@@ -52,9 +47,7 @@ class Backend::UsersController < BackendController
   def destroy
     @user.destroy
     authorize @user
-    respond_to do |format|
-      format.html { redirect_to backend_users_url }
-    end
+    redirect_to backend_users_url
   end
 
   private
