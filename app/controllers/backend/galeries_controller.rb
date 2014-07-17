@@ -4,16 +4,19 @@ class Backend::GaleriesController < BackendController
   # GET /galeries/new
   def new
     @galery = Galery.new
+    authorize @galery, :create?
     @galery.images.build
   end
 
   # GET /galeries/1/edit
   def edit
+    authorize @galery
   end
 
   # POST /galeries
   def create
     @galery = Galery.new(galery_params)
+    authorize @galery
     if @galery.save
       redirect_to @galery, notice: 'Galery was successfully created.'
     else
@@ -26,6 +29,7 @@ class Backend::GaleriesController < BackendController
   end
   # PATCH/PUT /galeries/1
   def update
+    authorize @galery, :edit?
     if @galery.update(galery_params)
       redirect_to @galery, notice: 'Galery was successfully updated.'
     else
@@ -35,6 +39,7 @@ class Backend::GaleriesController < BackendController
 
   # DELETE /galeries/1
   def destroy
+    authorize @galery
     @galery.destroy
     redirect_to backend_galeries_url
   end

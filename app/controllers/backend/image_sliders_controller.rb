@@ -9,14 +9,18 @@ class Backend::ImageSlidersController <  BackendController
   # GET /image_sliders/new
   def new
     @image_slider = ImageSlider.new
+    authorize @image_slider, :create?
   end
 
   # GET /image_sliders/1/edit
-  def edit; end
+  def edit
+    authorize @image_slider
+  end
 
   # POST /image_sliders
   def create
     @image_slider = ImageSlider.new(image_slider_params)
+    authorize @image_slider
 
     if @image_slider.save
       redirect_to backend_image_sliders_path, notice: 'Image slider was successfully created.'
@@ -27,6 +31,7 @@ class Backend::ImageSlidersController <  BackendController
 
   # PATCH/PUT /image_sliders/1
   def update
+    authorize @image_slider, :edit?
     if @image_slider.update(image_slider_params)
       redirect_to backend_image_sliders_path, notice: 'Image slider was successfully updated.'
     else
@@ -36,6 +41,7 @@ class Backend::ImageSlidersController <  BackendController
 
   # DELETE /image_sliders/1
   def destroy
+    authorize @image_slider
     @image_slider.destroy
     redirect_to backend_image_sliders_path
   end

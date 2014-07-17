@@ -1,0 +1,79 @@
+** Menu Docs
+
+   - definicion gral menu
+         - explicacion acciones grales
+         - explicacion casos de uso de cada posicion en el frontend
+         - explicacion paginas [actuales, disponibles, de otro menu], implicaciones de sacarlas de otro menu
+         - warning para sacar pagina de un menu?
+
+** User docs
+
+   - definicion gral usuarios
+# recordar explicar diferencia entre cargo y roles
+     - explicacion acciones grales
+       - registro
+       - inicio sesion
+       - borrar cuenta
+       - editar cuenta
+# explicar asignacion de cargo
+     - roles [ def alcance datos ]
+     - cargos
+       - definicion
+       - creacion
+       - asignacion
+
+
+* general docs
+** sistema gral
+** usuarios
+** sucursales
+** consultorios externos
+** paginas
+   - definicion gral paginas
+         - explicacion acciones grales (link backend)    
+         - diff grales/hijas
+** menus
+** noticias
+   - definicion gral noticias
+      - explicacion acciones grales (link backend)
+      - explicacion casos de uso de cada atributo en el frontend
+** formularios
+   - campos requeridos
+   - validaciones
+   - errores
+
+* frontend docs
+** usuarios
+   - registrarse
+   - iniciar sesion
+   - editar
+   - borra
+* backend docs
+** usuarios
+   - crear nuevo usuario
+   - editar
+     - campos grales
+     - campos especificos
+   - borrar
+** roles
+   -
+
+** noticias
+   - explicacion acciones grales
+   - creacion/edicion
+     - campos
+         - explicacion imagen de portada
+         - galerias (ref galerias)
+         - explicacion relacion sucursal (ref sucursales)
+
+# referencia a galerias
+
+
+** galerias
+** paginas
+   - info paginas grales
+     - relacion con menus (ref menus)
+       - info paginas hijas
+             - relacion con pag grales
+       - info widgets (ref doc widgets)
+

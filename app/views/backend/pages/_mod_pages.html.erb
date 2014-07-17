@@ -3,20 +3,22 @@
     <h3 class="box-title"><%= link_to "Paginas", backend_pages_path %></h3>
   </div><!-- /.box-header -->
   <div class="box-body">
-    <% if @pages.empty? %>
-    <div class="alert alert-info alert-dismissable">
+    <% if !@pages.nil? %>
+      <% if @pages.empty? %>
+      <div class="alert alert-info alert-dismissable">
       <i class="fa fa-info"></i>
       Todavia no tiene paginas cargadas.  <%= link_to "Crear Pagina", new_backend_page_path, class: 'button'%>
-    </div>
-    <% else %>
-    <table class="table table-condensed">
+  </div>
+  <% else %>
+      <table class="table table-condensed">
       <tbody>
       <% @pages.each do |page| %>
-      <tr>
+        <tr>
         <td><%= link_to page.title, edit_backend_page_path(page) %></td>
       </tr>
-      <% end %>
-    </tbody></table>
     <% end %>
+    </tbody></table>
+  <% end %>
+  <% end %>
   </div><!-- /.box-body -->
 </div>
