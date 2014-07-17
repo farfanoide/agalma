@@ -3,12 +3,14 @@ class Backend::UsersController < BackendController
 
   # GET /users
   def index
-    authorize User
     @users = User.all
+    authorize @users
   end
 
   # GET /users/1
-  def show; end
+  def show
+    authorize @user
+  end
 
   # GET /users/new
   def new
@@ -35,7 +37,7 @@ class Backend::UsersController < BackendController
 
   # PATCH/PUT /users/1
   def update
-    authorize @user
+    authorize @user, :edit?
     if @user.update(user_params)
       redirect_to backend_user_url(@user), notice: 'User was successfully updated.'
     else

@@ -1,8 +1,9 @@
 <div class="box">
   <div class="box-header"> <h3 class="box-title">Noticias:</h3> </div>
   <div class="box-body">
-    <% if !@posts.blank? %>
-    <table class="table table-condensed">
+    <% if !@posts.nil? %>
+      <% if !@posts.blank? %>
+      <table class="table table-condensed">
       <tbody>
       <tr>
         <th>Noticia</th>
@@ -10,7 +11,7 @@
         <th>Acciones</th>
       </tr>
       <% @posts.each do |post| %>
-      <tr>
+        <tr>
         <td><%= link_to post.title, edit_backend_post_path(post) %> </td>
         <td><%= post.branch.name %> </td>
         <td class="table-actions">
@@ -19,15 +20,16 @@
           <%= link_to fa_icon('trash-o'), backend_post_path(post), method: :delete, data: {confirm: 'Esta seguro?'}, class: 'btn btn-danger btn-sm' %>
         </td>
       </tr>
-      <% end %>
+    <% end %>
       </tbody>
     </table>
-    <% else %>
-    <div class="alert alert-info">
+  <% else %>
+      <div class="alert alert-info">
       <%= fa_icon :info %>
       <p>Todavia ha creado noticias, puede comenzar <%= link_to 'aqui.', new_backend_post_path %> </p>
     </div>
-    <% end %>
+  <% end %>
+  <% end %>  
   </div> <!-- /.box-body -->
 </div>
 <br>

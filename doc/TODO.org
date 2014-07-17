@@ -1,0 +1,79 @@
+*** Agalma TODO [0/4]
+    - [ ] testear menus
+    - [ ] testear paginas
+    - [ ] testear noticias
+    - [ ] crear session de tmuxstart
+
+
+
+* Fix
+** TODO Grales [0/1]
+   - [ ] layout frontend tablets -> vomit menus side by side
+   - [ ] backend dynamic inputs se ve como el culo
+   - [ ] generalizar botones en backend (ej edit posts backend tienen iconos, el resto no)
+   - [ ] null object para users
+   - [ ] dashboard index -> limit amount
+   - [ ] validaciones frontend
+
+** TODO Paginas [0/2]
+   - [ ] gral paginas [0/6]
+         - [ ] dashboard index -> only show active pages
+         - [ ] index -> filtros && controller check `authorize Page`
+         - [ ] destroy button alert -> poner algo mas coherente
+         - [ ] frontend show -> boton volver no pega ni con cola (padres e hijas)
+         - [ ] index -> crear nueva pagina (boton) especificar q tipo, agregar boton crear hija?
+         - [ ] new(gral) -> default menu || warning
+	 - [ ] ciertos elementos del back se muestran en frontend y otros en backend.
+	 - [ ] vista nombre de hijas en listado dentro de pagina gral
+
+   - [ ] formulario backend [0/7]
+         - [ ] mostrar errores
+         - [ ] traducciones errores
+         - [ ] title -> titulo
+         - [ ] widgets mayuscula [titulo, nombres]
+         - [ ] diferenciar mas entre acciones formulario y acciones grales
+         - [ ] hace falta "activa"? la estamos usando ?
+         - [ ] (hijas) require pagina padre
+
+** TODO CKEDITOR [0/2]
+   - [ ] modificar opciones menu
+   - [ ] modificar lenguaje
+** TODO Menus [0/1]
+   - [ ] frontend menus [0/1]
+         - [ ] vomit turqoise color links no se ve
+
+   - [ ] backend menus [0/1]
+         - [ ] nombre -> esta en minuscula, cancelar cambio de nombre y posicion?
+         - [ ] diferenciar mas entre acciones formulario y acciones grales
+
+** TODO Galerias [0/4]
+   - [ ] Creacion de galeria slider. Al cambiar imagen aparece vacio. Al submit error.
+   - [ ] Creacion si hay un error pinta de nuevo el form pero las imagenes seleccionadas se pierden
+   - [ ] creacion, va al show, al click en back no hace back. Va al show del frontend.
+   - [ ] show frontend se sale del diseño.
+   - [ ] edit-> botones no pegan ni con cola
+   - [ ] traduccion de notices
+** TODO Noticias [0/2]
+   - [ ] frontend  [0/1]
+         - [ ] volver boton te lleva a cualquier lado, explota
+
+   - [ ] backend  [0/4]
+         - [ ] danger alert paddings
+         - [ ] al crear galeria, si hay errores con las imagenes, guardar galeria igualmente y tirar errores aparte
+         - [ ] permitir borrar galeria
+         - [ ] postprocesar imagenes galerias(pesan mucho)
+         - [ ] index posts no funca por seeds
+         - [ ] diferenciar mas entre acciones formulario y acciones grales
+
+** TODO Consultorios Ext [0/1]
+   - [ ] Creacion -> show no anda el boton back
+   - [ ] ver de edicion - lleva al frontend y muestra noticia debajo.
+
+** TODO Usuarios [0/1]
+   - [ ] Sacar cache de firefox al editar el usuario
+   - [ ] Cuerencia de botones
+   - [ ] Traducciones de errores y vistas devise
+   - [ ] Busqueda de usuarios en el backend
+
+** TODO Cargos [0/1]
+   - [ ] Boton atras darle estilo

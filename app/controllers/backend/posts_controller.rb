@@ -7,6 +7,7 @@ class Backend::PostsController < BackendController
 
   def new
     @post = Post.new
+    authorize @post, :create?
   end
 
   def edit
@@ -15,6 +16,7 @@ class Backend::PostsController < BackendController
 
   def create
     @post = Post.new(post_params)
+    authorize @post
     @post.user = current_user
 
     if @post.save
@@ -25,6 +27,7 @@ class Backend::PostsController < BackendController
   end
 
   def update
+    authorize @post, :edit?
     @post.user = current_user
     if @post.update(post_params)
       redirect_to post_url(@post), notice: 'Noticia actualizada correctamente.'
@@ -34,6 +37,7 @@ class Backend::PostsController < BackendController
   end
 
   def destroy
+    authorize @post
     @post.destroy
     redirect_to backend_posts_url
   end

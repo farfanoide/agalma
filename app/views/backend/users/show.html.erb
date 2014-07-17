@@ -6,8 +6,9 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-
-
+<p>
+  <%= image_tag @user.avatar.url(:thumb), class: 'img-circle' %>
+</p>
 <% if !@user.positions.blank? %>
 <p>
 <strong>Cargos en sucursales:</strong>

@@ -1,9 +1,7 @@
-class PagePolicy < Struct.new(:user, :page)
+class ImageSliderPolicy < Struct.new(:user, :image_slider)
   class Scope < Struct.new(:user, :scope)
     def resolve
-      if user.admin?
-        scope.all
-      end
+      scope.all if user.admin?
     end
   end
 

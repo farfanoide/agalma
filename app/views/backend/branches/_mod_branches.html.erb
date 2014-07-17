@@ -3,21 +3,23 @@
     <h3 class="box-title"><%= link_to "Sucursales", backend_branches_path %></h3>
   </div><!-- /.box-header -->
   <div class="box-body">
-    <% if @branches.empty? %>
-    <div class="alert alert-info alert-dismissable">
+    <% if !@branches.nil? %>
+      <% if @branches.empty? %>
+      <div class="alert alert-info alert-dismissable">
       <%= fa :'fa-info'%>
       Todavia no tiene paginas cargadas.
       <%= link_to "Crear Sucursal", new_backend_branch_path, class: 'button'%>
     </div>
-    <% else %>
-    <table class="table table-condensed">
+  <% else %>
+      <table class="table table-condensed">
       <tbody>
       <% @branches.each do |branch| %>
-      <tr>
+        <tr>
         <td><%= link_to branch.name, edit_backend_branch_path(branch) %></td>
       </tr>
-      <% end %>
-    </tbody></table>
     <% end %>
+    </tbody></table>
+  <% end %>
+  <% end %>
   </div><!-- /.box-body -->
 </div>

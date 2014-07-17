@@ -3,20 +3,22 @@
     <h3 class="box-title"><%= link_to "Noticias", backend_posts_path %></h3>
   </div><!-- /.box-header -->
   <div class="box-body">
-    <% if @posts.empty? %>
-    <div class="alert alert-info alert-dismissable">
+    <% if !@posts.nil? %>
+      <% if @posts.empty? %>
+      <div class="alert alert-info alert-dismissable">
       <i class="fa fa-info"></i>
       Todavia no tiene noticias cargadas.  <%= link_to "Crear noticia", new_backend_post_path, class: 'button'%>
-    </div>
-    <% else %>
-    <table class="table table-condensed">
+  </div>
+  <% else %>
+      <table class="table table-condensed">
       <tbody>
       <% @posts.each do |post| %>
-      <tr>
+        <tr>
         <td><%= link_to post.title, edit_backend_post_path(post) %></td>
       </tr>
-      <% end %>
-    </tbody></table>
     <% end %>
+    </tbody></table>
+  <% end %>
+  <% end %>
   </div><!-- /.box-body -->
 </div>
